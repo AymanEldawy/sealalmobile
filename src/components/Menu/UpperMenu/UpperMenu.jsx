@@ -1,7 +1,8 @@
 import React from 'react';
 import Styles from '@/styles/Menu/Menu.module.css';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import { FreeShippingIcon } from './../../Icons/FreeShippingIcon';
 import { GetUpIcon } from './../../Icons/GetUpIcon';
 import { WalletIcon } from './../../Icons/WalletIcon';

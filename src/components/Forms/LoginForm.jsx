@@ -10,7 +10,7 @@ export const LoginForm = () => {
     e.preventDefault();
   };
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmite}>
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <InputField
         style={{ border: '2px solid #E5E5E5', padding: '12px' }}
         label="Email Address"

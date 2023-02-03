@@ -1,12 +1,13 @@
 import { useTranslation } from 'next-i18next';
-import { ServerSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import React from 'react';
 
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 
 export async function getStaticProps({ locale }) {
   return {
-    props: { ...(await ServerSideTranslations(locale, ['home'])) },
+    props: { ...(await serverSideTranslations(locale, ['home'])) },
   };
 }
 

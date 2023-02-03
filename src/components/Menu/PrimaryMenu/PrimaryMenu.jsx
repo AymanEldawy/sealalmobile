@@ -4,11 +4,12 @@ import { NavbarMenuLinks } from './NavbarMenuLinks';
 import { MainIconsList } from './MainIconsList';
 import { PrimaryButton } from './../../Global/PrimaryButton/PrimaryButton';
 import { useTranslation } from 'next-i18next';
-import { ServerSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 
 export async function getStaticProps({ locale }) {
   return {
-    props: { ...(await ServerSideTranslations(locale, ['common'])) },
+    props: { ...(await serverSideTranslations(locale, ['common'])) },
   };
 }
 export const PrimaryMenu = () => {
