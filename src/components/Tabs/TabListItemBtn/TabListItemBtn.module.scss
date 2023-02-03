@@ -1,0 +1,22 @@
+@import '../../../VariablesScss/Variables';
+@import '../../../VariablesScss/Media';
+
+.tabs_list_item {
+  padding: 1.25rem 1rem;
+  flex: 1;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid #ccc;
+}
+
+.tabs_list_item_active {
+  border-color: $primaryColor;
+  color: $primaryColor;
+  font-weight: 600;
+  font-size: 1.2rem;
+  @include smMedia('full') {
+    font-size: 1rem;
+  }
+}
