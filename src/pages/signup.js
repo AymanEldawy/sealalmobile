@@ -1,19 +1,11 @@
-import { Inter } from '@next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import { SectionTitle } from './../components/Global/SectionTitle';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
-import { LoginForm } from './../components/Forms/LoginForm';
 import { SignupForm } from './../components/Forms/SignupForm';
 
-const inter = Inter({ subsets: ['latin'] });
 
-export function getStaticProps({ locale }) {
-  return {
-    props: { locale },
-  };
-}
-export default function Signup(props) {
+export default function Signup() {
   // props?.locale
   return (
     <>

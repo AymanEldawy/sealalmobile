@@ -31,7 +31,7 @@ const NewPassword = () => {
           <SectionTitle title="New password" />
           <div className="h-14" />
 
-          <form > 
+          <form handleSubmit={handleSubmit}> 
             <InputField
               style={{ border: '2px solid #E5E5E5', padding: '12px' }}
               label="New Password"

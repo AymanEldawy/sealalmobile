@@ -1,1 +1,14 @@
-{"login":"login","shop_now":"Shop now","menu_home_link":"Home","home_flash_sale":"Flash sale UP to 50%","menu_about_link":"About us","menu_contact_link":"Contact us","upper_menu_get_up":"Get up to 40% off","upper_menu_call_us":"Call us","upper_menu_download":"Dowenload App","menu_categories_link":"Categories","upper_menu_free_shipping":"Free shipping over 100$","upper_menu_payment_options":"Flexible payment options"}
+{
+  "login": "login",
+  "shop_now": "Shop now",
+  "menu_home_link": "Home",
+  "home_flash_sale": "Flash sale UP to 50%",
+  "menu_about_link": "About us",
+  "menu_contact_link": "Contact us",
+  "upper_menu_get_up": "Get up to 40% off",
+  "upper_menu_call_us": "Call us",
+  "upper_menu_download": "Dowenload App",
+  "menu_categories_link": "Categories",
+  "upper_menu_free_shipping": "Free shipping over 100$",
+  "upper_menu_payment_options": "Flexible payment options"
+}

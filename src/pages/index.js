@@ -1,9 +1,4 @@
-import { Inter } from '@next/font/google';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import Head from 'next/head';
-import Image from 'next/image';
 import { products } from '@/data/cardData';
 
 import { Banner } from './../components/Banner/Banner';
@@ -16,15 +11,7 @@ import { OurFeatures } from './../components/OurFeatures/OurFeatures';
 import { Brands } from './../components/Brands/Brands';
 import { Testimonial } from './../components/Testimonial/Testimonial';
 
-// const inter = Inter({ subsets: ['latin'] });
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: { ...(await serverSideTranslations(locale, ['home'])) },
-  };
-}
-export default function Home(props) {
-  const { t } = useTranslation('home');
+export default function Home() {
   return (
     <>
       <Head>

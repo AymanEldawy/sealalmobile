@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { SectionTitle } from './../components/Global/SectionTitle';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
-import Link from 'next/link';
 const Activation = () => {
   return (
     <>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from './../components/Layout/Layout';
 import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
-import { SectionTitle } from './../components/Global/SectionTitle';
 import { SearchIcon } from './../components/Icons/SearchIcon';
 import { MessageIcon } from './../components/Icons/MessageIcon';
 import { PaymentIcon } from './../components/Icons/PaymentIcon';
