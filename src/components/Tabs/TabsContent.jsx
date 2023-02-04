@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types';
 import React from 'react';
 
 export const TabsContent = ({ children, selectedTab }) => {
@@ -9,9 +8,4 @@ export const TabsContent = ({ children, selectedTab }) => {
       )}
     </div>
   );
-};
-
-TabsContent.propTypes = {
-  children: PropTypes.node,
-  selectedTab: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };

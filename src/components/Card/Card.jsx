@@ -7,29 +7,47 @@ import { CardInfo } from './CardInfo';
 import { CardPrice } from './CardPrice';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 import { CartIcon } from './../Icons/CartIcon';
+import { AddToCardButton } from './AddToCardButton';
 
-// sale
-export const Card = ({ item }) => {
+export const Card = ({ item, inCategory }) => {
   return (
-    <div className="bg-bgprimary h-[456px] w-[288px] relative">
+    <div
+      className={`bg-bgprimary  w-full max-w-[288px] relative ${
+        inCategory ? 'h-[370px]' : 'h-[456px]'
+      }`}
+    >
       <CardSale sale="sale" />
       <CardWishlist inWishlist={item?.inWishlist} />
-      <CardImg src={item?.img} alt={item?.title} />
+      <CardImg
+        src={item?.img}
+        alt={item?.title}
+        id={item?.id}
+        inCategory={inCategory}
+      />
       <div className="flex flex-col justify-center items-center gap-2">
-        <CardInfo title={item?.title} category={item?.category?.name} />
-        <CardRate rating={item?.rating} />
-        <CardPrice price={item?.price} discount={item?.discount} />
-        <PrimaryButton
-          classes="flex gap-1 items-center"
-          text="Add to Cart"
-          icon={<CartIcon color="white" style={{ transform: 'scale(.7)' }} />}
-        />
+        {inCategory ? (
+          <>
+            <div className="flex justify-between gap-2 w-full px-2">
+              <CardInfo
+                title={item?.title}
+                category={item?.category?.name}
+                inCategory={inCategory}
+              />
+              <CardPrice price={item?.price} discount={item?.discount} />
+            </div>
+            <div className="mb-2">
+              <CardRate rating={item?.rating} />
+            </div>
+          </>
+        ) : (
+          <>
+            <CardInfo title={item?.title} category={item?.category?.name} />
+            <CardRate rating={item?.rating} />
+            <CardPrice price={item?.price} discount={item?.discount} />
+          </>
+        )}
+        <AddToCardButton />
       </div>
-      {/* category */}
-      {/* title */}
-      {/* rate */}
-      {/* price */}
-      {/* add to cart */}
     </div>
   );
 };

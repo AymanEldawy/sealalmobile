@@ -5,7 +5,7 @@ import { CloseIcon } from './../Icons/CloseIcon';
 import Image from 'next/image';
 export const ProductItemRow = ({ product }) => {
   return (
-    <div className="p-2 px-4 flex items-center">
+    <div className="p-4 flex items-center border-b">
       <div className="flex-1">
         <div className="flex gap-4">
           <figure>

@@ -20,12 +20,14 @@ export const SelectField = ({
         errors?.length ? Styles.form_group_error : '',
       ].join(' ')}
     >
-      <label>
-        {label}
-        {errors?.length ? (
-          <span className={Styles.label_error}>{errors[0]}</span>
-        ) : null}
-      </label>
+      {label ? (
+        <label>
+          {label}
+          {errors?.length ? (
+            <span className={Styles.label_error}>{errors[0]}</span>
+          ) : null}
+        </label>
+      ) : null}
 
       <select
         name={name}

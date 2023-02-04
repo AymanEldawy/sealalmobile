@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const CardInfo = ({ title, category }) => {
+export const CardInfo = ({ title, category, inCategory }) => {
   return (
     <>
-      <p>{category}</p>
+      {inCategory ? null : <p>{category}</p>}
       <h3>{title}</h3>
     </>
   );

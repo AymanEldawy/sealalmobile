@@ -453,6 +453,7 @@ export const newProducts = [
   },
 ];
 
+
 export const cart = [
   { id: 1, productId: 1, quantity: 2, price: 200 },
   { id: 2, productId: 2, quantity: 4, price: 540 },
@@ -463,8 +464,10 @@ export const cart = [
 ];
 
 export const getItemById = (productId) => {
-  let item = products.filter((product) => product.id === productId);
-  return item[0];
+  console.log(productId)
+  let item = products.find((product) => product.id === +productId);
+  console.log(productId)
+  return item;
 };
 export const calculateTotal = (items) => {
   if (items?.length)

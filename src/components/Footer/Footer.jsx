@@ -9,7 +9,8 @@ export const Footer = () => {
   return (
     <footer className="bg-bgprimary min-h-[432px] flex flex-col items-center">
       <div className="container flex flex-col">
-        <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:flex flex flex-wrap lg:flex-nowrap pt-16 lg:justify-between">
+        {/* <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 !lg:flex flex flex-wrap !lg:flex-nowrap pt-16 lg:justify-between"> */}
+        <div className="flex  pt-16 lg:justify-between">
           <OrganizationInfo />
           <ContactInfo />
           <CustomerService title="CUSTOMER SERVICE" />
