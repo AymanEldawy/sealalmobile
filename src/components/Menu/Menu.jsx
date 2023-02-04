@@ -8,8 +8,6 @@ export const Menu = () => {
     <nav className={Styles.menu}>
       <UpperMenu />
       <PrimaryMenu />
-      {/* UPPER MENU */}
-      {/* PRIMARY MENU */}
     </nav>
   );
 };

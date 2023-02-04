@@ -2,7 +2,7 @@ import React from 'react';
 
 export const OurFeaturesGrid = ({ features }) => {
   return (
-    <div className="flex justify-around items-center bg-bgseconday p-4 gap-4 h-[262px]">
+    <div className="flex flex-wrap sm:grid sm:grid-cols-2 md:flex md:flex-nowrap justify-around items-center bg-bgseconday p-4 gap-4 lg:h-[262px]">
       {features?.map((feature) => (
         <div
           className="flex-col flex gap-3 items-center justify-center"

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { SectionTitle } from './../Global/SectionTitle';
 import { TestimonialCard } from './TestimonialCard';
 
@@ -31,8 +32,8 @@ export const Testimonial = ({ title, row }) => {
       <div className="container">
         <SectionTitle title={title} />
         <div
-          className={`flex gap-4 justify-between items-center ${
-            row ? 'grid grid-cols-2' : ''
+          className={`flex flex-wrap md:flex-nowrap gap-4 justify-between items-center ${
+            row ? 'grid lg:grid-cols-2' : ''
           }`}
         >
           {reviews.map((review, index) => (

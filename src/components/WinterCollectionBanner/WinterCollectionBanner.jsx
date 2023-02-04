@@ -1,11 +1,12 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 export const WinterCollectionBanner = () => {
   return (
     <div className="mt-12">
-      <div className=" container relative">
+      <div className="container relative">
         <Image
+          className='object-cover min-h-[250px] md:min-h-max'
           src="/images/home/winter-collection.png"
           alt="Winter Collection"
           height={278}

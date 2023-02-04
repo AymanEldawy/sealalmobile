@@ -5,14 +5,15 @@ import React from 'react';
 
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   return {
-    props: { ...(await serverSideTranslations(locale, ['home'])) },
+    props: { ...(await serverSideTranslations(locale, ['home', 'common'])) },
   };
 }
 
 export const BannerInfo = () => {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('common');
+  console.log(t('home_flash_get_up'));
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2  text-center">
       <h1 className="text-6xl text-center mb-4 flex flex-col gap-2">
