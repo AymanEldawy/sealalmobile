@@ -3,7 +3,7 @@ import React from 'react';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
 import { SectionTitle } from './../Global/SectionTitle';
 import { MapIcon } from './../Icons/MapIcon';
-
+import Link from 'next/link';
 export const CartTotal = ({ cart }) => {
   const cartTotal = cart.reduce((result, cur) => {
     return (result += cur?.price * cur?.quantity);
@@ -38,10 +38,12 @@ export const CartTotal = ({ cart }) => {
               Amount: <span className="mx-5">{cartTotal + 45}$</span>{' '}
             </li>
           </ul>
-          <PrimaryButton
-            text="Checkout"
-            classes="!py-2 mt-4 w-full max-w-xs rounded-md"
-          />
+          <Link href="checkout" className="w-full max-w-xs">
+            <PrimaryButton
+              text="Checkout"
+              classes="!py-2 mt-4 w-full max-w-xs rounded-md"
+            />
+          </Link>
         </div>
       </div>
     </div>
