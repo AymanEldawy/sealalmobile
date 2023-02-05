@@ -8,14 +8,15 @@ export const CategoryBanner = () => {
       <figure>
         <Image
           className="max-h-[400px] object-cover object-center"
-          src="/images/new-collection.jpg"
+          src="/images/istockphoto-496127904-612x612.jpg"
+          // src="/images/new-collection.jpg"
           alt="Category"
           height={416}
           width={1200}
         />
       </figure>
       <div className="absolute top-1/2 -translate-y-1/2 right-36 flex flex-col gap-4 max-w-xs text-white">
-        <h1 className="text-4xl flex flex-col ">
+        <h1 className="text-4xl flex flex-col text-black">
           New
           <span className="text-6xl text-primary font-semibold">
             Collection
@@ -25,7 +26,7 @@ export const CategoryBanner = () => {
           We really care about you and your website as much as you do.Porto or
           any other
         </p>
-        <PrimaryButton text="Show now" />
+        <PrimaryButton text="Show now" classes="w-[136px] h-[40px] !rounded-md" />
       </div>
     </div>
   );

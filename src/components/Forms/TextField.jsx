@@ -12,7 +12,7 @@ export const TextField = ({
 }) => {
   return (
     <div className="mb-4" style={style}>
-      {label ? <label className="mb-2">{label}</label> : null}
+      {label ? <label className="flex items-center justify-between mb-2">{label}</label> : null}
       <textarea
         placeholder={placeholder}
         className={`border border-gray-300 w-full p-2 rounded-md h-28 ${classes}`}

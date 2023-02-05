@@ -304,7 +304,147 @@ export const products = [
     category: Categories[5],
   },
   {
-    id: 45,
+    id: 453,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 454,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4512,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4435,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4535,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4512,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4345,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4215,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 4545,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 45431,
+    title: 'white forest torte',
+    description:
+      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
+    price: 453,
+    img: images[Math.floor(Math.random() * (images.length - 1))],
+    discount: Math.floor(Math.random() * 15),
+    inWishlist: true,
+    rating: Math.floor(Math.random() * 6),
+    in_stock: false,
+    size: Math.max(33, Math.floor(Math.random() * 50), 50),
+    category: Categories[6],
+  },
+  {
+    id: 43235,
     title: 'white forest torte',
     description:
       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
@@ -318,142 +458,6 @@ export const products = [
     category: Categories[6],
   },
 ];
-export const newProducts = [
-  {
-    id: 1,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 200,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 2,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 540,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 3,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 123,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: true,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 42,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: true,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 42,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 46,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 6,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 14,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: true,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 24,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: true,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 34,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-  {
-    id: 45,
-    title: 'white forest torte',
-    description:
-      'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-    price: 453,
-    img: images[Math.floor(Math.random() * (images.length - 1))],
-    discount: Math.floor(Math.random() * 15),
-    inWishlist: false,
-    rating: Math.floor(Math.random() * 6),
-    category: newArrivalList[random(newArrivalList.length - 1)],
-  },
-];
-
-
 export const cart = [
   { id: 1, productId: 1, quantity: 2, price: 200 },
   { id: 2, productId: 2, quantity: 4, price: 540 },
@@ -463,10 +467,12 @@ export const cart = [
   { id: 6, productId: 34, quantity: 4, price: 453 },
 ];
 
+
+
 export const getItemById = (productId) => {
-  console.log(productId)
+  console.log(productId);
   let item = products.find((product) => product.id === +productId);
-  console.log(productId)
+  console.log(productId);
   return item;
 };
 export const calculateTotal = (items) => {

@@ -41,7 +41,25 @@ select:focus-within,
 textarea:focus-within {
   outline: none;
 }
-
+div:has(input:required) label,
+div:has(input:required) label::before,
+div:has(textarea:required) label {
+  position: relative;
+  width: fit-content;
+  display: block;
+}
+div:has(textarea:required) label::before,
+div:has(select:required) label::before,
+div:has(select:required) label::before {
+  position: absolute;
+  content: '*';
+  color: #f00;
+  right: -12px;
+  top: 2px;
+}
+::placeholder {
+  color: #666666;
+}
 .browse-slide-categories {
   max-width: calc(100% - 70px);
   margin: 0 auto;
@@ -60,6 +78,28 @@ textarea:focus-within {
   width: 100% !important;
   height: 100%;
   object-fit: contain;
+}
+
+.category-paginate li {
+  border: 1px solid #dfe3e8;
+  background-color: #fff;
+  border-radius: 0.25rem;
+}
+.category-paginate li a {
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  font-size: 14px;
+}
+.category-paginate li.disabled {
+  border: none;
+  background-color: #f4f4f4;
+}
+.category-paginate li.disabled * {
+  pointer-events: none;
 }
 /* dev */
 .divider-vertical {

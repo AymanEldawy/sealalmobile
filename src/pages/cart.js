@@ -1,6 +1,18 @@
+import { cart as carts } from '@/data/cardData';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+
+import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
+import { CartTotal } from './../components/CartComponents/CartTotal';
+import { TableCart } from './../components/CartComponents/TableCart';
+import { Layout } from './../components/Layout/Layout';
 
 export default function Home() {
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    setCart(carts);
+  }, []);
+
   return (
     <>
       <Head>
@@ -9,7 +21,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=''>cart</main>
+      <Layout>
+        <div className="container">
+          <Breadcrumb paths="Cart" />
+          <TableCart
+            cart={cart}
+          />
+          <CartTotal cart={cart} />
+        </div>
+      </Layout>
     </>
   );
 }
