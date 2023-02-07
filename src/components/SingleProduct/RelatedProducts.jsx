@@ -1,21 +1,30 @@
-import React from 'react';
-import { SectionTitle } from './../Global/SectionTitle';
+import { products } from '@/data/cardData';
+import { fetchWord } from '@/lang/fetchWord';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
+
+import { LanguageContext } from './../../context/LangContext';
+import { Card } from './../Card/Card';
+import { SectionTitle } from './../Global/SectionTitle';
+import { ChevronIcon } from './../Icons/ChevronIcon';
 
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
-import { Card } from './../Card/Card';
 
-import { products } from '@/data/cardData';
-import { ChevronIcon } from './../Icons/ChevronIcon';
-
-const CustomArrow = ({ direction, onClick }) => (
+const CustomArrow = ({ direction, onClick, lang }) => (
   <button
-    className={`absolute rounded-full scale-50 border-[1px] border-black !flex items-center justify-center !h-11 !w-11 -top-14 z-10 ${
-      direction === 'next' ? 'right-0' : 'right-8'
+    className={`absolute rounded-full scale-50 border-[1px] border-black !flex items-center justify-center !h-11 !w-11 -top-14 z-10  ${
+      direction === 'next' ? 'right-0 rtl:left-0' : 'right-8 rtl:left-8'
     } ${!!onClick ? '!border-primary ' : ''}`}
     style={{
-      transform: direction === 'next' ? 'scale(.5) rotate(180deg)' : '',
+      transform:
+        direction === 'next'
+          ? lang === 'en'
+            ? 'scale(.5) rotate(180deg)'
+            : 'scale(.5) rotate(0)'
+          : lang === 'ar'
+          ? 'scale(.5) rotate(180deg)'
+          : '',
     }}
     onClick={onClick}
     disabled={!onClick}
@@ -25,14 +34,15 @@ const CustomArrow = ({ direction, onClick }) => (
 );
 
 export const RelatedProducts = () => {
+  const { lang } = useContext(LanguageContext);
   const setting = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <CustomArrow direction="next" />,
-    prevArrow: <CustomArrow />,
+    nextArrow: <CustomArrow direction="next" lang={lang} />,
+    prevArrow: <CustomArrow lang={lang} />,
     responsive: [
       {
         breakpoint: 500,
@@ -55,7 +65,7 @@ export const RelatedProducts = () => {
   return (
     <div>
       <div className="relative py-8">
-        <SectionTitle title="Related Products" />
+        <SectionTitle title={fetchWord('Related_Products', lang)} />
         <Slider {...setting}>
           {products?.map((product) => (
             <figure key={product?.id} className="p-2">

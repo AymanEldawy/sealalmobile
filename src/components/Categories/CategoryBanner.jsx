@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 
 export const CategoryBanner = () => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className="relative">
       <figure>
@@ -17,16 +20,18 @@ export const CategoryBanner = () => {
       </figure>
       <div className="absolute top-1/2 -translate-y-1/2 right-36 flex flex-col gap-4 max-w-xs text-white">
         <h1 className="text-4xl flex flex-col text-black">
-          New
+          {fetchWord('new', lang)}
           <span className="text-6xl text-primary font-semibold">
-            Collection
+            {fetchWord('Collection', lang)}
           </span>
         </h1>
         <p className="text-[#858585]">
-          We really care about you and your website as much as you do.Porto or
-          any other
+          {fetchWord('Collection_description', lang)}
         </p>
-        <PrimaryButton text="Show now" classes="w-[136px] h-[40px] !rounded-md" />
+        <PrimaryButton
+          text={fetchWord('shop_now', lang)}
+          classes="w-[136px] h-[40px] !rounded-md"
+        />
       </div>
     </div>
   );

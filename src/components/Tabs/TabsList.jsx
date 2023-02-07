@@ -1,7 +1,11 @@
-import React from 'react';
+import { fetchWord } from '@/lang/fetchWord';
+import React, { useContext } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
 
 export const TabsList = ({ items, handelChangeTab, selectedTab }) => {
-  console.log(items, handelChangeTab, selectedTab)
+  const { lang } = useContext(LanguageContext);
+  console.log(items, handelChangeTab, selectedTab);
   return (
     <div className="flex w-full mt-8">
       {items.map((item) => (
@@ -13,7 +17,7 @@ export const TabsList = ({ items, handelChangeTab, selectedTab }) => {
           }`}
           onClick={() => handelChangeTab(item)}
         >
-          {item}
+          {fetchWord(item, lang)}
         </button>
       ))}
     </div>

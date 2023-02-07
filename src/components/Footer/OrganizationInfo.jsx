@@ -3,13 +3,11 @@ import React from 'react';
 import { Brand } from './../Global/Brand';
 import { Social } from './Social';
 
-export const OrganizationInfo = () => {
+export const OrganizationInfo = ({ description }) => {
   return (
-    <div className='p-4 flex-col flex gap-4 max-w-[230px]'>
+    <div className="p-4 flex-col flex gap-4 max-w-[230px]">
       <Brand invert />
-      <p>
-        Your web is the yomna Ecommece who Your web is the Ecommece who You.
-      </p>
+      <p>{description}</p>
       <Social />
     </div>
   );

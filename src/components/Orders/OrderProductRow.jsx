@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { OrderItem } from './OrderItem';
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../../context/LangContext';
 
 export const OrderProductRow = ({ order }) => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className="p-2 px-4 gap-4 flex items-center bg-bgprimary mb-4 rounded relative min-h-[140px]">
       <div className="flex-1">
@@ -35,7 +38,7 @@ export const OrderProductRow = ({ order }) => {
         <h4 className="capitalize text-lg font-medium ">{order?.total}$</h4>
       </div>
       <button className="border-primary border-2 absolute bottom-2 right-2 py-1 px-2 rounded-md text-primary font-medium text-sm">
-        More Details
+        {fetchWord('More_Details', lang)}
       </button>
     </div>
   );

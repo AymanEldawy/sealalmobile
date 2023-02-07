@@ -1,15 +1,18 @@
 import { PropTypes } from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { GoogleIcon } from '../Icons/GoogleIcon';
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../../context/LangContext';
 
 export const LoginWithGoogle = ({ handelLoginWithGoogle }) => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className={Styles.login_with_google}>
-      <p>Enter your email and password for login or continue with </p>
+      <p>{fetchWord('loginWithText', lang)} </p>
       <a href={handelLoginWithGoogle} className="flex gap-2 items-center">
         <GoogleIcon />
-        Google account
+        {fetchWord('google_account', lang)}
       </a>
     </div>
   );

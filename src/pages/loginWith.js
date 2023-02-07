@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
 
 import Head from 'next/head';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
-const loginWith = () => {
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../context/LangContext';
+const LoginWith = () => {
+  const { lang } = useContext(LanguageContext);
   return (
     <>
       <Head>
@@ -25,20 +28,24 @@ const loginWith = () => {
         <div className="container">
           <div className="flex flex-col items-center justify-center gap-3 text-primary mb-8">
             <h1 className="text-primary w- text-4xl my-8 text-center">
-              Sign up
+              {fetchWord('signup', lang)}
             </h1>
 
             <div className="flex items-center gap-4 mb-8 justify-center">
               <span className="h-[2px] w-40 bg-primary flex-1"></span>{' '}
-              <h3 className="text-2xl font-normal text-primary">With</h3>
+              <h3 className="text-2xl font-normal text-primary">
+                {fetchWord('with', lang)}
+              </h3>
               <span className="h-[2px] w-40 bg-primary flex-1"></span>
             </div>
             <PrimaryButton
               classes="w-72 !py-2 rounded-lg"
-              text="Mobile number"
+              text={fetchWord('"Mobile number"', lang)}
             />
             <PrimaryButton classes="w-72 !py-2 rounded-lg" text="Email" />
-            <span className="w-3 block mx-auto my-6">or</span>
+            <span className="w-3 block mx-auto my-6">
+              {fetchWord('or', lang)}
+            </span>
             <LoginWithSocialAccount />
           </div>
         </div>
@@ -48,4 +55,4 @@ const loginWith = () => {
   );
 };
 
-export default loginWith;
+export default LoginWith;

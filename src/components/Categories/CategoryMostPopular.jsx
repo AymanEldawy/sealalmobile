@@ -2,10 +2,10 @@ import { products } from '@/data/cardData';
 import Image from 'next/image';
 import React from 'react';
 
-export const CategoryMostPopular = () => {
+export const CategoryMostPopular = ({ title }) => {
   return (
     <div className=" p-4 lg:px-8">
-      <h3 className="text-primary mb-6 font-semibold text-xl">Most Popular</h3>
+      <h3 className="text-primary mb-6 font-semibold text-xl">{title}</h3>
       <div className="grid grid-cols-3 gap-4 justify-between">
         {products?.slice(0, 6).map((product) => (
           <figure

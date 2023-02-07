@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+
+import { TabsContent } from '../Tabs/TabsContent';
+import { Reviews } from './../Reviews/Reviews';
+import { TabsList } from './../Tabs/TabsList';
+import { ProductDescription } from './ProductDescription';
+import { ProductSizes } from './ProductSizes';
+import { RelatedProducts } from './RelatedProducts';
 import { SingleProductImg } from './SingleProductImg';
 import { SingleProductInfo } from './SingleProductInfo';
-import { TabsList } from './../Tabs/TabsList';
-import { TabsContent } from '../Tabs/TabsContent';
-import { ProductDescription } from './ProductDescription';
-import { RelatedProducts } from './RelatedProducts';
-import { ProductSizes } from './ProductSizes';
-import { Reviews } from './../Reviews/Reviews';
 
 export const SingleProductDetails = ({ product }) => {
   const [selectedTab, setSelectedTab] = useState('description');

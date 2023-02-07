@@ -3,8 +3,12 @@ import Image from 'next/image';
 import { SectionTitle } from './../components/Global/SectionTitle';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
 import { LoginForm } from './../components/Forms/LoginForm';
+import { fetchWord } from '@/lang/fetchWord';
+import { useContext } from 'react';
+import { LanguageContext } from './../context/LangContext';
 
 export default function Login() {
+  const { lang } = useContext(LanguageContext);
   // props?.locale
   return (
     <>
@@ -16,19 +20,26 @@ export default function Login() {
       </Head>
       <div className="flex gap-4">
         <figure className="full-image-login flex-1">
-          <Image src="/images/login.jpg" alt="Login" height={500} width={500} />
+          <Image
+            src="/images/login.jpg"
+            alt={fetchWord('login', lang)}
+            height={500}
+            width={500}
+          />
         </figure>
         <div className="flex flex-col p-8 flex-1">
-          <SectionTitle title="Login" />
+          <SectionTitle title={fetchWord('login', lang)} />
           <p className="text-xs text-[#949494] -mt-3">
-            Enter your credentials to access your account
+            {fetchWord('auth_message', lang)}
           </p>
           <div className="w-full my-4">
             <LoginWithSocialAccount />
           </div>
           <div className="flex items-center gap-4 mb-8 justify-center w-11/12 mx-auto">
             <span className="h-[2px] w-40 bg-[#E6E6E6] flex-1"></span>{' '}
-            <h3 className="text-lg font-normal text-[#E6E6E6]">or</h3>
+            <h3 className="text-lg font-normal text-[#E6E6E6]">
+              {fetchWord('or', lang)}
+            </h3>
             <span className="h-[2px] w-40 bg-[#E6E6E6] flex-1"></span>
           </div>
           <LoginForm />

@@ -1,7 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 
 export const CustomerService = ({ title }) => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className="p-4 w-52">
       <h4 className="text-lg text-primary font-medium mb-4 whitespace-nowrap">
@@ -10,17 +13,17 @@ export const CustomerService = ({ title }) => {
       <ul className="flex flex-col gap-5">
         <li className="flex gap-1 ">
           <Link href="" className="whitespace-nowrap">
-            Help & FAQs
+            {fetchWord('help_faqs', lang)}
           </Link>
         </li>
         <li className="flex gap-1 ">
           <Link href="" className="whitespace-nowrap">
-            Order Tracking
+            {fetchWord('order_tracking', lang)}
           </Link>
         </li>
         <li className="flex gap-1 ">
           <Link href="" className="whitespace-nowrap">
-            Sitemap
+            {fetchWord('sitemap', lang)}
           </Link>
         </li>
       </ul>

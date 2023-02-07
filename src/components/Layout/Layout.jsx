@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Footer } from './../Footer/Footer';
 import { Menu } from './../Menu/Menu';
-import { UpperMenu } from './../Menu/UpperMenu/UpperMenu';
+import { LanguageContext } from './../../context/LangContext';
 
 export const Layout = ({ children }) => {
+  const { lang } = useContext(LanguageContext);
   return (
     <>
       <Menu />

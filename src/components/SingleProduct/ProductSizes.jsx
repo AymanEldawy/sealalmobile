@@ -1,6 +1,11 @@
-import React from 'react';
+import { fetchWord } from '@/lang/fetchWord';
 import Image from 'next/image';
+import React, { useContext } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
+
 export const ProductSizes = () => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className="flex gap-4 lg:gap-8 mt-4 items-center">
       <figure className="">
@@ -21,31 +26,31 @@ export const ProductSizes = () => {
                 scope="col"
                 className="text-center text-sm font-medium text-gray-900 px-6 py-4 border border-black"
               >
-                Length
+                {fetchWord('Length', lang)}
               </th>
               <th
                 scope="col"
                 className="text-center text-sm font-medium text-gray-900 px-6 py-4 border border-black"
               >
-                Size
+                {fetchWord('Size', lang)}
               </th>
               <th
                 scope="col"
                 className="text-center text-sm font-medium text-gray-900 px-6 py-4 border border-black"
               >
-                Width Size
+                {fetchWord('Width_Size', lang)}
               </th>
               <th
                 scope="col"
                 className="text-center text-sm font-medium text-gray-900 px-6 py-4 border border-black"
               >
-                Width Size D
+                {fetchWord('Width_Size_D', lang)}
               </th>
               <th
                 scope="col"
                 className="text-center text-sm font-medium text-gray-900 px-6 py-4 border border-black"
               >
-                Width size EE
+                {fetchWord('Width_Size_EE', lang)}
               </th>
             </tr>
           </thead>

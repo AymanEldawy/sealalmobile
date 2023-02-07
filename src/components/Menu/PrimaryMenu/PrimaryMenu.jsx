@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Brand } from '../../Global/Brand';
 import { NavbarMenuLinks } from './NavbarMenuLinks';
 import { MainIconsList } from './MainIconsList';
 import { PrimaryButton } from './../../Global/PrimaryButton/PrimaryButton';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../../../context/LangContext';
 
-export async function getServerSideProps({ locale }) {
-  return {
-    props: { ...(await serverSideTranslations(locale, ['common'])) },
-  };
-}
 export const PrimaryMenu = () => {
-  const { t } = useTranslation('common');
+  const { lang } = useContext(LanguageContext);
+  const router = useRouter();
   return (
     <nav className="h-[60px]">
       <div className="container h-full flex items-center justify-between py-2">
@@ -21,9 +19,12 @@ export const PrimaryMenu = () => {
           <NavbarMenuLinks />
           <div className="divider-vertical" />
         </div>
-        <div className="ml-auto flex flex-1 justify-end">
+        <div className="ml-auto rtl:mr-auto flex flex-1 justify-end">
           <MainIconsList />
-          <PrimaryButton text={t('login')} />
+          <PrimaryButton
+            text={fetchWord('login', lang)}
+            onClick={() => router.push('/login')}
+          />
         </div>
       </div>
     </nav>

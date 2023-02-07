@@ -1,36 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { SectionTitle } from './../Global/SectionTitle';
 import { OurFeaturesGrid } from './OurFeaturesGrid';
 import { EasyShippingCartIcon } from './../Icons/EasyShippingCartIcon';
 import { HeadPhoneIcon } from './../Icons/HeadPhoneIcon';
 import { PaymentIcon } from './../Icons/PaymentIcon';
 import { FreeShippingIcon } from './../Icons/FreeShippingIcon';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 
 export const OurFeatures = ({ title, center }) => {
+  const { lang } = useContext(LanguageContext);
   const features = [
     {
       icon: <EasyShippingCartIcon />,
-      title: 'Easy shopping',
-      description:
-        'We really care about you and your website as much as you do.Porto or any other',
+      title: fetchWord('Easy_shopping', lang),
+      description: fetchWord('Easy_shopping_description', lang),
     },
     {
       icon: <HeadPhoneIcon />,
-      title: 'Customer service',
-      description:
-        'We really care about you and your website as much as you do.Porto or any other',
+      title: fetchWord('Customer_service', lang),
+
+      description: fetchWord('Customer_service_description', lang),
     },
     {
       icon: <PaymentIcon />,
-      title: 'Easy Payment',
-      description:
-        'We really care about you and your website as much as you do.Porto or any other',
+      title: fetchWord('Easy_Payment', lang),
+      description: fetchWord('Easy_shopping_description', lang),
     },
     {
       icon: <FreeShippingIcon width={40} />,
-      title: 'Fast shopping',
-      description:
-        'We really care about you and your website as much as you do.Porto or any other',
+      title: fetchWord('Fast_shopping', lang),
+      description: fetchWord('Easy_shopping_description', lang),
     },
   ];
   return (

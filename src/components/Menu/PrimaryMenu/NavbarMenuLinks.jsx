@@ -1,28 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../../../context/LangContext';
 
-export async function getServerSideProps ({ locale }) {
-  return {
-    props: { ...(await serverSideTranslations(locale, ['common'])) },
-  };
-}
 export const NavbarMenuLinks = () => {
-  const { t } = useTranslation('common');
+  const { lang } = useContext(LanguageContext);
+
   return (
     <ul className="flex items-center gap-4 mx-8">
       <li className="font-medium text-lg text-secondary hover:text-primary">
-        <Link href="/">{t('menu_home_link')}</Link>
+        <Link href="/">{fetchWord('menu_home_link', lang)}</Link>
       </li>
       <li className="font-medium text-lg text-secondary hover:text-primary">
-        <Link href="/categories">{t('menu_categories_link')}</Link>
+        <Link href="/categories">
+          {fetchWord('menu_categories_link', lang)}
+        </Link>
       </li>
       <li className="font-medium text-lg text-secondary hover:text-primary">
-        <Link href="/about">{t('menu_about_link')}</Link>
+        <Link href="/about">{fetchWord('menu_about_link', lang)}</Link>
       </li>
       <li className="font-medium text-lg text-secondary hover:text-primary">
-        <Link href="/contact">{t('menu_contact_link')}</Link>
+        <Link href="/contact">{fetchWord('menu_contact_link', lang)}</Link>
       </li>
     </ul>
   );

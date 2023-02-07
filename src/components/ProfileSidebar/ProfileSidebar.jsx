@@ -1,16 +1,20 @@
+import { fetchWord } from '@/lang/fetchWord';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
 import { ChevronIcon } from './../Icons/ChevronIcon';
 
 export const ProfileSidebar = () => {
+  const { lang } = useContext(LanguageContext);
   const router = useRouter();
   console.log(router);
   const links = [
-    { name: 'Profile', path: '/profile' },
-    { name: 'My Orders', path: '/orders' },
-    { name: 'Addresses', path: '/addresses' },
-    { name: 'Saved cards', path: '/saved-cards' },
+    { name: fetchWord('profile', lang), path: '/profile' },
+    { name: fetchWord('my_orders', lang), path: '/orders' },
+    { name: fetchWord('addresses', lang), path: '/addresses' },
+    { name: fetchWord('saved_cards', lang), path: '/saved-cards' },
   ];
   return (
     <aside className="sm:w-[250px] md:w-[361px] bg-bgprimary py-8">
@@ -36,17 +40,17 @@ export const ProfileSidebar = () => {
             </Link>
           </li>
         ))}
-        <li className='px-4 md:px-8 font-medium'>
-          <button className='border-b border-primary py-3 w-full flex gap-4 items-center'>
-            Languages
-            <span className='scale-75 -rotate-90 mt-2'>
+        <li className="px-4 md:px-8 font-medium">
+          <button className="border-b border-primary py-3 w-full flex gap-4 items-center">
+            {fetchWord('languages', lang)}
+            <span className="scale-75 -rotate-90 mt-2">
               <ChevronIcon />
             </span>
           </button>
         </li>
       </ul>
       <button className="text-secondary text-md px-4 md:px-8 mt-4 font-medium">
-        Sign out
+        {fetchWord('sign_out', lang)}
       </button>
     </aside>
   );

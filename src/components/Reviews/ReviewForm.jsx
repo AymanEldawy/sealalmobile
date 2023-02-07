@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import { SectionTitle } from './../Global/SectionTitle';
+import { fetchWord } from '@/lang/fetchWord';
+import React, { useContext, useState } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
 import { CardRate } from './../Card/CardRate';
-import { TextField } from './../Forms/TextField';
 import { InputField } from './../Forms/InputField';
+import { TextField } from './../Forms/TextField';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
+import { SectionTitle } from './../Global/SectionTitle';
 
 export const ReviewForm = () => {
+  const { lang } = useContext(LanguageContext);
+
   const [name, setName] = useState('');
   const [review, setReview] = useState('');
   const [email, setEmail] = useState('');
@@ -21,7 +26,7 @@ export const ReviewForm = () => {
             <CardRate width={40} />
           </div>
           <TextField
-            placeholder="Write a review"
+            placeholder={fetchWord('review_placeholder', lang)}
             classes="h-14"
             value={review}
             handleChange={(e) => setReview(e.target.value)}
@@ -31,17 +36,17 @@ export const ReviewForm = () => {
             value={name}
             handleChange={(e) => setName(e.target.value)}
             style={{ height: '60px' }}
-            placeholder="Your name"
+            placeholder={fetchWord('your_name', lang)}
             required
           />
           <InputField
             value={email}
             handleChange={(e) => setEmail(e.target.value)}
             style={{ height: '60px' }}
-            placeholder="Your Email"
+            placeholder={fetchWord('email_place_holder', lang)}
             required
           />
-          <PrimaryButton text="Submit" classes="max-w-fit mx-auto !px-6" />
+          <PrimaryButton text={fetchWord("submit", lang)} classes="max-w-fit mx-auto !px-6" />
         </form>
       </div>
     </div>

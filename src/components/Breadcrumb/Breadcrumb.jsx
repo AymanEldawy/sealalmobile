@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import { HomeIcon } from './../Icons/HomeIcon';
 import { ChevronIcon } from './../Icons/ChevronIcon';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 export const Breadcrumb = ({ paths }) => {
+  const { lang } = useContext(LanguageContext);
   const spratsPath = paths.split('/');
   return (
     <div className="flex gap-3 items-center my-6">
@@ -11,14 +14,14 @@ export const Breadcrumb = ({ paths }) => {
       </Link>
       {spratsPath?.map((path, index) => (
         <>
-          <span className="rotate-180">
+          <span className="rotate-180 rtl:rotate-0">
             <ChevronIcon />
           </span>
           {index === spratsPath?.length - 1 ? (
-            path
+            fetchWord(path, lang)
           ) : (
             <Link className="capitalize" href={`/${path}`}>
-              {path}
+              {fetchWord(path, lang)}
             </Link>
           )}
         </>

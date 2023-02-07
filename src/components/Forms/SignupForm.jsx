@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { InputField } from './InputField';
 import Link from 'next/link';
 import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 export const SignupForm = () => {
+  const { lang } = useContext(LanguageContext);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,48 +19,48 @@ export const SignupForm = () => {
       <div className="flex gap-4">
         <InputField
           style={{ flex: 1, border: '2px solid #E5E5E5', padding: '12px' }}
-          label="First Name"
+          label={fetchWord('first_name_label', lang)}
           type="text"
           name="firstName"
-          placeholder="First Name"
+          placeholder={fetchWord('first_name_placeholder', lang)}
           value={firstName}
           handleChange={(e) => setFirstName(e.target.value)}
         />
         <InputField
           style={{ flex: 1, border: '2px solid #E5E5E5', padding: '12px' }}
-          label="Last Name"
+          label={fetchWord('last_name_label', lang)}
           type="text"
           name="lastName"
-          placeholder="Last Name"
+          placeholder={fetchWord('last_name_placeholder', lang)}
           value={lastName}
           handleChange={(e) => setLastName(e.target.value)}
         />
       </div>
       <InputField
         style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-        label="Email Address"
+        label={fetchWord('email_label', lang)}
         type="email"
         name="email"
-        placeholder="Email"
+        placeholder={fetchWord('email_label', lang)}
         value={email}
         handleChange={(e) => setEmail(e.target.value)}
       />
       <div className="flex gap-4">
         <InputField
           style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-          label="Password"
+          label={fetchWord('password_label', lang)}
           type="password"
           name="password"
-          placeholder="password"
+          placeholder={fetchWord('password_label', lang)}
           value={password}
           handleChange={(e) => setPassword(e.target.value)}
         />
         <InputField
           style={{ border: '2px solid #E5E5E5', padding: '12px' }}
-          label="Confirm Password"
+          label={fetchWord('confirm_password_label', lang)}
           type="password"
           name="confirmPassword"
-          placeholder="Confirm password"
+          placeholder={fetchWord('confirm_password_placeholder', lang)}
           value={confirmPassword}
           handleChange={(e) => setConfirmPassword(e.target.value)}
         />
@@ -67,16 +70,16 @@ export const SignupForm = () => {
           type="checkbox"
           className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
         />
-        Keep me signed in
+        {fetchWord('keep_login', lang)}
       </label>
       <PrimaryButton
-        text="Sing up"
+        text={fetchWord('signup', lang)}
         classes="max-w-[90%] w-full rounded-lg !py-3 mx-auto "
       />
       <p className="text-md text-center text-[#4A4844]">
-        Have an account
-        <Link href="signup" className="text-[#5177FD]">
-          Login
+        {fetchWord('have_account', lang)}
+        <Link href="signup" className="mx-1 text-[#5177FD]">
+          {fetchWord('login', lang)}
         </Link>
       </p>
     </form>

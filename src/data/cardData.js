@@ -17,51 +17,61 @@ export const Categories = [
   {
     name: 'Packages',
     slug: 'packages',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[0],
   },
   {
     name: 'Clothes',
     slug: 'clothes',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[1],
   },
   {
     name: 'Shoes',
     slug: 'shoes',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[2],
   },
   {
     name: 'uncategories',
     slug: 'uncategories',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[3],
   },
   {
     name: 'Electronics',
     slug: 'electronics',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[4],
   },
   {
     name: 'Packages',
     slug: 'packages',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[0],
   },
   {
     name: 'Clothes',
     slug: 'clothes',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[1],
   },
   {
     name: 'Shoes',
     slug: 'shoes',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[2],
   },
   {
     name: 'uncategories',
     slug: 'uncategories',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[3],
   },
   {
     name: 'Electronics',
     slug: 'electronics',
+    product_length: Math.floor(Math.random() * 24),
     img: categories[4],
   },
 ];
@@ -466,8 +476,6 @@ export const cart = [
   { id: 5, productId: 46, quantity: 4, price: 453 },
   { id: 6, productId: 34, quantity: 4, price: 453 },
 ];
-
-
 
 export const getItemById = (productId) => {
   console.log(productId);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Layout } from './../components/Layout/Layout';
 import { Breadcrumb } from './../components/Breadcrumb/Breadcrumb';
 import { SearchIcon } from './../components/Icons/SearchIcon';
@@ -10,44 +10,41 @@ import { DollarIcon } from './../components/Icons/DollarIcon';
 import { TagIcon } from './../components/Icons/TagIcon';
 import { FAQCard } from './../components/FAQCard/FAQCard';
 import { PrimaryButton } from './../components/Global/PrimaryButton/PrimaryButton';
+import { fetchWord } from '@/lang/fetchWord';
+import { LanguageContext } from './../context/LangContext';
 
 const FAQ = () => {
+  const { lang } = useContext(LanguageContext);
   const faqs = [
     {
       icon: <MessageIcon color="var(--primary-color)" />,
-      question: 'How do I change my account email?',
-      answer:
-        'You can log in to your account and change it from your Profile > Edit Profile. Then go to the general tab to change your email.',
+      question: fetchWord('question_1', lang),
+      answer: fetchWord('answer_1', lang),
     },
     {
       icon: <PaymentIcon width={20} color="var(--primary-color)" />,
-      question: 'What should I do if my payment fails?',
-      answer:
-        'If your payment fails, you can use the (COD) payment option, if available on that order. If your payment is debited from your account after a payment failure, it will be credited back within 7-10 days.',
+      question: fetchWord('question_2', lang),
+      answer: fetchWord('answer_2', lang),
     },
     {
       icon: <CancellationIcon />,
-      question: 'What is your cancellation policy?',
-      answer:
-        'You can now cancel an order when it is in packed/shipped status. Any amount paid will be credited into the same payment mode using which the payment was made',
+      question: fetchWord('question_3', lang),
+      answer: fetchWord('answer_3', lang),
     },
     {
       icon: <TrunkIcon />,
-      question: 'How do I check order delivery status ?',
-      answer:
-        'Please tap on “My Orders” section under main menu of App/Website/M-site to check your order status.',
+      question: fetchWord('question_4', lang),
+      answer: fetchWord('answer_4', lang),
     },
     {
       icon: <DollarIcon />,
-      question: 'What is Instant Refunds?',
-      answer:
-        'Upon successful pickup of the return product at your doorstep, Myntra will instantly initiate the refund to your source account or chosen method of refund. Instant Refunds is not available in a few select pin codes and for all self ship returns.',
+      question: fetchWord('question_5', lang),
+      answer: fetchWord('answer_5', lang),
     },
     {
       icon: <TagIcon />,
-      question: 'How do I apply a coupon on my order?',
-      answer:
-        'You can apply a coupon on cart page before order placement. The complete list of your unused and valid coupons will be available under “My Coupons” tab of App/Website/M-site.',
+      question: fetchWord('question_6', lang),
+      answer: fetchWord('answer_6', lang),
     },
   ];
   return (
@@ -57,15 +54,15 @@ const FAQ = () => {
           <Breadcrumb paths="FAQ" />
           <div className="flex flex-col justify-center items-center">
             <span>FAQs</span>
-            <h1 className="text-4xl text-primary mb-4">Ask us anything</h1>
-            <p className="text-secondary">
-              Have any questions? We are here to assist you.
-            </p>
+            <h1 className="text-4xl text-primary mb-4">
+              {fetchWord('ask_anything', lang)}
+            </h1>
+            <p className="text-secondary">{fetchWord('have_question', lang)}</p>
             <form className="flex gap-2 shadow rounded-md p-2 my-6 max-w-xs w-full bg-white">
               <button className="scale-75">
                 <SearchIcon />
               </button>
-              <input type="search" placeholder="Search" />
+              <input type="search" placeholder={fetchWord('search', lang)} />
             </form>
           </div>
         </div>
@@ -79,14 +76,16 @@ const FAQ = () => {
             <div className="bg-bgprimary rounded-md max-h-56 flex justify-between items-center p-6 mt-8">
               <div className="flex flex-col ">
                 <h3 className="text-tprimary text-sm mb-2 font-medium">
-                  Still have questions?
+                  {fetchWord('still_have_question', lang)}
                 </h3>
                 <p className="text-xs text-tprimary">
-                  Can’t find the answer you’re looking for? Please chat to our
-                  friendly team.
+                  {fetchWord('no_answer', lang)}
                 </p>
               </div>
-              <PrimaryButton text="Get in touch" classes="w-36 text-sm py-2" />
+              <PrimaryButton
+                text={fetchWord('get_in_touch', lang)}
+                classes="w-36 text-sm py-2"
+              />
             </div>
           </div>
         </div>

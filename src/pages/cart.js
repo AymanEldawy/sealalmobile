@@ -23,10 +23,8 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="container">
-          <Breadcrumb paths="Cart" />
-          <TableCart
-            cart={cart}
-          />
+          <Breadcrumb paths="cart" />
+          <TableCart cart={cart} />
           <CartTotal cart={cart} />
         </div>
       </Layout>

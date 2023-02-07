@@ -1,15 +1,14 @@
 import { getItemById } from '@/data/cardData';
 import Image from 'next/image';
-import React from 'react';
-
-import { PrimaryButton } from '../Global/PrimaryButton/PrimaryButton';
-import { CartIcon } from '../Icons/CartIcon';
-import { CloseIcon } from '../Icons/CloseIcon';
-// import { decreaseQuantity, increaseQuantity } from './../../data/cardData';
+import React, { useContext } from 'react';
 import { Quantity } from './../SingleProduct/Quantity';
+import { LanguageContext } from './../../context/LangContext';
+import { fetchWord } from '@/lang/fetchWord';
 
-export const CartItemRow = ({ item}) => {
+export const CartItemRow = ({ item }) => {
   const product = getItemById(item?.productId);
+  const { lang } = useContext(LanguageContext);
+
   return (
     <div className="p-4 flex items-center border-b">
       <div className="flex-1">
@@ -28,13 +27,14 @@ export const CartItemRow = ({ item}) => {
             </h4>
             <ul className="flex flex-col gap-2">
               <li>
-                item code: <span>47536</span>
+                {fetchWord('item_code', lang)}: <span>47536</span>
               </li>
               <li>
-                Category: <span>{product?.category?.name}</span>
+                {fetchWord('category', lang)}:{' '}
+                <span>{product?.category?.name}</span>
               </li>
               <li>
-                size: <span>{product?.size} EE</span>
+                {fetchWord('size', lang)}: <span>{product?.size} EE</span>
               </li>
             </ul>
           </div>

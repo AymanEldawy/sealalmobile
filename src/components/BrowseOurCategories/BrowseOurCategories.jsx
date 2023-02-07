@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SectionTitle } from './../Global/SectionTitle';
 import { BrowseCategoriesSlide } from './BrowseCategoriesSlide';
 import { Categories } from '@/data/cardData';
-export const BrowseOurCategories = () => {
+export const BrowseOurCategories = ({ title }) => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     setCategories(Categories);
@@ -11,7 +11,7 @@ export const BrowseOurCategories = () => {
   return (
     <div className="mt-12">
       <div className="container">
-        <SectionTitle title="Browse Our Categories" />
+        <SectionTitle title={title} />
         <div className="relative overflow-hidden">
           <BrowseCategoriesSlide categories={categories} />
         </div>
