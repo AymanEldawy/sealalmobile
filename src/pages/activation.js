@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { SectionTitle } from './../components/Global/SectionTitle';

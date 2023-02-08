@@ -237,6 +237,7 @@ distribution of letters`,
     'You can apply a coupon on cart page before order placement. The complete list of your unused and valid coupons will be available under “My Coupons” tab of App/Website/M-site.',
   question_7: ``,
   answer_7: '',
+  'Order summery': 'Order summery',
 };
 
 export const getWordEn = (key) => {

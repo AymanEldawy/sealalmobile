@@ -10,7 +10,7 @@ export const OrderSummary = ({ nextStageHandler }) => {
   const { lang } = useContext(LanguageContext);
   return (
     <div className="flex-1 bg-bgprimary p-4 lg:px-8 pt-6">
-      <SectionTitle title="Order summery" />
+      <SectionTitle title={fetchWord("Order summery", lang)} />
       <OrderSummaryItem />
       <div className="my-4 border border-[#ACACAC]" />
       <ApplyCodeForm />
@@ -18,7 +18,7 @@ export const OrderSummary = ({ nextStageHandler }) => {
       <div className="flex justify-between mb-4 mt-6">
         <p className="font-medium text-lg">{fetchWord('subtotal', lang)}</p>
         <p className="font-medium text-lg">
-          {fetchWord('subtotal', lang)}Shipping
+          {fetchWord('subtotal', lang)}
         </p>
       </div>
       <div className="flex justify-between mb-6">

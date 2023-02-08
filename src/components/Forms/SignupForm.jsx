@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { InputField } from './InputField';
-import Link from 'next/link';
-import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
-import { LanguageContext } from './../../context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
+import Link from 'next/link';
+import React, { useContext, useEffect, useState } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
+import { PrimaryButton } from './../Global/PrimaryButton/PrimaryButton';
+import { InputField } from './InputField';
+
 export const SignupForm = () => {
   const { lang } = useContext(LanguageContext);
   const [firstName, setFirstName] = useState('');
@@ -79,7 +81,7 @@ export const SignupForm = () => {
       <p className="text-md text-center text-[#4A4844]">
         {fetchWord('have_account', lang)}
         <Link href="signup" className="mx-1 text-[#5177FD]">
-          {fetchWord('login', lang)}
+           {fetchWord('login', lang)}
         </Link>
       </p>
     </form>

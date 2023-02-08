@@ -42,7 +42,7 @@ export const SelectField = ({
               </option>
             ))}
         </select>
-        <span className="-rotate-90 absolute right-3 top-3 scale-50 bg-white flex items-center justify-center z-10 w-8 h-8">
+        <span className="-rotate-90 absolute right-3 top-3 rtl:left-3 rtl:right-auto scale-50 bg-white flex items-center justify-center z-10 w-8 h-8">
           <ChevronIcon />
         </span>
       </div>

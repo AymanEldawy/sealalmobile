@@ -57,6 +57,14 @@ div:has(select:required) label::before {
   right: -12px;
   top: 2px;
 }
+
+[dir='rtl'] div:has(textarea:required) label::before,
+[dir='rtl'] div:has(select:required) label::before,
+[dir='rtl'] div:has(select:required) label::before {
+  right: unset;
+  left: -12px;
+}
+
 ::placeholder {
   color: #666666;
 }

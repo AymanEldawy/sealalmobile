@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const CategoryFilterSizes = () => {
+export const CategoryFilterSizes = ({ title }) => {
   return (
     <div className=" p-4 lg:px-8">
-      <h3 className="text-primary mb-6 font-semibold text-xl">Sizes</h3>
+      <h3 className="text-primary mb-6 font-semibold text-xl">{title}</h3>
       <div className="flex gap-2">
         <span className="flex items-center justify-center p-2 text-base font-normal  rounded-full h-10 w-10 border border-black ">
           S
