@@ -43,13 +43,13 @@ export const ar = {
     'نحن نهتم حقًا بك وبموقع الويب الخاص بك بقدر اهتمامك أنت بورتو أو أي مكان آخر',
   customer_service: 'خدمة العملاء',
   Customer_service_description:
-    'We really care about you and your website as much as you do.Porto or any other',
+    'نحن نهتم حقًا بك وبموقع الويب الخاص بك بقدر اهتمامك أنت بورتو أو أي مكان آخر',
   Easy_Payment: 'التسوق السهل',
   Easy_Payment_description:
-    'We really care about you and your website as much as you do.Porto or any other',
+    'نحن نهتم حقًا بك وبموقع الويب الخاص بك بقدر اهتمامك أنت بورتو أو أي مكان آخر',
   Fast_shopping: 'تسوق سريع',
   Fast_shopping_description:
-    'We really care about you and your website as much as you do.Porto or any other',
+    'نحن نهتم حقًا بك وبموقع الويب الخاص بك بقدر اهتمامك أنت بورتو أو أي مكان آخر',
   Brands: 'العلامة التجارية',
   footer_description:
     'Your web is the yomna Ecommece who Your web is the Ecommece who You.',

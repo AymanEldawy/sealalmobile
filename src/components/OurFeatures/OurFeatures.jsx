@@ -26,12 +26,12 @@ export const OurFeatures = ({ title, center }) => {
     {
       icon: <PaymentIcon />,
       title: fetchWord('Easy_Payment', lang),
-      description: fetchWord('Easy_shopping_description', lang),
+      description: fetchWord('Easy_Payment_description', lang),
     },
     {
       icon: <FreeShippingIcon width={40} />,
       title: fetchWord('Fast_shopping', lang),
-      description: fetchWord('Easy_shopping_description', lang),
+      description: fetchWord('Fast_shopping_description', lang),
     },
   ];
   return (
