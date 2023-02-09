@@ -1,17 +1,17 @@
+import { fetchWord } from '@/lang/fetchWord';
 import React, { useContext } from 'react';
 
+import { LanguageContext } from './../../context/LangContext';
 import { ContactInfo } from './ContactInfo';
 import { CustomerService } from './CustomerService';
 import { OrganizationInfo } from './OrganizationInfo';
 import { Subscription } from './Subscription';
-import { LanguageContext } from './../../context/LangContext';
-import { fetchWord } from '@/lang/fetchWord';
 
 export const Footer = () => {
   const { lang } = useContext(LanguageContext);
   console.log('fo', lang);
   return (
-    <footer className="bg-bgprimary min-h-[432px] flex flex-col items-center">
+    <footer className="bg-bgprimary min-h-[432px] flex flex-col items-center mt-12">
       <div className="container flex flex-col">
         {/* <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 !lg:flex flex flex-wrap !lg:flex-nowrap pt-16 lg:justify-between"> */}
         <div className="flex  pt-16 lg:justify-between">

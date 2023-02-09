@@ -1,12 +1,13 @@
+import { fetchWord } from '@/lang/fetchWord';
 import React, { useContext } from 'react';
+
+import { LanguageContext } from './../../context/LangContext';
 import { SectionTitle } from './../Global/SectionTitle';
-import { OurFeaturesGrid } from './OurFeaturesGrid';
 import { EasyShippingCartIcon } from './../Icons/EasyShippingCartIcon';
+import { FreeShippingIcon } from './../Icons/FreeShippingIcon';
 import { HeadPhoneIcon } from './../Icons/HeadPhoneIcon';
 import { PaymentIcon } from './../Icons/PaymentIcon';
-import { FreeShippingIcon } from './../Icons/FreeShippingIcon';
-import { LanguageContext } from './../../context/LangContext';
-import { fetchWord } from '@/lang/fetchWord';
+import { OurFeaturesGrid } from './OurFeaturesGrid';
 
 export const OurFeatures = ({ title, center }) => {
   const { lang } = useContext(LanguageContext);
@@ -18,7 +19,7 @@ export const OurFeatures = ({ title, center }) => {
     },
     {
       icon: <HeadPhoneIcon />,
-      title: fetchWord('Customer_service', lang),
+      title: fetchWord('customer_service', lang),
 
       description: fetchWord('Customer_service_description', lang),
     },

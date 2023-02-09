@@ -30,7 +30,7 @@ export const ar = {
     'ينطبق على الطلبات بقيمة 60 دولارًا أو أكثر - خصم 50 دولارًا كحد أقصى',
   FEATURED_PRODUCTS: 'منتجات مميزة',
   New_Arrivals: 'وصل حديثا',
-  Browse_Our_Categories: 'تصفح فئاتنا"',
+  Browse_Our_Categories: 'تصفح فئاتنا',
   Our_Features: 'ميزاتنا',
   Testimonial: 'شهادة',
   Winter: 'شتاء',
@@ -91,7 +91,7 @@ export const ar = {
   last_name_placeholder: 'الاسم الأخير',
   confirm_password_label: 'تأكيد كلمة المرور',
   confirm_password_placeholder: 'تأكيد كلمة المرور',
-  loginWithText: 'أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول أو تابع"',
+  loginWithText: 'أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول أو تابع',
   verification: 'التحقق من الرمز',
   cart: 'السلة',
   product: 'المنتج',
@@ -159,7 +159,7 @@ export const ar = {
   Order_note: 'مذكرة الطلب',
   Next: 'التالي',
   Town: 'البلدة',
-  Country_Region: '"البلد/المنطقة"',
+  Country_Region: 'البلد/المنطقة',
   Pay_With: 'أدفع عن طريق',
   Cash: 'نقدي',
   Card: 'كرت',
@@ -238,7 +238,7 @@ distribution of letters`,
     'You can apply a coupon on cart page before order placement. The complete list of your unused and valid coupons will be available under “My Coupons” tab of App/Website/M-site.',
   question_7: ``,
   answer_7: '',
-  "Order summery":'الطلبات'
+  'Order summery': 'الطلبات',
 };
 export const getWordAr = (key) => {
   return ar[key];

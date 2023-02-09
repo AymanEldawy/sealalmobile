@@ -80,7 +80,7 @@ export const SignupForm = () => {
       />
       <p className="text-md text-center text-[#4A4844]">
         {fetchWord('have_account', lang)}
-        <Link href="signup" className="mx-1 text-[#5177FD]">
+        <Link href="login" className="mx-1 text-[#5177FD]">
            {fetchWord('login', lang)}
         </Link>
       </p>

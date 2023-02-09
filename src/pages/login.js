@@ -1,10 +1,11 @@
+import { fetchWord } from '@/lang/fetchWord';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useContext } from 'react';
+
+import { LoginForm } from './../components/Forms/LoginForm';
 import { SectionTitle } from './../components/Global/SectionTitle';
 import { LoginWithSocialAccount } from './../components/LoginWithSocialAccount/LoginWithSocialAccount';
-import { LoginForm } from './../components/Forms/LoginForm';
-import { fetchWord } from '@/lang/fetchWord';
-import { useContext } from 'react';
 import { LanguageContext } from './../context/LangContext';
 
 export default function Login() {
@@ -18,7 +19,7 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex gap-4">
+      <div className="flex gap-4  items-center">
         <figure className="full-image-login flex-1">
           <Image
             src="/images/login.jpg"

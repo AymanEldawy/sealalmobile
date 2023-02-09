@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
 import Link from 'next/link';
-import { SearchIcon } from './../../Icons/SearchIcon';
-import { HeartIcon } from './../../Icons/HeartIcon';
-import { WorldIcon } from './../../Icons/WorldIcon';
-import { CartIcon } from './../../Icons/CartIcon';
+import React, { useContext } from 'react';
+
 import { LanguageContext } from './../../../context/LangContext';
+import { CartIcon } from './../../Icons/CartIcon';
+import { HeartIcon } from './../../Icons/HeartIcon';
+import { SearchIcon } from './../../Icons/SearchIcon';
+import { WorldIcon } from './../../Icons/WorldIcon';
+
 export const MainIconsList = () => {
   const { changeLang } = useContext(LanguageContext);
   return (
@@ -27,7 +29,7 @@ export const MainIconsList = () => {
       <li className=" scale-75 ">
         <Link href="/cart" className="relative">
           <CartIcon />
-          <span className="text-[10px] bg-red-500 text-white absolute -top-1 -right-2 rounded-lg px-1">
+          <span className="text-[14px] bg-red-500 text-white absolute -top-2 -right-2 rounded-lg px-1">
             3
           </span>
         </Link>

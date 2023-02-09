@@ -1,9 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { CustomSlideArrow } from './CustomSlideArrow';
+
 import { CategoryCard } from './CategoryCard';
+import { CustomSlideArrow } from './CustomSlideArrow';
+
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 export const BrowseCategoriesSlide = ({ categories }) => {
   const setting = {
@@ -11,7 +13,7 @@ export const BrowseCategoriesSlide = ({ categories }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 1,
     className:"relative max-w-[90%] browse-slide-categories",
     nextArrow: <CustomSlideArrow direction="next" />,
     prevArrow: <CustomSlideArrow />,
