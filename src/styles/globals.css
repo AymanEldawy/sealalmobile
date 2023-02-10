@@ -121,3 +121,29 @@ div:has(select:required) label::before {
   width: 100%;
   background-color: #666666;
 }
+
+.price-slide .noUi-target {
+  height: 5px;
+  background-color: #d9d9d9;
+}
+.price-slide .noUi-horizontal .noUi-handle {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  top: -7px;
+  background-color: var(--primary-color) !important;
+  border: none;
+  box-shadow: none;
+}
+.price-slide .noUi-horizontal .noUi-handle:after,
+.price-slide .noUi-horizontal .noUi-handle:before {
+  display: none;
+}
+
+.price-slide .noUi-base,
+.noUi-connects {
+  height: 4px;
+}
+.price-slide .noUi-connect {
+  background-color: var(--primary-color) !important;
+}
