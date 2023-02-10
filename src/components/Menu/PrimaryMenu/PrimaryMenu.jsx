@@ -9,7 +9,7 @@ import { PrimaryButton } from './../../Global/PrimaryButton/PrimaryButton';
 import { MainIconsList } from './MainIconsList';
 import { NavbarMenuLinks } from './NavbarMenuLinks';
 
-export const PrimaryMenu = () => {
+export const PrimaryMenu = ({ setOpenedSearch }) => {
   const { lang } = useContext(LanguageContext);
   const router = useRouter();
   return (
@@ -21,7 +21,7 @@ export const PrimaryMenu = () => {
           <div className="divider-vertical" />
         </div>
         <div className="ml-auto rtl:mr-auto flex justify-end">
-          <MainIconsList />
+          <MainIconsList setOpenedSearch={setOpenedSearch} />
           <PrimaryButton
             text={fetchWord('login', lang)}
             onClick={() => router.push('/login')}

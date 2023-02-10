@@ -7,12 +7,12 @@ import { HeartIcon } from './../../Icons/HeartIcon';
 import { SearchIcon } from './../../Icons/SearchIcon';
 import { WorldIcon } from './../../Icons/WorldIcon';
 
-export const MainIconsList = () => {
+export const MainIconsList = ({ setOpenedSearch }) => {
   const { changeLang } = useContext(LanguageContext);
   return (
     <ul className="flex items-center gap-2 lg:gap-4 mr-8 rtl:ml-8 rtl:mr-auto">
       <li className=" scale-75 ">
-        <button>
+        <button onClick={() => setOpenedSearch(true)}>
           <SearchIcon />
         </button>
       </li>

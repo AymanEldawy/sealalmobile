@@ -1,14 +1,14 @@
-import React from 'react';
-import { UpperMenu } from './UpperMenu/UpperMenu';
 import Styles from '@/styles/Menu/Menu.module.css';
-import { PrimaryMenu } from './PrimaryMenu/PrimaryMenu';
+import React from 'react';
 
-export const Menu = (props) => {
-  console.log(props);
+import { PrimaryMenu } from './PrimaryMenu/PrimaryMenu';
+import { UpperMenu } from './UpperMenu/UpperMenu';
+
+export const Menu = ({setOpenedSearch }) => {
   return (
     <nav className={Styles.menu}>
-      <UpperMenu dir={props?.direction} />
-      <PrimaryMenu />
+      <UpperMenu  />
+      <PrimaryMenu setOpenedSearch={setOpenedSearch} />
     </nav>
   );
 };
