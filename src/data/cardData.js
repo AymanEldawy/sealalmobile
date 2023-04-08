@@ -1,8 +1,8 @@
 export const links = [
-  { name: "Home", link: "/" },
-  { name: "Services", link: "/services" },
-  { name: "Request services", link: "/request-services" },
-  { name: "Contact", link: "/Contact" },
+  { name: "home", link: "/" },
+  { name: "services", link: "/services" },
+  { name: "request_services", link: "/request-services" },
+  { name: "contact", link: "/Contact" },
 ];
 
 // const images = [

@@ -55,12 +55,11 @@ const SignupServiceForm = () => {
         label={fetchWord("website", lang)}
         onChange={(e) => setWebsite(e.target.value)}
       />
-      <FileUpload 
+      <FileUpload
         name="companyLicense"
         value={companyLicense}
-        label={fetchWord('company_license', lang)}
+        label={fetchWord("company_license", lang)}
         onChange={(e) => setCompanyLicense(e.target.value)}
-        
       />
     </form>
   );

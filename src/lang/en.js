@@ -32,9 +32,13 @@ export const en = {
   instagram_account: "instagram account",
   facebook_account: "facebook account",
   our_work: "Our work",
-  create_account:'create account',
+  create_account: "create account",
 
-
+  home: "Home",
+  request_services: "request services",
+  services:'Services',
+  contact:'Contact',
+  search: 'Search',
 
   login: "login",
   shop_now: "Shop now",
