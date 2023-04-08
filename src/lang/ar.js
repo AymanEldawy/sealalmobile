@@ -1,4 +1,58 @@
 export const ar = {
+  remember_me: 'تذكرني',
+  dont_have_account: 'ليس لديك حساب ؟',
+  register_now : 'سجل الان',
+  account: 'حسابي',
+  signin:'تسجيل الدخول',
+  forgot_password: 'نسيت كلمة السر؟',
+
+
+  verification: 'التحقق من الرمز',
+confirm: 'Confirm',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   login: 'تسجيل الدخول',
   shop_now: 'تسوق الأن',
   menu_home_link: 'الصفحة الرئيسية',
@@ -92,7 +146,6 @@ export const ar = {
   confirm_password_label: 'تأكيد كلمة المرور',
   confirm_password_placeholder: 'تأكيد كلمة المرور',
   loginWithText: 'أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول أو تابع',
-  verification: 'التحقق من الرمز',
   cart: 'السلة',
   product: 'المنتج',
   status: 'حالة',

@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 :root {
-  --primary-color: #f1a002;
-  --secondary-color: #dddddd;
+  --primary-color: #0063c6;
+  --secondary-color: #ffc33a;
   --text-color: #666666;
-  --bg-primary-color: #f4f4f4;
+  --bg-main-color: #f2f5f8;
   --max-width: 1200px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 * {
   padding: 0;
@@ -21,7 +21,7 @@
 body {
   background-color: #ffffff;
   /* background-color: #e4e4e4; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
   /* height: 5000px; */
 }
 .container {
@@ -52,15 +52,15 @@ div:has(textarea:required) label::before,
 div:has(select:required) label::before,
 div:has(select:required) label::before {
   position: absolute;
-  content: '*';
+  content: "*";
   color: #f00;
   right: -12px;
   top: 2px;
 }
 
-[dir='rtl'] div:has(textarea:required) label::before,
-[dir='rtl'] div:has(select:required) label::before,
-[dir='rtl'] div:has(select:required) label::before {
+[dir="rtl"] div:has(textarea:required) label::before,
+[dir="rtl"] div:has(select:required) label::before,
+[dir="rtl"] div:has(select:required) label::before {
   right: unset;
   left: -12px;
 }

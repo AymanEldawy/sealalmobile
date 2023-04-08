@@ -1,19 +1,11 @@
 import Head from 'next/head';
-import { products } from '@/data/cardData';
 
-import { Banner } from './../components/Banner/Banner';
-import { Layout } from './../components/Layout/Layout';
-import { OfferSection } from './../components/OfferSection/OfferSection';
-import { FeaturedProductSection } from './../components/FeaturedProductSection/FeaturedProductSection';
-import { BrowseOurCategories } from './../components/BrowseOurCategories/BrowseOurCategories';
-import { WinterCollectionBanner } from './../components/WinterCollectionBanner/WinterCollectionBanner';
-import { OurFeatures } from './../components/OurFeatures/OurFeatures';
-import { Brands } from './../components/Brands/Brands';
-import { Testimonial } from './../components/Testimonial/Testimonial';
+
 import { fetchWord } from '@/lang/fetchWord';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { LanguageContext } from './../context/LangContext';
+import { Layout } from '@/components/Layout/Layout';
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -27,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Banner />
+        {/* <Banner />
         <OfferSection />
         <FeaturedProductSection
           title={fetchWord('FEATURED_PRODUCTS', lang)}
@@ -41,7 +33,7 @@ export default function Home() {
         />
         <OurFeatures title={fetchWord('Our_Features', lang)} center />
         <Brands title={fetchWord('Brands', lang)} />
-        <Testimonial title={fetchWord('Testimonial', lang)} />
+        <Testimonial title={fetchWord('Testimonial', lang)} /> */}
       </Layout>
     </>
   );
