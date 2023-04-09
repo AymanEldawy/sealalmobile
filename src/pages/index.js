@@ -1,11 +1,14 @@
-import Head from 'next/head';
-
-
-import { fetchWord } from '@/lang/fetchWord';
-import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { LanguageContext } from './../context/LangContext';
+import Banner from '@/components/Banner/Banner';
 import { Layout } from '@/components/Layout/Layout';
+import ServicesSection from '@/components/ServicesSection/ServicesSection';
+import Head from 'next/head';
+import { useContext } from 'react';
+
+import { LanguageContext } from './../context/LangContext';
+import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
+import LatestProjects from '@/components/LatestProjects/LatestProjects';
+import Testimonial from '@/components/Testimonial/Testimonial';
+import OurTeam from '@/components/OurTeam/OurTeam';
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -19,7 +22,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        {/* <Banner />
+        <Banner />
+        <ServicesSection />
+        <WhyChooseUs />
+        <LatestProjects />
+        <Testimonial /> 
+        <OurTeam />
+
+        {/* 
         <OfferSection />
         <FeaturedProductSection
           title={fetchWord('FEATURED_PRODUCTS', lang)}

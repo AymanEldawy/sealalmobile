@@ -36,9 +36,40 @@ export const en = {
 
   home: "Home",
   request_services: "request services",
-  services:'Services',
-  contact:'Contact',
-  search: 'Search',
+  services: "Services",
+  contact: "Contact",
+  search: "Search",
+  form_subscribe: "Subscribe to our newsletter",
+  join: "Join",
+  get_Professional: "Get Professional",
+  home_services: "Home Services",
+  book_now: "Book Now",
+
+  top_services: "Top Services",
+  kitchen: "Kitchen",
+  decoration: "Decoration",
+  electricity: "Electricity",
+  electrical: "Electrical Devices",
+  plumbing: "Plumbing",
+  carpentry: "Carpentry",
+  furniture: "Furniture",
+  paint: "Paint & Gypsum",
+  browse_services: "browse services",
+
+  why_choose_us: "Why choose us ?",
+  warranty_maintenance: "Warranty & Maintenance",
+  affordable_price: "Affordable Price",
+  services24: "24/7 Services",
+
+  latest_projects: "Our Latest Project",
+  electricity: "Electricity",
+  electricity_description: "Technician utside AC",
+  plumbing: "plumbing",
+  plumbing_description: "Cleaning service. Sponges",
+
+  client_say: "What Our Clients Say ?",
+
+  our_team: "Our Great Team",
 
   login: "login",
   shop_now: "Shop now",

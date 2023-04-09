@@ -5,6 +5,116 @@ export const links = [
   { name: "contact", link: "/Contact" },
 ];
 
+export const services = [
+  { name: "kitchen", img: "/images/services/1.png" },
+  { name: "decoration", img: "/images/services/2.png" },
+  { name: "electricity", img: "/images/services/3.png" },
+  { name: "electrical", img: "/images/services/4.png" },
+  { name: "plumbing", img: "/images/services/5.png" },
+  { name: "carpentry", img: "/images/services/6.png" },
+  { name: "furniture", img: "/images/services/7.png" },
+  { name: "paint", img: "/images/services/8.png" },
+];
+
+export const latestProjects = [
+  {
+    title: "electricity",
+    description: "electricity_description",
+    img: "/images/projects/1.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/2.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/3.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/4.png",
+  },
+  {
+    title: "electricity",
+    description: "electricity_description",
+    img: "/images/projects/1.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/2.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/3.png",
+  },
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/4.png",
+  },
+  {
+    title: "electricity",
+    description: "electricity_description",
+    img: "/images/projects/1.png",
+  },
+
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/2.png",
+  },
+
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/3.png",
+  },
+
+  {
+    title: "plumbing",
+    description: "plumbing_description",
+    img: "/images/projects/4.png",
+  },
+];
+
+export const ourTeam = [
+  {
+    name: "John Martin",
+    position: "Electrician",
+    img: "/images/projects/1.png",
+    social: { facebook: "", instagram: "", twitter: "" },
+  },
+  {
+    name: "John Martin",
+    position: "Cleaner",
+    img: "/images/projects/2.png",
+    social: { facebook: "", instagram: "", twitter: "" },
+  },
+  {
+    name: "John Martin",
+    position: "Plumper",
+    img: "/images/projects/3.png",
+    social: { facebook: "", instagram: "", twitter: "" },
+  },
+  {
+    name: "John Martin",
+    position: "Plumper",
+    img: "/images/projects/4.png",
+    social: { facebook: "", instagram: "", twitter: "" },
+  },
+  {
+    name: "John Martin",
+    position: "Electrician",
+    img: "/images/projects/1.png",
+    social: { facebook: "", instagram: "", twitter: "" },
+  },
+];
+
 // const images = [
 //   '/images/items/image 2.png',
 //   '/images/items/image 3.png',
