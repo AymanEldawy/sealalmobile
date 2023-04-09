@@ -1,10 +1,11 @@
-import React from "react";
-import { Layout } from "../Layout/Layout";
 import Image from "next/image";
+import React from "react";
+
+import { Layout } from "../Layout/Layout";
 
 const AuthLayout = ({ children }) => {
   return (
-    <Layout hideFooter>
+    <Layout hideFooter hideApp>
       <div className="flex gap-4">
         <Image
           className="!max-w-full !h-auto !w-auto bg-cover flex-1"
