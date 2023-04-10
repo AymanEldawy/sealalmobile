@@ -1,8 +1,12 @@
-import React from "react";
+import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
+import React, { useContext } from "react";
+
 import AppCircleIcon from "../Icons/AppCircleIcon";
 
 const DownloadApp = () => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className="relative">
       <span className="top-1/4 -left-44 absolute">
@@ -15,7 +19,7 @@ const DownloadApp = () => {
               Alo Tadilat App
             </h2>
             <h3 className="text-[#391400] text-xl mb-4">
-              Discover and appointment a lot of services
+              {fetchWord("discover_appointment", lang)}
             </h3>
             <p className="text-lead text-sm max-w-md">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

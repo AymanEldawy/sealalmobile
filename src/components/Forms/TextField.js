@@ -1,24 +1,19 @@
-import { PropTypes } from 'prop-types';
 import React from 'react';
 
 export const TextField = ({
   label,
-  handleChange,
-  value,
   style,
   resize,
-  placeholder,
   classes,
+  ...textField
 }) => {
   return (
-    <div className="mb-4" style={style}>
+    <div className="mb-4">
       {label ? <label className="flex items-center justify-between mb-2">{label}</label> : null}
       <textarea
-        placeholder={placeholder}
         className={`border border-gray-300 w-full p-2 rounded-md h-28 ${classes}`}
-        onChange={handleChange}
-        value={value}
         style={{ resize: resize ? resize : 'none' }}
+        {...textField}
       ></textarea>
     </div>
   );

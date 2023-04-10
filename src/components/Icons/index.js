@@ -30,3 +30,7 @@ export { default as StarIcon } from "./StarIcon";
 export { default as HeartIcon } from "./HeartIcon";
 export { default as ElectricIcon } from "./ElectricIcon";
 export { default as CashFlowIcon } from "./CashFlowIcon";
+export { default as LockVectorIcon } from "./LockVectorIcon";
+export { default as CallSolidIcon } from "./CallSolidIcon";
+export { default as MessageSolidIcon } from "./MessageSolidIcon";
+export { default as MapSolidIcon } from "./MapSolidIcon";

@@ -2,8 +2,8 @@ import { LanguageContext } from "@/context/LangContext";
 import React, { useContext, useState } from "react";
 import { InputField } from "../Forms/InputField";
 import { fetchWord } from "@/lang/fetchWord";
-import { SelectField } from "../Forms/SelectField";
 import { FileUpload } from "../Forms/FileUpload";
+import CustomSelectField from "../Forms/CustomSelectField";
 
 const SignupServiceForm = () => {
   const { lang } = useContext(LanguageContext);
@@ -30,19 +30,19 @@ const SignupServiceForm = () => {
         onChange={(e) => setLocation(e.target.value)}
       />
       <div className="flex gap-4">
-        <SelectField
+        <CustomSelectField
           name="country"
           value={country}
           label={fetchWord("country", lang)}
           onChange={(e) => setCountry(e.target.value)}
         />
-        <SelectField
+        <CustomSelectField
           name="city"
           value={city}
           label={fetchWord("city", lang)}
           onChange={(e) => setCity(e.target.value)}
         />
-        <SelectField
+        <CustomSelectField
           name="municipality"
           value={municipality}
           label={fetchWord("municipality", lang)}

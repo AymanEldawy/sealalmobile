@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChevronIcon = () => {
+const ChevronIcon = ({ ...classes}) => {
   return (
     <svg
       width="14"
@@ -8,6 +8,7 @@ const ChevronIcon = () => {
       viewBox="0 0 14 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      { ...classes}
     >
       <path
         fill-rule="evenodd"

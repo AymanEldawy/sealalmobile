@@ -26,6 +26,7 @@ export const en = {
   location: "Location",
   municipality: "Municipality",
   country: "Country",
+  state: "State",
   city: "City",
   website: "Website",
   company_license: "Company License",
@@ -68,7 +69,7 @@ export const en = {
   plumbing_description: "Cleaning service. Sponges",
 
   client_say: "What Our Clients Say ?",
-
+  discover_appointment: "Discover and appointment a lot of services",
   our_team: "Our Great Team",
 
   refrigerators: "refrigerators",
@@ -85,6 +86,13 @@ export const en = {
   about: "about",
   some_work: "some of my work",
   customer_feedback: "Customer feedback and comment",
+  get_in_touch: "Get in touch",
+  subject: "Subject",
+  message: "Message",
+  submit_now: "Submit now",
+
+
+
 
   login: "login",
   shop_now: "Shop now",
@@ -295,7 +303,6 @@ more-or-less normal distribution of letters he point of using Lorem
 Ipsum look like rea is that it has a more-or-less normal
 distribution of letters`,
   search: "Search",
-  get_in_touch: "Get in touch",
   still_have_question: "Still have questions?",
   no_answer: `Can’t find the answer you’re looking for? Please chat to our
   friendly team.`,
