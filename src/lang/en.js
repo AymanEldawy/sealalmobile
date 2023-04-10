@@ -90,6 +90,8 @@ export const en = {
   subject: "Subject",
   message: "Message",
   submit_now: "Submit now",
+  your_email: "your email",
+
 
 
 
