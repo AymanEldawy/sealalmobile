@@ -1,5 +1,5 @@
 import { LanguageContext } from "@/context/LangContext";
-import { links } from "@/data/cardData";
+import { links } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
 import Link from "next/link";
 import React from "react";

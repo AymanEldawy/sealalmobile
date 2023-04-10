@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";
 import Slider from "react-slick";
-import { latestProjects } from "@/data/cardData";
+import { latestProjects } from "@/data/dummyData";
 import Image from "next/image";
 import { BoltsIcons, LongArrowIcon, QuoteIcon } from "../Icons";
 import TestimonialGallery from "./TestimonialGallery/TestimonialGallery";

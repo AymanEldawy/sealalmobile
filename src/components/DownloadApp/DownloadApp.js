@@ -1,15 +1,23 @@
 import React from "react";
 import Image from "next/image";
+import AppCircleIcon from "../Icons/AppCircleIcon";
 
 const DownloadApp = () => {
   return (
-    <div>
+    <div className="relative">
+      <span className="top-1/4 -left-44 absolute">
+        <AppCircleIcon />
+      </span>
       <div className="container">
         <div className="flex justify-between items-center gap-8">
           <div className="flex-1">
-            <h2 className="font-medium text-3xl mb-2 text-[#391400]">Alo Tadilat App</h2>
-            <h3 className="text-[#391400] text-xl mb-4">Discover and appointment a lot of services</h3>
-            <p className="text-[#979797] text-sm max-w-md">
+            <h2 className="font-medium text-3xl mb-2 text-[#391400]">
+              Alo Tadilat App
+            </h2>
+            <h3 className="text-[#391400] text-xl mb-4">
+              Discover and appointment a lot of services
+            </h3>
+            <p className="text-lead text-sm max-w-md">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eius dminim veniam, quis nostrud exercitation ullamco laboris nisi
               ut wr dminim veniam, quis nostrud exercitation ullamco laboris

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import SectionTitle from "../Global/SectionTitle/SectionTitle";
 import { BoltSixIcon, CircleStrokeIcon } from "../Icons";
-import { services } from "@/data/cardData";
+import { services } from "@/data/dummyData";
 import Image from "next/image";
 import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";

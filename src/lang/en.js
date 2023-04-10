@@ -71,6 +71,21 @@ export const en = {
 
   our_team: "Our Great Team",
 
+  refrigerators: "refrigerators",
+  ovens: "ovens",
+  conditioners: "conditioners",
+  microwaves: "microwaves",
+  Gas: "Gas",
+  Others: "Others",
+
+  service_providers: "Service Providers near you",
+  view_profile: "view profile",
+  see_more: "see more",
+  companies: "companies",
+  about: "about",
+  some_work: "some of my work",
+  customer_feedback: "Customer feedback and comment",
+
   login: "login",
   shop_now: "Shop now",
   menu_home_link: "Home",

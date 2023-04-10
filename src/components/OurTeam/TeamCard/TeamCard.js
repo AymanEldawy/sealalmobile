@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "@/components/Icons";
+import SocialCard from "@/components/SocialCard/SocialCard";
 
 const TeamCard = ({ employee }) => {
   return (
@@ -17,17 +18,7 @@ const TeamCard = ({ employee }) => {
           <p className="text-white">{employee?.position}</p>
           <h3>{employee?.name}</h3>
         </div>
-        <div className="flex items-center gap-1">
-          <a href="" className="scale-[60%]">
-            <FacebookIcon className="text-black" />
-          </a>
-          <a href="" className="scale-[60%]">
-            <InstagramIcon className="text-black" />
-          </a>
-          <a href="" className="scale-[60%]">
-            <TwitterIcon className="text-black" />
-          </a>
-        </div>
+        <SocialCard />
       </div>
     </div>
   );

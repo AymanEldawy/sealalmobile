@@ -11,7 +11,7 @@ const SignupTabBar = ({ activeStage }) => {
   return (
     <div className="shadow p-3 flex justify-around gap-4 mb-6 ">
       <button
-        className={`flex flex-col justify-center items-center gap-1 text-[#979797] ${
+        className={`flex flex-col justify-center items-center gap-1 text-lead ${
           activeStage === "customer" ? "!text-secondary" : ""
         }`}
       >
@@ -19,7 +19,7 @@ const SignupTabBar = ({ activeStage }) => {
         <span>{fetchWord("customer", lang)}</span>
       </button>
       <button
-        className={`flex flex-col justify-center items-center gap-1 text-[#979797] ${
+        className={`flex flex-col justify-center items-center gap-1 text-lead ${
           activeStage === "service provider" ? "!text-secondary" : ""
         }`}
       >
@@ -27,7 +27,7 @@ const SignupTabBar = ({ activeStage }) => {
         <span>{fetchWord("service_provider", lang)}</span>
       </button>
       <button
-        className={`flex flex-col justify-center items-center gap-1 text-[#979797] ${
+        className={`flex flex-col justify-center items-center gap-1 text-lead ${
           activeStage === "company" ? "!text-secondary" : ""
         }`}
       >

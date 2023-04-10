@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";
 import Slider from "react-slick";
-import { latestProjects } from "@/data/cardData";
+import { latestProjects } from "@/data/dummyData";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -1,3 +1,19 @@
+import {
+  AirConIcon,
+  FriggedIcon,
+  GasIcon,
+  MicrowavesIcon,
+  OthersIcon,
+  OvensIcon,
+} from "@/components/Icons";
+
+const getRandomOf = (list) => {
+  return Math.floor(Math.random() * list?.length - 1);
+};
+
+export const getItemById = (list, itemId) => {
+  return list?.find((item) => item?.id === +itemId);
+};
 export const links = [
   { name: "home", link: "/" },
   { name: "services", link: "/services" },
@@ -112,6 +128,228 @@ export const ourTeam = [
     position: "Electrician",
     img: "/images/projects/1.png",
     social: { facebook: "", instagram: "", twitter: "" },
+  },
+];
+
+export const electrics = [
+  {
+    name: "refrigerators",
+    icon: <FriggedIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
+  },
+  {
+    name: "ovens",
+    icon: <OvensIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
+  },
+  {
+    name: "conditioners",
+    icon: <AirConIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
+  },
+  {
+    name: "microwaves",
+    icon: <MicrowavesIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
+  },
+  {
+    name: "gas",
+    icon: <GasIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ",
+  },
+  {
+    name: "others",
+    icon: <OthersIcon />,
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ",
+  },
+];
+
+export const serviceProviders = [
+  {
+    id: 1,
+    image: "/images/projects/1.png",
+    name: "John Doe",
+    favorite: true,
+    rating: 4,
+    hourPrice: 50,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 2,
+    image: "/images/projects/2.png",
+    name: "Jane Smith",
+    favorite: false,
+    rating: 3,
+    hourPrice: 60,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 3,
+    image: "/images/projects/3.png",
+    name: "Bob Johnson",
+    favorite: true,
+    rating: 5,
+    hourPrice: 75,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 4,
+    image: "/images/projects/5.png",
+    name: "Sarah Lee",
+    favorite: false,
+    rating: 4,
+    hourPrice: 65,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 5,
+    image: "/images/projects/4.png",
+    name: "Tom Wilson",
+    favorite: true,
+    rating: 4,
+    hourPrice: 55,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 6,
+    image: "/images/projects/2.png",
+    name: "Emily Wang",
+    favorite: false,
+    rating: 5,
+    hourPrice: 80,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 7,
+    image: "/images/projects/3.png",
+    name: "Jack Chen",
+    favorite: true,
+    rating: 3,
+    hourPrice: 45,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 8,
+    image: "/images/projects/4.png",
+    name: "Maggie Li",
+    favorite: false,
+    rating: 4,
+    hourPrice: 70,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 9,
+    image: "/images/projects/5.png",
+    name: "Ryan Zhang",
+    favorite: true,
+    rating: 5,
+    hourPrice: 90,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+  {
+    id: 10,
+    image: "/images/projects/1.pngg",
+    name: "Sophia Wu",
+    favorite: false,
+    rating: 4,
+    hourPrice: 60,
+    services: electrics?.[getRandomOf(electrics)],
+  },
+];
+
+export const companies = [
+  {
+    id: 1,
+
+    name: "Acme Corporation",
+    image: "/images/companies/Bitmap.png",
+  },
+  {
+    id: 2,
+
+    name: "Globex Corporation",
+    image: "/images/companies/Bitmap-1.png",
+  },
+  {
+    id: 3,
+
+    name: "Initech Corporation",
+    image: "/images/companies/Bitmap-2.png",
+  },
+  {
+    id: 4,
+
+    name: "Stark Industries",
+    image: "/images/companies/Bitmap-1.png",
+  },
+  {
+    id: 5,
+
+    name: "Wayne Enterprises",
+    image: "/images/companies/Bitmap-2.png",
+  },
+  {
+    id: 6,
+
+    name: "Umbrella Corporation",
+    image: "/images/companies/Bitmap-1.png",
+  },
+  {
+    id: 7,
+
+    name: "Oscorp Industries",
+    image: "/images/companies/Bitmap-2.png",
+  },
+  {
+    id: 8,
+
+    name: "Aperture Science",
+    image: "/images/companies/Bitmap-1.png",
+  },
+  {
+    id: 9,
+
+    name: "Weyland-Yutani Corporation",
+    image: "/images/companies/Bitmap-2.png",
+  },
+  {
+    id: 10,
+
+    name: "Gekko & Co.",
+    image: "/images/companies/Bitmap.png",
+  },
+];
+
+export const reviews = [
+  {
+    id: 1,
+    name: "John Smith",
+    image: "/images/clients/Ellipse 182.png",
+    date: "2023-04-08",
+    rating: 4,
+    comment: "Great product, works as advertised!",
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+    image: "/images/clients/Group 3.png",
+    date: "2023-04-07",
+    rating: 2,
+    comment: "This product did not meet my expectations.",
+  },
+  {
+    id: 3,
+    name: "Bob Johnson",
+    image: "/images/clients/Ellipse 180.png",
+    date: "2023-04-05",
+    rating: 5,
+    comment: "I am very happy with my purchase!",
   },
 ];
 
