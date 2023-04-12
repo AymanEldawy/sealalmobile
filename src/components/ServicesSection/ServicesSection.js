@@ -1,12 +1,14 @@
+import { LanguageContext } from "@/context/LangContext";
+import { services } from "@/data/dummyData";
+import { fetchWord } from "@/lang/fetchWord";
+import Image from "next/image";
+import Link from "next/link";
 import React, { useContext } from "react";
 
+import { Button } from "../Global/Button/Button";
+import PrimaryLink from "../Global/PrimaryLink/PrimaryLink";
 import SectionTitle from "../Global/SectionTitle/SectionTitle";
 import { BoltSixIcon, CircleStrokeIcon } from "../Icons";
-import { services } from "@/data/dummyData";
-import Image from "next/image";
-import { LanguageContext } from "@/context/LangContext";
-import { fetchWord } from "@/lang/fetchWord";
-import { Button } from "../Global/Button/Button";
 
 const ServicesSection = () => {
   const { lang } = useContext(LanguageContext);
@@ -40,7 +42,12 @@ const ServicesSection = () => {
               </div>
             ))}
           </div>
-          <Button classes="mt-8 block mx-auto px-6 !py-3 rounded-xl text-sm capitalize">{fetchWord('browse_services', lang)}</Button>
+          <PrimaryLink
+            link="/services"
+            className=" max-w-[180px] mt-8 block mx-auto px-6 !py-3 rounded-xl "
+          >
+            {fetchWord("browse_services", lang)}
+          </PrimaryLink>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Brand = () => {
   return (
-    <Link href="/home">
+    <Link href="/">
       <Image src="/images/brand.png" alt="BRAND" height={60} width={190} />
     </Link>
   );

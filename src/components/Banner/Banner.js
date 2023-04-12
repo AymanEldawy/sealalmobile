@@ -4,9 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { useContext } from "react";
 
-import { Button } from "../Global/Button/Button";
 import { BoltSixIcon } from "../Icons";
-import { CloseIcon } from "../Icons/CloseIcon";
 import HeadBannerInfo from "../HeadBannerInfo/HeadBannerInfo";
 
 const Banner = () => {

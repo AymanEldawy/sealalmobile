@@ -1,15 +1,11 @@
-import React from "react";
+import { CashFlowIcon, CircleStrokeIcon, ElectricIcon } from "@/components/Icons";
 import PaymentMethods from "@/components/PaymentMethods/PaymentMethods";
 import ProfileBanner from "@/components/ProfileBanner/ProfileBanner";
 import RatingStars from "@/components/RatingStars/RatingStars";
 import SocialCard from "@/components/SocialCard/SocialCard";
 import Image from "next/image";
 import Link from "next/link";
-import {
-    CashFlowIcon,
-    CircleStrokeIcon,
-    ElectricIcon,
-  } from "@/components/Icons";
+import React from "react";
 
 const ProviderProfile = ({ provider }) => {
   return (
@@ -43,7 +39,7 @@ const ProviderProfile = ({ provider }) => {
             </p>
           </div>
           <div className="flex flex-col gap-6">
-            <SocialCard withMessage iconClassName="text-yellow-500" />
+            <SocialCard withMessage iconClassName="!text-yellow-500" />
             <RatingStars rating={provider?.rating} />
             <PaymentMethods />
           </div>

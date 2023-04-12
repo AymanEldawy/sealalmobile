@@ -1,24 +1,21 @@
-import {
-  AirConIcon,
-  FriggedIcon,
-  GasIcon,
-  MicrowavesIcon,
-  OthersIcon,
-  OvensIcon,
-} from "@/components/Icons";
+import { AirConIcon, FriggedIcon, GasIcon, MicrowavesIcon, OthersIcon, OvensIcon } from "@/components/Icons";
 
 const getRandomOf = (list) => {
   return Math.floor(Math.random() * list?.length - 1);
 };
 
 export const getItemById = (list, itemId) => {
-  return list?.find((item) => item?.id === +itemId);
+  return list?.find((item) => +item?.id === +itemId);
+};
+export const getOfferById = (list, itemId) => {
+  console.log(list, itemId)
+  return list?.find((item) => +item?.offerNumber === +itemId);
 };
 export const links = [
   { name: "home", link: "/" },
   { name: "services", link: "/services" },
   { name: "request_services", link: "/request-services" },
-  { name: "contact", link: "/Contact" },
+  { name: "contact", link: "/contact" },
 ];
 
 export const services = [
@@ -350,6 +347,45 @@ export const reviews = [
     date: "2023-04-05",
     rating: 5,
     comment: "I am very happy with my purchase!",
+  },
+];
+
+export const offers = [
+  {
+    name: "Summer Sale",
+    offerNumber: "725319",
+    date: "2023-06-01",
+    image: "/images/18571126_303.png",
+  },
+  {
+    name: "Back to School",
+    offerNumber: "834967",
+    date: "2023-08-15",
+    image: "/images/18571126_303.png",
+  },
+  {
+    name: "Holiday Deals",
+    offerNumber: "619532",
+    date: "2023-12-01",
+    image: "/images/18571126_303.png",
+  },
+  {
+    name: "Black Friday Deals",
+    offerNumber: "984563",
+    date: "2023-11-24",
+    image: "/images/18571126_303.png",
+  },
+  {
+    name: "New Year Clearance",
+    offerNumber: "752369",
+    date: "2024-01-01",
+    image: "/images/18571126_303.png",
+  },
+  {
+    name: "Spring Specials",
+    offerNumber: "135790",
+    date: "2024-04-01",
+    image: "/images/18571126_303.png",
   },
 ];
 

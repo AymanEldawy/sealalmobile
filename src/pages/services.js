@@ -1,11 +1,4 @@
-import {
-  AirConIcon,
-  FriggedIcon,
-  GasIcon,
-  MicrowavesIcon,
-  OthersIcon,
-  OvensIcon,
-} from "@/components/Icons";
+import { AirConIcon, FriggedIcon, GasIcon, MicrowavesIcon, OthersIcon, OvensIcon } from "@/components/Icons";
 import { Layout } from "@/components/Layout/Layout";
 import ServiceContainerBox from "@/components/ServiceContainerBox/ServiceContainerBox";
 import TabsContent from "@/components/Tabs/TabsContent";
@@ -19,9 +12,9 @@ const Services = () => {
   return (
     <Layout>
       <div className="container">
-        <div className="flex relative items-start">
+        <div className="flex relative items-start ">
           <TabsList
-            containerClassName="shadow-md py-10 gap-2 min-w-[210px]"
+            containerClassName="shadow-md py-10 gap-2 h-[100dvh] min-w-[210px] sticky top-0 "
             direction="vertical"
             list={services}
             keyName="name"
@@ -44,17 +37,9 @@ const Services = () => {
             </TabsContent>
           </div>
         </div>
-        {/* tab list */}
-        {/* tab content */}
-        {/* tab list */}
-        {/* tab content */}
       </div>
     </Layout>
   );
 };
 
 export default Services;
-
-/*
-
-*/

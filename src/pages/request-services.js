@@ -1,60 +1,38 @@
-import CustomSelectField from "@/components/Forms/CustomSelectField";
-import HeadBannerInfo from "@/components/HeadBannerInfo/HeadBannerInfo";
-import { LockVectorIcon } from "@/components/Icons";
+import BannerTitle from "@/components/BannerTitle/BannerTitle";
+import HowItWork from "@/components/HowItWork/HowItWork";
 import { Layout } from "@/components/Layout/Layout";
-import SearchBar from "@/components/SearchBar/SearchBar";
+import RequestServicesConfirmation from "@/components/RequestServicesConfirmation/RequestServicesConfirmation";
+import RequestServicesForm from "@/components/RequestServicesForm/RequestServicesForm";
+import TabsContent from "@/components/Tabs/TabsContent";
 import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";
-import React, { useState, useContext } from "react";
+import React from "react";
+import { useState } from "react";
+import { useContext } from "react";
 
 const RequestServices = () => {
   const { lang } = useContext(LanguageContext);
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
-  const [countryState, setCountryState] = useState("");
+  const [selectTab, setSelectedTab] = useState("confirmation");
+
+  const getValues = (values) => {};
   return (
     <Layout>
-      <div className="overflow-hidden">
-        <div className="container">
-          <div className="flex justify-between gap-8">
-            <div className="flex-1 mt-12">
-              <HeadBannerInfo layout="services-page" />
-              <div className="mt-8">
-                <SearchBar inputClassName="!p-3" iconClassName="!px-5" />
-              </div>
-              <div className="flex gap-3 mt-4">
-                <CustomSelectField
-                  name="state"
-                  value={countryState}
-                  list={[]}
-                  label={fetchWord("state", lang)}
-                  onChange={(e) => setCountryState(e.target.value)}
-                  iconClassName=" text-gray-500 "
-                  selectClassName="bg-bmain border-none"
-                />
-                <CustomSelectField
-                  name="country"
-                  value={country}
-                  list={[]}
-                  label={fetchWord("country", lang)}
-                  onChange={(e) => setCountry(e.target.value)}
-                  iconClassName=" text-gray-500 "
-                  selectClassName="bg-bmain border-none"
-                />
-                <CustomSelectField
-                  name="city"
-                  value={city}
-                  list={[]}
-                  label={fetchWord("city", lang)}
-                  onChange={(e) => setCity(e.target.value)}
-                  iconClassName=" text-gray-500 "
-                  selectClassName="bg-bmain border-none"
-                />
-              </div>
-            </div>
-            <div className="-translate-y-48 -mr-56 ">
-              <LockVectorIcon />
-            </div>
+      <BannerTitle title={fetchWord("request_services", lang)} />
+      <div className="container">
+        <div className="flex gap-8 mt-12 items-start">
+          <HowItWork />
+          <div className="flex-1">
+            <TabsContent activeTabName={selectTab}>
+              <RequestServicesForm
+                tabName="information"
+                setSelectedTab={setSelectedTab}
+                getValues={getValues}
+              />
+              <RequestServicesConfirmation
+                tabName="confirmation"
+                setSelectedTab={setSelectedTab}
+              />
+            </TabsContent>
           </div>
         </div>
       </div>

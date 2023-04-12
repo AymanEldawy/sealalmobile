@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CloseIcon } from "../Icons/CloseIcon";
+import { CloseIcon } from "../Icons";
 import { Button } from "../Global/Button/Button";
 import { fetchWord } from "@/lang/fetchWord";
 import { LanguageContext } from "@/context/LangContext";

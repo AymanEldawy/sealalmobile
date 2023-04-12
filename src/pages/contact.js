@@ -1,3 +1,4 @@
+import BannerTitle from "@/components/BannerTitle/BannerTitle";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import ContactInfo from "@/components/ContactInfo/ContactInfo";
 import { Layout } from "@/components/Layout/Layout";
@@ -10,9 +11,7 @@ const Contact = () => {
   const { lang } = useContext(LanguageContext);
   return (
     <Layout>
-      <h1 className="bg-primary text-white h-48 flex items-center justify-center text-3xl">
-        {fetchWord("contact", lang)}
-      </h1>
+      <BannerTitle title={fetchWord("contact", lang)} />
       <div className="container">
         <div className="mt-12 flex justify-between gap-8">
           <div className="flex-1 p-8 bg-[#F9F9F9] rounded-lg">

@@ -1,7 +1,7 @@
+import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
 
 const TabsList = ({
   direction,
@@ -13,9 +13,9 @@ const TabsList = ({
   activeClassName,
   containerClassName,
   setActiveTab,
-  activeTab
+  activeTab,
 }) => {
-
+  const { lang } = useContext(LanguageContext);
   return (
     <div
       className={`flex ${
@@ -44,7 +44,7 @@ const TabsList = ({
           {item?.icon ? (
             <span className={iconClassName}>{item?.icon}</span>
           ) : null}
-          {keyName ? item?.[keyName] : item}
+          {keyName ? fetchWord(item?.[keyName], lang) : fetchWord(item, lang)}
         </button>
       ))}
     </div>

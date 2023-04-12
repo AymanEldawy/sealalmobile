@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import TabsList from "../Tabs/TabsList";
-import TabsContent from "../Tabs/TabsContent";
-import { companies, electrics, serviceProviders } from "@/data/dummyData";
-import ServiceCardBox from "./ServiceCardBox/ServiceCardBox";
-import { useState } from "react";
-import ServiceProviderCard from "./ServiceProviderCard/ServiceProviderCard";
-import { fetchWord } from "@/lang/fetchWord";
 import { LanguageContext } from "@/context/LangContext";
+import { companies, electrics, serviceProviders } from "@/data/dummyData";
+import { fetchWord } from "@/lang/fetchWord";
 import Link from "next/link";
-import CompanyCardBox from "./CompanyCardBox";
+import React, { useContext } from "react";
+import { useState } from "react";
+
 import SeeMore from "../Global/SeeMore/SeeMore";
+import TabsContent from "../Tabs/TabsContent";
+import TabsList from "../Tabs/TabsList";
+import CompanyCardBox from "./CompanyCardBox";
+import ServiceCardBox from "./ServiceCardBox/ServiceCardBox";
+import ServiceProviderCard from "./ServiceProviderCard/ServiceProviderCard";
 
 const ServiceContainerBox = ({ service }) => {
   const { lang } = useContext(LanguageContext);
