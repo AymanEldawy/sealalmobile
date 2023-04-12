@@ -1,14 +1,21 @@
-import { AirConIcon, FriggedIcon, GasIcon, MicrowavesIcon, OthersIcon, OvensIcon } from "@/components/Icons";
+import {
+  AirConIcon,
+  FriggedIcon,
+  GasIcon,
+  MicrowavesIcon,
+  OthersIcon,
+  OvensIcon,
+} from "@/components/Icons";
 
 const getRandomOf = (list) => {
-  return Math.floor(Math.random() * list?.length - 1);
+  return Math.floor(Math.random() * list?.length);
 };
 
 export const getItemById = (list, itemId) => {
   return list?.find((item) => +item?.id === +itemId);
 };
 export const getOfferById = (list, itemId) => {
-  console.log(list, itemId)
+  console.log(list, itemId);
   return list?.find((item) => +item?.offerNumber === +itemId);
 };
 export const links = [
@@ -19,111 +26,116 @@ export const links = [
 ];
 
 export const services = [
-  { name: "kitchen", img: "/images/services/1.png" },
-  { name: "decoration", img: "/images/services/2.png" },
-  { name: "electricity", img: "/images/services/3.png" },
-  { name: "electrical", img: "/images/services/4.png" },
-  { name: "plumbing", img: "/images/services/5.png" },
-  { name: "carpentry", img: "/images/services/6.png" },
-  { name: "furniture", img: "/images/services/7.png" },
-  { name: "paint", img: "/images/services/8.png" },
+  { name: "kitchen", image: "/images/services/1.png" },
+  { name: "decoration", image: "/images/services/2.png" },
+  { name: "electricity", image: "/images/services/3.png" },
+  { name: "electrical", image: "/images/services/4.png" },
+  { name: "plumbing", image: "/images/services/5.png" },
+  { name: "carpentry", image: "/images/services/6.png" },
+  { name: "furniture", image: "/images/services/7.png" },
+  { name: "paint", image: "/images/services/8.png" },
 ];
 
 export const latestProjects = [
   {
     title: "electricity",
     description: "electricity_description",
-    img: "/images/projects/1.png",
+    image: "/images/projects/1.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/2.png",
+    image: "/images/projects/2.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/3.png",
+    image: "/images/projects/3.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/4.png",
+    image: "/images/projects/4.png",
   },
   {
     title: "electricity",
     description: "electricity_description",
-    img: "/images/projects/1.png",
+    image: "/images/projects/1.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/2.png",
+    image: "/images/projects/2.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/3.png",
+    image: "/images/projects/3.png",
   },
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/4.png",
+    image: "/images/projects/4.png",
   },
   {
     title: "electricity",
     description: "electricity_description",
-    img: "/images/projects/1.png",
+    image: "/images/projects/1.png",
   },
 
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/2.png",
+    image: "/images/projects/2.png",
   },
 
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/3.png",
+    image: "/images/projects/3.png",
   },
 
   {
     title: "plumbing",
     description: "plumbing_description",
-    img: "/images/projects/4.png",
+    image: "/images/projects/4.png",
   },
 ];
 
 export const ourTeam = [
   {
+    id: 1,
     name: "John Martin",
     position: "Electrician",
-    img: "/images/projects/1.png",
+    image: "/images/projects/1.png",
     social: { facebook: "", instagram: "", twitter: "" },
   },
   {
+    id: 2,
     name: "John Martin",
     position: "Cleaner",
-    img: "/images/projects/2.png",
+    image: "/images/projects/2.png",
     social: { facebook: "", instagram: "", twitter: "" },
   },
   {
+    id: 3,
     name: "John Martin",
     position: "Plumper",
-    img: "/images/projects/3.png",
+    image: "/images/projects/3.png",
     social: { facebook: "", instagram: "", twitter: "" },
   },
   {
+    id: 4,
     name: "John Martin",
     position: "Plumper",
-    img: "/images/projects/4.png",
+    image: "/images/projects/4.png",
     social: { facebook: "", instagram: "", twitter: "" },
   },
   {
+    id: 5,
     name: "John Martin",
     position: "Electrician",
-    img: "/images/projects/1.png",
+    image: "/images/projects/1.png",
     social: { facebook: "", instagram: "", twitter: "" },
   },
 ];
@@ -389,612 +401,96 @@ export const offers = [
   },
 ];
 
-// const images = [
-//   '/images/items/image 2.png',
-//   '/images/items/image 3.png',
-//   '/images/items/image 4.png',
-//   '/images/items/image 5.png',
-// ];
-// const categories = [
-//   '/images/categories/1.png',
-//   '/images/categories/2.jpg',
-//   '/images/categories/3.png',
-//   '/images/categories/4.png',
-//   '/images/categories/5.png',
-// ];
-// const random = (num) => Math.floor(Math.random() * num);
+export const orders = [
+  {
+    name: "Order 1",
+    date: "2022-05-20",
+    orderNumber: "ORD-123456",
+    userId: serviceProviders[3],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 2",
+    date: "2022-06-15",
+    orderNumber: "ORD-789012",
+    userId: serviceProviders[5],
+    favorite: false,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 3",
+    date: "2022-07-01",
+    orderNumber: "ORD-345678",
+    userId: serviceProviders[1],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 4",
+    date: "2022-08-10",
+    orderNumber: "ORD-901234",
+    userId: serviceProviders[4],
+    favorite: false,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 5",
+    date: "2022-09-05",
+    orderNumber: "ORD-567890",
+    userId: serviceProviders[2],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 1",
+    date: "2022-05-20",
+    orderNumber: "ORD-123456",
+    userId: serviceProviders[3],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 2",
+    date: "2022-06-15",
+    orderNumber: "ORD-789012",
+    userId: serviceProviders[5],
+    favorite: false,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 3",
+    date: "2022-07-01",
+    orderNumber: "ORD-345678",
+    userId: serviceProviders[1],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 4",
+    date: "2022-08-10",
+    orderNumber: "ORD-901234",
+    userId: serviceProviders[4],
+    favorite: false,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+  {
+    name: "Order 5",
+    date: "2022-09-05",
+    orderNumber: "ORD-567890",
+    userId: serviceProviders[2],
+    favorite: true,
+    service: services[getRandomOf(services)],
+    offer: offers[getRandomOf(offers)],
+  },
+];
 
-// export const Categories = [
-//   {
-//     name: 'Packages',
-//     slug: 'packages',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[0],
-//   },
-//   {
-//     name: 'Clothes',
-//     slug: 'clothes',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[1],
-//   },
-//   {
-//     name: 'Shoes',
-//     slug: 'shoes',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[2],
-//   },
-//   {
-//     name: 'uncategories',
-//     slug: 'uncategories',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[3],
-//   },
-//   {
-//     name: 'Electronics',
-//     slug: 'electronics',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[4],
-//   },
-//   {
-//     name: 'Packages',
-//     slug: 'packages',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[0],
-//   },
-//   {
-//     name: 'Clothes',
-//     slug: 'clothes',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[1],
-//   },
-//   {
-//     name: 'Shoes',
-//     slug: 'shoes',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[2],
-//   },
-//   {
-//     name: 'uncategories',
-//     slug: 'uncategories',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[3],
-//   },
-//   {
-//     name: 'Electronics',
-//     slug: 'electronics',
-//     product_length: Math.floor(Math.random() * 24),
-//     img: categories[4],
-//   },
-// ];
-
-// export const menuItems = [
-//   { name: 'Menu' },
-//   { name: 'Best Seller' },
-//   { name: 'New arrival' },
-//   { name: 'About us', slug: 'about-us' },
-//   { name: 'Contact us', slug: 'contact-us' },
-// ];
-// export const menuItemsFooter = [
-//   { name: 'Menu', slug: 'menu' },
-//   { name: 'Best Seller', slug: 'best-seller' },
-//   { name: 'New arrival', slug: 'new-arrival' },
-//   { name: 'About us', slug: 'about-us' },
-//   { name: 'Contact us', slug: 'contact-us' },
-// ];
-
-// export const newArrivalList = [
-//   { name: 'ICE-CREAM TORTES', slug: 'ICE-CREAM-TORTES' },
-//   { name: 'TORTES', slug: 'TORTES' },
-//   { name: 'BITES', slug: 'BITES' },
-//   { name: 'GATEAUX LUX', slug: 'GATEAUX-LUX' },
-// ];
-
-// export const bestSellerList = [
-//   { name: 'TORTES', slug: 'TORTES' },
-//   { name: 'ORIENTAL', slug: 'ORIENTAL' },
-//   { name: 'CHOCOLATE', slug: 'CHOCOLATE' },
-//   { name: 'BAKERY', slug: 'BAKERY' },
-//   { name: 'GATEAUX', slug: 'GATEAUX' },
-//   { name: 'MINI SANDWICHES', slug: 'MINI SANDWICHES' },
-//   { name: 'COOKIES', slug: 'COOKIES' },
-// ];
-
-// export const userSettingsMenu = [
-//   { name: 'my account', slug: 'profile' },
-//   { name: 'my wishlist', slug: 'profile/wishlist' },
-//   { name: 'my orders', slug: 'profile/orders' },
-//   { name: 'my addresses', slug: 'profile/addresses' },
-// ];
-
-// export const useFulLinks = [
-//   { name: 'privacy policy', slug: 'privacy-policy' },
-//   { name: 'termes & conditions', slug: 'termes&conditions' },
-//   { name: 'support', slug: 'support' },
-// ];
-
-// export const locations = [
-//   {
-//     name: 'Port Said Street  ',
-//     street:
-//       'Port Said St, Al Mansi, Bab El Sharia, Downtown Cairo, Cairo, Egypt  ',
-//     phone: '19918',
-//   },
-//   {
-//     name: 'Al Hosary  ',
-//     street:
-//       '425 , El Mehwar El Markazi, Behind 6th October University, Giza, Egypt  ',
-//     phone: '19918',
-//   },
-//   {
-//     name: 'Genena Mall - Nasr City  ',
-//     street: 'Al Manteqah Al Oula, Nasr City, Nasr City,  Cairo, Egypt',
-//     phone: '19918',
-//   },
-//   {
-//     name: 'Port Said Street  ',
-//     street:
-//       'Port Said St, Al Mansi, Bab El Sharia, Downtown Cairo, Cairo, Egypt  ',
-//     phone: '19918',
-//   },
-//   {
-//     name: 'Al Hosary  ',
-//     street:
-//       '425 , El Mehwar El Markazi, Behind 6th October University, Giza, Egypt  ',
-//     phone: '19918',
-//   },
-//   {
-//     name: 'Genena Mall - Nasr City  ',
-//     street: 'Al Manteqah Al Oula, Nasr City, Nasr City,  Cairo, Egypt',
-//     phone: '19918',
-//   },
-// ];
-
-// export const products = [
-//   {
-//     id: 1,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 200,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[0],
-//   },
-//   {
-//     id: 2,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 540,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[0],
-//   },
-//   {
-//     id: 3,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 123,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: false,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[1],
-//   },
-//   {
-//     id: 42,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: false,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[1],
-//   },
-//   {
-//     id: 42,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: false,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[2],
-//   },
-//   {
-//     id: 46,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[2],
-//   },
-//   {
-//     id: 6,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[3],
-//   },
-//   {
-//     id: 14,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: false,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[3],
-//   },
-//   {
-//     id: 24,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: false,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[4],
-//   },
-//   {
-//     id: 34,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[4],
-//   },
-//   {
-//     id: 454,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: true,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[5],
-//   },
-//   {
-//     id: 453,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 454,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4512,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4435,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4535,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4512,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4345,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4215,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 4545,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 45431,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-//   {
-//     id: 43235,
-//     title: 'white forest torte',
-//     description:
-//       'Vanilla Sponge- White Cream- Strawberry Sauce-White Vanilla Sponge- White Cream- Strawberry Sauce-White ...',
-//     price: 453,
-//     img: images[Math.floor(Math.random() * (images.length - 1))],
-//     discount: Math.floor(Math.random() * 15),
-//     inWishlist: true,
-//     rating: Math.floor(Math.random() * 6),
-//     in_stock: false,
-//     size: Math.max(33, Math.floor(Math.random() * 50), 50),
-//     category: Categories[6],
-//   },
-// ];
-// export const cart = [
-//   { id: 1, productId: 1, quantity: 2, price: 200 },
-//   { id: 2, productId: 2, quantity: 4, price: 540 },
-//   { id: 3, productId: 3, quantity: 3, price: 123 },
-//   { id: 4, productId: 45, quantity: 2, price: 453 },
-//   { id: 5, productId: 46, quantity: 4, price: 453 },
-//   { id: 6, productId: 34, quantity: 4, price: 453 },
-// ];
-
-// export const getItemById = (productId) => {
-//   console.log(productId);
-//   let item = products.find((product) => product.id === +productId);
-//   console.log(productId);
-//   return item;
-// };
-// export const calculateTotal = (items) => {
-//   if (items?.length)
-//     return items.reduce((result, cur) => {
-//       return result + cur.quantity * cur.price;
-//     }, 0);
-// };
-// const statusDelivery = ['Completed', 'Delivered', 'Pending', 'Canceled'];
-// export const orders = [
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-//   {
-//     id: random(2545),
-//     status: statusDelivery[random(statusDelivery.length - 1)],
-//     date: new Date(),
-//     items: products.slice(0, random(4)),
-//     total: this?.item ? calculateTotal(this.items) : random(3000),
-//   },
-// ];
-
-// export const addresses = [
-//   {
-//     id: 1,
-//     name: 'Damitta 1',
-//     city: 'Cairo',
-//     country: 'Egypt',
-//     street: 'El Shrabassy St , Damietta',
-//     default: true,
-//   },
-
-//   {
-//     id: 2,
-//     name: 'Damitta 1',
-//     city: 'Cairo',
-//     country: 'Egypt',
-//     street: 'El Shrabassy St , Damietta',
-//     default: true,
-//   },
-
-//   {
-//     id: 3,
-//     name: 'Damitta 1',
-//     city: 'Cairo',
-//     country: 'Egypt',
-//     street: 'El Shrabassy St , Damietta',
-//     default: true,
-//   },
-
-//   {
-//     id: 4,
-//     name: 'Damitta 1',
-//     city: 'Cairo',
-//     country: 'Egypt',
-//     street: 'El Shrabassy St , Damietta',
-//     default: true,
-//   },
-// ];

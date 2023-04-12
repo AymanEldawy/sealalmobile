@@ -8,7 +8,7 @@ export const TextField = ({
   ...textField
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 w-full">
       {label ? <label className="flex items-center justify-between mb-2">{label}</label> : null}
       <textarea
         className={`border border-gray-300 w-full p-2 rounded-md h-28 ${classes}`}

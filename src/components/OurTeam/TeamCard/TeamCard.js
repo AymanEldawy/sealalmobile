@@ -8,7 +8,7 @@ const TeamCard = ({ employee }) => {
     <div className="relative rounded-md overflow-hidden m-4">
       <Image
         className="!w-full !h-full object-cover scale-105"
-        src={employee?.img}
+        src={employee?.image}
         alt={employee?.name}
         height={400}
         width={330}

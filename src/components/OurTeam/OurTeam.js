@@ -27,7 +27,7 @@ const OurTeam = () => {
   const { lang } = useContext(LanguageContext);
 
   return (
-    <div className="bg-[#061432] py-8 relative z-10">
+    <div className="bg-[#061432] py-8 relative z-10  overflow-hidden">
       <span className="absolute top-[30%] -right-10 scale-90">
         <Bolt8Icon className="text-primary" />
       </span>

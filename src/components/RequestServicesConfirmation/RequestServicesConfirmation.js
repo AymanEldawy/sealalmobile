@@ -1,13 +1,14 @@
-import React from "react";
-import { EditIcon, ElectricCategoryIcon, WorldIcon } from "../Icons";
-import { fetchWord } from "@/lang/fetchWord";
-import { useContext } from "react";
 import { LanguageContext } from "@/context/LangContext";
-import Link from "next/link";
+import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
-import { Button } from "../Global/Button/Button";
+import Link from "next/link";
+import React from "react";
+import { useContext } from "react";
 
-const RequestServicesConfirmation = ({ setSelectedTab }) => {
+import { Button } from "../Global/Button/Button";
+import { EditIcon, ElectricCategoryIcon, WorldIcon } from "../Icons";
+
+const RequestServicesConfirmation = ({ setSelectedTab, setOpenFormFeedback }) => {
   const { lang } = useContext(LanguageContext);
   return (
     <div className="">
@@ -60,7 +61,7 @@ const RequestServicesConfirmation = ({ setSelectedTab }) => {
         </div>
       </div>
       <Button
-        onClick={() => setSelectedTab("information")}
+        onClick={() => setOpenFormFeedback(true)}
         classes="w-[300px] !p-3 mt-8 mx-auto block"
       >
         {fetchWord("confirm_send", lang)}{" "}

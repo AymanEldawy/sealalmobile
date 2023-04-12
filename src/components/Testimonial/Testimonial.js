@@ -66,7 +66,7 @@ const Testimonial = () => {
     };
   });
   return (
-    <div className="min-h-screen h-[740px] py-8">
+    <div className="min-h-screen h-[740px] py-8  overflow-hidden">
       <div className="container relative">
         <TestimonialGallery
           activeTestimonial={activeTestimonial}

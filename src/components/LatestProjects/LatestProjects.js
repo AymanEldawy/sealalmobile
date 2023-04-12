@@ -28,7 +28,7 @@ const LatestProjects = () => {
   const { lang } = useContext(LanguageContext);
 
   return (
-    <div className="bg-[#F8F8F8] py-12 relative">
+    <div className="bg-[#F8F8F8] py-12 relative  overflow-hidden">
       <div className="container">
         <SectionTitle title={fetchWord("latest_projects", lang)} />
         <div className="w-full">
@@ -39,8 +39,8 @@ const LatestProjects = () => {
                 key={index}
               >
                 <Image
-                  className="!w-auto !h-auto max-w-full object-cover"
-                  src={project?.img}
+                  className="!w-full !h-full  object-cover"
+                  src={project?.image}
                   alt={project?.title}
                   height={320}
                   width={260}

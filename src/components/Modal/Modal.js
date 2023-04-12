@@ -1,20 +1,41 @@
 import React from "react";
-import { useEffect } from "react";
-import ReactDOM from "react-dom";
+import { CloseIcon } from "../Icons";
 
-const Modal = ({open ,close, children}) => {
-  //   useEffect(() => {
+const Modal = ({ open, close, children, title }) => {
   //     const element = document.createElement("div");
   //     element.id = "custom-modal";
   //     document.appendChild(element);
   //   });
 
   return (
-    <div onClick={close} className="fixed top-0 left-0 bottom-0 right-0 z-10 bg-[#0009] flex justify-center items-center">
-      <div className="bg-white p-6 rounded-md min-w-[250px] min-h-[200px]">
-        {children}
-      </div>
-    </div>
+    <>
+      {open ? (
+        <div
+          onClick={close}
+          className="fixed top-0 left-0 bottom-0 right-0 z-10 bg-[#0009] flex justify-center items-center"
+        >
+          <div
+            className="bg-white  rounded-md min-w-[250px] min-h-[200px] overflow-hidden"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            {title ? (
+              <div className="flex justify-between items-center p-3 px-6 mb-8 bg-[#F2F2F2]">
+                {title}
+                <button
+                  className="rounded-full h-6 w-6 border border-gray-400 flex justify-center items-center"
+                  onClick={close}
+                >
+                  <CloseIcon className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+            ) : null}
+            <div className={title? 'p-4 pt-1 px-8':"p-6"}>{children}</div>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 };
 

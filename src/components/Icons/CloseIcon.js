@@ -1,6 +1,6 @@
 import React from "react";
 
-const CloseIcon = () => {
+const CloseIcon = ({ ...classes }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ const CloseIcon = () => {
       strokeWidth={1.5}
       stroke="currentColor"
       className="w-6 h-6"
+      {...classes}
     >
       <path
         strokeLinecap="round"

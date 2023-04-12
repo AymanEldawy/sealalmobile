@@ -11,7 +11,7 @@ const UpperMenu = () => {
     <div className=" bg-primary text-white p-1">
       <div className="flex justify-between items-center container">
         <LanguageBar />
-        <Link href="/profile" className="flex items-center gap-1 uppercase text-sm">
+        <Link href="/my-profile" className="flex items-center gap-1 uppercase text-sm">
           <UserIcon />
           {fetchWord("account", lang)}
         </Link>

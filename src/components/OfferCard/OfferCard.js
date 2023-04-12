@@ -23,7 +23,7 @@ const OfferCard = ({ offer, hideButton }) => {
       {hideButton ? null : (
         <PrimaryLink
           link={`/offers/${offer?.offerNumber}`}
-          className={`!bg-transparent !border-primary !text-primary !hover:bg-primary hover:text-white`}
+          className={`!bg-transparent !border-primary !w-full !block !text-primary !hover:bg-primary hover:text-white`}
         >
           {fetchWord("view_offers", lang)}
         </PrimaryLink>

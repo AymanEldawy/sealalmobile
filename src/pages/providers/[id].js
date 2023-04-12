@@ -1,3 +1,4 @@
+import BackToHome from "@/components/Global/BackToHome/BackToHome";
 import { Button } from "@/components/Global/Button/Button";
 import { LampIcon } from "@/components/Icons";
 import { Layout } from "@/components/Layout/Layout";
@@ -18,11 +19,9 @@ const SingleProvider = () => {
   const [open, setOpen] = useState(false);
   const [provider, setProvider] = useState();
 
-  console.log(router);
   useEffect(() => {
     setProvider(getItemById(serviceProviders, id));
   }, [id]);
-  console.log(provider);
   return (
     <>
       <Layout>
@@ -41,25 +40,18 @@ const SingleProvider = () => {
         </div>
         {/* reviews */}
       </Layout>
-      {open ? (
-        <Modal open={open} close={() => setOpen(false)}>
-          <div className="flex flex-col justify-center items-center gap-2 px-12">
-            <span>
-              <LampIcon />
-            </span>
-            <small className="text-primary font-medium">
-              {fetchWord("thank_you", lang)}
-            </small>
-            <p className="font-medium">{fetchWord("soon", lang)}</p>
-            <Link
-              href="/"
-              className="!bg-secondary rounded-md text-sm px-6 py-3 !text-black mt-6"
-            >
-              {fetchWord("back_home", lang)}
-            </Link>
-          </div>
-        </Modal>
-      ) : null}
+      <Modal open={open} close={() => setOpen(false)}>
+        <div className="flex flex-col justify-center items-center gap-2 px-12">
+          <span>
+            <LampIcon />
+          </span>
+          <small className="text-primary font-medium">
+            {fetchWord("thank_you", lang)}
+          </small>
+          <p className="font-medium">{fetchWord("soon", lang)}</p>
+          <BackToHome />
+        </div>
+      </Modal>
     </>
   );
 };

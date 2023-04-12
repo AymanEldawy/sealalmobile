@@ -6,19 +6,19 @@ import { LanguageContext } from "@/context/LangContext";
 import Link from "next/link";
 
 const userList = [
-  { name: "profile", icon: <UserCircleIcon /> },
-  { name: "my_requests", icon: <RequestsIcon />, count: "6" },
-  { name: "offers", icon: <OffersIcon />, count: "10" },
-  { name: "notification", icon: <BellIcon />, text: "now" },
+  { link:'/my-profile', name: "profile", icon: <UserCircleIcon /> },
+  { link:'/my-requests', name: "my_requests", icon: <RequestsIcon />, count: "6" },
+  { link:'/offers', name: "offers", icon: <OffersIcon />, count: "10" },
+  { link:'/notification', name: "notification", icon: <BellIcon />, text: "now" },
 ];
 const UserDropdownBar = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <ul className=" absolute bg-white py-6 left-0 top-[67px] shadow-inner">
+    <ul className=" absolute bg-white py-6 left-0 top-[67px] shadow-inner z-40">
       {userList?.map((item, index) => (
         <li key={index} className="">
           <Link
-            href="/"
+            href={item?.link}
             className="flex gap-1 p-2 px-4 cursor-pointer text-sm items-center w-52 hover:bg-gray-100"
           >
             <span className="w-7 scale-90">{item?.icon}</span>

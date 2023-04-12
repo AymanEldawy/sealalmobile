@@ -3,6 +3,7 @@ import { CloseIcon } from "../Icons";
 import { Button } from "../Global/Button/Button";
 import { fetchWord } from "@/lang/fetchWord";
 import { LanguageContext } from "@/context/LangContext";
+import PrimaryLink from "../Global/PrimaryLink/PrimaryLink";
 
 const HeadBannerInfo = ({ layout }) => {
   const { lang } = useContext(LanguageContext);
@@ -32,9 +33,9 @@ const HeadBannerInfo = ({ layout }) => {
         consequat duis autem vel eum iriure dolor in commodo hendrerit.{" "}
       </p>
       {layout === "services-page" ? null : (
-        <Button classes="px-8 py-3 mt-8 text-sm rounded-xl">
+        <PrimaryLink link="/request-services" className="block w-fit px-8 py-3 mt-8 text-sm rounded-xl">
           {fetchWord("book_now", lang)}
-        </Button>
+        </PrimaryLink>
       )}
     </div>
   );

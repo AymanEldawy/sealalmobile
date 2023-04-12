@@ -14,6 +14,7 @@ const TabsList = ({
   containerClassName,
   setActiveTab,
   activeTab,
+  iconEndClassName,
 }) => {
   const { lang } = useContext(LanguageContext);
   return (
@@ -32,9 +33,9 @@ const TabsList = ({
               : ""
           }`}
         >
-          {item?.img ? (
+          {item?.image ? (
             <Image
-              src={item?.img}
+              src={item?.image}
               alt={item[keyName]}
               height={60}
               width={80}
@@ -45,6 +46,9 @@ const TabsList = ({
             <span className={iconClassName}>{item?.icon}</span>
           ) : null}
           {keyName ? fetchWord(item?.[keyName], lang) : fetchWord(item, lang)}
+          {item?.iconEnd ? (
+            <span className={iconEndClassName}>{item?.iconEnd}</span>
+          ) : null}
         </button>
       ))}
     </div>

@@ -10,7 +10,7 @@ import HeadBannerInfo from "../HeadBannerInfo/HeadBannerInfo";
 const Banner = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <div className="flex gap-2 relative  mb-8">
+    <div className="flex gap-2 relative overflow-hidden mb-8">
       <div className="container relative">
         <span className="absolute top-0 left-[30%] rtl:right-8 rtl:left-auto scale-75">
           <BoltSixIcon className="text-[#5FD2A2]" />{" "}
