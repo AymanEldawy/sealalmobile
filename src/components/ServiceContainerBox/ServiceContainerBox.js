@@ -21,7 +21,7 @@ const ServiceContainerBox = ({ service }) => {
         list={electrics}
         keyName="name"
         containerClassName="shadow"
-        itemClassName="capitalize flex-1 !py-5 px-4"
+        itemClassName=" whitespace-nowrap capitalize flex-1 !py-5 px-4"
         activeClassName="bg-[#F2F2F2]"
         activeTab={activeTab}
         setActiveTab={setActiveTab}

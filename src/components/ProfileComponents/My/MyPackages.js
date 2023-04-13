@@ -52,7 +52,7 @@ const MyPackages = () => {
                   : "text-primary"
               }`}
             >
-              {plan?.name}
+              {fetchWord(plan?.name, lang)}
             </h3>
             <h2 className="text-4xl font-medium flex items-end text-primary">
               {plan?.price}$

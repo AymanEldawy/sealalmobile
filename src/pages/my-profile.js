@@ -1,21 +1,18 @@
-import Banner from "@/components/Banner/Banner";
-import HeadBannerInfo from "@/components/HeadBannerInfo/HeadBannerInfo";
 import { Layout } from "@/components/Layout/Layout";
-import ProfileBanner from "@/components/ProfileBanner/ProfileBanner";
-import { LanguageContext } from "@/context/LangContext";
-import { fetchWord } from "@/lang/fetchWord";
-import React, { useContext } from "react";
-import Image from "next/image";
-import { EditIcon } from "@/components/Icons";
-import Link from "next/link";
+import React, { useState } from "react";
 import ProfileHeader from "@/components/ProfileComponents/ProfileHeader";
 import ProfileBody from "@/components/ProfileComponents/ProfileBody";
 const MyProfile = () => {
-  const { lang } = useContext(LanguageContext);
-  const userRole = "provider"; // to change between user role you can use one of these words [client | provider]
+  // to change between user role you can use one of these words [client | provider]
+  const [userRole, setUserRole] = useState("client");
+  const changeRole = () => {
+    if (userRole === "client") {
+      setUserRole("provider");
+    } else setUserRole("client");
+  };
   return (
     <Layout>
-      <ProfileHeader />
+      <ProfileHeader role={userRole}  changeRole={changeRole} />
       <ProfileBody role={userRole} />
     </Layout>
   );

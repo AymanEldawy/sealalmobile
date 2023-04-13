@@ -26,7 +26,7 @@ const ServiceProviderCard = ({ provider }) => {
           <RatingStars rating={provider?.rating} />
           <p className="font-medium flex text-lg">
             <span className="text-primary">{provider?.hourPrice}$</span>
-            <span>/hr</span>
+            <span>/{fetchWord('hr', lang)}</span>
           </p>
         </div>
         <div className="flex justify-between flex-col items-end">

@@ -29,21 +29,7 @@ export default function Home() {
         <Testimonial /> 
         <OurTeam />
 
-        {/* 
-        <OfferSection />
-        <FeaturedProductSection
-          title={fetchWord('FEATURED_PRODUCTS', lang)}
-          products={products}
-        />
-        <BrowseOurCategories title={fetchWord('Browse_Our_Categories', lang)} />
-        <WinterCollectionBanner />
-        <FeaturedProductSection
-          title={fetchWord('New_Arrivals', lang)}
-          products={products}
-        />
-        <OurFeatures title={fetchWord('Our_Features', lang)} center />
-        <Brands title={fetchWord('Brands', lang)} />
-        <Testimonial title={fetchWord('Testimonial', lang)} /> */}
+       
       </Layout>
     </>
   );

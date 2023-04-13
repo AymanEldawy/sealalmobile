@@ -27,7 +27,7 @@ const UserDropdownBar = () => {
               <span className="ltr:ml-auto rtl:mr-auto bg-gray-200 rounded-full min-w-[25px] h-[25px] flex justify-center items-center text-xs font-medium text-red-600">{item?.count}</span>
             ) : null}
             {item?.text ? (
-              <span className="ltr:ml-auto rtl:mr-auto">{item?.text}</span>
+              <span className="ltr:ml-auto rtl:mr-auto">{fetchWord(item?.text, lang)}</span>
             ) : null}
           </Link>
         </li>

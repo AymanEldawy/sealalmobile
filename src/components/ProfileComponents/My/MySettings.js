@@ -16,22 +16,22 @@ const settingList = [
   {
     icon: <LanguagesIcon />,
     name: "languages",
-    iconEnd: <ChevronIcon className="h-3 w-3" />,
+    iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <PrivacyIcon />,
     name: "privacy_policy",
-    iconEnd: <ChevronIcon className="h-3 w-3" />,
+    iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <TermsIcon />,
     name: "term_use",
-    iconEnd: <ChevronIcon className="h-3 w-3" />,
+    iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <SupportIcon />,
     name: "support",
-    iconEnd: <ChevronIcon className="h-3 w-3" />,
+    iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
 ];
 const MySettings = () => {

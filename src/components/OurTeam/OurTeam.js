@@ -21,7 +21,7 @@ const settings = {
   swipeToSlide: true,
   arrows: true,
   nextArrow: <CustomSlideArrow />,
-  prevArrow: <CustomSlideArrow classes="right-12" direction="prev" />,
+  prevArrow: <CustomSlideArrow classes="ltr:right-12 rtl:left-12" direction="prev" />,
 };
 const OurTeam = () => {
   const { lang } = useContext(LanguageContext);

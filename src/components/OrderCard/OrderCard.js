@@ -51,7 +51,7 @@ const OrderCard = ({
         <div className="flex flex-col gap-3 flex-1 relative">
           <span className="scale-75 cursor-pointer absolute rtl:left-2 ltr:right-2">
             {myOffers || inProgress ? (
-              <span className="text-secondary text-lg">30$/hr</span>
+              <span className="text-secondary text-lg">30$/{fetchWord('hr', lang)}</span>
             ) : (
               <HeartIcon
                 className={

@@ -7,7 +7,7 @@ import ProfileHeaderInfo from "./ProfileHeaderInfo";
 import { fetchWord } from "@/lang/fetchWord";
 import { LanguageContext } from "@/context/LangContext";
 
-const ProfileHeader = () => {
+const ProfileHeader = ({ role, changeRole }) => {
   const { lang } = useContext(LanguageContext);
   return (
     <ProfileBanner
@@ -17,7 +17,7 @@ const ProfileHeader = () => {
       <span className="absolute rtl:-left-6 ltr:-right-6 top-0 opacity-50">
         <GearIcon />
       </span>
-      <div className="flex gap-3">
+      <div className="flex gap-3" onClick={changeRole}>
         <div className="relative w-fit">
           <Link
             href="/"
@@ -43,10 +43,13 @@ const ProfileHeader = () => {
             }
             subtitle={fetchWord("reviews", lang)}
           />
-          <ProfileHeaderInfo title="175" subtitle={fetchWord("offers", lang)} />
+          <ProfileHeaderInfo
+            title="175"
+            subtitle={fetchWord(role === "provider" ? "offers" : "orders", lang)}
+          />
           <ProfileHeaderInfo
             title="+500$"
-            subtitle={fetchWord("earning", lang)}
+            subtitle={fetchWord(role === "provider" ? "earning" : 'payments', lang)}
           />
         </div>
       </div>

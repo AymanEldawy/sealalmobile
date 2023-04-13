@@ -80,7 +80,7 @@ const Testimonial = () => {
             <BoltsIcons />
           </span>
           <div className="bg-primary max-w-xl  mx-auto p-12 rounded-2xl relative min-h-[380px] flex items-center">
-            <span className="absolute -top-4 right-0 rtl:right-auto rtl:left-0">
+            <span className="absolute -top-4 right-0 ">
               <QuoteIcon />
             </span>
             <p className="text-white leading-7">
@@ -90,7 +90,7 @@ const Testimonial = () => {
             <span className="absolute -bottom-8 h-8 w-[84%] left-[8%] opacity-50 bg-inherit rounded-b-xl"></span>
             <button
               onClick={nextTestimonial}
-              className="cursor-pointer absolute -bottom-20 scale-90 right-10 rtl:right-auto rtl:left-10"
+              className="cursor-pointer absolute -bottom-20 scale-90 right-10"
             >
               <LongArrowIcon />
             </button>

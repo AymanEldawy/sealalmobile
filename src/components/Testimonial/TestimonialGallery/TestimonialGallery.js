@@ -21,7 +21,7 @@ const TestimonialGallery = ({ activeTestimonial, changeActiveTestimonial }) => {
         />
       </figure>
       <figure
-        className={`absolute rounded-full top-[50%] ${
+        className={`absolute rounded-full left-0 top-[50%] ${
           activeTestimonial?.index === 2 ? activeClasses : ""
         }`}
         onClick={() => changeActiveTestimonial(2)}

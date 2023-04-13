@@ -22,10 +22,10 @@ const Services = () => {
             getActiveTab={setActiveMainTab}
             activeTab={activeMainTab}
             setActiveTab={setActiveMainTab}
-            itemClassName="capitalize font-medium"
+            itemClassName="capitalize font-medium whitespace-nowrap"
             imgClassName="w-10 h-10 object-contain"
           />
-          <div className="flex-1 rtl:ml-auto rtl:mr-56">
+          <div className="flex-1">
             <TabsContent activeTabName={activeMainTab?.name}>
               {services?.map((service) => (
                 <ServiceContainerBox

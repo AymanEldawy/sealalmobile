@@ -1,9 +1,12 @@
 import { PropTypes } from "prop-types";
-import React from "react";
+import React, { useContext } from "react";
 
 import FileIcon from "../Icons/FileIcon";
+import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
 
 export const FileUpload = ({ label, containerClass, classes, ...file }) => {
+  const { lang } = useContext(LanguageContext);
   return (
     <div className={`mb-4 ${containerClass}`}>
       {label ? (
@@ -18,7 +21,7 @@ export const FileUpload = ({ label, containerClass, classes, ...file }) => {
           <span className="scale-90">
             <FileIcon />
           </span>
-          Upload Photo
+          {fetchWord("upload_photo", lang)}
         </span>
         <input
           type="file"

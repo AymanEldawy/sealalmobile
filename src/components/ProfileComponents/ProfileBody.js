@@ -11,12 +11,12 @@ import CompaniesSuggestions from "./My/CompaniesSuggestions";
 
 const profileList = [
   { icon: <GearIcon className="h-6 w-6" />, name: "settings", role: ["all"] },
-  { icon: <PackagesIcon />, name: "packages", role: ["all"] },
-  { icon: <PaymentsIcon />, name: "payments", role: ["client"] },
+  { icon: <PaymentsIcon />, name: "payments", role: ["all"] },
+  { icon: <PackagesIcon />, name: "packages", role: ["provider"] },
   {
     icon: <PackagesIcon />,
     name: "companies_and_suggestions",
-    role: ["provider"],
+    role: ["client"],
   },
   { icon: <LogoutIcon />, name: "logout", role: ["all"] },
 ];

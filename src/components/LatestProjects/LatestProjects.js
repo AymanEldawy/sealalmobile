@@ -1,16 +1,17 @@
-import React from "react";
-import SectionTitle from "../Global/SectionTitle/SectionTitle";
-import { useContext } from "react";
 import { LanguageContext } from "@/context/LangContext";
-import { fetchWord } from "@/lang/fetchWord";
-import Slider from "react-slick";
 import { latestProjects } from "@/data/dummyData";
+import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { ChevronIcon } from "../Icons";
-import CustomSlideArrow from "../CustomSlideArrow/CustomSlideArrow";
+import React from "react";
+import { useContext } from "react";
+import Slider from "react-slick";
 
+import CustomSlideArrow from "../CustomSlideArrow/CustomSlideArrow";
+import SectionTitle from "../Global/SectionTitle/SectionTitle";
+import { ChevronIcon } from "../Icons";
+
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const settings = {
   className: "center",
@@ -22,7 +23,7 @@ const settings = {
   swipeToSlide: true,
   arrows: true,
   nextArrow: <CustomSlideArrow />,
-  prevArrow: <CustomSlideArrow classes="right-12" direction="prev" />,
+  prevArrow: <CustomSlideArrow classes="ltr:right-12 rtl:left-12" direction="prev" />,
 };
 const LatestProjects = () => {
   const { lang } = useContext(LanguageContext);

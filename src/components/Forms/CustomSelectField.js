@@ -21,7 +21,7 @@ const CustomSelectField = ({
       ) : null}
       <div className="relative">
         {iconStart ? (
-          <span className="absolute top-3 left-2">{iconStart}</span>
+          <span className="absolute top-3 ltr:left-2 rtl:right-2">{iconStart}</span>
         ) : null}
         <select
           className={`border border-gray-300 text-gray-500 w-full p-3 rounded-md appearance-none ${
@@ -37,7 +37,7 @@ const CustomSelectField = ({
               </option>
             ))}
         </select>
-        <span className="-rotate-90 absolute right-3 top-2 rtl:left-3 rtl:right-auto scale-50 flex items-center justify-center z-10 w-8 h-8">
+        <span className="-rotate-90 absolute ltr:right-3  top-2 rtl:left-3 scale-50 flex items-center justify-center z-10 w-8 h-8">
           <ChevronIcon
             color="#0063C6"
             className={`bg-white ${iconClassName}`}
