@@ -8,7 +8,7 @@ const AuthLayout = ({ children, pageTitle, description, link, ...props }) => {
     <Layout
       {...props}
       containerClassName="flex flex-col gap-4 !items-start justify-start !pb-8"
-      mainClassName="-mt-5"
+      mainClassName="-mt-5 bg-white h-full"
       hideIcons
       extraContent={
         <div className="">
@@ -17,7 +17,7 @@ const AuthLayout = ({ children, pageTitle, description, link, ...props }) => {
         </div>
       }
     >
-      <div className="flex flex-col flex-1 items-center mb-8">{children}</div>
+      <div className="flex flex-col flex-1 items-center pb-12">{children}</div>
     </Layout>
   );
 };
