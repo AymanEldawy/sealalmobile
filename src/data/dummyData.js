@@ -494,3 +494,63 @@ export const orders = [
   },
 ];
 
+export const notifications = [
+  {
+    date: "Today",
+    list: [
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "04:55",
+        status: true,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "04:03",
+        status: false,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "03:34",
+        status: true,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "02:54",
+        status: true,
+      },
+    ],
+  },
+  {
+    date: "Yesterday",
+    list: [
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "01:55",
+        status: false,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "12:33",
+        status: true,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "11:39",
+        status: false,
+      },
+      {
+        description: "Air conditioner transistor repair Confirm and send",
+        image: "/images/18571126_303.png",
+        time: "10:54",
+        status: true,
+      },
+    ],
+  },
+];

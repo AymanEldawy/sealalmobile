@@ -17,9 +17,10 @@ const OrderCompetedForm = ({
       open={openCompetedForm}
       close={onClosePopup}
       title={<span className="text-green-500">{fetchWord("done", lang)}</span>}
+      containerClassName="max-w-[575px] !items-end pb-12"
     >
       <div className="flex flex-col w-full md:min-w-[450px] max-w-[550px]">
-        <div className="flex flex-col items-center gap-6 p-12">
+        <div className="flex flex-col items-center gap-6 px-2 py-4">
           <LampIcon />
           <p className="text-[#061432]">{fetchWord("job_done_msg", lang)}</p>
           <Button

@@ -3,7 +3,7 @@ import React from "react";
 
 const CompanyCardBox = ({ company }) => {
   return (
-    <div className="p-4">
+    <div className="p-2">
       <div className="shadow text-center p-3 rounded-md bg-white">
         <Image
         className="block mx-auto"

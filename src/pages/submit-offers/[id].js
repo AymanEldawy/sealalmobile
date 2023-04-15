@@ -19,24 +19,24 @@ const SubmitOffers = () => {
     serOffer(getOfferById(offers, id));
   }, [id]);
   return (
-    <Layout>
-      <BannerTitle
+    <Layout full hideBottomMenu title={fetchWord("submit_offer", lang)}>
+      {/* <BannerTitle
         title={
           <span className="flex flex-col items-center justify-center">
             {fetchWord("submit_offer", lang)}
             <span className="text-secondary block mt-2 text-base">#{id}</span>
           </span>
         }
-      />
-      <div className="bg-[#F6F6F6] p-8">
+      /> */}
+      <div className="bg-[#F6F6F6] pt-8">
         <div className="container">
-          <div className="flex gap-6">
-            <SubmitOfferCard offer={offer} />
-            <div className="flex-1">
-              <SubmitOfferForm operation={operation}/>{" "}
-            </div>
-          </div>
+          <SubmitOfferCard offer={offer} />
         </div>
+        <div className="border-2 border-white my-4" />
+        <div className="container">
+          <SubmitOfferForm operation={operation} />{" "}
+        </div>
+        <div className="h-32" />
       </div>
     </Layout>
   );

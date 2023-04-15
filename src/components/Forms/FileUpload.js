@@ -1,16 +1,16 @@
+import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
 import { PropTypes } from "prop-types";
 import React, { useContext } from "react";
 
 import FileIcon from "../Icons/FileIcon";
-import { LanguageContext } from "@/context/LangContext";
-import { fetchWord } from "@/lang/fetchWord";
 
-export const FileUpload = ({ label, containerClass, classes, ...file }) => {
+export const FileUpload = ({ label,labelClassName ,containerClass, classes, ...file }) => {
   const { lang } = useContext(LanguageContext);
   return (
     <div className={`mb-4 ${containerClass}`}>
       {label ? (
-        <label className="flex items-center justify-between mb-2">
+        <label className={`flex text-[#00000080] items-center justify-between mb-2 ${labelClassName}`}>
           {label}
         </label>
       ) : null}

@@ -1,10 +1,19 @@
 import Image from "next/image";
 import React from "react";
 
-const PaymentMethods = ({ containerClassName, labelClassName, showInputs,...input }) => {
+const PaymentMethods = ({
+  containerClassName,
+  labelClassName,
+  onPaymentClick,
+  showInputs,
+  ...input
+}) => {
   return (
     <div className={`flex gap-4 items-center ${containerClassName} `}>
-      <label className={` flex flex-col gap-2 ${labelClassName}`}>
+      <label
+        className={` flex flex-col gap-2 ${labelClassName}`}
+        onClick={!!onPaymentClick ? onPaymentClick : undefined}
+      >
         <span className="rounded-md bg-white p-2 shadow">
           <Image
             src="/images/Visa.png"
@@ -14,9 +23,14 @@ const PaymentMethods = ({ containerClassName, labelClassName, showInputs,...inpu
             className="w-8 h-8 object-contain"
           />
         </span>
-        {!!showInputs? <input type="radio" name="payment_method" {...input} />: null}
+        {!!showInputs ? (
+          <input type="radio" name="payment_method" {...input} />
+        ) : null}
       </label>
-      <label className={` flex flex-col  gap-2 ${labelClassName}`}>
+      <label
+        className={` flex flex-col  gap-2 ${labelClassName}`}
+        onClick={!!onPaymentClick ? onPaymentClick : undefined}
+      >
         <span className="rounded-md bg-white p-2 shadow">
           <Image
             src="/images/mastercard.png"
@@ -26,9 +40,14 @@ const PaymentMethods = ({ containerClassName, labelClassName, showInputs,...inpu
             className="w-8 h-8 object-contain"
           />
         </span>
-        {!!showInputs? <input type="radio" name="payment_method" {...input} />: null}
+        {!!showInputs ? (
+          <input type="radio" name="payment_method" {...input} />
+        ) : null}
       </label>
-      <label className={` flex flex-col  gap-2 ${labelClassName}`}>
+      <label
+        className={` flex flex-col  gap-2 ${labelClassName}`}
+        onClick={!!onPaymentClick ? onPaymentClick : undefined}
+      >
         <span className="rounded-md bg-white p-2 shadow">
           <Image
             src="/images/cash.png"
@@ -38,7 +57,9 @@ const PaymentMethods = ({ containerClassName, labelClassName, showInputs,...inpu
             className="w-8 h-8 object-contain"
           />
         </span>
-        {!!showInputs? <input type="radio" name="payment_method" {...input} />: null}
+        {!!showInputs ? (
+          <input type="radio" name="payment_method" {...input} />
+        ) : null}
       </label>
     </div>
   );

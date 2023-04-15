@@ -21,15 +21,15 @@ const packages = [
 const MyPackages = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <div className="mt-12">
-      <h3 className="text-lg font-medium mb-8 text-primary">
+    <div className="">
+      <h3 className="text-center text-lg font-medium mb-4 text-primary">
         {fetchWord("choose_plan", lang)}
       </h3>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="flex flex-col gap-4">
         {packages?.map((plan) => (
           <div
-            className={`relative rounded-bl-[30px] rounded-tr-[30px] rounded-br-lg rounded-lr-lg p-6 flex-col flex gap-4 items-center
+            className={`relative bg-white rounded-bl-[30px] rounded-tr-[30px] rounded-br-lg rounded-lr-lg p-3 px-16 flex-col flex gap-4 items-start
             ${
               plan?.name === "standard"
                 ? "bg-yellow-100"
@@ -40,8 +40,8 @@ const MyPackages = () => {
             `}
             key={plan?.name}
           >
-            <span className="absolute top-1 left-3">
-              <GearIcon className="h-6 w-6 opacity-50" />
+            <span className="absolute top-1 left-1">
+              <GearIcon className="h-10 w-10 opacity-50" />
             </span>
             <h3
               className={`font-medium capitalize ${
@@ -54,30 +54,32 @@ const MyPackages = () => {
             >
               {fetchWord(plan?.name, lang)}
             </h3>
-            <h2 className="text-4xl font-medium flex items-end text-primary">
+            <h2 className="text-5xl font-medium flex items-end text-primary">
               {plan?.price}$
-              <small className="text-[10px] -mb-2 ">
+              <small className="text-xs -mb-2 ">
                 /{fetchWord("month", lang)}
               </small>
             </h2>
-            <ul className="flex flex-col gap-2">
-              {plan?.features?.map((feature) => (
-                <li className="text-lead text-sm" key={feature}>
-                  - {feature}
-                </li>
-              ))}
-            </ul>
-            <Button
-              classes={`capitalize min-w-[120px] text-black ${
-                plan?.name === "basic"
-                  ? "bg-secondary"
-                  : "border-2 border-primary !bg-transparent"
-              }`}
-            >
-              {fetchWord("add", lang)}
-            </Button>
-            <span className="absolute bottom-0 right-0">
-              <GearWorkIcon className="h-14 w-14 opacity-50" />
+            <div className="flex gap-16 items-end">
+              <ul className="flex flex-col gap-2">
+                {plan?.features?.map((feature) => (
+                  <li className="text-lead text-sm" key={feature}>
+                    - {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                classes={`capitalize min-w-[150px] text-sm !p-2 text-black ${
+                  plan?.name === "basic"
+                    ? "bg-secondary"
+                    : "border-2 border-primary !bg-transparent"
+                }`}
+              >
+                {fetchWord("add", lang)}
+              </Button>
+            </div>
+            <span className="absolute bottom-0 right-0 ">
+              <GearWorkIcon className="h-20 w-20 opacity-50" />
             </span>
           </div>
         ))}

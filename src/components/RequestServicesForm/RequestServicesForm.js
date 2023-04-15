@@ -1,17 +1,19 @@
 import { LanguageContext } from "@/context/LangContext";
+import { serviceProviders, services } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
 import React from "react";
 import { useContext } from "react";
-import { InputField } from "../Forms/InputField";
-import CustomSelectField from "../Forms/CustomSelectField";
-import { serviceProviders, services } from "@/data/dummyData";
 import { useState } from "react";
+
+import CustomSelectField from "../Forms/CustomSelectField";
+import { FileUpload } from "../Forms/FileUpload";
+import { InputField } from "../Forms/InputField";
 import { TextField } from "../Forms/TextField";
+import { Button } from "../Global/Button/Button";
 import { TimeCheckIcon } from "../Icons";
 import { PlusIcon, WorldIcon } from "../Icons";
-import { FileUpload } from "../Forms/FileUpload";
+import Modal from "../Modal/Modal";
 import PaymentMethods from "../PaymentMethods/PaymentMethods";
-import { Button } from "../Global/Button/Button";
 
 const timeList = [
   { id: 0, name: "1-2 AM" },
@@ -46,11 +48,11 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
   const [selectDate, setSelectDate] = useState("");
   const [selectTime, setSelectTime] = useState("");
   const [selectCategory, setSelectCategory] = useState("");
-  const [description, setDescription] = useState("");
   const [creditCard, setCreditCard] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
+  const [openPaymentForm, setOpenPaymentForm] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -63,86 +65,22 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
       creditCard,
       cvv,
       name,
-      description,
       expirationDate,
     });
-    setSelectedTab("confirmation");
+    setSelectedTab(1);
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h2 className="text-2xl font-semibold mb-6">
-        {fetchWord("add_information", lang)}{" "}
-      </h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 text-sm gap-3">
-        <InputField
-          label={fetchWord("service_name", lang)}
-          name="serviceName"
-          placeholder={fetchWord("service_name_placeholder", lang)}
-          value={serviceName}
-          onChange={(e) => setServiceName(e.target.value)}
-          classes="!py-3 placeholder:text-xs"
-        />
-        <CustomSelectField
-          label={fetchWord("select_category", lang)}
-          name="selectCategory"
-          value={selectCategory}
-          list={services}
-          onChange={(e) => setSelectCategory(e.target.value)}
-        />
-        <InputField
-          label={fetchWord("location", lang)}
-          name="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          classes="!py-3"
-          iconEnd={<WorldIcon />}
-        />
-        <InputField
-          label={fetchWord("select_date", lang)}
-          name="selectDate"
-          value={selectDate}
-          onChange={(e) => setSelectDate(e.target.value)}
-          placeholder={fetchWord("select_date_placeholder", lang)}
-          iconStart={<TimeCheckIcon />}
-        />
-        <CustomSelectField
-          label={fetchWord("select_time", lang)}
-          name="selectTime"
-          value={selectTime}
-          list={timeList}
-          onChange={(e) => setSelectTime(e.target.value)}
-          placeholder={fetchWord("select_time_placeholder", lang)}
-          iconStart={<TimeCheckIcon />}
-          selectClassName="text-sm"
-        />
-      </div>
-      <h2 className="text-2xl font-semibold my-6">
-        {fetchWord("add_information", lang)}{" "}
-      </h2>
-      <TextField
-        value={description}
-        label={fetchWord("description", lang)}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder={fetchWord("description_placeholder", lang)}
-      />
-      <button type="button" className=" flex gap-2 items-center">
-        <span className="text-white bg-primary rounded-md p-2">
-          <PlusIcon />
-        </span>
-        {fetchWord("add_picture", lang)}
-      </button>
-      <div className="flex justify-center items-center flex-col mt-8">
-        <FileUpload classes="min-h-[auto]  min-w-[340px] p-4 px-8 border border-primary" />
-        <button type="button" className="text-primary">
-          {fetchWord("camera_capture", lang)}{" "}
-        </button>
-      </div>
-      <h2 className="text-2xl font-semibold my-6">
-        {fetchWord("payment_method", lang)}{" "}
-      </h2>
-      <PaymentMethods showInputs />
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 mt-4">
+    <>
+      <Modal
+        open={openPaymentForm}
+        close={() => setOpenPaymentForm(false)}
+        containerClassName="!items-end z-20 max-w-[575px] !justify-center"
+        contentBoxClassName="relative !overflow-visible max-w-[90%] !rounded-none pt-12"
+      >
+        <h2 className="bg-primary text-white text-center text-xl capitalize shadow-md p-6 rounded-3xl -top-9 left-0 absolute w-full">
+          {fetchWord("credit_card", lang)}
+        </h2>
         <InputField
           label={fetchWord("name", lang)}
           name="name"
@@ -159,13 +97,13 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
           classes="!py-3"
           placeholder="92839239237923"
         />
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-full">
           <InputField
             label={fetchWord("expiration_date", lang)}
             name="expirationDate"
             value={expirationDate}
             onChange={(e) => setExpirationDate(e.target.value)}
-            classes="!py-3"
+            classes="!py-3 w-full"
             placeholder="Y/M"
           />
           <InputField
@@ -177,11 +115,78 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
             placeholder="***"
           />
         </div>
-      </div>
-      <Button classes="w-[270px] py-3 text-sm mt-8">
-        {fetchWord("book_now", lang)}{" "}
-      </Button>
-    </form>
+        <Button classes="w-full font-medium mt-8">
+          {fetchWord("confirmation_payment", lang)}
+        </Button>
+      </Modal>
+      <form onSubmit={onSubmit}>
+        <InputField
+          label={fetchWord("service_name", lang)}
+          name="serviceName"
+          placeholder={fetchWord("service_name_placeholder", lang)}
+          value={serviceName}
+          onChange={(e) => setServiceName(e.target.value)}
+          classes="!py-3 placeholder:text-xs"
+          labelClassName="!text-black"
+        />
+        <CustomSelectField
+          label={fetchWord("select_category", lang)}
+          name="selectCategory"
+          value={selectCategory}
+          list={services}
+          onChange={(e) => setSelectCategory(e.target.value)}
+          labelClassName="!text-black"
+        />
+        <InputField
+          label={fetchWord("location", lang)}
+          name="location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          classes="!py-3 !bg-white"
+          iconEnd={<WorldIcon />}
+          labelClassName="!text-black"
+        />
+        <InputField
+          label={fetchWord("select_date", lang)}
+          name="selectDate"
+          value={selectDate}
+          onChange={(e) => setSelectDate(e.target.value)}
+          placeholder={fetchWord("select_date_placeholder", lang)}
+          iconStart={<TimeCheckIcon />}
+          labelClassName="!text-black"
+        />
+        <CustomSelectField
+          label={fetchWord("select_time", lang)}
+          name="selectTime"
+          value={selectTime}
+          list={timeList}
+          onChange={(e) => setSelectTime(e.target.value)}
+          placeholder={fetchWord("select_time_placeholder", lang)}
+          iconStart={<TimeCheckIcon />}
+          selectClassName="text-sm"
+          labelClassName="!text-black"
+          iconClassName="!text-gray-500"
+        />
+
+        <h3 className="text-base mt-4 mb-2">
+          {fetchWord("payment_method", lang)}{" "}
+        </h3>
+        <PaymentMethods
+          onPaymentClick={() => setOpenPaymentForm(true)}
+          showInputs
+          containerClassName="justify-around mb-4"
+        />
+        <div className="h-32 -mx-4 bg-[#f2f2f2]" />
+        <div className="bg-[#f2f2f2] fixed bottom-0 left-0 w-full max-w-[575px] p-4">
+          <Button
+            classes="w-[270px] py-3 text-sm !w-full block "
+            onClick={() => setSelectedTab(3)}
+          >
+            {fetchWord("next", lang)}{" "}
+          </Button>
+        </div>
+      </form>
+    </>
   );
 };
 

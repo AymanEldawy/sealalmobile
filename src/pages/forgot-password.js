@@ -21,38 +21,24 @@ export default function ForgotPassword() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AuthLayout>
-        <div className="flex flex-col flex-1 mt-24 items-center">
-          <div className="flex flex-col w-full max-w-[500px]">
-            <h1 className="text-xl text-center mb-8 font-medium capitalize">
-              {fetchWord("forgot_password", lang)}
-            </h1>
-            <div className="text-center mb-8 text-[#505050]">
-              <p className="flex justify-center gap-1">
-                {fetchWord("forgot_password_1", lang)}
-                <span className="text-primary font-medium">
-                  {fetchWord("secret_code", lang)}
-                </span>
-              </p>
-              <p>{fetchWord("forgot_password_2", lang)}</p>
-            </div>
-            <InputField
-              name="email"
-              value={email}
-              placeholder={fetchWord("email", lang)}
-              onChange={(e) => setEmail(e.target.value)}
-              classes="placeholder:text-primary !p-3 border border-[#6D41A1]"
-            />
-            <Button classes="rounded-none capitalize !p-3">
-              {fetchWord("send_code", lang)}
-            </Button>
-            <Link
-              href="/login"
-              className=" text-gray-400 text-sm mt-8 text-center"
-            >
-              {fetchWord("or_sign_in", lang)}
-            </Link>
-          </div>
+      <AuthLayout
+        hideBottomMenu
+        full
+        pageTitle={`${fetchWord("reset_password", lang)}`}
+        description={fetchWord("reset_password_description", lang)}
+      >
+        <div className="flex flex-col w-full max-w-[500px] mt-12">
+          <InputField
+            name="email"
+            value={email}
+            label={fetchWord("email_phone", lang)}
+            placeholder='whynotdevlopment@gmail.com'
+            onChange={(e) => setEmail(e.target.value)}
+            classes=" !p-3 border border-[#6D41A1] w-full"
+          />
+          <Button classes="rounded-none capitalize !p-4 text-black mt-24 bg-secondary">
+            {fetchWord("reset_password", lang)}
+          </Button>
         </div>
       </AuthLayout>
     </>

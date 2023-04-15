@@ -18,23 +18,22 @@ const OrderCancelForm = ({ onClosePopup, onConfirmCancel, openCancelForm }) => {
       open={openCancelForm}
       close={onClosePopup}
       title={<span className="text-red-500">{fetchWord("cancel", lang)}</span>}
+      containerClassName="max-w-[575px] !items-end pb-12"
     >
-      <div className="flex flex-col w-full md:min-w-[450px] max-w-[550px]">
-        <TextField
-          name={reason}
-          onChange={(e) => setReason(e.target.value)}
-          label={fetchWord("reason_label", lang)}
-          placeholder={fetchWord("enter_here", lang)}
-          classes="min-h-[230px]"
-          ref={inputRef}
-        />
-        <Button
-          classes="bg-secondary mx-auto px-8 w-[70%]"
-          onClick={() => onConfirmCancel(reason)}
-        >
-          {fetchWord("send", lang)}
-        </Button>
-      </div>
+      <TextField
+        name={reason}
+        onChange={(e) => setReason(e.target.value)}
+        label={fetchWord("reason_label", lang)}
+        placeholder={fetchWord("enter_here", lang)}
+        classes="min-h-[230px] !w-full"
+        ref={inputRef}
+      />
+      <Button
+        classes="bg-secondary mx-auto px-8 w-[70%]"
+        onClick={() => onConfirmCancel(reason)}
+      >
+        {fetchWord("send", lang)}
+      </Button>
     </Modal>
   );
 };

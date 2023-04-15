@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #ffffff;
+  background-color: #F2F2F2;
   /* background-color: #e4e4e4; */
   font-family: "Poppins", sans-serif;
   /* height: 5000px; */
@@ -105,4 +105,54 @@ div:has(select:required) label::before {
 
 .scroll-hide::-webkit-scrollbar {
   display: none;
+}
+
+
+/* mobile container */
+body {
+  background-color: #666666;
+}
+
+.mobile-container-full,
+.mobile-container {
+  position: relative;
+  background-color: #F2F2F2;
+  width: 100%;
+  max-width: 575px;
+  padding: 1rem;
+  height: 100vh;
+  overflow-y: auto;
+}
+.mobile-container-full {
+  padding: 0;
+}
+.mobile-container main {
+  /* height: 5000px; */
+}
+.mobile-container-full::-webkit-scrollbar,
+.mobile-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.banner-slide ul {
+  bottom: 15px
+}
+.banner-slide ul li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #999;
+}
+.banner-slide ul li.slick-active {
+  background: #666;
+
+}
+.banner-slide ul li button{}
+.banner-slide ul li button:before{ 
+  display: none;
+}
+
+.menu-bottom-active-link svg {
+  color: var(--secondary-color)
 }

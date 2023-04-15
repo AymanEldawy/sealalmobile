@@ -1,14 +1,14 @@
+import AuthLayout from "@/components/AuthLayout/AuthLayout";
+import { InputField } from "@/components/Forms/InputField";
+import { Button } from "@/components/Global/Button/Button";
+import { Layout } from "@/components/Layout/Layout";
 import { fetchWord } from "@/lang/fetchWord";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useContext, useState } from "react";
 
 import { LanguageContext } from "./../context/LangContext";
-import { InputField } from "@/components/Forms/InputField";
-import { Button } from "@/components/Global/Button/Button";
-import Link from "next/link";
-import { Layout } from "@/components/Layout/Layout";
-import AuthLayout from "@/components/AuthLayout/AuthLayout";
 
 export default function Login() {
   const { lang } = useContext(LanguageContext);
@@ -22,12 +22,20 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AuthLayout>
-        <div className="flex flex-col flex-1 mt-24 items-center w-full max-w-[500px]">
-          <div className="flex flex-col w-full max-w-[500px]">
-            <h1 className="text-xl text-center  mb-8 capitalize">
-              {fetchWord("signin", lang)}
-            </h1>
+      <AuthLayout
+        hideBottomMenu
+        full
+        pageTitle={`${fetchWord("welcome", lang)} Alo Tadilat`}
+        description={fetchWord("welcome_msg", lang)}
+        link={
+          <Link href={"/signup"} className="text-secondary underline mx-1">
+            {" "}
+            {fetchWord("signup", lang)}
+          </Link>
+        }
+      >
+        <div className="flex flex-col flex-1 mt-12 items-center w-full max-w-[500px]">
+          <form className="flex flex-col w-full max-w-[500px]">
             <InputField
               name="email"
               value={email}
@@ -42,20 +50,23 @@ export default function Login() {
             />
             <label className="flex item-center gap-2 mb-4">
               <input
+                className="w-5 h-5 accent-green-500"
                 type="checkbox"
                 name="remember_me"
                 value={(e) => setRememberMe(e.target.checked)}
               />
               {fetchWord("remember_me", lang)}
             </label>
-            <Button classes="rounded-none">{fetchWord("signin", lang)}</Button>
+            <Button classes="rounded-none !bg-secondary !text-black font-medium text-base capitalize !p-4">
+              {fetchWord("signin", lang)}
+            </Button>
             <div className="mt-8 text-center gap-1 flex justify-center font-medium">
               {fetchWord("dont_have_account", lang)}
-              <Link href="/signup" className=" text-secondary">
+              <Link href="/signup" className=" text-primary font-normal">
                 {fetchWord("register_now", lang)}
               </Link>
             </div>
-          </div>
+          </form>
         </div>
       </AuthLayout>
     </>

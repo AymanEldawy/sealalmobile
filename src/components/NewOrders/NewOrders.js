@@ -43,9 +43,9 @@ const NewOrders = ({ layout }) => {
         onConfirmDone={onConfirmDone}
         openCompetedForm={openCompetedForm}
       />
-      <div className=" bg-[#F6F6F6] p-8">
+      <div className=" bg-[#F6F6F6] py-8">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-4">
             {orders?.map((order) => (
               <OrderCard
                 onClickCancel={onClickCancel}

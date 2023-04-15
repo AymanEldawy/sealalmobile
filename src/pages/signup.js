@@ -1,9 +1,14 @@
+import AuthLayout from "@/components/AuthLayout/AuthLayout";
 import { FileUpload } from "@/components/Forms/FileUpload";
 import { InputField } from "@/components/Forms/InputField";
 import { Button } from "@/components/Global/Button/Button";
 import { CustomerIcon, ServiceProviderIcon } from "@/components/Icons";
 import CompanyIcon from "@/components/Icons/CompanyIcon";
 import { Layout } from "@/components/Layout/Layout";
+import SignupCompanyForm from "@/components/SignupCompanyForm/SignupCompanyForm";
+import SignupCustomerForm from "@/components/SignupCustomerForm/SignupCustomerForm";
+import SignupServiceForm from "@/components/SignupServiceForm/SignupServiceForm";
+import SignupTabBar from "@/components/SignupTabBar/SignupTabBar";
 import { fetchWord } from "@/lang/fetchWord";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,11 +16,6 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 
 import { LanguageContext } from "./../context/LangContext";
-import SignupTabBar from "@/components/SignupTabBar/SignupTabBar";
-import SignupCustomerForm from "@/components/SignupCustomerForm/SignupCustomerForm";
-import SignupServiceForm from "@/components/SignupServiceForm/SignupServiceForm";
-import AuthLayout from "@/components/AuthLayout/AuthLayout";
-import SignupCompanyForm from "@/components/SignupCompanyForm/SignupCompanyForm";
 
 const tabs = ["customer", "service provider", "company"];
 export default function Login() {
@@ -46,16 +46,24 @@ export default function Login() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AuthLayout>
-        <div className="mt-8 flex flex-col w-full max-w-[500px]">
-          <h1 className="text-xl text-center font-medium mb-4 capitalize">
-            {fetchWord("register", lang)}
-          </h1>
-          <SignupTabBar activeStage={activeStage} />
+      <AuthLayout
+        hideBottomMenu
+        full
+        pageTitle={`${fetchWord("create_your_account", lang)}`}
+        description={fetchWord("have_account", lang)}
+        link={
+          <Link href={"/login"} className="text-secondary underline mx-1">
+            {" "}
+            {fetchWord("signin", lang)}
+          </Link>
+        }
+      >
+        <SignupTabBar activeStage={activeStage} />
+        <div className="mt-2 flex flex-col w-full max-w-[500px]">
           {displayTab()}
 
           <Button
-            classes="rounded-none"
+            classes="!bg-secondary !text-black !p-4 mt-4 rounded-none capitalize"
             onClick={() => {
               if (activeStage !== "company") goNext();
               else submit("");

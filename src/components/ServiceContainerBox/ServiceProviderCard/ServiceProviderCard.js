@@ -13,12 +13,13 @@ const ServiceProviderCard = ({ provider }) => {
   const { lang } = useContext(LanguageContext);
   console.log(provider?.image);
   return (
-    <div className="shadow rounded-md p-4 flex gap-4">
+    <div className="shadow rounded-xl p-4 flex gap-4 bg-white">
       <Image
+        className="object-contain max-h-[140px] rounded-xl overflow-hidden"
         src={`${provider?.image}`}
         alt={provider?.name}
         height={160}
-        width={100}
+        width={150}
       />
       <div className="flex flex-1 justify-between gap-4">
         <div className="flex flex-col justify-between h-full">
@@ -41,7 +42,7 @@ const ServiceProviderCard = ({ provider }) => {
           </span>
           <PrimaryLink
             link={`/providers/${provider?.id}`}
-            className="border-primary border-2 font-medium capitalize text-sm !bg-transparent text-black"
+            className="border-primary border-2 font-medium capitalize text-sm !bg-transparent !text-black"
           >
             {fetchWord("view_profile", lang)}
           </PrimaryLink>

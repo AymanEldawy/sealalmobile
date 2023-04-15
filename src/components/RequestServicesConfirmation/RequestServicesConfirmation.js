@@ -8,19 +8,25 @@ import { useContext } from "react";
 import { Button } from "../Global/Button/Button";
 import { EditIcon, ElectricCategoryIcon, WorldIcon } from "../Icons";
 
-const RequestServicesConfirmation = ({ setSelectedTab, setOpenFormFeedback }) => {
+const RequestServicesConfirmation = ({
+  setSelectedTab,
+  setOpenFormFeedback,
+  layout,
+}) => {
   const { lang } = useContext(LanguageContext);
   return (
     <div className="">
-      <div className="flex flex-col gap-5 bg-[#F5F5F5] p-4 py-8 rounded-md">
+      <div className="flex flex-col gap-5 p-4 py-8 rounded-md">
         <h3 className="text-lg font-medium capitalize items-center flex justify-between">
           Air conditioner transistor repair confirm and send
-          <button
-            onClick={() => setSelectedTab("information")}
-            className="ltr:ml-auto rtl:mr-auto scale-75 cursor-pointer"
-          >
-            <EditIcon />
-          </button>
+          {layout === "view" ? null : (
+            <button
+              onClick={() => setSelectedTab(2)}
+              className="ltr:ml-auto rtl:mr-auto scale-75 cursor-pointer"
+            >
+              <EditIcon />
+            </button>
+          )}
         </h3>
         <p className="text-lead text-sm">30 Nov , 2022 - :30 PM</p>
         <div className="flex gap-2 items-center">
@@ -28,12 +34,14 @@ const RequestServicesConfirmation = ({ setSelectedTab, setOpenFormFeedback }) =>
           <Link href="/" className="text-primary font-medium capitalize">
             Electrical Devices
           </Link>
-          <button
-            onClick={() => setSelectedTab("information")}
-            className="ltr:ml-auto rtl:mr-auto scale-75 cursor-pointer"
-          >
-            <EditIcon />
-          </button>
+          {layout === "view" ? null : (
+            <button
+              onClick={() => setSelectedTab(2)}
+              className="ltr:ml-auto rtl:mr-auto scale-75 cursor-pointer"
+            >
+              <EditIcon />
+            </button>
+          )}
         </div>
         <p className="flex gap-2 items-center">
           <WorldIcon />
@@ -58,14 +66,25 @@ const RequestServicesConfirmation = ({ setSelectedTab, setOpenFormFeedback }) =>
             width={200}
             height={180}
           />
+          <Image
+            src="/images/18571126_303.png"
+            alt="product Images"
+            width={200}
+            height={180}
+          />
         </div>
       </div>
-      <Button
-        onClick={() => setOpenFormFeedback(true)}
-        classes="w-[300px] !p-3 mt-8 mx-auto block"
-      >
-        {fetchWord("confirm_send", lang)}{" "}
-      </Button>
+      <div className="bg-[#f2f2f2] -mx-4 h-32" />
+      {layout === "view" ? null : (
+        <div className="bg-[#f2f2f2] fixed bottom-0 left-0 w-full max-w-[575px] p-4">
+          <Button
+            onClick={() => setSelectedTab(5)}
+            classes="w-[300px] !p-3 mx-auto block"
+          >
+            {fetchWord("confirm_send", lang)}{" "}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

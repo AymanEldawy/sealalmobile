@@ -7,12 +7,12 @@ import React, { useContext } from "react";
 const MyPayments = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <ul className="flex flex-col gap-4 mt-8 max-w-[450px]">
-      <li className="flex gap-3 items-center bg-[#F5F5F5] rounded-lg p-6 text-lead">
+    <ul className="flex flex-col gap-4">
+      <li className="flex gap-3 items-center bg-white rounded-xl p-6 px-10 text-lead">
         <PaypalIcon />
         Whynot@gmail.com
       </li>
-      <li className="flex gap-3 items-center bg-[#F5F5F5] rounded-lg p-6 text-lead">
+      <li className="flex gap-3 items-center bg-white rounded-xl p-6 px-10 text-lead">
         <Image
           src="/images/Visa.png"
           alt=""
@@ -22,7 +22,7 @@ const MyPayments = () => {
         />
         **** **** **** 2564
       </li>
-      <li className="flex gap-3 items-center bg-[#F5F5F5] rounded-lg p-6 text-lead">
+      <li className="flex gap-3 items-center bg-white rounded-xl p-6 px-10 text-lead">
         <Image
           src="/images/mastercard.png"
           alt=""
@@ -32,7 +32,7 @@ const MyPayments = () => {
         />
         **** **** **** 2564
       </li>
-      <li className="bg-[#F5F5F5] rounded-lg p-6">
+      <li className="bg-white rounded-xl p-6 px-10">
         <button className="flex gap-4 items-center text-primary font-medium">
           <span className="w-7 h-7 rounded-full flex items-center justify-center border-primary border-2">
             <PlusIcon className="text-primary font-semibold" />

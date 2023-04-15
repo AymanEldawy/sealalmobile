@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ChevronIcon } from "../Icons";
 
 const CustomSelectField = ({
@@ -9,12 +10,14 @@ const CustomSelectField = ({
   selectClassName,
   placeholder,
   iconStart,
+  containerClassName,
+  labelClassName,
   ...selectProps
 }) => {
   return (
-    <div className="mb-4 w-full">
+    <div className={`mb-4 w-full ${containerClassName}`}>
       {label ? (
-        <label className="flex items-center justify-between mb-2">
+        <label className={`text-[#00000080] flex items-center justify-between mb-2  ${labelClassName}`}>
           {label}
           {error?.length ? <span className="">{error}</span> : null}
         </label>
@@ -24,7 +27,7 @@ const CustomSelectField = ({
           <span className="absolute top-3 ltr:left-2 rtl:right-2">{iconStart}</span>
         ) : null}
         <select
-          className={`border border-gray-300 text-gray-500 w-full p-3 rounded-md appearance-none ${
+          className={`border border-gray-300 text-[#00000080] w-full p-3 rounded-md appearance-none ${
             !!iconStart ? "ltr:pl-10 rtl:pr-10" : ""
           }  ${selectClassName}`}
           {...selectProps}
@@ -37,10 +40,10 @@ const CustomSelectField = ({
               </option>
             ))}
         </select>
-        <span className="-rotate-90 absolute ltr:right-3  top-2 rtl:left-3 scale-50 flex items-center justify-center z-10 w-8 h-8">
+        <span className="-rotate-90 absolute ltr:right-2  top-1 rtl:left-2 scale-50 flex items-center justify-center z-10 w-8 h-8">
           <ChevronIcon
-            color="#0063C6"
-            className={`bg-white ${iconClassName}`}
+            color="white"
+            className={` ${iconClassName}`}
           />
         </span>
       </div>

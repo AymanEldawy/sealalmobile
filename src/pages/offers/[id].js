@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppShareIcon } from "@/components/Icons";
 import ServiceProviderCard from "@/components/ServiceContainerBox/ServiceProviderCard/ServiceProviderCard";
+import RequestServicesConfirmation from "@/components/RequestServicesConfirmation/RequestServicesConfirmation";
 const SingleOffer = () => {
   const { lang } = useContext(LanguageContext);
   const [offer, setOffer] = useState({});
@@ -21,28 +22,42 @@ const SingleOffer = () => {
     setOffer(getOfferById(offers, id));
   }, [id]);
   return (
-    <Layout>
-      <BannerTitle title={fetchWord("offers", lang)} />
+    <Layout
+      full
+      mainClassName="!rounded-none bg-[#F2F2F2]"
+      title={fetchWord("offers", lang)}
+    >
       <div className="container">
-        <div className="flex gap-12 mt-8">
+        {/* <RequestServicesConfirmation
+          layout="view"
+          // tabName="confirmation"
+          // setSelectedTab={setSelectedTab}
+          // setOpenFormFeedback={setOpenFormFeedback}
+        /> */}
+        <div className="flex flex-col gap-12 pt-8">
           <Image
-            className="object-cover w-full flex-1 max-w-[400px]"
+            className="object-cover w-full flex-1"
             src={offer?.image}
             alt={offer?.name}
-            width={140}
+            width={300}
             height={200}
           />
           <div className="flex flex-col gap-3 flex-1 relative">
-            <Link href="" className="absolute top-0 ltr:right-0 rtl:left-0">
-              <WhatsAppShareIcon />
-            </Link>
-            <h3 className="font-medium text-2xl">{offer?.name}</h3>
-            <span className="text-secondary ">#{offer?.offerNumber}</span>
-            <p className="text-lead ">{offer?.date}</p>
+            <div className="flex justify-between items-center gap-2 flex-wrap">
+              <h3 className="font-medium text-2xl">{offer?.name}</h3>
+              <span className="text-secondary ">#{offer?.offerNumber}</span>
+            </div>
+            <div className="flex justify-between items-center gap-2 flex-wrap">
+              <p className="text-lead ">{offer?.date}</p>
+              <Link href="" className="">
+                <WhatsAppShareIcon />
+              </Link>
+            </div>
           </div>
         </div>
+        <div className="border border-white my-4 -mx-4" />
 
-        <div className="mt-12">
+        <div className="pb-32">
           <div className="flex justify-between mb-4">
             <h2 className="text-primary text-xl items-center capitalize font-medium flex gap-2">
               {fetchWord("all_offers", lang)}

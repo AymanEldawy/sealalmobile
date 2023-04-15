@@ -1,14 +1,21 @@
-import Banner from '@/components/Banner/Banner';
-import { Layout } from '@/components/Layout/Layout';
-import ServicesSection from '@/components/ServicesSection/ServicesSection';
-import Head from 'next/head';
-import { useContext } from 'react';
+import Banner from "@/components/Banner/Banner";
+import BannerSlide from "@/components/BannerSlide/BannerSlide";
+import LatestProjects from "@/components/LatestProjects/LatestProjects";
+import { Layout } from "@/components/Layout/Layout";
+import OurTeam from "@/components/OurTeam/OurTeam";
+import ServicesSection from "@/components/ServicesSection/ServicesSection";
+import Testimonial from "@/components/Testimonial/Testimonial";
+import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
+import Head from "next/head";
+import { useContext } from "react";
 
-import { LanguageContext } from './../context/LangContext';
-import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
-import LatestProjects from '@/components/LatestProjects/LatestProjects';
-import Testimonial from '@/components/Testimonial/Testimonial';
-import OurTeam from '@/components/OurTeam/OurTeam';
+import { LanguageContext } from "./../context/LangContext";
+import BannerLocation from "@/components/BannerLocation/BannerLocation";
+import CategoriesSection from "@/components/CategoriesSection/CategoriesSection";
+import CompanyCardBox from "@/components/ServiceContainerBox/CompanyCardBox";
+import { companies } from "@/data/dummyData";
+import Link from "next/link";
+import { fetchWord } from "@/lang/fetchWord";
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -21,15 +28,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Banner />
+      <Layout
+        containerClassName="!block pb-7"
+        full
+        arrowClassName="hidden"
+        extraContent={<BannerSlide />}
+        extraContent2={<BannerLocation />}
+        mainClassName="rounded-t-x2l -mt-5"
+        hideIcons
+      >
+        <CategoriesSection />
+        <div className="bg-bmain p-4">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-[#414B5A] font-semibold text-xl uppercase ">
+              {fetchWord("categories", lang)}
+            </h2>
+            <Link href="/" className="uppercase text-primary font-normal">
+              {fetchWord('see_all', lang)}
+            </Link>
+          </div>
+          <div className="overflow-hidden w-full">
+            <div className="flex max-w-full">
+              {companies?.slice(0, 4)?.map((company) => (
+                <CompanyCardBox key={company?.name} company={company} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* <Banner />
         <ServicesSection />
         <WhyChooseUs />
         <LatestProjects />
-        <Testimonial /> 
-        <OurTeam />
-
-       
+        <Testimonial />
+        <OurTeam /> */}
       </Layout>
     </>
   );

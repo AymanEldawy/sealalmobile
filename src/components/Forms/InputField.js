@@ -7,12 +7,14 @@ export const InputField = ({
   classes,
   iconStart,
   iconEnd,
+  labelClassName,
+  containerClassName,
   ...inputProps
 }) => {
   return (
-    <div className="mb-4 w-full">
+    <div className={`mb-4 w-full ${containerClassName}`}>
       {label ? (
-        <label className="flex items-center justify-between mb-2">
+        <label className={`flex items-center justify-between mb-2 text-[#00000080]  ${labelClassName}`}>
           {label}
           {error?.length ? <span className="">{error}</span> : null}
         </label>
@@ -25,7 +27,7 @@ export const InputField = ({
           </span>
         ) : null}
         <input
-          className={`border border-gray-300 w-full p-2 py-3 rounded-md ${
+          className={`border border-gray-300 w-full p-4 text-[#00000080 ] rounded-lg ${
             !!iconStart ? "ltr:pl-10 rtl:pr-10" : ""
           } ${!!iconEnd ? "ltr:pr-10 rtl:pl-10" : ""}  ${classes}`}
           {...inputProps}

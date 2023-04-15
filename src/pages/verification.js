@@ -20,46 +20,45 @@ export default function ForgotPassword() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AuthLayout>
-        <div className="flex flex-col w-full max-w-[500px] mt-24">
-          <h1 className="text-xl text-center mb-8 font-medium capitalize">
-            {fetchWord("verification", lang)}
-          </h1>
-
-          <p className=" text-[#505050] font-medium gap-1 flex justify-center">
-            {fetchWord("please_enter", lang)}
-            <span className="text-primary font-medium uppercase">
-              {fetchWord("secret_code", lang)}
-            </span>
-            <span className="text-primary">{fetchWord("sent_to", lang)}</span>
-          </p>
-          <p className="text-center mb-8 text-sm mt-2 font-medium">
-            +45451231551
-          </p>
+      <AuthLayout
+        hideBottomMenu
+        full
+        pageTitle={`${fetchWord("enter_code", lang)}`}
+        description={fetchWord("enter_code_description", lang)}
+      >
+        <div className="flex flex-col w-full max-w-[500px] mt-12">
           <div className="flex gap-4">
             <InputField
               type="tel"
-              classes="!p-6"
               onChange={(e) => setNumbers(e.target.value)}
+              classes="!p-6"
+              placeholder="2"
             />
             <InputField
               type="tel"
-              classes="!p-6"
               onChange={(e) => setNumbers(e.target.value)}
+              classes="!p-6"
+              placeholder="2"
             />
             <InputField
               type="tel"
-              classes="!p-6"
               onChange={(e) => setNumbers(e.target.value)}
+              classes="!p-6"
+              placeholder="2"
             />
             <InputField
               type="tel"
-              classes="!p-6"
               onChange={(e) => setNumbers(e.target.value)}
+              classes="!p-6"
+              placeholder="2"
             />
           </div>
-          <Button classes="rounded-none capitalize !p-3">
-            {fetchWord("confirm", lang)}
+          <div className="mt-8 flex flex-col items-center">
+            <p className="text-lead text-sm">{fetchWord("receive_code", lang)}</p>
+            <p className="text-primary text-sm">{fetchWord("resend_code", lang)}</p>
+          </div>
+          <Button classes="rounded-none capitalize !p-4 text-black bg-secondary mt-14">
+            {fetchWord("keep_going", lang)}
           </Button>
         </div>
       </AuthLayout>

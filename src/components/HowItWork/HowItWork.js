@@ -3,45 +3,21 @@ import { fetchWord } from "@/lang/fetchWord";
 import React from "react";
 import { useContext } from "react";
 
+import { Button } from "../Global/Button/Button";
 import { WashMachineIcon } from "../Icons";
 
-const steps = [
-  {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing ",
-    label: "enter_information",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing ",
-    label: "confirmation",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing ",
-    label: "wait_offers",
-  },
-];
-const HowItWork = () => {
+const HowItWork = ({ setSelectedTab }) => {
   const { lang } = useContext(LanguageContext);
   return (
-    <div className="bg-[#ffde93] px-4 py-8 rounded-md max-w-xs sticky top-0 h-[100dvh]">
-      <div className="text-center mb-4">
-        <WashMachineIcon  className="mx-auto w-fit"/>
-      </div>
-      <div className="flex flex-col gap-4">
-        {steps?.map((step, index) => (
-          <div
-            className="flex flex-col gap-2 justify-center items-center"
-            key={index}
-          >
-            <span className="h-14 w-14 rounded-full font-medium text-primary text-lg bg-white flex justify-center items-center">
-              {index + 1}
-            </span>
-            <h3 className="font-medium ">
-              {fetchWord(step?.label, lang)}
-            </h3>
-            <p className="text-center text-[#697B95] text-sm">{step?.text}</p>
-          </div>
-        ))}
-      </div>
+    <div className="text-center pb-8 p-8 pt-16">
+      <WashMachineIcon className="mx-auto !max-w-full" />
+      <h1 className="text-primary text-xl font-medium mt-4 capitalize mb-6">
+        {fetchWord("welcome_dear", lang)}
+      </h1>
+      <p className="mt-2">{fetchWord("request_services_msg", lang)}</p>
+      <Button onClick={() => setSelectedTab(2)} classes="block w-full mt-20">
+        {fetchWord("get_started", lang)}
+      </Button>
     </div>
   );
 };

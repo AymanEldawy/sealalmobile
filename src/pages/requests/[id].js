@@ -13,8 +13,7 @@ const SingleRequest = () => {
   const { lang } = useContext(LanguageContext);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   return (
-    <Layout>
-      <BannerTitle title={fetchWord("my_requests", lang)} />
+    <Layout full title={fetchWord("my_requests", lang)}>
       <div className="shadow-md">
         <div className="container">
           <TabsList

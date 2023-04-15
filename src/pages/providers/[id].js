@@ -1,13 +1,17 @@
 import BackToHome from "@/components/Global/BackToHome/BackToHome";
 import { Button } from "@/components/Global/Button/Button";
-import { LampIcon } from "@/components/Icons";
+import { HeartIcon, LampIcon } from "@/components/Icons";
+import MessageIcon from "@/components/Icons/MessageIcon";
+import ShareIcon from "@/components/Icons/ShareIcon";
 import { Layout } from "@/components/Layout/Layout";
 import Modal from "@/components/Modal/Modal";
+import PaymentMethods from "@/components/PaymentMethods/PaymentMethods";
 import ProviderInfo from "@/components/ProviderInfo/ProviderInfo";
 import ProviderProfile from "@/components/ProviderProfile/ProviderProfile";
 import { LanguageContext } from "@/context/LangContext";
 import { getItemById, serviceProviders } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
@@ -24,23 +28,45 @@ const SingleProvider = () => {
   }, [id]);
   return (
     <>
-      <Layout>
-        <ProviderProfile provider={provider} />
-        <div className="pt-12">
-          <div className="container">
-            <ProviderInfo provider={provider} />
-            <Button
-              onClick={() => setOpen(true)}
-              classes="bg-secondary min-w-[320px] !py-3 block mx-auto"
-            >
-              {" "}
-              {fetchWord("accept_offer", lang)}{" "}
-            </Button>
-          </div>
+      <Layout
+        full
+        mainClassName="!bg-[#F2F2F2]"
+        containerClassName="relative h-32 !items-start"
+        hideBottomMenu
+        extraIcons={
+          <>
+            <ShareIcon className="scale-[85%] cursor-pointer" />
+            <HeartIcon className="text-white scale-[85%] cursor-pointer"/>
+          </>
+        }
+      >
+        <div className="relative">
+          <figure className="absolute -top-20 left-1/2 overflow-visible -translate-x-1/2  ">
+            <Image
+              className="rounded-[50%] object-cover  h-36 w-h-36 border-4 bg-white border-[#F2F2F2] "
+              src={provider?.image}
+              alt={provider?.name}
+              height={150}
+              width={150}
+            />
+          </figure>
         </div>
+
+        <ProviderProfile provider={provider} />
+        <div className="container pt-4">
+          <ProviderInfo provider={provider} />
+        </div>
+        <div className="border-2 border-white my-4" />
+        <div className="container">
+          <h3 className="text-primary text-lg mb-4 capitalize">
+            {fetchWord("payment_methods_available", lang)}
+          </h3>
+          <PaymentMethods containerClassName="w-full mb-4 justify-around" />
+        </div>
+        <div className="h-28" />
         {/* reviews */}
       </Layout>
-      <Modal open={open} close={() => setOpen(false)}>
+      <Modal open={open} close={() => setOpen(false)} containerClassName="max-w-[575px]">
         <div className="flex flex-col justify-center items-center gap-2 px-12">
           <span>
             <LampIcon />
@@ -52,6 +78,14 @@ const SingleProvider = () => {
           <BackToHome />
         </div>
       </Modal>
+      <div className="fixed bottom-0 left-0 bg-[#F2F2F2] w-full !max-w-[575px]">
+        <div className=" flex gap-2 p-3 mb-2">
+          <Button classes="flex-1 !p-3" onClick={() => setOpen(true)} >{fetchWord("book_now", lang)}</Button>
+          <button className="w-20 flex items-center justify-center rounded-md border-primary border-2">
+            <MessageIcon className="text-gray-500" />{" "}
+          </button>
+        </div>
+      </div>
     </>
   );
 };

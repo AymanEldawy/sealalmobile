@@ -1,30 +1,32 @@
-import React, { useContext } from "react";
-import ProfileBanner from "../ProfileBanner/ProfileBanner";
-import Link from "next/link";
-import { EditIcon, GearIcon, StarIcon } from "../Icons";
-import Image from "next/image";
-import ProfileHeaderInfo from "./ProfileHeaderInfo";
-import { fetchWord } from "@/lang/fetchWord";
 import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useContext } from "react";
 
-const ProfileHeader = ({ role, changeRole }) => {
+import { EditIcon, GearIcon, StarIcon } from "../Icons";
+import ProfileBanner from "../ProfileBanner/ProfileBanner";
+import ProfileHeaderInfo from "./ProfileHeaderInfo";
+
+const ProfileHeader = ({ role, changeRole, setActiveTab }) => {
   const { lang } = useContext(LanguageContext);
   return (
-    <ProfileBanner
-      containerClassName="items-center"
-      bannerClassName=" relative overflow-hidden py-4"
-    >
-      <span className="absolute rtl:-left-6 ltr:-right-6 top-0 opacity-50">
+    <div className="bg-white ltr:rounded-bl-[40px] rtl:rounded-br-[40px] p-4 relative">
+      <span className="absolute rtl:-left-10 ltr:-right-10 top-6 opacity-[30%]">
         <GearIcon />
       </span>
       <div className="flex gap-3" onClick={changeRole}>
         <div className="relative w-fit">
-          <Link
-            href="/"
+          <button
             className="scale-50 absolute -top-3 ltr:right-0 rtl:left-0 "
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveTab({ name: "edit_profile" });
+            }}
           >
             <EditIcon className="text-secondary" />
-          </Link>
+          </button>
+
           <Image
             src={"/images/clients/Ellipse 182.png"}
             alt="Avatar"
@@ -45,15 +47,18 @@ const ProfileHeader = ({ role, changeRole }) => {
           />
           <ProfileHeaderInfo
             title="175"
-            subtitle={fetchWord(role === "provider" ? "offers" : "orders", lang)}
+            subtitle={fetchWord(role === "company" ? "offers" : "orders", lang)}
           />
           <ProfileHeaderInfo
             title="+500$"
-            subtitle={fetchWord(role === "provider" ? "earning" : 'payments', lang)}
+            subtitle={fetchWord(
+              role === "company" ? "earning" : "payments",
+              lang
+            )}
           />
         </div>
       </div>
-    </ProfileBanner>
+    </div>
   );
 };
 

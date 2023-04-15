@@ -13,14 +13,13 @@ const SingleRequest = () => {
   const { lang } = useContext(LanguageContext);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   return (
-    <Layout>
-      <BannerTitle title={fetchWord("my_requests", lang)} />
+    <Layout title={fetchWord("my_requests", lang)} full>
       <div className="shadow-md mb-1">
         <div className="container">
           <TabsList
             containerClassName="justify-around"
-            activeClassName="border-2 border-primary"
-            itemClassName="!p-4 text-center justify-center flex-1 first:text-green-400 last:text-red-400 tex-black capitalize"
+            activeClassName="border-b-4 border-primary"
+            itemClassName="!p-4 text-center justify-center  first:text-green-400 last:text-red-400 text-gray-700 capitalize"
             list={tabs}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
@@ -31,7 +30,11 @@ const SingleRequest = () => {
         <div className="container  ">
           <TabsContent activeTabName={activeTab}>
             <OffersGrid tabName="current_orders" offers={offers} />
-            <OffersGrid tabName="previous_orders" offers={offers} previousStage/>
+            <OffersGrid
+              tabName="previous_orders"
+              offers={offers}
+              previousStage
+            />
             <OffersGrid tabName="canceled_orders" offers={offers} />
           </TabsContent>
         </div>

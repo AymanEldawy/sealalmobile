@@ -1,6 +1,59 @@
 export const en = {
+  dont_have_account: "Don't have account ?",
+  create_your_account: "Create your account",
+  have_account: "Do you already have account? Sign In",
+  username: "Username",
+  password: "Password",
+  reset_password: "Reset password",
+  reset_password_description:
+    "Enter your email addreess and we will send you link to reset password",
+  email_phone: "E-mail or Phone",
+  enter_code: "Enter the code",
+  enter_code_description:
+    "Enter the code , we send to your phone please check and fill it.",
+  receive_code: "I didnt receive the code",
+  resend_code: "RESEND CODE",
+  keep_going: "keep going",
+  add_request: "Add request",
+  slide_title1: "slideTitle 1",
+  slide_description1:
+    "choose your slider carefully for the proposes of the User Interface Design.",
+  slide_title2: "slideTitle 2",
+  slide_description2:
+    "choose your slider carefully for the proposes of the User Interface Design.",
+  slide_title3: "slideTitle 3",
+  slide_description3:
+    "choose your slider carefully for the proposes of the User Interface Design.",
+  categories: "categories",
+  town: "town",
+  choose_location: "Choose Location",
+  view_all: "view all",
+  payment_methods_available: "Payment methods available",
+  request_services_msg: `You will go through several steps to add steps 
+  Make sure you complete the required before 
+  sending the request`,
+  get_started: "Get Started",
+  welcome_dear: "welcome dear",
+  credit_card: "credit card",
+  confirmation_payment: "Confirmation Payment",
+
+  request_successfully: `Your request has been successfully sent`,
+  notification_servers_owners:
+    "You will receive notifications of offers from service owners",
+  requests: "requests",
+  chatting: "chatting",
+  today: "today",
+  notification: "notification",
+  company_account: "company account",
+  save: "save",
+  tax_number: "Tax Number",
+  social_media: "social media",
+  my_account: "my account",
+  //
+  //
+  //
+  //
   remember_me: "remember me",
-  dont_have_account: "If don't have account",
   register_now: "Register now",
   account: "account",
   signin: "sign in",
@@ -200,10 +253,13 @@ export const en = {
   upload_photo: "Upload Photo",
   //
   //
-  orders:'orders',
+  orders: "orders",
   basic: "basic",
   standard: "standard",
   premium: "premium",
+  welcome: "welcome to",
+  welcome_msg: "Please fill E-mail & password to login your app account.",
+  signup: "Sign Up",
 };
 
 export const getWordEn = (key) => {
