@@ -33,8 +33,8 @@ const CategoriesSection = () => {
               className="max-w-full object-contain !w-auto !h-auto mt-auto"
               src={service?.image}
               alt={service?.name}
-              height={50}
-              width={80}
+              height={85}
+              width={110}
             />
             <h3 className="mt-auto text-center text-primary">
               {fetchWord(service?.name, lang)}
