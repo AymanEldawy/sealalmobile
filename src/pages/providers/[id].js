@@ -8,6 +8,7 @@ import Modal from "@/components/Modal/Modal";
 import PaymentMethods from "@/components/PaymentMethods/PaymentMethods";
 import ProviderInfo from "@/components/ProviderInfo/ProviderInfo";
 import ProviderProfile from "@/components/ProviderProfile/ProviderProfile";
+import RequestServicesForm from "@/components/RequestServicesForm/RequestServicesForm";
 import { LanguageContext } from "@/context/LangContext";
 import { getItemById, serviceProviders } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
@@ -21,11 +22,17 @@ const SingleProvider = () => {
   const router = useRouter();
   const { id } = router?.query;
   const [open, setOpen] = useState(false);
+  const [openRequest, setOpenRequest] = useState(false);
   const [provider, setProvider] = useState();
 
   useEffect(() => {
     setProvider(getItemById(serviceProviders, id));
   }, [id]);
+
+  const onSubmitRequest = (values) => {
+    setOpenRequest(false)
+    setOpen(true)
+  }
   return (
     <>
       <Layout
@@ -36,7 +43,7 @@ const SingleProvider = () => {
         extraIcons={
           <>
             <ShareIcon className="scale-[85%] cursor-pointer" />
-            <HeartIcon className="text-white scale-[85%] cursor-pointer"/>
+            <HeartIcon className="text-white scale-[85%] cursor-pointer" />
           </>
         }
       >
@@ -66,6 +73,9 @@ const SingleProvider = () => {
         <div className="h-28" />
         {/* reviews */}
       </Layout>
+      <Modal open={openRequest} close={() => setOpenRequest(false)} containerClassName="max-w-[575px]" modalClassName="overflow-auto max-h-[80vh]">
+        <RequestServicesForm getValues={onSubmitRequest}  inModal />
+      </Modal>
       <Modal open={open} close={() => setOpen(false)} containerClassName="max-w-[575px]">
         <div className="flex flex-col justify-center items-center gap-2 px-12">
           <span>
@@ -80,10 +90,10 @@ const SingleProvider = () => {
       </Modal>
       <div className="fixed bottom-0 left-0 bg-[#F2F2F2] w-full !max-w-[575px]">
         <div className=" flex gap-2 p-3 mb-2">
-          <Button classes="flex-1 !p-3" onClick={() => setOpen(true)} >{fetchWord("book_now", lang)}</Button>
-          <button className="w-20 flex items-center justify-center rounded-md border-primary border-2">
+          <Button classes="flex-1 !p-3" onClick={() => setOpenRequest(true)} >{fetchWord("book_now", lang)}</Button>
+          <Link href="/chat" className="w-20 flex items-center justify-center rounded-md border-primary border-2">
             <MessageIcon className="text-gray-500" />{" "}
-          </button>
+          </Link>
         </div>
       </div>
     </>

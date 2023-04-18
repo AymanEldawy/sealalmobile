@@ -3,7 +3,7 @@ import { fetchWord } from "@/lang/fetchWord";
 import Link from "next/link";
 import React, { useContext } from "react";
 
-import { EditIcon, GearWorkIcon } from "../Icons";
+import { EditIcon, FacebookIcon, GearWorkIcon, InstagramIcon } from "../Icons";
 import Image from "next/image";
 
 const ProfileInformation = ({ setActiveTab, role }) => {
@@ -85,20 +85,8 @@ const ProfileInformation = ({ setActiveTab, role }) => {
                   {fetchWord("social_media", lang)}
                 </span>
                 <div className="flex gap-2">
-                  <Image
-                    src="/images/facebook.png"
-                    alt="facebook page"
-                    height={25}
-                    width={25}
-                    className="object-cover max-w-full h-auto"
-                  />
-                  <Image
-                    src="/images/instagram.png"
-                    alt="instagram page"
-                    height={25}
-                    width={25}
-                    className="object-cover max-w-full h-auto"
-                  />
+                  <FacebookIcon className="w-5 h-5 text-secondary" />
+                  <InstagramIcon className="w-5 h-5 text-secondary" />
                 </div>
               </li>
             </>

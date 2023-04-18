@@ -1,8 +1,9 @@
 import BannerTitle from "@/components/BannerTitle/BannerTitle";
+import BackToHome from "@/components/Global/BackToHome/BackToHome";
 import { Button } from "@/components/Global/Button/Button";
 import PrimaryLink from "@/components/Global/PrimaryLink/PrimaryLink";
 import HowItWork from "@/components/HowItWork/HowItWork";
-import { RequestCompleteIcon } from "@/components/Icons";
+import { OfferEditIcon, RequestCompleteIcon } from "@/components/Icons";
 import { Layout } from "@/components/Layout/Layout";
 import Modal from "@/components/Modal/Modal";
 import RequestServicesConfirmation from "@/components/RequestServicesConfirmation/RequestServicesConfirmation";
@@ -16,10 +17,11 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
+
 const RequestServices = () => {
   const { lang } = useContext(LanguageContext);
   const [selectTab, setSelectedTab] = useState(1);
-  const [openFormFeedback, setOpenFormFeedback] = useState(false);
+  const [open, setOpen] = useState(false);
   const getValues = (values) => {};
   const onFeedbackSubmit = (values) => {
     console.log(values);
@@ -44,11 +46,21 @@ const RequestServices = () => {
   };
   return (
     <>
-      <RequestServicesFormFeedback
-        openFormFeedback={openFormFeedback}
-        setOpenFormFeedback={setOpenFormFeedback}
-        onFeedbackSubmit={onFeedbackSubmit}
-      />
+      <Modal open={open} close={() => setOpen(false)}>
+        <div className="flex flex-col gap-3 items-center ">
+          <OfferEditIcon />
+          <p className="text-primary">
+            {fetchWord("add_offer_message", lang)}
+          </p>
+          <BackToHome />
+          <button
+            className="text-red-500 text-sm"
+            onClick={() => setOpen(false)}
+          >
+            {fetchWord("cancel", lang)}
+          </button>
+        </div>
+      </Modal>
       <Layout
         full
         title={displayTitle()}
@@ -106,7 +118,7 @@ const RequestServices = () => {
             <RequestServicesConfirmation
               tabName={4}
               setSelectedTab={setSelectedTab}
-              setOpenFormFeedback={setOpenFormFeedback}
+              setOpen={setOpen}
             />
             <div className="" tabName={5}>
               <div className="w-fit mx-auto my-8">

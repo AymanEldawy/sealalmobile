@@ -9,7 +9,7 @@ const Notification = () => {
   const { lang } = useContext(LanguageContext);
   return (
     <Layout title={fetchWord("notification", lang)} full>
-      <div className="flex flex-col gap-8 p-8">
+      <div className="flex flex-col gap-8 p-4">
         {notifications?.map((notif) => (
           <div className="" key={notif?.date}>
             <h2 className="text-gray-500 capitalize mb-4">{notif?.date}</h2>

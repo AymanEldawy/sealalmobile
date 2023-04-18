@@ -34,7 +34,7 @@ const SubmitOffers = () => {
         </div>
         <div className="border-2 border-white my-4" />
         <div className="container">
-          <SubmitOfferForm operation={operation} />{" "}
+          <SubmitOfferForm />{" "}
         </div>
         <div className="h-32" />
       </div>

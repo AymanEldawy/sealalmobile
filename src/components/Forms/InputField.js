@@ -14,7 +14,7 @@ export const InputField = ({
   return (
     <div className={`mb-4 w-full ${containerClassName}`}>
       {label ? (
-        <label className={`flex items-center justify-between mb-2 text-[#00000080]  ${labelClassName}`}>
+        <label className={`capitalize flex items-center justify-between mb-2 text-[#00000080]  ${labelClassName}`}>
           {label}
           {error?.length ? <span className="">{error}</span> : null}
         </label>

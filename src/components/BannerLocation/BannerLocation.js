@@ -12,12 +12,16 @@ const BannerLocation = () => {
   const [countryState, setCountryState] = useState("");
 
   return (
-    <div className="flex gap-2 mt-4 items-center">
-      <div className="flex items-center gap-2 shrink-0">
-        <ChooseIcon />
-        <span className="whitespace-nowrap text-white text-sm" >
-        {fetchWord("choose_location", lang)}
-          </span>
+    <div className="flex gap-2 mt-4 items-center min-[0px]:flex-col min-[500px]:flex-row">
+      <div className="flex items-center gap-2">
+        <span className="shrink-0">
+
+
+          <ChooseIcon />
+        </span>
+        <span className="min-[520px]:whitespace-nowrap text-white text-sm" >
+          {fetchWord("choose_location", lang)}
+        </span>
       </div>
       <CustomSelectField
         name="state"

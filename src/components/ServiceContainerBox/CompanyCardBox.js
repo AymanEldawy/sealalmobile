@@ -4,7 +4,7 @@ import React from "react";
 const CompanyCardBox = ({ company }) => {
   return (
     <div className="p-2">
-      <div className="shadow text-center p-3 rounded-md bg-white">
+      <div className="h-full flex flex-col items-center justify-end shadow text-center p-3 rounded-md bg-white">
         <Image
         className="block mx-auto"
           src={company?.image}

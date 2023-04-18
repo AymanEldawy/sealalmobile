@@ -37,7 +37,7 @@ export default function Login() {
         return <SignupCompanyForm />;
     }
   };
-  const submit = () => {};
+  const submit = () => { };
   return (
     <>
       <Head>
@@ -58,7 +58,7 @@ export default function Login() {
           </Link>
         }
       >
-        <SignupTabBar activeStage={activeStage} />
+        <SignupTabBar setActiveStage={setActiveStage} activeStage={activeStage} />
         <div className="mt-2 flex flex-col w-full max-w-[500px]">
           {displayTab()}
 
@@ -69,9 +69,9 @@ export default function Login() {
               else submit("");
             }}
           >
-            {activeStage === "company"
-              ? fetchWord("create_account", lang)
-              : fetchWord("next", lang)}
+
+            {fetchWord("create_account", lang)}
+
           </Button>
           <Link
             href="/login"

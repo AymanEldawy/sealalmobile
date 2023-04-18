@@ -10,7 +10,7 @@ import { EditIcon, ElectricCategoryIcon, WorldIcon } from "../Icons";
 
 const RequestServicesConfirmation = ({
   setSelectedTab,
-  setOpenFormFeedback,
+  setOpen,
   layout,
 }) => {
   const { lang } = useContext(LanguageContext);

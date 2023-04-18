@@ -17,7 +17,7 @@ const CustomSelectField = ({
   return (
     <div className={`mb-4 w-full ${containerClassName}`}>
       {label ? (
-        <label className={`text-[#00000080] flex items-center justify-between mb-2  ${labelClassName}`}>
+        <label className={`capitalize text-[#00000080] flex items-center justify-between mb-2  ${labelClassName}`}>
           {label}
           {error?.length ? <span className="">{error}</span> : null}
         </label>

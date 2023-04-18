@@ -48,7 +48,7 @@ const PaymentMethods = ({
         className={` flex flex-col  gap-2 ${labelClassName}`}
         onClick={!!onPaymentClick ? onPaymentClick : undefined}
       >
-        <span className="rounded-md bg-white p-2 shadow">
+        <span className="rounded-md bg-white p-2 shadow relative">
           <Image
             src="/images/cash.png"
             alt=""
@@ -56,6 +56,7 @@ const PaymentMethods = ({
             height={28}
             className="w-8 h-8 object-contain"
           />
+          <span className="text-[10px] uppercase absolute font-semibold bg-yellow-400 text-white px-[2px] bottom-1">Cash</span>
         </span>
         {!!showInputs ? (
           <input type="radio" name="payment_method" {...input} />

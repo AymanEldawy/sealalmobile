@@ -260,6 +260,20 @@ export const en = {
   welcome: "welcome to",
   welcome_msg: "Please fill E-mail & password to login your app account.",
   signup: "Sign Up",
+  confirm_password:'confirm password',
+  company_name: 'company name',
+  our_client: "our client",
+  my_works: "my works",
+  payment_available:'Available payments',
+  follow_us:'Follow us',
+  waiting_confirm:'waiting confirm',
+  waiting_approval:'waiting approval',
+  register:'register',
+  confirm_password:'confirm password',
+  company_name:'company name',
+  accept_the_offer:'accept the offer',
+  add_offer_message:'The offer has been added and we will review it',
+  
 };
 
 export const getWordEn = (key) => {

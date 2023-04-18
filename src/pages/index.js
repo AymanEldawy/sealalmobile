@@ -1,21 +1,16 @@
-import Banner from "@/components/Banner/Banner";
+import BannerLocation from "@/components/BannerLocation/BannerLocation";
 import BannerSlide from "@/components/BannerSlide/BannerSlide";
-import LatestProjects from "@/components/LatestProjects/LatestProjects";
+import CategoriesSection from "@/components/CategoriesSection/CategoriesSection";
 import { Layout } from "@/components/Layout/Layout";
-import OurTeam from "@/components/OurTeam/OurTeam";
-import ServicesSection from "@/components/ServicesSection/ServicesSection";
+import CompanyCardBox from "@/components/ServiceContainerBox/CompanyCardBox";
 import Testimonial from "@/components/Testimonial/Testimonial";
-import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
+import { companies } from "@/data/dummyData";
+import { fetchWord } from "@/lang/fetchWord";
 import Head from "next/head";
+import Link from "next/link";
 import { useContext } from "react";
 
 import { LanguageContext } from "./../context/LangContext";
-import BannerLocation from "@/components/BannerLocation/BannerLocation";
-import CategoriesSection from "@/components/CategoriesSection/CategoriesSection";
-import CompanyCardBox from "@/components/ServiceContainerBox/CompanyCardBox";
-import { companies } from "@/data/dummyData";
-import Link from "next/link";
-import { fetchWord } from "@/lang/fetchWord";
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -48,20 +43,14 @@ export default function Home() {
             </Link>
           </div>
           <div className="overflow-hidden w-full">
-            <div className="flex max-w-full">
+            <div className="flex max-w-full items-stretch">
               {companies?.slice(0, 4)?.map((company) => (
                 <CompanyCardBox key={company?.name} company={company} />
               ))}
             </div>
           </div>
         </div>
-
-        {/* <Banner />
-        <ServicesSection />
-        <WhyChooseUs />
-        <LatestProjects />
-        <Testimonial />
-        <OurTeam /> */}
+        {/* <Testimonial /> */}
       </Layout>
     </>
   );

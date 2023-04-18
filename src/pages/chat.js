@@ -9,9 +9,10 @@ import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 
 const allMessages = [
-  { message: "Hey how are you ?", author: "me" },
-  { message: "I am fine ... ", author: "" },
-  { message: "I need to ask you about ……….", author: "me" },
+  { status: 'read', message: "Hey how are you ?", author: "me" },
+  { status: 'arrived', message: "I need to ask you about ……….", author: "me" },
+  { status: '', message: "I am fine ... ", author: "" },
+  { status: 'send', message: "Did you check the new updates?", author: "me" },
 ];
 const Chat = () => {
   const [messages, setMessages] = useState(allMessages);
@@ -50,7 +51,7 @@ const Chat = () => {
       </div>
       <div className="flex flex-col gap-4 mt-4 mx-8">
         {messages?.map((msg, index) => (
-          <ChatMessageCard key={`${msg?.author}${index}`} author={msg?.author}>
+          <ChatMessageCard key={`${msg?.author}${index}`} author={msg?.author} status={msg?.status}>
             {msg?.message}
           </ChatMessageCard>
         ))}

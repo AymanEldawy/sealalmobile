@@ -1,10 +1,11 @@
-import React from "react";
-import { InputField } from "../Forms/InputField";
-import { FileUpload } from "../Forms/FileUpload";
 import { LanguageContext } from "@/context/LangContext";
-import { useContext } from "react";
 import { fetchWord } from "@/lang/fetchWord";
+import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
+
+import { FileUpload } from "../Forms/FileUpload";
+import { InputField } from "../Forms/InputField";
 
 const SignupCustomerForm = () => {
   const { lang } = useContext(LanguageContext);
@@ -13,6 +14,7 @@ const SignupCustomerForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <form>
       <InputField
@@ -44,6 +46,14 @@ const SignupCustomerForm = () => {
         value={password}
         label={fetchWord("password", lang)}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder="*********"
+      />
+      <InputField
+        type="password"
+        name="confirmPassword"
+        value={confirmPassword}
+        label={fetchWord("confirm_password", lang)}
+        onChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="*********"
       />
       <FileUpload label="Profile Photo" />

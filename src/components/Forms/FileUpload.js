@@ -10,7 +10,7 @@ export const FileUpload = ({ label,labelClassName ,containerClass, classes, ...f
   return (
     <div className={`mb-4 ${containerClass}`}>
       {label ? (
-        <label className={`flex text-[#00000080] items-center justify-between mb-2 ${labelClassName}`}>
+        <label className={`capitalize flex text-[#00000080] items-center justify-between mb-2 ${labelClassName}`}>
           {label}
         </label>
       ) : null}

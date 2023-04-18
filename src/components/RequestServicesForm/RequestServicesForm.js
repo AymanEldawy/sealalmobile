@@ -41,7 +41,7 @@ const timeList = [
   { id: 22, name: "11-12 PM" },
   { id: 23, name: "12-1 AM" },
 ];
-const RequestServicesForm = ({ getValues, setSelectedTab }) => {
+const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
   const { lang } = useContext(LanguageContext);
   const [serviceName, setServiceName] = useState("");
   const [location, setLocation] = useState("");
@@ -67,7 +67,8 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
       name,
       expirationDate,
     });
-    setSelectedTab(1);
+    if(!!setSelectedTab)
+      setSelectedTab(1);
   };
 
   return (
@@ -147,6 +148,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
           labelClassName="!text-black"
         />
         <InputField
+          type="datetime-local"
           label={fetchWord("select_date", lang)}
           name="selectDate"
           value={selectDate}
@@ -155,7 +157,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
           iconStart={<TimeCheckIcon />}
           labelClassName="!text-black"
         />
-        <CustomSelectField
+        {/* <CustomSelectField
           label={fetchWord("select_time", lang)}
           name="selectTime"
           value={selectTime}
@@ -166,7 +168,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
           selectClassName="text-sm"
           labelClassName="!text-black"
           iconClassName="!text-gray-500"
-        />
+        /> */}
 
         <h3 className="text-base mt-4 mb-2">
           {fetchWord("payment_method", lang)}{" "}
@@ -176,13 +178,22 @@ const RequestServicesForm = ({ getValues, setSelectedTab }) => {
           showInputs
           containerClassName="justify-around mb-4"
         />
-        <div className="h-32 -mx-4 bg-[#f2f2f2]" />
-        <div className="bg-[#f2f2f2] fixed bottom-0 left-0 w-full max-w-[575px] p-4">
+        {
+          inModal ? null : (
+            <div className="h-32 -mx-4 bg-[#f2f2f2]" />
+
+          )
+        }
+        <div className={` bottom-0 left-0 w-full max-w-[575px] p-4 ${inModal ? '' : 'fixed bg-[#f2f2f2]'}`}>
           <Button
             classes="w-[270px] py-3 text-sm !w-full block "
-            onClick={() => setSelectedTab(3)}
+            onClick={() => {
+              if (setSelectedTab) {
+                setSelectedTab(3)
+              }
+            }}
           >
-            {fetchWord("next", lang)}{" "}
+            {fetchWord(inModal ? 'confirm' : "next", lang)}{" "}
           </Button>
         </div>
       </form>

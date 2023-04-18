@@ -79,3 +79,5 @@ export { default as RequestCompleteIcon } from "./RequestCompleteIcon";
 export { default as SendIcon } from "./SendIcon";
 export { default as LinkIcon } from "./LinkIcon";
 export { default as RemoveIcon } from "./RemoveIcon";
+export { default as DoubleCheckIcon } from "./DoubleCheckIcon";
+export { default as CheckIcon } from "./CheckIcon";
