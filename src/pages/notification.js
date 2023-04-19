@@ -16,9 +16,8 @@ const Notification = () => {
             <div className="flex flex-col gap-4">
               {notif?.list?.map((item) => (
                 <div
-                  className={`p-3 rounded-md flex items-start gap-2 ${
-                    item?.status ? "bg-white" : "bg-[#FFC33A14] shadow-md"
-                  }`}
+                  className={`p-3 rounded-md flex items-start gap-2 ${item?.status ? "bg-white" : "bg-[#FFC33A14] shadow-md"
+                    }`}
                   key={item?.time}
                 >
                   <Image
@@ -28,8 +27,11 @@ const Notification = () => {
                     width={100}
                     className="max-w-full object-contain"
                   />
-                  <p className="text-sm">{item?.description}</p>
-                  <span className="text-xs text-gray-500">{item?.time}</span>
+                  <div >
+                    <h4 className="font-medium mb-1">{item?.title}</h4>
+                    <p className="text-sm text-lead">{item?.description}</p>
+                  </div>
+                  <span className="ltr:ml-auto rtl:mr-auto text-xs text-gray-500">{item?.time}</span>
                 </div>
               ))}
             </div>
