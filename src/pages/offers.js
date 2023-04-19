@@ -20,16 +20,16 @@ const Offers = () => {
   const { lang } = useContext(LanguageContext);
   return (
     <Layout full mainClassName="!rounded-none bg-[#F6F6F6]"  title={fetchWord('offers', lang)}>
-      <div className="shadow-md pt-8">
+      <div className="shadow-md pt-8 min-[]:">
         <div className="container rounded-tl-xl">
           <TabsList
             list={tabs}
             keyName="name"
             setActiveTab={setActiveTab}
             activeTab={activeTab}
-            containerClassName="justify-around !bg-transparent"
+            containerClassName="justify-around flex-col min-[300px]:flex-row gap-2 !bg-transparent"
             activeClassName="before:absolute before:rounded-md before:bottom-0 before:left-[15%] before:border before:border-primary before:border-4 before:w-[70%]"
-            itemClassName="relative text-primary !px-8 !gap-1 flex-col overflow-hidden bg-orange-100 rounded-3xl !p-4 text-center justify-center capitalize"
+            itemClassName="relative flex-row min-[300px]:flex-col text-primary !px-3 xs:!px-5 !gap-1 overflow-hidden bg-orange-100 rounded-3xl !p-4 text-center justify-center capitalize"
           />
         </div>
       </div>

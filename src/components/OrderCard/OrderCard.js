@@ -29,7 +29,7 @@ const OrderCard = ({
 
   return (
     <div className="flex gap-4 flex-col p-4 pt-0 rounded-md bg-white">
-      <div className="flex gap-8 -mx-4 items-center">
+      <div className="flex justify-between ltr:pr-2 rtl-pl-2 xs:gap-8 -mx-4 items-center">
         <div className="flex gap-2 items-center shadow-md p-1 px-4 min-h-[45px]">
           <Image
             onClick={handleLink}
@@ -48,16 +48,17 @@ const OrderCard = ({
         <span className="text-secondary text-sm">
           #{order?.offer?.offerNumber}
         </span>
-        <p className="text-lead text-sm">{order?.offer?.date}</p>
+        <p className="max-[350px]:hidden text-lead text-sm">{order?.offer?.date}</p>
       </div>
-      <div className="flex gap-4 items-start">
+      <div className="flex flex-col xs:flex-row w-full gap-4 items-start">
         <Image
+          className="w-full object-contain xs:w-40 "
           src={order?.offer?.image}
           alt={order?.offer?.name}
           width={170}
           height={220}
         />
-        <div className="flex flex-col gap-1 flex-1 relative">
+        <div className="flex flex-col gap-1 w-full flex-1 relative">
           <span className="scale-75 cursor-pointer absolute rtl:left-2 ltr:right-2">
             {myOffers || inProgress ? (
               <span className="text-secondary text-lg">30$/{fetchWord('hr', lang)}</span>
@@ -72,8 +73,9 @@ const OrderCard = ({
             )}
           </span>
           <h3 className="font-medium text-lg cursor-pointer" onClick={handleLink}>{order?.offer?.name}</h3>
+          <p className="min-[350px]:hidden text-lead text-sm">{order?.offer?.date}</p>
           <h4 className="text-lead text-sm">{order?.userId?.name}</h4>
-          <div className="flex gap-4 items-center mt-4">
+          <div className="flex gap-2 items-center mt-4 flex-wrap justify-center">
             {inProgress ? (
               <Button
                 onClick={() => {

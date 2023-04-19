@@ -11,7 +11,7 @@ import ProfileHeaderInfo from "./ProfileHeaderInfo";
 const ProfileHeader = ({ role, changeRole, setActiveTab }) => {
   const { lang } = useContext(LanguageContext);
   return (
-    <div className="bg-white ltr:rounded-bl-[40px] rtl:rounded-br-[40px] p-4 relative">
+    <div className="bg-white ltr:rounded-bl-[40px] rtl:rounded-br-[40px] p-4 relative overflow-hidden">
       <span className="absolute rtl:-left-10 ltr:-right-10 top-6 opacity-[30%]">
         <GearIcon />
       </span>
@@ -21,9 +21,9 @@ const ProfileHeader = ({ role, changeRole, setActiveTab }) => {
             className="scale-50 absolute -top-3 ltr:right-0 rtl:left-0 "
             onClick={(e) => {
               e.stopPropagation();
-              setActiveTab({ name: "edit_profile" });
             }}
           >
+            <input type="file" className="z-[1] absolute top-0 left-0 bottom-0 right-0 opacity-0" />
             <EditIcon className="text-secondary" />
           </button>
 

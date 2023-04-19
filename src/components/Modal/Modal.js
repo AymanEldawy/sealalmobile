@@ -21,7 +21,7 @@ const Modal = ({
       {open ? (
         <div
           onClick={close}
-          className={`fixed top-0 left-0 bottom-0 right-0 z-10 bg-[#0009] flex justify-center items-center ${containerClassName} `}
+          className={`fixed top-0 left-0 bottom-0 right-0 z-30 bg-[#0009] flex justify-center items-center ${containerClassName} `}
         >
           <div
             className={`bg-white  rounded-md min-w-[250px] min-h-[200px] overflow-hidden ${contentBoxClassName}`}

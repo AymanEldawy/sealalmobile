@@ -34,7 +34,7 @@ const SingleOffer = () => {
           // setSelectedTab={setSelectedTab}
           // setOpenFormFeedback={setOpenFormFeedback}
         /> */}
-        <div className="flex flex-col gap-12 pt-8">
+        <div className="flex flex-col gap-4 pt-8">
           <Image
             className="object-cover w-full flex-1"
             src={offer?.image}
@@ -42,16 +42,11 @@ const SingleOffer = () => {
             width={300}
             height={200}
           />
-          <div className="flex flex-col gap-3 flex-1 relative">
-            <div className="flex justify-between items-center gap-2 flex-wrap">
+          <div className="flex flex-col gap-2 flex-1 relative">
               <h3 className="font-medium text-2xl">{offer?.name}</h3>
-              <span className="text-secondary ">#{offer?.offerNumber}</span>
-            </div>
             <div className="flex justify-between items-center gap-2 flex-wrap">
+              <span className="text-secondary ">#{offer?.offerNumber}</span>
               <p className="text-lead ">{offer?.date}</p>
-              <Link href="" className="">
-                <WhatsAppShareIcon />
-              </Link>
             </div>
           </div>
         </div>

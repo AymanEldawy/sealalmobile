@@ -29,7 +29,7 @@ const MyPackages = () => {
       <div className="flex flex-col gap-4">
         {packages?.map((plan) => (
           <div
-            className={`relative bg-white rounded-bl-[30px] rounded-tr-[30px] rounded-br-lg rounded-lr-lg p-3 px-16 flex-col flex gap-4 items-start
+            className={`relative bg-white rounded-bl-[30px] rounded-tr-[30px] rounded-br-lg rounded-lr-lg p-3 px-8 xs:px-16 flex-col flex gap-4 items-start
             ${
               plan?.name === "standard"
                 ? "bg-yellow-100"
@@ -60,10 +60,10 @@ const MyPackages = () => {
                 /{fetchWord("month", lang)}
               </small>
             </h2>
-            <div className="flex gap-16 items-end">
+            <div className="flex justify-between w-full items-end">
               <ul className="flex flex-col gap-2">
                 {plan?.features?.map((feature) => (
-                  <li className="text-lead text-sm" key={feature}>
+                  <li className="flex text-lead text-sm" key={feature}>
                     - {feature}
                   </li>
                 ))}
