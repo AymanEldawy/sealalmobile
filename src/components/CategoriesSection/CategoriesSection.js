@@ -30,11 +30,11 @@ const CategoriesSection = () => {
             key={service?.name}
           >
             <Image
-              className="max-w-full object-contain !w-auto !h-auto mt-auto"
+              className="max-w-full object-contain !w-full h-full !max-h-[70%] mt-auto"
               src={service?.image}
               alt={service?.name}
-              height={85}
-              width={110}
+              height={70}
+              width={100}
             />
             <h3 className="mt-auto text-center text-primary">
               {fetchWord(service?.name, lang)}
