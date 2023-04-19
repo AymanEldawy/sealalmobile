@@ -9,7 +9,7 @@ const SeeMore = ({ linkClassName, link }) => {
   return (
     <Link
       href={link ? link : ""}
-      className={`text-secondary capitalize ${linkClassName}`}
+      className={`text-secondary whitespace-nowrap capitalize ${linkClassName}`}
     >
       {fetchWord("see_more", lang)}
     </Link>

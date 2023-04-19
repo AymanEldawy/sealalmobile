@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout
-        containerClassName="!block pb-7"
+        containerClassName="!block"
         full
         arrowClassName="hidden"
         extraContent={<BannerSlide />}

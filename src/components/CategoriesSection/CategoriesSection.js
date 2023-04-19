@@ -23,7 +23,7 @@ const CategoriesSection = () => {
       <h2 className="text-[#414B5A] font-semibold text-xl  uppercase mb-4" >{fetchWord('categories', lang)}</h2>
       <div className="grid grid-cols-2 xs:grid-cols-3 gap-6">
         {services?.map((service) => (
-          <button
+          <div
 
             onClick={() => handleLink(service?.name)}
             className="flex h-36 min-w-[120px] flex-col justify-center items-center bg-white p-2 rounded-xl shadow hover:border-2 hover:border-primary"
@@ -39,7 +39,7 @@ const CategoriesSection = () => {
             <h3 className="mt-auto text-center text-primary">
               {fetchWord(service?.name, lang)}
             </h3>
-          </button>
+          </div>
         ))}
       </div>
       <Link href="/services" className="py-2 rounded-lg px-6 w-fit block mx-auto mt-8 text-red-500 capitalize border-2 border-red-500">{fetchWord('view_all', lang)}</Link>
