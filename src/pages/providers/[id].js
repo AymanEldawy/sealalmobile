@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
-
+import { FacebookShareButton } from 'react-share';
 const SingleProvider = () => {
   const { lang } = useContext(LanguageContext);
   const router = useRouter();
@@ -24,9 +24,13 @@ const SingleProvider = () => {
   const [open, setOpen] = useState(false);
   const [openRequest, setOpenRequest] = useState(false);
   const [provider, setProvider] = useState();
+  const [favorite, setFavorite] = useState(false)
+  const [url, setUrl] = useState('')
 
   useEffect(() => {
     setProvider(getItemById(serviceProviders, id));
+    setFavorite(provider?.favorite)
+    setUrl(window?.location?.href)
   }, [id]);
 
   const onSubmitRequest = (values) => {
@@ -42,8 +46,10 @@ const SingleProvider = () => {
         hideBottomMenu
         extraIcons={
           <>
-            <ShareIcon className="scale-[85%] cursor-pointer" />
-            <HeartIcon className="text-white scale-[85%] cursor-pointer" />
+            <FacebookShareButton quote="Provider" url={url}>
+              <ShareIcon className={`scale-[85%] cursor-pointer`} />
+            </FacebookShareButton>
+            <HeartIcon onClick={() => setFavorite(p => !p)} className={`text-white scale-[85%] cursor-pointer  ${favorite ? 'text-red-500' : ''}`} />
           </>
         }
       >
@@ -74,7 +80,7 @@ const SingleProvider = () => {
         {/* reviews */}
       </Layout>
       <Modal open={openRequest} close={() => setOpenRequest(false)} containerClassName="max-w-[575px]" modalClassName="overflow-auto max-h-[80vh]">
-        <RequestServicesForm getValues={onSubmitRequest}  inModal />
+        <RequestServicesForm getValues={onSubmitRequest} inModal />
       </Modal>
       <Modal open={open} close={() => setOpen(false)} containerClassName="max-w-[575px]">
         <div className="flex flex-col justify-center items-center gap-2 px-12">
