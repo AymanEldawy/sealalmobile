@@ -63,10 +63,9 @@ const Services = () => {
                     {" "}
                     {fetchWord("service_providers", lang)}
                   </h2>
-                  <SeeMore link="" />
+                  
                 </div>
                 <div className="grid gap-4">
-                  {/* //lg:grid-cols-2  */}
                   {serviceProviders?.slice(0, 6)?.map((provider, index) => (
                     <ServiceProviderCard key={index} provider={provider} />
                   ))}

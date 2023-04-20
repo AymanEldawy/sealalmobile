@@ -5,6 +5,7 @@ const PaymentMethods = ({
   containerClassName,
   labelClassName,
   onPaymentClick,
+  onPaymentCashClick,
   showInputs,
   ...input
 }) => {
@@ -46,7 +47,7 @@ const PaymentMethods = ({
       </label>
       <label
         className={` flex flex-col  gap-2 ${labelClassName}`}
-        onClick={!!onPaymentClick ? onPaymentClick : undefined}
+        onClick={!!onPaymentCashClick ? onPaymentCashClick : undefined}
       >
         <span className="rounded-md bg-white p-2 shadow relative">
           <Image

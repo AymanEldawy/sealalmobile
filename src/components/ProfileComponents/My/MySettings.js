@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Privacy from "./Settings/Privacy";
 import SupportForm from "./Settings/SupportForm";
 import Terms from "./Settings/Terms";
+import Languages from "@/components/Languages/Languages";
 
 const settingList = [
   {
@@ -49,6 +50,7 @@ const MySettings = ({ activeTab, setActiveTab }) => {
           <SupportForm tabName="support" />
           <Privacy tabName="privacy_policy" />
           <Terms tabName="term_use" />
+          <Languages tabName="languages" />
         </TabsContent>
       )}
     </div>

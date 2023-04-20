@@ -12,9 +12,6 @@ const ProfileHeader = ({ role, changeRole, setActiveTab }) => {
   const { lang } = useContext(LanguageContext);
   return (
     <div className="bg-white ltr:rounded-bl-[40px] rtl:rounded-br-[40px] p-4 relative overflow-hidden">
-      <span className="absolute rtl:-left-10 ltr:-right-10 top-6 opacity-[30%]">
-        <GearIcon />
-      </span>
       <div className="flex gap-3" onClick={changeRole}>
         <div className="relative w-fit">
           <button

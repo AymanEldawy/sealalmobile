@@ -23,31 +23,26 @@ const profileList = [
   {
     icon: <GearIcon className="h-6 w-6" />,
     name: "settings",
-    role: ["all"],
     iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <PaymentsIcon />,
     name: "payments",
-    role: ["all"],
     iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <PackagesIcon />,
     name: "packages",
-    role: ["provider"],
     iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <PackagesIcon />,
     name: "companies_and_suggestions",
-    role: ["company"],
     iconEnd: <ChevronIcon className="h-3 w-3 rtl:rotate-180" />,
   },
   {
     icon: <LogoutIcon />,
     name: "logout",
-    role: ["all"],
   },
 ];
 
@@ -58,9 +53,6 @@ const MyProfile = () => {
   const [userRole, setUserRole] = useState("company");
   const [activeTab, setActiveTab] = useState();
   const [activeTabNested, setActiveTabNested] = useState("");
-  const list = profileList?.filter(
-    (item) => item?.role?.includes(userRole) || item?.role?.includes("all")
-  );
   const changeRole = () => {
     if (userRole === "company") {
       setUserRole("provider");
@@ -96,7 +88,7 @@ const MyProfile = () => {
         setActiveTab={setActiveTab}
       />
       <div className="h-10 bg-white">
-        <span className="bg-[#f2f2f2]  h-full block w-full rounded-tr-[40px]"></span>
+        <span className="bg-[#f2f2f2]  h-full block w-full rtl:rounded-tl-[40px] ltr:rounded-tr-[40px]"></span>
       </div>
       <div className="container">
         {!activeTab ? (
@@ -107,7 +99,7 @@ const MyProfile = () => {
               containerClassName="gap-4"
               itemClassName="whitespace-nowrap bg-white rounded-xl !p-4 text-center"
               keyName="name"
-              list={list}
+              list={profileList}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
               iconClassName="w-6"

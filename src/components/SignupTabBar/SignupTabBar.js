@@ -12,7 +12,7 @@ const SignupTabBar = ({ activeStage, setActiveStage }) => {
   return (
     <div className="shadow-md flex justify-around  mb-6 w-full ">
       <button
-        className={`flex flex-1 p-4 flex-col justify-center items-center gap-1 text-lead ${activeStage === "customer" ? "!text-secondary border-b-4 border-b-primary" : ""
+        className={`flex flex-1 py-4 px-1 capitalize flex-col justify-center items-center gap-1 text-lead ${activeStage === "customer" ? "!text-secondary border-b-4 border-b-primary" : ""
           }`}
         onClick={() => setActiveStage('customer')}
       >
@@ -20,7 +20,7 @@ const SignupTabBar = ({ activeStage, setActiveStage }) => {
         <span>{fetchWord("customer", lang)}</span>
       </button>
       <button
-        className={`flex border-l border-r flex-1 p-4 flex-col justify-center items-center gap-1 text-lead ${activeStage === "service provider" ? "!text-secondary border-b-4 border-b-primary" : ""
+        className={`flex border-l border-r whitespace-nowrap flex-1 py-4 px-1 capitalize flex-col justify-center items-center gap-1 text-lead ${activeStage === "service provider" ? "!text-secondary border-b-4 border-b-primary" : ""
           }`}
         onClick={() => setActiveStage('service provider')}
       >
@@ -28,7 +28,7 @@ const SignupTabBar = ({ activeStage, setActiveStage }) => {
         <span>{fetchWord("service_provider", lang)}</span>
       </button>
       <button
-        className={`flex flex-1 p-4 flex-col justify-center items-center gap-1 text-lead ${activeStage === "company" ? "!text-secondary border-b-4 border-b-primary" : ""
+        className={`flex flex-1 py-4 px-1 capitalize flex-col justify-center items-center gap-1 text-lead ${activeStage === "company" ? "!text-secondary border-b-4 border-b-primary" : ""
           }`}
         onClick={() => setActiveStage('company')}
       >

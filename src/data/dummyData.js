@@ -598,3 +598,33 @@ export const previousWorks = [
     date: "2021-06-20",
   },
 ];
+
+export const allProposal = [
+  {
+    "name": "John Doe",
+    "price": 30,
+    "description": "We are seeking a highly skilled software engineer to join our team. The ideal candidate will have experience with a variety of programming languages and frameworks, and will be able to work independently as well as in a team environment.",
+    "timeToGo": "Immediately",
+    "deadline": "May 31, 2023",
+    image: "/images/clients/Group 3.png",
+    "title": "Software Engineer"
+  },
+  {
+    "name": "Jane Smith",
+    "price": 33,
+    "description": "We are looking for an experienced marketing manager to develop and implement marketing strategies that will help our company grow. The ideal candidate will have a proven track record of success in marketing, and will be able to lead a team of marketing professionals.",
+    "timeToGo": "Immediately",
+    "deadline": "June 15, 2023",
+    image: "/images/clients/Group 3.png",
+    "title": "Marketing Manager"
+  },
+  {
+    "name": "Bob Johnson",
+    "price": 29,
+    "description": "We are seeking a data scientist with experience in statistical modeling, machine learning, and data visualization. The ideal candidate will be able to work with large datasets and have strong programming skills in Python, R, or similar languages.",
+    "timeToGo": "Immediately",
+    "deadline": "April 30, 2023",
+    image: "/images/clients/Group 3.png",
+    "title": "Data Scientist"
+  }
+]

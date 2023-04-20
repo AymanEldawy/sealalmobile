@@ -17,7 +17,7 @@ const RequestServicesConfirmation = ({
   return (
     <div className="">
       <div className="flex flex-col gap-5 p-4 py-8 rounded-md">
-        <h3 className="text-lg font-medium capitalize items-center flex justify-between">
+        <h3 className=" font-medium capitalize items-center flex justify-between">
           Air conditioner transistor repair confirm and send
           {layout === "view" ? null : (
             <button
@@ -30,7 +30,9 @@ const RequestServicesConfirmation = ({
         </h3>
         <p className="text-lead text-sm">30 Nov , 2022 - :30 PM</p>
         <div className="flex gap-2 items-center">
+          <span className="scale-75"> 
           <ElectricCategoryIcon />
+          </span>
           <Link href="/" className="text-primary font-medium capitalize">
             Electrical Devices
           </Link>
@@ -63,14 +65,14 @@ const RequestServicesConfirmation = ({
           <Image
             src="/images/18571126_303.png"
             alt="product Images"
-            width={200}
-            height={180}
+            width={120}
+            height={100}
           />
           <Image
             src="/images/18571126_303.png"
             alt="product Images"
-            width={200}
-            height={180}
+            width={120}
+            height={100}
           />
         </div>
       </div>

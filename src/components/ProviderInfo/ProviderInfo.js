@@ -6,13 +6,13 @@ import React, { useContext, useState } from "react";
 
 import SeeMore from "../Global/SeeMore/SeeMore";
 import ReviewCard from "../ReviewCard/ReviewCard";
-import Modal from "../Modal/Modal";
 import ProviderWorksTimeLine from "../ProviderWorksTimeLine/ProviderWorksTimeLine";
+import PaymentMethods from "../PaymentMethods/PaymentMethods";
+import FullImage from "../FullImage/FullImage";
 
 const ProviderInfo = ({ provider }) => {
   const { lang } = useContext(LanguageContext);
   const [view, setView] = useState("");
-  const [selectedImage, setSelectedImage] = useState("");
   return (
     <>
       <div className="flex flex-col gap-4 justify-between">
@@ -22,7 +22,7 @@ const ProviderInfo = ({ provider }) => {
               <h3 className="text-primary text-lg mb-4  capitalize">
                 {fetchWord("about", lang)} {provider?.name}
               </h3>
-              <p className="text-lead text-sm max-w-xl">
+              <p className="text-lead text-sm max-w-xl mb-4">
                 was popularised in the 1960s with the release of Letraset sheets
                 containing Lorem Ipsum passages, and more recently with was
                 popularised in the 1960s with the release of Letraset sheets
@@ -34,7 +34,12 @@ const ProviderInfo = ({ provider }) => {
                 popularised in the 1960s with the release of Letraset sheets
                 containing Lorem Ipsum passages, and more recently with
               </p>
-              <div className="mt-20">
+              <h3 className="text-primary text-lg mb-4  capitalize">
+                {fetchWord("payment_methods_available", lang)}
+              </h3>
+              <PaymentMethods containerClassName="w-full mb-4 justify-around" />
+
+              <div className="mt-12">
                 <div className="flex justify-between gap-4 mb-4 items-center">
                   <h3 className="text-primary text-lg capitalize">
                     {fetchWord("customer_feedback", lang)}
@@ -59,53 +64,47 @@ const ProviderInfo = ({ provider }) => {
                 </button>
               </div>
               <div className="gap-2 grid grid-cols-2">
-                <Image
+                <FullImage
                   src="/images/projects/1.png"
                   alt="works 1"
                   height={200}
                   width={200}
                   className=" w-full max-w-full !h-full rounded-md object-cover"
-                  onClick={() => setSelectedImage("/images/projects/1.png")}
                 />
-                <Image
+                <FullImage
                   src="/images/projects/2.png"
                   alt="works 2"
                   height={200}
                   width={200}
                   className=" w-full max-w-full !h-full rounded-md object-cover "
-                  onClick={() => setSelectedImage("/images/projects/2.png")}
                 />
-                <Image
+                <FullImage
                   src="/images/projects/3.png"
                   alt="works 2"
                   height={200}
                   width={200}
                   className="w-full max-w-full !h-full rounded-md object-cover "
-                  onClick={() => setSelectedImage("/images/projects/3.png")}
                 />
-                <Image
+                <FullImage
                   src="/images/projects/4.png"
                   alt="works 2"
                   height={200}
                   width={200}
                   className="w-full max-w-full !h-full rounded-md object-cover "
-                  onClick={() => setSelectedImage("/images/projects/4.png")}
                 />
-                <Image
+                <FullImage
                   src="/images/projects/5.png"
                   alt="works 2"
                   height={200}
                   width={200}
                   className="w-full max-w-full !h-full rounded-md object-cover "
-                  onClick={() => setSelectedImage("/images/projects/5.png")}
                 />
-                <Image
+                <FullImage
                   src="/images/projects/6.png"
                   alt="works 2"
                   height={200}
                   width={200}
                   className="w-full max-w-full !h-full rounded-md object-cover "
-                  onClick={() => setSelectedImage("/images/projects/6.png")}
                 />
               </div>
             </div>
@@ -114,15 +113,7 @@ const ProviderInfo = ({ provider }) => {
           <ProviderWorksTimeLine />
         )}
       </div>
-      <Modal open={!!selectedImage} close={() => setSelectedImage("")}>
-        <Image
-          src={selectedImage}
-          alt="works 2"
-          height={450}
-          width={1200}
-          className="w-full max-h-[90vh] rounded-md object-cover "
-        />
-      </Modal>
+
     </>
 
   );

@@ -12,7 +12,7 @@ const OfferCard = ({ offer, hideButton }) => {
   console.log(offer);
   return (
     <div className="flex gap-4 p-4 rounded-md bg-white">
-      <Image src={offer?.image} alt={offer?.name} width={200} height={280} />
+      <Image className="w-32 h-36 xs:w-52 xs:h-44" src={offer?.image} alt={offer?.name} width={200} height={280} />
       <div className="flex gap-4 flex-1">
         <div className="flex flex-col gap-3 flex-1">
           <h3 className="font-medium text-lg">{offer?.name}</h3>
@@ -21,7 +21,7 @@ const OfferCard = ({ offer, hideButton }) => {
           {hideButton ? null : (
             <PrimaryLink
               link={`/offers/${offer?.offerNumber}`}
-              className={`!border-primary !text-primary bg-transparent !w-full !block  hover:!bg-primary hover:!text-white`}
+              className={`!border-primary mt-auto !text-primary bg-transparent !w-full !block  hover:!bg-primary hover:!text-white`}
             >
               {fetchWord("view_offers", lang)}
             </PrimaryLink>

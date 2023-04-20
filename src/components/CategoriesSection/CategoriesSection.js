@@ -21,22 +21,22 @@ const CategoriesSection = () => {
   return (
     <div className="p-4 py-8">
       <h2 className="text-[#414B5A] font-semibold text-xl  uppercase mb-4" >{fetchWord('categories', lang)}</h2>
-      <div className="grid grid-cols-2 xs:grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 xs:grid-cols-3 gap-2">
         {services?.map((service) => (
           <div
 
             onClick={() => handleLink(service?.name)}
-            className="flex h-36 min-w-[120px] flex-col justify-center items-center bg-white p-2 rounded-xl shadow hover:border-2 hover:border-primary"
+            className="flex h-32 flex-col justify-center items-center bg-white p-1 rounded-xl shadow hover:border-2 hover:border-primary"
             key={service?.name}
           >
             <Image
-              className="max-w-full object-contain !w-full h-full !max-h-[70%] mt-auto"
+              className="max-w-full object-contain !w-full h-full max-[420px]:!max-h-[60%] max-h-[70%] mt-auto"
               src={service?.image}
               alt={service?.name}
-              height={70}
-              width={100}
+              height={60}
+              width={80}
             />
-            <h3 className="mt-auto text-center text-primary">
+            <h3 className="mt-auto text-center text-sm text-primary">
               {fetchWord(service?.name, lang)}
             </h3>
           </div>

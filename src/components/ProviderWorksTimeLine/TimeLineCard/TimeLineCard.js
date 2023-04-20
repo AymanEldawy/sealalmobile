@@ -1,3 +1,4 @@
+import FullImage from "@/components/FullImage/FullImage";
 import RatingStars from "@/components/RatingStars/RatingStars";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +7,7 @@ const TimeLineCard = ({ work }) => {
   return (
     <div className="mb-4 bg-white p-4 rounded-md w-full">
       <div className="flex justify-between">
-        <div className="flex gap-2 items-center">
+        <div className="flex  gap-2 items-center">
           <Image
             className="rounded-full border-2 border-gray-600"
             src={"/images/clients/Group 3.png"}
@@ -22,15 +23,15 @@ const TimeLineCard = ({ work }) => {
         <span className="text-gray-600 text-sm">{work?.date}</span>
       </div>
       <p className="text-lead text-sm my-2">{work?.comment}</p>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
         {work?.images?.map((img, index) => (
-          <Image
+          <FullImage
             className="rounded-md"
             src={img}
             key={index}
             alt={`gallery-${index}`}
-            height={160}
-            width={140}
+            height={110}
+            width={90}
           />
         ))}
       </div>

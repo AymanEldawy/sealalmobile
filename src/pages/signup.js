@@ -59,7 +59,7 @@ export default function Login() {
         }
       >
         <SignupTabBar setActiveStage={setActiveStage} activeStage={activeStage} />
-        <div className="mt-2 flex flex-col w-full max-w-[500px]">
+        <div className="mt-2 px-4 flex flex-col w-full max-w-[500px]">
           {displayTab()}
 
           <Button

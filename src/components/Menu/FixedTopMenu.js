@@ -58,9 +58,9 @@ const FixedTopMenu = ({
             {extraIcons ? extraIcons : null}
             {/* notification icons */}
             {router?.pathname === "/notification" ? (
-              <Link href="/" className="">
+              <button onClick={() => router?.back()} className="">
                 <RemoveIcon />
-              </Link>
+              </button>
             ) : (
               <Link href="/notification" className="">
                 <BellIcon />

@@ -259,6 +259,24 @@ export const ar = {
   standard: "الباقة القياسية",
   premium: "الباقة المميزة",
   welcome: "مرحبا بك في",
+  welcome_msg: "من فضلك قم بادخال الايميل و كلمة السر للدخول",
+
+
+  optional: "اختياري ",
+  upload_photo: "تحميل صورة",
+  payment_available:'وسائل الدفع المتاحة',
+  follow_us:'تابعنا',
+  waiting_confirm:'بانتظار التاكيد',
+  waiting_approval:'بانتظار الموافقة',
+  register:'تسجيل',
+  confirm_password:'تاكيد كلمة السر',
+  company_name:'اسم الشركة',
+  accept_the_offer:'قبول العرض',
+  add_offer_message:'تم اضافة الطلب بنجاح و جاري معالجته',
+  save:'حفظ',
+  share:'مشاركة',
+  language:'اللغة'
+
 };
 export const getWordAr = (key) => {
   return ar[key];

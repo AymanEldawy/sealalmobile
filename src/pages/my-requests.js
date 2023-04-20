@@ -19,7 +19,7 @@ const SingleRequest = () => {
           <TabsList
             containerClassName="justify-around"
             activeClassName="border-b-4 border-primary"
-            itemClassName="!p-4 text-center justify-center  first:text-green-400 last:text-red-400 text-gray-700 capitalize"
+            itemClassName="!p-2 !px-1  text-center  p justify-center  first:text-green-400 last:text-red-400 text-gray-700 capitalize"
             list={tabs}
             activeTab={activeTab}
             setActiveTab={setActiveTab}

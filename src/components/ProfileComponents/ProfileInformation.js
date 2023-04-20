@@ -5,9 +5,11 @@ import React, { useContext } from "react";
 
 import { EditIcon, FacebookIcon, GearWorkIcon, InstagramIcon } from "../Icons";
 import Image from "next/image";
+import LanguageBar from "../LanguageBar/LanguageBar";
 
 const ProfileInformation = ({ setActiveTab, role }) => {
   const { lang } = useContext(LanguageContext);
+  
   return (
     <div className="-mt-4">
       <h2 className="flex gap-2 justify-between items-center text-primary font-medium">
@@ -89,14 +91,18 @@ const ProfileInformation = ({ setActiveTab, role }) => {
                   <InstagramIcon className="w-5 h-5 text-secondary" />
                 </div>
               </li>
+             
             </>
           ) : null}
+           <li className="flex gap-6">
+                <span className="flex-1 text-lead max-w-[140px] ">
+                  {fetchWord("language", lang)}
+                </span>
+                <div className="flex gap-2">
+                  <LanguageBar />
+                </div>
+              </li>
         </ul>
-        <div className="relative mt-auto translate-y-6">
-          <span className="absolute bottom-0  rtl:-left-5 ltr:-right-5">
-            <GearWorkIcon />
-          </span>
-        </div>
       </div>
       <div className="border-t-2 border-white h-1 -mx-4 my-4 shadow-md" />
     </div>

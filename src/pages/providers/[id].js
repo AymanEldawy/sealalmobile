@@ -16,11 +16,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
-import { FacebookShareButton } from 'react-share';
+import {
+  FacebookShareButton, EmailShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton
+} from 'react-share';
+import { SocialIcon } from "react-social-icons";
 const SingleProvider = () => {
   const { lang } = useContext(LanguageContext);
   const router = useRouter();
   const { id } = router?.query;
+  const [openShare, setOpenShare] = useState(false);
   const [open, setOpen] = useState(false);
   const [openRequest, setOpenRequest] = useState(false);
   const [provider, setProvider] = useState();
@@ -39,6 +60,35 @@ const SingleProvider = () => {
   }
   return (
     <>
+      <Modal containerClassName="max-w-[575px]" contentBoxClassName="mx-4"  open={openShare} close={() => setOpenShare(false)}>
+        <h3 className="capitalize text-xl mb-2 text-primary font-medium">{fetchWord('share', lang)}</h3>
+        <div className="flex flex-wrap gap-2" >
+          <FacebookShareButton url={url}>
+            <SocialIcon network="facebook" />
+          </FacebookShareButton>
+          <InstapaperShareButton url={url}>
+            <SocialIcon network="instagram" />
+          </InstapaperShareButton>
+          <TelegramShareButton url={url}>
+            <SocialIcon network="telegram" />
+          </TelegramShareButton>
+          <TwitterShareButton url={url}>
+            <SocialIcon network="twitter" />
+          </TwitterShareButton>
+          <PinterestShareButton url={url}>
+            <SocialIcon network="pinterest" />
+          </PinterestShareButton>
+          <RedditShareButton url={url}>
+            <SocialIcon network="reddit" />
+          </RedditShareButton>
+          <LinkedinShareButton url={url}>
+            <SocialIcon network="linkedin" />
+          </LinkedinShareButton>
+          <WhatsappShareButton url={url}>
+            <SocialIcon network="whatsapp" />
+          </WhatsappShareButton>
+        </div>
+      </Modal>
       <Layout
         full
         mainClassName="!bg-[#F2F2F2]"
@@ -46,9 +96,9 @@ const SingleProvider = () => {
         hideBottomMenu
         extraIcons={
           <>
-            <FacebookShareButton quote="Provider" url={url}>
+            <button onClick={() => setOpenShare(true)}>
               <ShareIcon className={`scale-[85%] cursor-pointer`} />
-            </FacebookShareButton>
+            </button>
             <HeartIcon onClick={() => setFavorite(p => !p)} className={`text-white scale-[85%] cursor-pointer  ${favorite ? 'text-red-500' : ''}`} />
           </>
         }
@@ -69,13 +119,6 @@ const SingleProvider = () => {
         <div className="container pt-4">
           <ProviderInfo provider={provider} />
         </div>
-        <div className="border-2 border-white my-4" />
-        <div className="container">
-          <h3 className="text-primary text-lg mb-4 capitalize">
-            {fetchWord("payment_methods_available", lang)}
-          </h3>
-          <PaymentMethods containerClassName="w-full mb-4 justify-around" />
-        </div>
         <div className="h-28" />
         {/* reviews */}
       </Layout>
@@ -87,10 +130,10 @@ const SingleProvider = () => {
           <span>
             <LampIcon />
           </span>
-          <small className="text-primary font-medium">
+          <small className="text-primary text-center font-medium">
             {fetchWord("thank_you", lang)}
           </small>
-          <p className="font-medium">{fetchWord("soon", lang)}</p>
+          <p className="font-medium text-center">{fetchWord("soon", lang)}</p>
           <BackToHome />
         </div>
       </Modal>

@@ -13,7 +13,7 @@ const ServiceProviderCard = ({ provider }) => {
   const { lang } = useContext(LanguageContext);
   console.log(provider?.image);
   return (
-    <div className="shadow rounded-xl p-4 flex gap-4 bg-white">
+    <div className="shadow rounded-xl flex gap-4 bg-white">
       <div className="flex items-start justify-start xs:w-[40%]">
         <Image
           className="object-cover object-top max-h-[140px] max-w-full w-full rounded-xl overflow-hidden"
@@ -23,13 +23,13 @@ const ServiceProviderCard = ({ provider }) => {
           width={150}
         />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 px-2 py-2">
         <div className="flex flex-col w-full h-full">
           <div className="">
-            <h3 className="font-medium text-xl mb-1">{provider?.name}</h3>
+            <h3 className="font-medium mb-1">{provider?.name}</h3>
           </div>
           <RatingStars rating={provider?.rating} />
-          <p className="font-medium flex text-base mt-2">
+          <p className="font-medium flex text-sm mt-2">
             <span className="text-primary">{provider?.hourPrice}$</span>
             <span>/{fetchWord('hr', lang)}</span>
           </p>

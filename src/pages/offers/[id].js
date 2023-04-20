@@ -1,18 +1,14 @@
-import BannerTitle from "@/components/BannerTitle/BannerTitle";
 import { Layout } from "@/components/Layout/Layout";
-import OfferCard from "@/components/OfferCard/OfferCard";
 import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { getOfferById, offers, serviceProviders } from "@/data/dummyData";
+import { allProposal, getOfferById, offers, serviceProviders } from "@/data/dummyData";
 import Image from "next/image";
 import Link from "next/link";
-import { WhatsAppShareIcon } from "@/components/Icons";
-import ServiceProviderCard from "@/components/ServiceContainerBox/ServiceProviderCard/ServiceProviderCard";
-import RequestServicesConfirmation from "@/components/RequestServicesConfirmation/RequestServicesConfirmation";
+import ProposalCard from "@/components/ProposalCard/ProposalCard";
 const SingleOffer = () => {
   const { lang } = useContext(LanguageContext);
   const [offer, setOffer] = useState({});
@@ -43,7 +39,7 @@ const SingleOffer = () => {
             height={200}
           />
           <div className="flex flex-col gap-2 flex-1 relative">
-              <h3 className="font-medium text-2xl">{offer?.name}</h3>
+            <h3 className="font-medium text-2xl">{offer?.name}</h3>
             <div className="flex justify-between items-center gap-2 flex-wrap">
               <span className="text-secondary ">#{offer?.offerNumber}</span>
               <p className="text-lead ">{offer?.date}</p>
@@ -62,9 +58,9 @@ const SingleOffer = () => {
               {fetchWord("see_all", lang)}
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {serviceProviders?.slice(0, 6)?.map((provider, index) => (
-              <ServiceProviderCard key={index} provider={provider} />
+          <div className="grid gap-4">
+            {allProposal?.slice(0, 6)?.map((proposal, index) => (
+              <ProposalCard proposal={proposal} key={index} />
             ))}
           </div>
         </div>

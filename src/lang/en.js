@@ -273,7 +273,9 @@ export const en = {
   company_name:'company name',
   accept_the_offer:'accept the offer',
   add_offer_message:'The offer has been added and we will review it',
-  
+  save:'save',
+  share:'share',
+  language:'language',
 };
 
 export const getWordEn = (key) => {

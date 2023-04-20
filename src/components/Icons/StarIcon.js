@@ -3,8 +3,8 @@ import React from "react";
 const StarIcon = ({ ...classes }) => {
   return (
     <svg
-      width="17"
-      height="16"
+      width="14"
+      height="13"
       viewBox="0 0 13 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
