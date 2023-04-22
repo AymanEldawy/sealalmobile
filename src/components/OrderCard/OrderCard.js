@@ -4,7 +4,7 @@ import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/router';
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { memo } from "react";
 
 import { Button } from "../Global/Button/Button";
@@ -20,6 +20,7 @@ const OrderCard = ({
 }) => {
   const router = useRouter()
   const { lang } = useContext(LanguageContext);
+  const [favorite, setFavorite] = useState(order?.userId?.favorite)
   const myOffers = layout === "my_offers";
   const inProgress = layout === "in_progress";
   let operation = { operation: "update" };
@@ -32,7 +33,6 @@ const OrderCard = ({
       <div className="flex justify-between ltr:pr-2 rtl-pl-2 xs:gap-8 -mx-4 items-center">
         <div className="flex gap-2 items-center shadow-md p-1 px-4 min-h-[45px]">
           <Image
-            onClick={handleLink}
             className="object-contain cursor-pointer"
             src={order?.service?.image}
             alt={order?.service?.name}
@@ -52,7 +52,9 @@ const OrderCard = ({
       </div>
       <div className="flex flex-col xs:flex-row w-full gap-4 items-start">
         <Image
-          className="w-full object-contain xs:w-40 "
+          onClick={handleLink}
+
+          className="w-full object-contain xs:w-40 cursor-pointer"
           src={order?.offer?.image}
           alt={order?.offer?.name}
           width={170}
@@ -63,13 +65,17 @@ const OrderCard = ({
             {myOffers || inProgress ? (
               <span className="text-secondary text-lg">30$/{fetchWord('hr', lang)}</span>
             ) : (
-              <HeartIcon
-                className={
-                  order?.userId?.favorite
-                    ? "text-red-500"
-                    : "text-[#979797]"
-                }
-              />
+              <button
+                onClick={() => setFavorite(p => !p)}>
+
+                <HeartIcon
+                  className={
+                    favorite
+                      ? "text-red-500"
+                      : "text-[#979797]"
+                  }
+                />
+              </button>
             )}
           </span>
           <h3 className="font-medium text-lg cursor-pointer" onClick={handleLink}>{order?.offer?.name}</h3>

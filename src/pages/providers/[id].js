@@ -9,6 +9,8 @@ import PaymentMethods from "@/components/PaymentMethods/PaymentMethods";
 import ProviderInfo from "@/components/ProviderInfo/ProviderInfo";
 import ProviderProfile from "@/components/ProviderProfile/ProviderProfile";
 import RequestServicesForm from "@/components/RequestServicesForm/RequestServicesForm";
+import RequestServicesFormPopup from "@/components/RequestServicesFormPopup/RequestServicesFormPopup";
+import RequestServicesFormUpload from "@/components/RequestServicesFormUpload/RequestServicesFormUpload";
 import { LanguageContext } from "@/context/LangContext";
 import { getItemById, serviceProviders } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
@@ -58,37 +60,16 @@ const SingleProvider = () => {
     setOpenRequest(false)
     setOpen(true)
   }
+  const webShareApi = async () => {
+    try {
+      await navigator?.share({ title: `${provider?.name} Profile` , url: window?.location?.href })
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <>
-      <Modal containerClassName="max-w-[575px]" contentBoxClassName="mx-4"  open={openShare} close={() => setOpenShare(false)}>
-        <h3 className="capitalize text-xl mb-2 text-primary font-medium">{fetchWord('share', lang)}</h3>
-        <div className="flex flex-wrap gap-2" >
-          <FacebookShareButton url={url}>
-            <SocialIcon network="facebook" />
-          </FacebookShareButton>
-          <InstapaperShareButton url={url}>
-            <SocialIcon network="instagram" />
-          </InstapaperShareButton>
-          <TelegramShareButton url={url}>
-            <SocialIcon network="telegram" />
-          </TelegramShareButton>
-          <TwitterShareButton url={url}>
-            <SocialIcon network="twitter" />
-          </TwitterShareButton>
-          <PinterestShareButton url={url}>
-            <SocialIcon network="pinterest" />
-          </PinterestShareButton>
-          <RedditShareButton url={url}>
-            <SocialIcon network="reddit" />
-          </RedditShareButton>
-          <LinkedinShareButton url={url}>
-            <SocialIcon network="linkedin" />
-          </LinkedinShareButton>
-          <WhatsappShareButton url={url}>
-            <SocialIcon network="whatsapp" />
-          </WhatsappShareButton>
-        </div>
-      </Modal>
+     
       <Layout
         full
         mainClassName="!bg-[#F2F2F2]"
@@ -96,7 +77,7 @@ const SingleProvider = () => {
         hideBottomMenu
         extraIcons={
           <>
-            <button onClick={() => setOpenShare(true)}>
+            <button onClick={webShareApi}>
               <ShareIcon className={`scale-[85%] cursor-pointer`} />
             </button>
             <HeartIcon onClick={() => setFavorite(p => !p)} className={`text-white scale-[85%] cursor-pointer  ${favorite ? 'text-red-500' : ''}`} />
@@ -123,7 +104,7 @@ const SingleProvider = () => {
         {/* reviews */}
       </Layout>
       <Modal open={openRequest} close={() => setOpenRequest(false)} containerClassName="max-w-[575px]" modalClassName="overflow-auto max-h-[80vh]">
-        <RequestServicesForm getValues={onSubmitRequest} inModal />
+        <RequestServicesFormPopup />
       </Modal>
       <Modal open={open} close={() => setOpen(false)} containerClassName="max-w-[575px]">
         <div className="flex flex-col justify-center items-center gap-2 px-12">

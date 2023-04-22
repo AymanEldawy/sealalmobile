@@ -6,17 +6,23 @@ import { LanguageContext } from "@/context/LangContext";
 import { fetchWord } from "@/lang/fetchWord";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { useContext } from "react";
 
 const ServiceProviderCard = ({ provider }) => {
   const { lang } = useContext(LanguageContext);
+  const router = useRouter();
+  const handleLink = () => {
+    router.push(`/providers/${provider?.id}`)
+  }
   console.log(provider?.image);
   return (
     <div className="shadow rounded-xl flex gap-4 bg-white">
       <div className="flex items-start justify-start xs:w-[40%]">
         <Image
-          className="object-cover object-top max-h-[140px] max-w-full w-full rounded-xl overflow-hidden"
+          onClick={handleLink}
+          className="cursor-pointer object-cover object-top w-[120px] h-[120px] xs:max-h-[140px] xs:h-full xs:max-w-full xs:w-full rounded-xl overflow-hidden"
           src={`${provider?.image}`}
           alt={provider?.name}
           height={160}

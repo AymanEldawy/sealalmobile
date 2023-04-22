@@ -1,3 +1,5 @@
+
+
 import { LanguageContext } from "@/context/LangContext";
 import { serviceProviders, services } from "@/data/dummyData";
 import { fetchWord } from "@/lang/fetchWord";
@@ -6,14 +8,15 @@ import { useContext } from "react";
 import { useState } from "react";
 
 import CustomSelectField from "../Forms/CustomSelectField";
+import { FileUpload } from "../Forms/FileUpload";
 import { InputField } from "../Forms/InputField";
+import { TextField } from "../Forms/TextField";
 import { Button } from "../Global/Button/Button";
 import { TimeCheckIcon } from "../Icons";
 import { PlusIcon, WorldIcon } from "../Icons";
 import Modal from "../Modal/Modal";
 import PaymentMethods from "../PaymentMethods/PaymentMethods";
-
-const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
+const RequestServicesFormPopup = ({ getValues, setSelectedTab, inModal }) => {
   const { lang } = useContext(LanguageContext);
   const [serviceName, setServiceName] = useState("");
   const [location, setLocation] = useState("");
@@ -25,6 +28,8 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
   const [openPaymentForm, setOpenPaymentForm] = useState(false);
+  const [description, setDescription] = useState("");
+
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +44,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
       name,
       expirationDate,
     });
-    if(!!setSelectedTab)
+    if (!!setSelectedTab)
       setSelectedTab(1);
   };
 
@@ -129,6 +134,18 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
           iconStart={<TimeCheckIcon />}
           labelClassName="!text-black"
         />
+        <TextField
+          value={description}
+          label={fetchWord("description", lang)}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder={fetchWord("description_placeholder", lang)}
+          classes="w-full"
+          labelClassName="!text-black"
+        />
+
+        <div className="flex justify-center items-center flex-col">
+          <FileUpload classes="min-h-[auto]  min-w-[340px] p-4 px-8 border border-primary" />
+        </div>
 
         <h3 className="text-base mt-4 mb-2">
           {fetchWord("payment_method", lang)}{" "}
@@ -138,13 +155,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
           showInputs
           containerClassName="justify-around mb-4"
         />
-        {
-          inModal ? null : (
-            <div className="h-32 -mx-4 bg-[#f2f2f2]" />
-
-          )
-        }
-        <div className={` bottom-0 left-0 w-full max-w-[575px] p-4 ${inModal ? '' : 'fixed bg-[#f2f2f2]'}`}>
+        <div className={` bottom-0 left-0 w-full max-w-[575px] p-4`}>
           <Button
             classes="w-[270px] py-3 text-sm !w-full block "
             onClick={() => {
@@ -153,7 +164,7 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
               }
             }}
           >
-            {fetchWord(inModal ? 'confirm' : "next", lang)}{" "}
+            {fetchWord('confirm', lang)}{" "}
           </Button>
         </div>
       </form>
@@ -161,4 +172,4 @@ const RequestServicesForm = ({ getValues, setSelectedTab, inModal }) => {
   );
 };
 
-export default RequestServicesForm;
+export default RequestServicesFormPopup;

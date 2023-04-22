@@ -15,7 +15,7 @@ const HowItWork = ({ setSelectedTab }) => {
         {fetchWord("welcome_dear", lang)}
       </h1>
       <p className="mt-2">{fetchWord("request_services_msg", lang)}</p>
-      <Button onClick={() => setSelectedTab(2)} classes="block w-full mt-20">
+      <Button onClick={() => setSelectedTab(2)} classes="block w-full mt-8">
         {fetchWord("get_started", lang)}
       </Button>
     </div>
