@@ -1,52 +1,4 @@
 export const ar = {
-  dont_have_account: "ليس لديك حساب؟",
-  create_your_account: "إنشاء حسابك",
-  have_account: "هل لديك حساب بالفعل",
-  username: "اسم المستخدم",
-  password: "كلمة المرور",
-  reset_password: "إعادة تعيين كلمة المرور",
-  reset_password_description:
-    "أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور",
-  email_phone: "البريد الإلكتروني أو الهاتف",
-  enter_code: "أدخل الرمز",
-  enter_code_description:
-    "أدخل الرمز الذي أرسلناه إلى هاتفك ، يرجى التحقق وتعبئته.",
-  receive_code: "لم يصلني الرمز",
-  resend_code: "إعادة إرسال الرمز",
-  keep_going: "استمر",
-  add_request: "إضافة طلب",
-  slide_title1: "عنوان الشريحة 1",
-  slide_description1:
-    "اختر الشريحة الخاصة بك بعناية لأغراض تصميم واجهة المستخدم.",
-  slide_title2: "عنوان الشريحة 2",
-  slide_description2:
-    "اختر الشريحة الخاصة بك بعناية لأغراض تصميم واجهة المستخدم.",
-  slide_title3: "عنوان الشريحة 3",
-  slide_description3:
-    "اختر الشريحة الخاصة بك بعناية لأغراض تصميم واجهة المستخدم.",
-  categories: "الفئات",
-  town: "المدينة",
-  choose_location: "اختر الموقع",
-  view_all: "عرض الكل",
-  payment_methods_available: "طرق الدفع المتاحة",
-  request_services_msg:
-    "سوف تقوم بالمرور عبر عدة خطوات لإضافة الطلب. تأكد من استكمال المطلوب قبل إرسال الطلب.",
-  get_started: "البدء",
-  welcome_dear: "مرحباً عزيزي",
-  credit_card: "بطاقة الائتمان",
-  confirmation_payment: "تأكيد الدفع",
-  request_successfully: "تم إرسال طلبك بنجاح",
-  notification_servers_owners: "سوف تتلقى إشعارات بالعروض من ملاك الخدما",
-  requests: "الطلبات",
-  chatting: "المحادثة",
-  today: "اليوم",
-  notification: "الإشعارات",
-  company_account: "حساب الشركة",
-  save: "حفظ",
-  tax_number: "الرقم الضريبي",
-  social_media: "وسائل التواصل الاجتماعي",
-  my_account: "حسابي",
-
   remember_me: "تذكرني",
   dont_have_account: "إذا لم يكن لديك حساب",
   register_now: "سجل الآن",
@@ -258,8 +210,8 @@ export const ar = {
   basic: "الباقة البسيطة",
   standard: "الباقة القياسية",
   premium: "الباقة المميزة",
-  welcome: "مرحبا بك في",
-  welcome_msg: "من فضلك قم بادخال الايميل و كلمة السر للدخول",
+  our_client:'عملائنا',
+  my_works: "أعمالي",
 
 
   optional: "اختياري ",
@@ -274,9 +226,6 @@ export const ar = {
   accept_the_offer:'قبول العرض',
   add_offer_message:'تم اضافة الطلب بنجاح و جاري معالجته',
   save:'حفظ',
-  share:'مشاركة',
-  language:'اللغة'
-
 };
 export const getWordAr = (key) => {
   return ar[key];

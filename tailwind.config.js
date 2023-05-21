@@ -14,10 +14,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#0063C6",
-        secondary: "#FFC33A",
-        bmain: "#F2F5F8",
-        lead: "#979797",
+        primary: "#EA4958",
+        secondary: "#094E99",
+        ptext: '#949CA9',
+        bsecondary: "#F2F5F8",
+        bmain: "#F4F4F4",
+        lead: '#979797'
       },
       minWidth: {
         custom: "345",

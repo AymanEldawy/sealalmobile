@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import {
-  ArrowShortIcon,
-  BellIcon,
-  LongArrowIcon,
-  OvalIcon,
-  RemoveIcon,
-} from "../Icons";
+// import {
+//   ArrowShortIcon,
+//   BellIcon,
+//   LongArrowIcon,
+//   OvalIcon,
+//   RemoveIcon,
+// } from "../Icons";
 import Link from "next/link";
 
 const FixedTopMenu = ({
@@ -28,7 +28,7 @@ const FixedTopMenu = ({
       className={`relative overflow-hidden p-4 bg-primary pb-5 ${headerClassName}`}
     >
       <span className="absolute -right-6 -top-5 z-0">
-        <OvalIcon />
+        {/* <OvalIcon /> */}
       </span>
       <div
         className={`flex items-center justify-between relative z-10 ${containerClassName}`}
@@ -43,7 +43,7 @@ const FixedTopMenu = ({
             }}
             className={` ${arrowClassName}`}
           >
-            <ArrowShortIcon className="text-white" />
+            {/* <ArrowShortIcon className="text-white" /> */}
           </button>
         )}
         {extraContent ? extraContent : null}
@@ -59,11 +59,11 @@ const FixedTopMenu = ({
             {/* notification icons */}
             {router?.pathname === "/notification" ? (
               <button onClick={() => router?.back()} className="">
-                <RemoveIcon />
+                {/* <RemoveIcon /> */}
               </button>
             ) : (
               <Link href="/notification" className="">
-                <BellIcon />
+                {/* <BellIcon /> */}
               </Link>
             )}
           </div>

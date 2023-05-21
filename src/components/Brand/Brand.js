@@ -3,9 +3,12 @@ import Link from "next/link";
 
 const Brand = () => {
   return (
-    <Link href="/">
-      <Image src="/images/brand.png" alt="BRAND" height={60} width={190} />
-    </Link>
+    <div className="min-w-[250px]">
+
+      <Link href="/">
+        <Image src="/images/logo.png" alt="BRAND" height={60} width={190} />
+      </Link>
+    </div>
   );
 };
 

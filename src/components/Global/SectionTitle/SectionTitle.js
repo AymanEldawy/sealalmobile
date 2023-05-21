@@ -1,10 +1,17 @@
-import React from "react";
+import { LanguageContext } from "@/context/LangContext";
+import { fetchWord } from "@/lang/fetchWord";
+import Link from "next/link";
+import React, { useContext } from "react";
 
-const SectionTitle = ({ title, extraContent, classes, titleClassName }) => {
+const SectionTitle = ({ title, link }) => {
+  const { lang } = useContext(LanguageContext)
   return (
-    <div className={`mb-9 flex justify-between ${classes}`}>
-      {title ? <h1 className={`before:w-[7px] before:h-full before:bg-primary before:rounded-xl before:absolute relative ltr:before:left-0 rtl:before:right-0 px-4 py-1 flex items-center font-medium text-[#061432] text-2xl ${titleClassName}`}>{title}</h1> : null}
-      {extraContent}
+    <div className='flex justify-between items-center mb-6'>
+      <h2 className='capitalize text-secondary text-xl font-semibold flex items-center gap-2'>
+        {title}
+        <span className="text-primary border border-primary rounded-2xl p-1 text-xs">{fetchWord('hot_categories', lang)}</span>
+      </h2>
+      <Link href={link} className='text-primary'>{fetchWord('all', lang)}</Link>
     </div>
   );
 };

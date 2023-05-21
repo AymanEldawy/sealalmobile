@@ -6,7 +6,7 @@ const CustomSlideArrow = (props) => {
   const { classes, style, onClick, direction } = props;
   return (
     <button
-      className={`absolute -top-[75px] ltr:right-0 rtl:left-0  w-9 h-9 rounded-md flex justify-center items-center bg-white ${classes} disabled:text-[#707070] text-primary`}
+      className={`absolute -top-[60px] ltr:right-0 rtl:left-0  w-9 h-9 rounded-md flex justify-center items-center bg-white ${classes} disabled:text-[#707070] text-primary`}
       onClick={onClick}
       disabled={!onClick}
     >

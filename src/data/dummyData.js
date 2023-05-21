@@ -1,18 +1,12 @@
-import {
-  AirConIcon,
-  FriggedIcon,
-  GasIcon,
-  MicrowavesIcon,
-  OthersIcon,
-  OvensIcon,
-} from "@/components/Icons";
+import { AirConIcon, FriggedIcon, GasIcon, MicrowavesIcon, OthersIcon, OvensIcon } from "@/components/Icons";
 
 const getRandomOf = (list) => {
   return Math.floor(Math.random() * list?.length);
 };
 
 export const getItemById = (list, itemId) => {
-  return list?.find((item) => +item?.id === +itemId);
+  console.log(list, itemId)
+  return list?.find((item) => item?.id === itemId);
 };
 export const getOfferById = (list, itemId) => {
   console.log(list, itemId);
@@ -20,320 +14,442 @@ export const getOfferById = (list, itemId) => {
 };
 export const links = [
   { name: "home", link: "/" },
-  { name: "services", link: "/services" },
-  { name: "request_services", link: "/request-services" },
-  { name: "contact", link: "/contact" },
+  { name: "about_us", link: "/about-us" },
+  { name: "categories", link: "/categories" },
+  { name: "sale", link: "/sale" },
+  { name: "companies", link: "/companies" },
+  { name: "contact_us", link: "/contact-us" },
 ];
 
-export const services = [
-  { name: "kitchen", image: "/images/services/1.png" },
-  { name: "decoration", image: "/images/services/2.png" },
-  { name: "electricity", image: "/images/services/3.png" },
-  { name: "electrical", image: "/images/services/4.png" },
-  { name: "plumbing", image: "/images/services/5.png" },
-  { name: "carpentry", image: "/images/services/6.png" },
-  { name: "furniture", image: "/images/services/7.png" },
-  { name: "paint", image: "/images/services/8.png" },
-];
 
-export const latestProjects = [
-  {
-    title: "electricity",
-    description: "electricity_description",
-    image: "/images/projects/1.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/2.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/3.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/4.png",
-  },
-  {
-    title: "electricity",
-    description: "electricity_description",
-    image: "/images/projects/1.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/2.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/3.png",
-  },
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/4.png",
-  },
-  {
-    title: "electricity",
-    description: "electricity_description",
-    image: "/images/projects/1.png",
-  },
+export const categories = [
+  "Best Seller Products",
+  "Woman",
+  "Male",
+  "Mother & child",
+  "Supermarket",
+  "Cosmetic",
+  "Shoes & Bags",
+  "Watches & Accessories",
+  "Electronics",
+  "Devices",
+  "Toys & Hobbies",
+  "Heath & Beauty",
+  "Back to school",
+  "Others",
+
+]
+
+export const products = [
 
   {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/2.png",
+    id: 'Product X',
+    "name": "Product X",
+    "description": "This is a great product that will meet all of your needs!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 25,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.15,
+    "company_name": "ABC Inc.",
+    "delivery_time": "2-3 Delivery days"
   },
+  {
+    id: 'Product Y',
+    "name": "Product Y",
+    "description": "This is another great product that will meet all of your needs!",
+    stock: Math.floor(Math.random() * 32),
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 20,
+    "rating": 3,
+    "favorite": true,
+    "discount": 0.10,
+    "company_name": "XYZ Corp.",
+    "delivery_time": "3-5 Delivery days"
+  },
+  {
+    id: 'Product Z',
+    "name": "Product Z",
+    "description": "This is an amazing product that you won't want to miss out on!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 39,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.25,
+    "company_name": "ACME Inc.",
+    "delivery_time": "1-2 Delivery days"
+  },
+  {
+    id: 'Product A',
+    "name": "Product A",
+    "description": "This product is perfect for those who need a reliable solution!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 15,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.05,
+    "company_name": "DEF Corp.",
+    "delivery_time": "4-6 Delivery days"
+  },
+  {
+    id: 'Product B',
+    "name": "Product B",
+    "description": "This is a high-quality product that will exceed your expectations!",
+    stock: Math.floor(Math.random() * 32),
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 29,
+    "rating": 3,
+    "favorite": false,
+    "discount": 0.20,
+    "company_name": "GHI Inc.",
+    "delivery_time": "2-4 Delivery days"
+  },
+  {
+    id: 'Product C',
+    "name": "Product C",
+    "description": "This product is designed to make your life easier and more enjoyable!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 50,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.30,
+    "company_name": "JKL Corp.",
+    "delivery_time": "1-3 Delivery days"
+  },
+  {
+    id: 'Product D',
+    "name": "Product D",
+    "description": "This is a versatile product that can be used in many different ways!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 19,
+    "rating": 3,
+    "favorite": false,
+    "discount": 0.10,
+    "company_name": "MNO Inc.",
+    "delivery_time": "3-5 Delivery days"
+  },
+  {
+    id: 'Product E',
+    "name": "Product E",
+    "description": "This product is perfect for those who demand the best!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 99,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.40,
+    "company_name": "PQR Corp.",
+    "delivery_time": "1-2 Delivery days"
+  },
+  {
+    id: 'Product F',
+    "name": "Product F",
+    "description": "This is a reliable product that you can count on!",
+    stock: Math.floor(Math.random() * 32),
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 24,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.15,
+    "company_name": "STU Inc.",
+    "delivery_time": "2-4 Delivery days"
+  },
+  {
+    id: 'Product G',
+    "name": "Product G",
+    "description": "This product is perfect for those who need a powerful solution!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 69,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.35,
+    "company_name": "VWX Corp.",
+    "delivery_time": "1-3 Delivery days"
+  },
+  {
+    id: 'Product H',
+    "name": "Product H",
+    "description": "This is a high-performance product that won't let you down!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 39,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.20,
+    "company_name": "YZA Inc.",
+    "delivery_time": "3-5 Delivery days"
+  },
+  {
+    id: 'Product I',
+    "name": "Product I",
+    "description": "This product is perfect for those who demand the best!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 99,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.40,
+    "company_name": "BCD Corp.",
+    "delivery_time": "1-2 Delivery days"
+  },
+  {
+    id: 'Product J',
+    "name": "Product J",
+    "description": "This is a versatile product that can be used in many different ways!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 19,
+    "rating": 3,
+    "favorite": false,
+    "discount": 0.10,
+    "company_name": "EFG Inc.",
+    "delivery_time": "3-5 Delivery days"
+  },
+  {
+    id: 'Product K',
+    "name": "Product K",
+    "description": "This product is perfect for those who need a reliable solution!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 15,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.05,
+    "company_name": "HIJ Corp.",
+    "delivery_time": "4-6 Delivery days"
+  },
+  {
+    id: 'Product L',
+    "name": "Product L",
+    "description": "This is a high-quality product that will exceed your expectations!",
+    stock: Math.floor(Math.random() * 32),
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 29,
+    "rating": 3,
+    "favorite": false,
+    "discount": 0.20,
+    "company_name": "KLM Inc.",
+    "delivery_time": "2-4 Delivery days"
+  },
+  {
+    id: 'Product M',
+    "name": "Product M",
+    "description": "This product is designed to make your life easier and more enjoyable!",
+    stock: Math.floor(Math.random() * 32),
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 50,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.30,
+    "company_name": "NOP Corp.",
+    "delivery_time": "1-3 Delivery days"
+  },
+  {
+    id: 'Product N',
+    "name": "Product N",
+    "description": "This is a reliable product that you can count on!",
+    stock: Math.floor(Math.random() * 32),
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 24,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.15,
+    "company_name": "QRS Inc.",
+    "delivery_time": "2-4 Delivery days"
+  }
+]
 
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/3.png",
-  },
 
-  {
-    title: "plumbing",
-    description: "plumbing_description",
-    image: "/images/projects/4.png",
-  },
-];
+// ]Institutional
+// categories
+// Popular Brands
+// Popular Phones
+// Lorem ipsum, or lipsum as it is sometimes known, is
+//  dummy text used in laying out print, graphic or web 
+// designs. The passage is attributed to an unknown 
+// typesetter in the 15th century 
+export const institutional = [
+  { name: "about us", link: '' },
+  { name: "Vision mission", link: '' },
+  { name: "Management", link: '' },
+  { name: "Corporate Social Responsibility", link: '' },
+  { name: "Our Business Partners", link: '' },
+  { name: "I want to be a supplier", link: '' },
+  { name: "I Want To Be A Delivery Point", link: '' },
+  { name: "Become a Seller on Hepsiburada", link: '' },
+  { name: "Investor relations", link: '' },
+  { name: "solution center", link: '' },
+  { name: "News From Us", link: '' },
+]
 
-export const ourTeam = [
-  {
-    id: 1,
-    name: "John Martin",
-    position: "Electrician",
-    image: "/images/projects/1.png",
-    social: { facebook: "", instagram: "", twitter: "" },
-  },
-  {
-    id: 2,
-    name: "John Martin",
-    position: "Cleaner",
-    image: "/images/projects/2.png",
-    social: { facebook: "", instagram: "", twitter: "" },
-  },
-  {
-    id: 3,
-    name: "John Martin",
-    position: "Plumper",
-    image: "/images/projects/3.png",
-    social: { facebook: "", instagram: "", twitter: "" },
-  },
-  {
-    id: 4,
-    name: "John Martin",
-    position: "Plumper",
-    image: "/images/projects/4.png",
-    social: { facebook: "", instagram: "", twitter: "" },
-  },
-  {
-    id: 5,
-    name: "John Martin",
-    position: "Electrician",
-    image: "/images/projects/1.png",
-    social: { facebook: "", instagram: "", twitter: "" },
-  },
-];
+export const footerCategories = [
 
-export const electrics = [
-  {
-    name: "refrigerators",
-    icon: <FriggedIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
-  },
-  {
-    name: "ovens",
-    icon: <OvensIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
-  },
-  {
-    name: "conditioners",
-    icon: <AirConIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
-  },
-  {
-    name: "microwaves",
-    icon: <MicrowavesIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,   remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop ",
-  },
-  {
-    name: "gas",
-    icon: <GasIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ",
-  },
-  {
-    name: "others",
-    icon: <OthersIcon />,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ",
-  },
-];
+  { name: "Computer / Electronics", link: "" },
+  { name: "Phone Prices / Mobile Phone", link: "" },
+  { name: "White Goods / Kitchen", link: "" },
+  { name: "Photvo / Camera", link: "" },
+  { name: "Sports / Outdoor", link: "" },
+  { name: "Clothing / Shoes", link: "" },
+  { name: "Jewelry / Jewelery", link: "" },
+  { name: "Watch / Glasses / Accessories", link: "" },
+  { name: "Cosmetics / Personal Care", link: "" },
+  { name: "Mother & Baby", link: "" },
+  { name: "Toy", link: "" },
+  { name: "Book / Movie / Music", link: "" },
+  { name: "Hobby / Game Console", link: "" },
+  { name: "Stationery / Office", link: "" },
+  { name: "Auto Accessories / Garden", link: "" },
+  { name: "Winter Tire", link: "" },
+  { name: "Home Decoration / Furniture", link: "" },
+  { name: "Pet Shop / Supermarket", link: "" },
+  { name: "Wallpaper / Calculator", link: "" },
+]
 
-export const serviceProviders = [
-  {
-    id: 1,
-    image: "/images/projects/1.png",
-    name: "John Doe",
-    favorite: true,
-    rating: 4,
-    hourPrice: 50,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 2,
-    image: "/images/projects/2.png",
-    name: "Jane Smith",
-    favorite: false,
-    rating: 3,
-    hourPrice: 60,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 3,
-    image: "/images/projects/3.png",
-    name: "Bob Johnson",
-    favorite: true,
-    rating: 5,
-    hourPrice: 75,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 4,
-    image: "/images/projects/5.png",
-    name: "Sarah Lee",
-    favorite: false,
-    rating: 4,
-    hourPrice: 65,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 5,
-    image: "/images/projects/4.png",
-    name: "Tom Wilson",
-    favorite: true,
-    rating: 4,
-    hourPrice: 55,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 6,
-    image: "/images/projects/2.png",
-    name: "Emily Wang",
-    favorite: false,
-    rating: 5,
-    hourPrice: 80,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 7,
-    image: "/images/projects/3.png",
-    name: "Jack Chen",
-    favorite: true,
-    rating: 3,
-    hourPrice: 45,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 8,
-    image: "/images/projects/4.png",
-    name: "Maggie Li",
-    favorite: false,
-    rating: 4,
-    hourPrice: 70,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 9,
-    image: "/images/projects/5.png",
-    name: "Ryan Zhang",
-    favorite: true,
-    rating: 5,
-    hourPrice: 90,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-  {
-    id: 10,
-    image: "/images/projects/1.pngg",
-    name: "Sophia Wu",
-    favorite: false,
-    rating: 4,
-    hourPrice: 60,
-    services: electrics?.[getRandomOf(electrics)],
-  },
-];
+export const popularBrands = [
 
-export const companies = [
-  {
-    id: 1,
+  { name: "Avon", link: "" },
+  { name: "Samsung", link: "" },
+  { name: "adidas", link: "" },
+  { name: "Nike", link: "" },
+  { name: "apple", link: "" },
+  { name: "Vestel", link: "" },
+  { name: "Bosch", link: "" },
+  { name: "New Balance", link: "" },
+  { name: "defacto", link: "" },
+  { name: "Lacoste", link: "" },
+  { name: "Asus", link: "" },
+  { name: "Lego", link: "" },
+  { name: "Boyner", link: "" },
+  { name: "Cotton", link: "" },
+  { name: "Fairy", link: "" },
+  { name: "Blue", link: "" },
+  { name: "Under Armor", link: "" },
+  { name: "wasa", link: "" },
+  { name: "All Brands", link: "" },
+]
 
-    name: "Acme Corporation",
-    image: "/images/companies/Bitmap.png",
-  },
-  {
-    id: 2,
+export const popularPhones = [
 
-    name: "Globex Corporation",
-    image: "/images/companies/Bitmap-1.png",
-  },
-  {
-    id: 3,
+  { name: "iPhone iOS Phones", link: "" },
+  { name: "Samsung Android Phones", link: "" },
+  { name: "Xiaomi Android Phones", link: "" },
+  { name: "iPhone SE", link: "" },
+  { name: "iPhone 14", link: "" },
+  { name: "iPhone 12 ", link: "" },
+  { name: "iPhone 11 ", link: "" },
+  { name: "Watch 7", link: "" },
+  { name: "iPhone 13", link: "" },
+  { name: "Galaxy Note ", link: "" },
+  { name: "S20 / S20 Plus / S20 Ultra", link: "" },
+]
 
-    name: "Initech Corporation",
-    image: "/images/companies/Bitmap-2.png",
-  },
-  {
-    id: 4,
+export const footerAllHere = [
+  { name: "My User Information", link: "" },
+  { name: "Trading Guide", link: "" },
+  { name: "Twitter Support", link: "" },
+  { name: "Mobile Apps", link: "" },
+  { name: "Safe Shopping Guide", link: "" },
+  { name: "Information h Policy", link: "" },
+  { name: "E - commerce Advertising", link: "" },
+]
 
-    name: "Stark Industries",
-    image: "/images/companies/Bitmap-1.png",
-  },
-  {
-    id: 5,
 
-    name: "Wayne Enterprises",
-    image: "/images/companies/Bitmap-2.png",
-  },
-  {
-    id: 6,
+export const colors = [
+  { src: "/images/products/1.png", name: "red", "color": "#e6194b", "id": 1 },
+  { src: "/images/products/2.png", name: "green", "color": "#3cb44b", "id": 2 },
+  { src: "/images/products/3.png", name: "yellow", "color": "#ffe119", "id": 3 },
+  { src: "/images/products/4.png", name: "blue", "color": "#0082c8", "id": 4 },
+  { src: "/images/products/5.png", name: "orange", "color": "#f58231", "id": 5 },
+  { src: "/images/products/6.png", name: "purple", "color": "#911eb4", "id": 6 },
+  { src: "/images/products/1.png", name: "cyan", "color": "#46f0f0", "id": 7 },
+  { src: "/images/products/2.png", name: "pink", "color": "#f032e6", "id": 8 },
+  { src: "/images/products/3.png", name: "Green Yellow", "color": "#d2f53c", "id": 9 },
+  { src: "/images/products/4.png", name: "light pink", "color": "#fabebe", "id": 10 }
+]
 
-    name: "Umbrella Corporation",
-    image: "/images/companies/Bitmap-1.png",
-  },
-  {
-    id: 7,
 
-    name: "Oscorp Industries",
-    image: "/images/companies/Bitmap-2.png",
-  },
-  {
-    id: 8,
+export const sizes = [
+  { "size": "M", "id": 1 },
+  { "size": "S", "id": 2 },
+  { "size": "L", "id": 3 },
+  { "size": "XL", "id": 4 },
+  { "size": "M", "id": 5 },
+  { "size": "S", "id": 6 },
+  { "size": "L", "id": 7 },
+  { "size": "M", "id": 8 },
+  { "size": "XL", "id": 9 },
+  { "size": "S", "id": 10 }
+]
 
-    name: "Aperture Science",
-    image: "/images/companies/Bitmap-1.png",
-  },
-  {
-    id: 9,
+export const brands = [
+  { "brand": "Nike", "id": 1, count: Math.floor(Math.random() * 200) },
+  { "brand": "Adidas", "id": 2, count: Math.floor(Math.random() * 200) },
+  { "brand": "Levi's", "id": 3, count: Math.floor(Math.random() * 200) },
+  { "brand": "H&M", "id": 4, count: Math.floor(Math.random() * 200) },
+  { "brand": "Zara", "id": 5, count: Math.floor(Math.random() * 200) },
+  { "brand": "Gucci", "id": 6, count: Math.floor(Math.random() * 200) },
+  { "brand": "Chanel", "id": 7, count: Math.floor(Math.random() * 200) },
+  { "brand": "Calvin Klein", "id": 8, count: Math.floor(Math.random() * 200) },
+  { "brand": "Ralph Lauren", "id": 9, count: Math.floor(Math.random() * 200) },
+  { "brand": "Tommy Hilfiger", "id": 10, count: Math.floor(Math.random() * 200) }
+]
 
-    name: "Weyland-Yutani Corporation",
-    image: "/images/companies/Bitmap-2.png",
-  },
-  {
-    id: 10,
+export const suggestionsKeywords = [
+  { "keyword": "Nike", "id": 1 },
+  { "keyword": "Adidas", "id": 2 },
+  { "keyword": "Levi's", "id": 3 },
+  { "keyword": "H&M", "id": 4 },
+  { "keyword": "Zara", "id": 5 },
+  { "keyword": "Gucci", "id": 6 },
+  { "keyword": "Chanel", "id": 7 },
+  { "keyword": "Calvin Klein", "id": 8 },
+  { "keyword": "Ralph Lauren", "id": 9 },
+  { "keyword": "Tommy Hilfiger", "id": 10 },
+  { "keyword": "Samsung", "id": 11 },
+  { "keyword": "Apple", "id": 12 },
+  { "keyword": "Google", "id": 13 },
+  { "keyword": "LG", "id": 14 },
+  { "keyword": "Motorola", "id": 15 },
+  { "keyword": "OnePlus", "id": 16 },
+  { "keyword": "Sony", "id": 17 },
+  { "keyword": "Xiaomi", "id": 18 },
+  { "keyword": "Nokia", "id": 19 },
+  { "keyword": "HTC", "id": 20 }
+]
 
-    name: "Gekko & Co.",
-    image: "/images/companies/Bitmap.png",
-  },
-];
+export const productImages = [
+  { id: 1, src: '/images/products/1.png' },
+  { id: 2, src: '/images/products/2.png' },
+  { id: 3, src: '/images/products/3.png' },
+  { id: 4, src: '/images/products/4.png' },
+  { id: 5, src: '/images/products/5.png' },
+  { id: 6, src: '/images/products/6.png' },
+
+]
+
 
 export const reviews = [
   {
@@ -362,269 +478,441 @@ export const reviews = [
   },
 ];
 
-export const offers = [
-  {
-    name: "Summer Sale",
-    offerNumber: "725319",
-    date: "2023-06-01",
-    image: "/images/18571126_303.png",
-  },
-  {
-    name: "Back to School",
-    offerNumber: "834967",
-    date: "2023-08-15",
-    image: "/images/18571126_303.png",
-  },
-  {
-    name: "Holiday Deals",
-    offerNumber: "619532",
-    date: "2023-12-01",
-    image: "/images/18571126_303.png",
-  },
-  {
-    name: "Black Friday Deals",
-    offerNumber: "984563",
-    date: "2023-11-24",
-    image: "/images/18571126_303.png",
-  },
-  {
-    name: "New Year Clearance",
-    offerNumber: "752369",
-    date: "2024-01-01",
-    image: "/images/18571126_303.png",
-  },
-  {
-    name: "Spring Specials",
-    offerNumber: "135790",
-    date: "2024-04-01",
-    image: "/images/18571126_303.png",
-  },
-];
 
-export const orders = [
+export const sizeChart = [
   {
-    name: "Order 1",
-    date: "2022-05-20",
-    orderNumber: "ORD-123456",
-    userId: serviceProviders[3],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
+    "size_name": "XS",
+    "measurements": {
+      "shoulder": "14",
+      "length": "22",
+      "sleeve_length": "23",
+      "bust": "32",
+      "waist_size": "26",
+      "cuff": "8",
+      "bicep_length": "11"
+    }
   },
   {
-    name: "Order 2",
-    date: "2022-06-15",
-    orderNumber: "ORD-789012",
-    userId: serviceProviders[5],
-    favorite: false,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
+    "size_name": "S",
+    "measurements": {
+      "shoulder": "15",
+      "length": "23",
+      "sleeve_length": "24",
+      "bust": "34",
+      "waist_size": "28",
+      "cuff": "8.5",
+      "bicep_length": "11.5"
+    }
   },
   {
-    name: "Order 3",
-    date: "2022-07-01",
-    orderNumber: "ORD-345678",
-    userId: serviceProviders[1],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
+    "size_name": "M",
+    "measurements": {
+      "shoulder": "16",
+      "length": "24",
+      "sleeve_length": "25",
+      "bust": "36",
+      "waist_size": "30",
+      "cuff": "9",
+      "bicep_length": "12"
+    }
   },
   {
-    name: "Order 4",
-    date: "2022-08-10",
-    orderNumber: "ORD-901234",
-    userId: serviceProviders[4],
-    favorite: false,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
+    "size_name": "L",
+    "measurements": {
+      "shoulder": "17",
+      "length": "25",
+      "sleeve_length": "26",
+      "bust": "38",
+      "waist_size": "32",
+      "cuff": "9.5",
+      "bicep_length": "12.5"
+    }
   },
   {
-    name: "Order 5",
-    date: "2022-09-05",
-    orderNumber: "ORD-567890",
-    userId: serviceProviders[2],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-  {
-    name: "Order 1",
-    date: "2022-05-20",
-    orderNumber: "ORD-123456",
-    userId: serviceProviders[3],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-  {
-    name: "Order 2",
-    date: "2022-06-15",
-    orderNumber: "ORD-789012",
-    userId: serviceProviders[5],
-    favorite: false,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-  {
-    name: "Order 3",
-    date: "2022-07-01",
-    orderNumber: "ORD-345678",
-    userId: serviceProviders[1],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-  {
-    name: "Order 4",
-    date: "2022-08-10",
-    orderNumber: "ORD-901234",
-    userId: serviceProviders[4],
-    favorite: false,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-  {
-    name: "Order 5",
-    date: "2022-09-05",
-    orderNumber: "ORD-567890",
-    userId: serviceProviders[2],
-    favorite: true,
-    service: services[getRandomOf(services)],
-    offer: offers[getRandomOf(offers)],
-  },
-];
-
-export const notifications = [
-  {
-    date: "Today",
-    list: [
-      {
-        title: 'New order added',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "04:55",
-        status: true,
-      },
-      {
-        title: 'New order added',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "04:03",
-        status: false,
-      },
-      {
-        title: 'New order added',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "03:34",
-        status: true,
-      },
-      {
-        title: 'New order added',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "02:54",
-        status: true,
-      },
-    ],
-  },
-  {
-    date: "Yesterday",
-    list: [
-      {
-        title: 'Job X has been closed',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "01:55",
-        status: false,
-      },
-      {
-        title: 'Job X has been closed',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "12:33",
-        status: true,
-      },
-      {
-        title: 'Job X has been closed',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "11:39",
-        status: false,
-      },
-      {
-        title: 'Job X has been closed',
-        description: "Air conditioner transistor repair Confirm and send",
-        image: "/images/18571126_303.png",
-        time: "10:54",
-        status: true,
-      },
-    ],
-  },
-];
-
-export const previousWorks = [
-  {
-    clientName: "John Smith",
-    rating: 4,
-    images: [
-      "/images/works/1.png",
-      "/images/works/2.png",
-      "/images/works/3.png",
-    ],
-    comment: "Great work, very professional!",
-    date: "2022-03-15",
-  },
-  {
-    clientName: "John Smith",
-    rating: 5,
-    images: [
-      "/images/works/4.png",
-      "/images/works/5.png",
-      "/images/works/6.png",
-    ],
-    comment: "Absolutely stunning results, exceeded my expectations!",
-    date: "2021-12-01",
-  },
-  {
-    clientName: "John Smith",
-    rating: 3,
-    images: [
-      "/images/works/7.png",
-      "/images/works/8.png",
-      "/images/works/9.png",
-    ],
-    comment: "Good work, but took longer than expected.",
-    date: "2021-06-20",
-  },
-];
-
-export const allProposal = [
-  {
-    "name": "John Doe",
-    "price": 30,
-    "description": "We are seeking a highly skilled software engineer to join our team. The ideal candidate will have experience with a variety of programming languages and frameworks, and will be able to work independently as well as in a team environment.",
-    "timeToGo": "Immediately",
-    "deadline": "May 31, 2023",
-    image: "/images/clients/Group 3.png",
-    "title": "Software Engineer"
-  },
-  {
-    "name": "Jane Smith",
-    "price": 33,
-    "description": "We are looking for an experienced marketing manager to develop and implement marketing strategies that will help our company grow. The ideal candidate will have a proven track record of success in marketing, and will be able to lead a team of marketing professionals.",
-    "timeToGo": "Immediately",
-    "deadline": "June 15, 2023",
-    image: "/images/clients/Group 3.png",
-    "title": "Marketing Manager"
-  },
-  {
-    "name": "Bob Johnson",
-    "price": 29,
-    "description": "We are seeking a data scientist with experience in statistical modeling, machine learning, and data visualization. The ideal candidate will be able to work with large datasets and have strong programming skills in Python, R, or similar languages.",
-    "timeToGo": "Immediately",
-    "deadline": "April 30, 2023",
-    image: "/images/clients/Group 3.png",
-    "title": "Data Scientist"
+    "size_name": "XL",
+    "measurements": {
+      "shoulder": "18",
+      "length": "26",
+      "sleeve_length": "27",
+      "bust": "40",
+      "waist_size": "34",
+      "cuff": "10",
+      "bicep_length": "13"
+    }
   }
 ]
+
+
+export const phoneChart = [
+  {
+    "name": "Warranty Type",
+    "value": "Apple Turkey Guaranteed"
+  },
+  {
+    "name": "RAM Capacity",
+    "value": "4GB"
+  },
+  {
+    "name": "Battery Power (mAh)",
+    "value": "3000 - 4000"
+  },
+  {
+    "name": "Camera Resolution",
+    "value": "10 - 15MP"
+  },
+  {
+    "name": "Display Technology",
+    "value": "LCD"
+  },
+  {
+    "name": "Mobile Phone Model",
+    "value": "iphone 11"
+  },
+  {
+    "name": "Display Type",
+    "value": "OLED"
+  },
+  {
+    "name": "Touch screen",
+    "value": "There is"
+  },
+  {
+    "name": "Main Camera Flash",
+    "value": "There is"
+  },
+  {
+    "name": "Front Camera Resolution Range",
+    "value": "10 - 15MP"
+  },
+  {
+    "name": "OS",
+    "value": "iOS"
+  },
+  {
+    "name": "Colour",
+    "value": "Red"
+  },
+  {
+    "name": "Headphone jack",
+    "value": "lightning"
+  },
+  {
+    "name": "Charge Input",
+    "value": "lightning"
+  },
+  {
+    "name": "Wireless charging",
+    "value": "No"
+  }
+]
+
+
+export const cartList = [
+
+  {
+    id: 'Product M',
+    "name": "Product M",
+    "description": "This product is designed to make your life easier and more enjoyable!",
+    "status": true,
+    image: '/images/products/1.png',
+    "price": 50,
+    "rating": 5,
+    "favorite": true,
+    "discount": 0.30,
+    "company_name": "NOP Corp.",
+    "delivery_time": "1-3 Delivery days",
+    quantity: 4
+  },
+  {
+    id: 'Product N',
+    "name": "Product N",
+    "description": "This is a reliable product that you can count on!",
+    "status": false,
+    image: '/images/products/1.png',
+    "price": 24,
+    "rating": 4,
+    "favorite": false,
+    "discount": 0.15,
+    "company_name": "QRS Inc.",
+    "delivery_time": "2-4 Delivery days",
+    quantity: 2
+  }
+]
+
+
+export const sellerOrders = [
+
+  {
+    "order_number": "5b7e2297",
+    "product_name": "Chair",
+    "quantity": 7,
+    "address_details": {
+      "address": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e0df0a74",
+    "product_name": "Table",
+    "quantity": 5,
+    "address_details": {
+      "address": "456 Oak St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "a4e7bce2",
+    "product_name": "Sofa",
+    "quantity": 2,
+    "address_details": {
+      "address": "789 Elm St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "7e377d9d",
+    "product_name": "Armchair",
+    "quantity": 1,
+    "address_details": {
+      "address": "321 Pine St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "8f8b0e6d",
+    "product_name": "Bed",
+    "quantity": 3,
+    "address_details": {
+      "address": "654 Cedar St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e3e7b6c3",
+    "product_name": "Bookshelf",
+    "quantity": 2,
+    "address_details": {
+      "address": "987 Birch St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "a4c8e4b7",
+    "product_name": "Desk",
+    "quantity": 1,
+    "address_details": {
+      "address": "246 Walnut St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e5e4d4fe",
+    "product_name": "Lamp",
+    "quantity": 4,
+    "address_details": {
+      "address": "753 Maple St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "a3e8d9c6",
+    "product_name": "Mirror",
+    "quantity": 2,
+    "address_details": {
+      "address": "159 Oak St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "c1d3d1e0",
+    "product_name": "Rug",
+    "quantity": 1,
+    "address_details": {
+      "address": "852 Cedar St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "f7e0c2c9",
+    "product_name": "Side table",
+    "quantity": 2,
+    "address_details": {
+      "address": "753 Oak St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "d1b7e5a1",
+    "product_name": "Armchair",
+    "quantity": 1,
+    "address_details": {
+      "address": "963 Pine St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e5f3b9d6",
+    "product_name": "Bookcase",
+    "quantity": 3,
+    "address_details": {
+      "address": "753 Walnut St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "b8c4e1d0",
+    "product_name": "Chair",
+    "quantity": 4,
+    "address_details": {
+      "address": "246 Cedar St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "d6c1e8d3",
+    "product_name": "Coffee table",
+    "quantity": 1,
+    "address_details": {
+      "address": "753 Pine St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "f0d4e2b2",
+    "product_name": "Dining table",
+    "quantity": 1,
+    "address_details": {
+      "address": "246 Elm St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e4d0b4c8",
+    "product_name": "Lamp",
+    "quantity": 2,
+    "address_details": {
+      "address": "963 Oak St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "b0f2c5a1",
+    "product_name": "Sofa",
+    "quantity": 1,
+    "address_details": {
+      "address": "852 Elm St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  },
+  {
+    "order_number": "e8d0c2b6",
+    "product_name": "TV stand",
+    "quantity": 1,
+    "address_details": {
+      "address": "159 Walnut St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  }
+]
+
+export const addresses = [
+  {
+    id: 1,
+    name: 'Damitta 1',
+    city: 'Cairo',
+    country: 'Egypt',
+    street: 'El Shrabassy St , Damietta',
+    default: true,
+  },
+
+  {
+    id: 2,
+    name: 'Damitta 1',
+    city: 'Cairo',
+    country: 'Egypt',
+    street: 'El Shrabassy St , Damietta',
+    default: true,
+  },
+
+  {
+    id: 3,
+    name: 'Damitta 1',
+    city: 'Cairo',
+    country: 'Egypt',
+    street: 'El Shrabassy St , Damietta',
+    default: true,
+  },
+
+  {
+    id: 4,
+    name: 'Damitta 1',
+    city: 'Cairo',
+    country: 'Egypt',
+    street: 'El Shrabassy St , Damietta',
+    default: true,
+  },
+];
+
+
+export const paymentsBank = [
+  {
+    "id": 987654,
+    "bank_name": "First National Bank",
+    "vpn": 2353,
+    "name": "Jane Smith",
+    "date": "12/25"
+  },
+
+  {
+    "id": 567890,
+    "bank_name": "Global Bank",
+    "vpn": 3212,
+    "name": "Bob Johnson",
+    "date": "10/24"
+  },
+
+  {
+    "id": 246810,
+    "bank_name": "City Bank",
+    "vpn": 4364,
+    "name": "Sarah Lee",
+    "date": "12/34"
+  }]

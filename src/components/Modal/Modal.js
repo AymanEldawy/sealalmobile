@@ -1,16 +1,7 @@
 import React from "react";
-
 import { CloseIcon } from "../Icons";
 
-const Modal = ({
-  open,
-  close,
-  children,
-  title,
-  modalClassName,
-  containerClassName,
-  contentBoxClassName
-}) => {
+const Modal = ({ open, close, children, title,containerClassName, modalClassName }) => {
   //     const element = document.createElement("div");
   //     element.id = "custom-modal";
   //     document.appendChild(element);
@@ -21,10 +12,10 @@ const Modal = ({
       {open ? (
         <div
           onClick={close}
-          className={`fixed top-0 left-0 bottom-0 right-0 z-30 bg-[#0009] flex justify-center items-center ${containerClassName} `}
+          className="fixed top-0 left-0 bottom-0 right-0 z-10 bg-[#0009] flex justify-center items-center"
         >
           <div
-            className={`bg-white  rounded-md min-w-[250px] min-h-[200px] overflow-hidden ${contentBoxClassName}`}
+            className="bg-white  rounded-md min-w-[250px] min-h-[200px] overflow-hidden"
             onClick={(e) => {
               e.stopPropagation();
             }}
@@ -40,11 +31,7 @@ const Modal = ({
                 </button>
               </div>
             ) : null}
-            <div
-              className={`${title ? "p-4 pt-1 px-8" : "p-6"} ${modalClassName}`}
-            >
-              {children}
-            </div>
+            <div className={`${title? 'p-4 pt-1 px-8':"p-6"} ${modalClassName}`}>{children}</div>
           </div>
         </div>
       ) : null}
