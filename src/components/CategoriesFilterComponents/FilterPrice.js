@@ -23,8 +23,8 @@ function FilterPrice({ max, values, onChangePrice }) {
         trackStyle={[{ background: "#094E99", height: '7px' }]}
       />
       <div className="flex justify-between items-center mt-4 -mx-2">
-        <span className="text-xs text-[#1C1F23] font-meidum whitespace-nowrap capitalize">{fetchWord('min_price', lang)} {values?.[0]}</span>
-        <span className="text-xs text-[#1C1F23] font-meidum whitespace-nowrap capitalize">{fetchWord('max_price', lang)} {values?.[1]}</span>
+        <span className="text-sm text-[#1C1F23] font-meidum whitespace-nowrap capitalize">{fetchWord('min_price', lang)} {values?.[0]}</span>
+        <span className="text-sm text-[#1C1F23] font-meidum whitespace-nowrap capitalize">{fetchWord('max_price', lang)} {values?.[1]}</span>
       </div>
     </div>
   );

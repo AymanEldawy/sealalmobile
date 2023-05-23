@@ -35,15 +35,14 @@ export const CartAddress = ({setStage}) => {
     setStage('payment')
   }
   return (
-    <div className=" py-4">
-      <div className="container">
-        <h2 className='font-semibold text-xl capitalize mb-4 text-secondary'>
+    <div className="py-4">
+        {/* <h2 className='font-semibold text-xl capitalize mb-4 text-secondary'>
           {fetchWord('send_message', lang)}
-        </h2>
+        </h2> */}
         {error ? <p className='text-red-500 my-4 text-sm bg-red-200 p-1 rounded-md text-center'>{error}</p> : null}
         {msg ? <p className='text-green-500 my-4 text-sm bg-green-200 p-1 rounded-md text-center'>{msg}</p> : null}
         <form>
-          <div className='grid gap-4 md:grid-cols-2 mb-4'>
+          <div className='grid gap-4 grid-cols-2 mb-4'>
             <InputField
               containerClassName="!mb-0"
               label={fetchWord('first_name', lang)}
@@ -55,19 +54,19 @@ export const CartAddress = ({setStage}) => {
               placeholder={fetchWord('last_name', lang)} value={cartAddressInfo?.last_name} name="last_name" onChange={handelChangeField}
               
               />
-              </div>
             <CustomSelectField
               label={fetchWord('Country_Region', lang)}
               list={options}
               placeholder={fetchWord('Country_Region', lang)}
               value={cartAddressInfo?.Country_Region} name="Country_Region" onChange={handelChangeField}
-            />
+              />
             <CustomSelectField
               label={fetchWord('Town', lang)}
               list={options}
               placeholder={fetchWord('Town', lang)}
               value={cartAddressInfo?.Town} name="Town" onChange={handelChangeField}
-            />
+              />
+              </div>
             <CustomSelectField
               label={fetchWord('Street_address', lang)}
               list={options}
@@ -85,9 +84,8 @@ export const CartAddress = ({setStage}) => {
               placeholder={fetchWord('Order_note', lang)} value={cartAddressInfo?.Order_note} name="Order_note" onChange={handelChangeField}
             />
           
-            <Button onClick={onSubmit} classes="px-6 mt-8 mb-12 w-full max-w-[313px] mx-auto block !p-3">{fetchWord('Place_order', lang)}</Button>
+            <Button onClick={onSubmit} classes="px-6 mt-8 mb-12 w-full max-w-[313px] mx-auto block !p-3 !rounded-3xl">{fetchWord('Place_order', lang)}</Button>
         </form>
-      </div>
     </div>
   )
 }

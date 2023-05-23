@@ -4,8 +4,10 @@ import { brands, colors, sizes } from '@/data/dummyData'
 import { FilterSizes } from './FilterSizes'
 import FilterPrice from './FilterPrice'
 import { FilterBrands } from './FilterBrands'
+import { CategoriesKeywords } from './CategoriesKeywords'
 
 export const Filters = () => {
+  const [activeKeywords, setActiveKeywords] = useState('')
   const [selectedColors, setSelectedColors] = useState([])
   const [selectedSizes, setSelectedSizes] = useState([])
   const [selectedBrands, setSelectedBrands] = useState([])
@@ -36,6 +38,7 @@ export const Filters = () => {
 
   return (
     <div className='flex flex-col gap-4'>
+      <CategoriesKeywords activeKeywords={activeKeywords} setActiveKeywords={setActiveKeywords} />
       <FilterColors selectedColors={selectedColors} colors={colors} insertIntoColors={insertIntoColors} />
       <FilterSizes selectedSizes={selectedSizes} sizes={sizes} insertIntoSizes={insertIntoSizes} />
       <FilterPrice onChangePrice={onChangePrice} values={values} max={600} />

@@ -1,0 +1,65 @@
+import PrimaryLink from '@/components/Global/PrimaryLink/PrimaryLink'
+import { CartIcon } from '@/components/Icons'
+import { Layout } from '@/components/Layout/Layout'
+import { LoadingBar } from '@/components/LoadingBar/LoadingBar'
+import { ProductCard } from '@/components/Product/ProductCard'
+import { LanguageContext } from '@/context/LangContext'
+import { cartList, products } from '@/data/dummyData'
+import { fetchWord } from '@/lang/fetchWord'
+import React, { useState, useEffect, useContext } from 'react'
+
+const Cart = () => {
+  const [loading, setLoading] = useState(false)
+  const [cart, setCart] = useState([])
+  const { lang } = useContext(LanguageContext);
+  const [favorites, setFavorites] = useState([])
+  useEffect(() => {
+    setLoading(true)
+    setFavorites(products?.filter(product => product?.favorite))
+    setCart(cartList)
+    setLoading(false)
+  }, [])
+  return (
+    <Layout containerClassName="!justify-center" hideIcons hideSearch hideNotificationIcon hideIconBack title={fetchWord('my_cart', lang)}>
+      {!loading ? (
+        <>
+          {
+            cart?.length ? (
+              <div className='mb-12 mt-8'>
+                {cart?.map(item => (
+                  <div className='mb-8' key={item?.id}>
+                    <ProductCard grid size="large" product={item} />
+                  </div>
+                ))}
+              </div>
+            )
+              : (
+                <>
+                  <div className="h-full -mx-4 flex items-center justify-center flex-col gap-4 bg-[#F1F1F1] py-12 mb-12">
+                    <CartIcon className="stroke-[4px] h-24 w-24 text-[#D9D9D9]" />
+                    <p className="text-sm font-medium">{fetchWord('cart_empty_msg', lang)}</p>
+                    <PrimaryLink link="/" className="rounded-3xl px-4 py-2 text-sm">{fetchWord('Start_shopping', lang)}</PrimaryLink>
+                  </div>
+                  {favorites?.length ? (
+                    <div className=''>
+                      <h3 className='font-semibold capitalize pb-2 border-b mb-4'>{fetchWord('favorites', lang)}</h3>
+                      {favorites?.map(item => (
+                        <div className='mb-8' key={item?.id}>
+                          <ProductCard grid size="large" product={item} />
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </>
+              )
+
+
+          }
+        </>
+      ) : <LoadingBar />
+      }
+    </Layout>
+  )
+}
+
+export default Cart

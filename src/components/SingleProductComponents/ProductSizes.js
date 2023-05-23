@@ -9,10 +9,9 @@ export const ProductSizes = ({ productSizes, size, setSize }) => {
 
   return (
     <div className="">
-      <h4 className="uppercase mb-2 font-medium">{fetchWord('size', lang)}</h4>
+      <h4 className="uppercase mb-2 font-medium text-secondary">{fetchWord('size', lang)}</h4>
       <div className="flex">
-
-        <div className="flex flex-1 gap-2">
+        <div className="flex flex-1 gap-2 flex-wrap">
           {productSizes?.slice(0,6)?.map(currentSize => (
             <button onClick={() => setSize(currentSize?.id)} key={currentSize?.id} className={`w-9 h-9 text-center items-center border p-1 px-2text-[#3D3D3D] ${currentSize?.id === size ? "!text-white bg-primary rounded-md" : ""}`}>
               {currentSize?.size}

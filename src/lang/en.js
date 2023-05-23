@@ -337,12 +337,12 @@ export const en = {
   Discard: "Discard",
   Add_product: "Add product",
 
-  // orders 
+  // orders
   make_it_done: "make it done",
-  order_details:"order details",
-  product_statues:"product statues",
-  Cancel_the_order:"Cancel the order",
-  buyer_name:"buyer name",
+  order_details: "order details",
+  product_statues: "product statues",
+  Cancel_the_order: "Cancel the order",
+  buyer_name: "buyer name",
 
 
   // terms
@@ -364,9 +364,81 @@ export const en = {
   rate_seller: "rate seller",
   seller: "seller",
 
-  // 
-  // 
-  // 
+  // Mobile version
+
+  // join page
+  join_sealal: "Join Sealal",
+  join_msg: "Log in to your existing account / Log in to your existings account",
+  with_Google: "Continue with Google",
+  with_Facebook: "Continue with Facebook",
+  with_Apple: "Continue with Apple",
+
+  Need_Help: "Need Help?",
+  Bysigning_Offer: "Bysigning up or logging in, you agree to the Offer Up",
+  Trams_Service: "Trams of Service ",
+  and: "and ",
+  Privacy_Policy: "Privacy Policy.",
+  Version: "Version:",
+  // signup page
+  with_Email: "Continue with Email",
+  signup_msg: "Log in to your existent accountLog in to your existent account",
+  login_msg: "Log in to your existent accountLog in to your existent account",
+  Continue: "Continue",
+  create_password: "Create your password",
+  enter_otp: "Enter the OTP",
+  otp_msg1: "Didn’t receive ?",
+  in: "in",
+  otp_msg2: "Resend OTP",
+  // login page
+  Welcome_Back: "Welcome Back !",
+  Or_Continue_With: "Or Continue With",
+
+  // forgot password page
+  reset_password: "Reset your password",
+  // search bar
+  Search_Product: "Search Product",
+
+  // home page
+  see_all: "see all",
+  My_orders: "My orders",
+  Help: "Help",
+  Sealal_express: "Sealal express",
+  menu: "menu",
+
+  // categories menu 
+  Accessories: "Accessories",
+  Brands: "Brands",
+  Popular: "Popular",
+  phone: "Phone",
+  clothes: "clothes",
+
+  // single category page
+  filter: "filter",
+
+
+  // favorite page
+  favorite_msg: "No Product in your favorites",
+  Start_shopping: "Start shopping",
+  favorites: "favorites",
+  // cart page
+  my_cart: "my cart",
+  cart_empty_msg: "No Product in your cart",
+
+  // checkout page 
+  checkout: "checkout",
+
+  // single product page
+  shoulder: 'shoulder',
+  length: "length",
+  sleeve_length: "sleeve length",
+  bust: "bust",
+  waist_size: "waist size",
+  cuff: "cuff",
+  bicep_length: "bicep length",
+
+  // Notification page 
+  Notification: "Notification",
+  notification_empty_msg: "No Notification yet",
 };
 
 export const getWordEn = (key) => {

@@ -19,26 +19,46 @@ export const links = [
   { name: "sale", link: "/sale" },
   { name: "companies", link: "/companies" },
   { name: "contact_us", link: "/contact-us" },
+  { name: "My_orders", link: "/profile" },
+  { name: "Help", link: "/help" },
+
 ];
 
 
-export const categories = [
-  "Best Seller Products",
-  "Woman",
-  "Male",
-  "Mother & child",
-  "Supermarket",
-  "Cosmetic",
-  "Shoes & Bags",
-  "Watches & Accessories",
-  "Electronics",
-  "Devices",
-  "Toys & Hobbies",
-  "Heath & Beauty",
-  "Back to school",
-  "Others",
-
+export const AllCategories = [
+  { id: 1, name: "Best Seller Products" },
+  { id: 2, name: "Woman" },
+  { id: 3, name: "Male" },
+  { id: 4, name: "Mother & child" },
+  { id: 5, name: "Supermarket" },
+  { id: 6, name: "Cosmetic" },
+  { id: 7, name: "Shoes & Bags" },
+  { id: 8, name: "Watches & Accessories" },
+  { id: 9, name: "Electronics" },
+  { id: 10, name: "Devices" },
+  { id: 11, name: "Toys & Hobbies" },
+  { id: 12, name: "Heath & Beauty" },
+  { id: 13, name: "Back to school" },
+  { id: 14, name: "Others" },
 ]
+
+export const mostCategories = [
+  { id: 1, name: "Woman", image: "/images/categories/1.png" },
+  { id: 1, name: "New", image: "/images/categories/2.png" },
+  { id: 1, name: "last chance", image: "/images/categories/3.png" },
+]
+
+export const categories = [
+  { id: 1, name: "Fashion", image: "/images/categories/Ellipse 445.png" },
+  { id: 2, name: "Watches", image: "/images/categories/Ellipse 446.png" },
+  { id: 3, name: "Devices", image: "/images/categories/Ellipse 447.png" },
+  { id: 4, name: "Products", image: "/images/categories/Ellipse 448.png" },
+  { id: 5, name: "Shoes", image: "/images/categories/Ellipse 449.png" },
+  { id: 6, name: "Home", image: "/images/categories/Ellipse 450.png" },
+]
+
+
+
 
 export const products = [
 

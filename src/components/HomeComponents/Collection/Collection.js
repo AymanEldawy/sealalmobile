@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { CollectionSubCategories } from './CollectionSubCategories/CollectionSubCategories'
-import { CollectionProducts } from './CollectionProducts/CollectionProducts'
 import { categories, products } from '@/data/dummyData'
+import { Grid } from '@/components/Grid/Grid'
 
 export const Collection = () => {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0])
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]?.name)
   return (
-    <div className='pt-8 pb-20 -mt-[120px]'>
+    <div className=' pb-12 '>
       <CollectionSubCategories categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-      <CollectionProducts filterProducts={products} />
+      <Grid products={products} />
     </div>
   )
 }

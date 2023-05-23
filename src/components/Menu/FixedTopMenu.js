@@ -1,74 +1,83 @@
+import Image from "next/image";
+import {
+  //   ArrowShortIcon,
+  BellIcon,
+  LongArrowIcon,
+  //   LongArrowIcon,
+  //   OvalIcon,
+  //   props,
+  UserMenuIcon
+} from "../Icons";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
-// import {
-//   ArrowShortIcon,
-//   BellIcon,
-//   LongArrowIcon,
-//   OvalIcon,
-//   RemoveIcon,
-// } from "../Icons";
-import Link from "next/link";
+import SearchBar from "../SearchBar/SearchBar";
 
 const FixedTopMenu = ({
   title,
   extraIcons,
-  extraContent,
   handleBack,
   containerClassName,
   arrowClassName,
-  customArrow,
   hideIcons,
-  extraContent2,
-  headerClassName,
+  hideNotificationIcon,
+  hideIconBack,
+  hideSearch
 }) => {
   const router = useRouter();
   return (
     <div
-      className={`relative overflow-hidden p-4 bg-primary pb-5 ${headerClassName}`}
+      className={`relative flex items-center gap-4 overflow-hidden mb-4 ${containerClassName}`}
     >
-      <span className="absolute -right-6 -top-5 z-0">
-        {/* <OvalIcon /> */}
-      </span>
-      <div
-        className={`flex items-center justify-between relative z-10 ${containerClassName}`}
-      >
-        {customArrow ? (
-          customArrow
-        ) : (
-          <button
-            onClick={() => {
-              if (handleBack) handleBack();
-              else router?.back();
-            }}
-            className={` ${arrowClassName}`}
-          >
-            {/* <ArrowShortIcon className="text-white" /> */}
-          </button>
-        )}
-        {extraContent ? extraContent : null}
-        {extraContent2 ? extraContent2 : null}
-        {title ? (
-          <h1 className="text-white capitalize text-lg font-semibold">
-            {title}
-          </h1>
-        ) : null}
-        {!hideIcons ? (
-          <div className="flex gap-2 items-center ">
-            {extraIcons ? extraIcons : null}
-            {/* notification icons */}
-            {router?.pathname === "/notification" ? (
-              <button onClick={() => router?.back()} className="">
-                {/* <RemoveIcon /> */}
-              </button>
-            ) : (
-              <Link href="/notification" className="">
-                {/* <BellIcon /> */}
-              </Link>
-            )}
-          </div>
-        ) : null}
-      </div>
+      {
+        hideSearch ?
+          <>
+            {
+              hideIconBack ? null : (
+                <button
+                  onClick={() => {
+                    if (handleBack) handleBack();
+                    else router?.back();
+                  }}
+                  className={` ${arrowClassName}`}
+                >
+                  <LongArrowIcon />
+                </button>
+              )
+            }
+          </>
+          : (
+            <div className="flex gap-2 items-center">
+              <figure>
+                <Image src="/images/logo.png" alt="" height={20} width={83} className="object-contain w-[80px] h-[40px]  min-[450px]:w-[100px] min-[450px]h-[30px]" />
+              </figure>
+              <SearchBar />
+            </div>
+          )
+      }
+
+      {title ? (
+        <h1 className="mx-auto text-secondary capitalize text-lg font-semibold">
+          {title}
+        </h1>
+      ) : null}
+      {!!hideIcons ? null : (
+        <div className="ltr:ml-auto rtl:mr-auto flex gap-2 items-center ">
+          {extraIcons ? extraIcons : null}
+          {
+            hideNotificationIcon ? null : (
+              <div className="gap-2 flex">
+                <Link href="/profile" className="">
+                  <UserMenuIcon />
+                </Link>
+                <Link href="/notification" className="">
+                  <BellIcon />
+                </Link>
+              </div>
+            )
+          }
+        </div>
+      )}
     </div>
   );
 };

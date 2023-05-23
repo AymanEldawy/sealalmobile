@@ -5,6 +5,7 @@ import { createContext, useState, useEffect } from "react";
 export const GlobalOptions = createContext();
 
 export const GlobalOptionsProvider = ({ children }) => {
+  const [openDrawer, setOpenDrawer] = useState(false)
   const [cart, setCart] = useState();
   const [user, setUser] = useState({
     name: "Monga",
@@ -30,7 +31,7 @@ export const GlobalOptionsProvider = ({ children }) => {
     setCart(prev => prev?.filter(item => item?.id !== id))
   }
 
-  const values = { user, changeUserRole, cart, addToCart, removeFromCart, cartLength: cart?.length }
+  const values = { openDrawer, setOpenDrawer, user, changeUserRole, cart, addToCart, removeFromCart, cartLength: cart?.length }
   return (
     <GlobalOptions.Provider value={values}>
       {children}

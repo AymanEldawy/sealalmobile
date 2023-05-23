@@ -4,10 +4,9 @@ import { BestSellerSection } from '@/components/HomeComponents/BestSellerSection
 import { Collection } from '@/components/HomeComponents/Collection/Collection';
 import CompaniesBanner from '@/components/HomeComponents/CompaniesBanner/CompaniesBanner';
 import { FlashSaleBanner } from '@/components/HomeComponents/FlashSaleBanner/FlashSaleBanner';
-import { PopularProducts } from '@/components/HomeComponents/PopularProducts/PopularProducts';
+import { Grid } from '@/components/Grid/Grid';
 import { WhyChooseUs } from '@/components/HomeComponents/WhyChooseUs/WhyChooseUs';
 import { Layout } from '@/components/Layout/Layout';
-import { categories } from '@/data/dummyData'
 // import SubMenu from '@/components/Menu/SubMenu/SubMenu';
 import { fetchWord } from '@/lang/fetchWord';
 import Head from 'next/head';
@@ -19,6 +18,9 @@ import { LanguageContext } from './../context/LangContext';
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { HomePickup } from '@/components/HomePickup/HomePickup';
+import { CategoriesSection } from '@/components/HomeComponents/CategoriesSection/CategoriesSection';
+import { products } from '@/data/dummyData';
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -31,31 +33,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout hideSubMenu>
-        <div className='container'>
-          <div className='flex gap-4'>
-            <Sidebar list={categories} title={fetchWord('shop_department', lang)} />
-            <div className='flex-1'>
-              {/* <SubMenu /> */}
-              <Banner />
-            </div>
-          </div>
-          <CompaniesSection />
-          <PopularProducts title={fetchWord('popular_products', lang)} />
-          <CompaniesBanner />
-          <PopularProducts title={fetchWord('opportunity_products', lang)} />
-          <BestSellerSection />
+      <Layout>
+        <Banner />
+        <CategoriesSection />
+        {/* <CompaniesSection /> */}
+        <Grid products={products} title={fetchWord('popular_products', lang)} />
+        <CompaniesBanner />
+        <Grid products={products} title={fetchWord('opportunity_products', lang)} />
+        <Grid products={products} title={fetchWord('best_seller', lang)} />
+        {/* <BestSellerSection /> */}
+        <div className='relative z-10'>
+          <FlashSaleBanner />
+          <Collection />
         </div>
-        <div className='relative z-10 mt-[170px]'>
-          <Image src="/images/backdrop-banner.png" alt="Flash sale" height={600} width={1440} className='absolute top-0 left-0 h-full w-screen object-cover' />
-          <div className='container relative z-[12]'>
-            <FlashSaleBanner />
-            <Collection />
-          </div>
-        </div>
-        <div className='container'>
-          <WhyChooseUs />
-        </div>
+        {/* <WhyChooseUs /> */}
       </Layout>
     </>
   );

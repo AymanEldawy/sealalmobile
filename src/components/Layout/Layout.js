@@ -4,46 +4,52 @@ import { LanguageContext } from "../../context/LangContext";
 import FixedTopMenu from "../Menu/FixedTopMenu";
 import FixedBottomMenu from "./../Menu/FixedBottomMenu";
 
+import { GlobalOptions } from '@/context/GlobalOptions';
+import { Drawer } from "../Menu/Drawer";
+
 export const Layout = ({
   children,
   title,
   extraIcons,
-  extraContent,
   handleBack,
   containerClassName,
   arrowClassName,
-  customArrow,
   hideIcons,
   hideBottomMenu,
   full,
   mainClassName,
-  extraContent2,
-  headerClassName,
+  hideNotificationIcon,
+  hideIconBack,
+  hideSearch
 }) => {
-  const [openedSearch, setOpenedSearch] = useState(false);
   const { lang } = useContext(LanguageContext);
+  const { openDrawer, setOpenDrawer } = useContext(GlobalOptions)
   return (
     <div className={`${full ? "mobile-container-full" : "mobile-container"}`}>
-      <FixedTopMenu
-        title={title}
-        extraIcons={extraIcons}
-        extraContent={extraContent}
-        handleBack={handleBack}
-        containerClassName={containerClassName}
-        arrowClassName={arrowClassName}
-        customArrow={customArrow}
-        hideIcons={hideIcons}
-        extraContent2={extraContent2}
-        headerClassName={headerClassName}
-      />
-      <main
-        className={`rounded-t-3xl relative ${
-          hideBottomMenu ? "" : " pb-24"
-        } ${mainClassName}`}
-      >
-        {children}
-      </main>
+      {
+        openDrawer ? <Drawer /> : (
+          <>
+            <FixedTopMenu
+              title={title}
+              hideSearch={hideSearch}
+              hideIconBack={hideIconBack}
+              extraIcons={extraIcons}
+              handleBack={handleBack}
+              containerClassName={containerClassName}
+              arrowClassName={arrowClassName}
+              hideIcons={hideIcons}
+              hideNotificationIcon={hideNotificationIcon}
+            />
+            <main
+              className={`relative ${hideBottomMenu ? "" : " pb-24"
+                } ${mainClassName}`}
+            >
+              {children}
+            </main>
+          </>
+        )
+      }
       {hideBottomMenu ? null : <FixedBottomMenu />}
-    </div>
+    </div >
   );
 };

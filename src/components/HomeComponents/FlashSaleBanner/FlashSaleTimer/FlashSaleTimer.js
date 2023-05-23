@@ -37,28 +37,28 @@ export const FlashSaleTimer = () => {
   }, [remainingTime]);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-4 max-w-fit px-8 h-full relative z-[5]">
-      <h2 className='font-semibold text-[33px] capitalize text-secondary  ltr:text-right rtl:text-left w-full'>{fetchWord('flash_sale', lang)} 24 {fetchWord('hours', lang)}</h2>
-      <div className='flex items-center gap-6'>
-        <span className="text-primary -mt-4 font-medium capitalize text-lg">{fetchWord('ends_in', lang)}</span>
-        <div className='flex items-center gap-6'>
-          <div className='flex flex-col gap-4 items-center'>
-            <span className='text-[35px] bg-white py-2 px-6  min-w-[90px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.hours.toString().padStart(2, '0')}</span>
-            <p className='text-sm capitalize'>{fetchWord('hours', lang)}</p>
+    <div className="flex flex-col px-4 justify-center items-center gap-1 max-w-fit h-full relative z-[5]">
+      <h2 className='font-semibold text-sm capitalize text-secondary  ltr:text-right rtl:text-left w-full'>{fetchWord('flash_sale', lang)} 24 {fetchWord('hours', lang)}</h2>
+      <div className='flex items-center gap-4'>
+        <span className="text-primary -mt-4 font-medium capitalize text-[10px]">{fetchWord('ends_in', lang)}</span>
+        <div className='flex items-center gap-4'>
+          <div className='flex flex-col gap-1 items-center'>
+            <span className='text-sm font-semibold bg-white py-1 px-3  min-w-[30px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.hours.toString().padStart(2, '0')}</span>
+            <p className='text-[10px] capitalize'>{fetchWord('hours', lang)}</p>
           </div>
-          <div className='flex flex-col gap-4 items-center'>
-            <span className='text-[35px] bg-white py-2 px-6  min-w-[90px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.minutes.toString().padStart(2, '0')}</span>
-            <p className='text-sm capitalize'>{fetchWord('minutes', lang)}</p>
+          <div className='flex flex-col gap-1 items-center'>
+            <span className='text-sm font-semibold bg-white py-1 px-3  min-w-[30px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.minutes.toString().padStart(2, '0')}</span>
+            <p className='text-[10px] capitalize'>{fetchWord('minutes', lang)}</p>
           </div>
-          <div className='flex flex-col gap-4 items-center'>
-            <span className='text-[35px] bg-white py-2 px-6  min-w-[90px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.seconds.toString().padStart(2, '0')}</span>
-            <p className='text-sm capitalize'>{fetchWord('seconds', lang)}</p>
+          <div className='flex flex-col gap-1 items-center'>
+            <span className='text-sm font-semibold bg-white py-1 px-3  min-w-[30px] text-center rounded-md border border-[#DBDBDB] '>{remainingTime.seconds.toString().padStart(2, '0')}</span>
+            <p className='text-[10px] capitalize'>{fetchWord('seconds', lang)}</p>
           </div>
         </div>
       </div>
       {
         router?.pathname !== '/sale' ? (
-          <PrimaryLink link="" className="!border-none mt-8 !rounded-3xl !p-3 !px-5 w-[140px]">{fetchWord('shop_now', lang)}</PrimaryLink>
+          <PrimaryLink link="" className="!border-none mt-2 text-xs !rounded-3xl !p-1 !px-4">{fetchWord('shop_now', lang)}</PrimaryLink>
         ) : null
       }
     </div>
