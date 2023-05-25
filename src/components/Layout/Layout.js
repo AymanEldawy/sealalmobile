@@ -1,11 +1,10 @@
+import { GlobalOptions } from '@/context/GlobalOptions';
 import React, { useContext, useState } from "react";
 
 import { LanguageContext } from "../../context/LangContext";
+import { Drawer } from "../Menu/Drawer";
 import FixedTopMenu from "../Menu/FixedTopMenu";
 import FixedBottomMenu from "./../Menu/FixedBottomMenu";
-
-import { GlobalOptions } from '@/context/GlobalOptions';
-import { Drawer } from "../Menu/Drawer";
 
 export const Layout = ({
   children,
@@ -41,7 +40,7 @@ export const Layout = ({
               hideNotificationIcon={hideNotificationIcon}
             />
             <main
-              className={`relative ${hideBottomMenu ? "" : " pb-24"
+              className={`relative ${hideBottomMenu ? "" : " pb-12"
                 } ${mainClassName}`}
             >
               {children}

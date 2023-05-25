@@ -1,15 +1,15 @@
+import { LanguageContext } from '@/context/LangContext'
+import { fetchWord } from '@/lang/fetchWord'
+import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 
+import { Button } from '../Global/Button/Button'
+import { CartIcon, DeleteIcon } from '../Icons'
 import { ProductFavorite } from './ProductFavorite'
 import { ProductImg } from './ProductImg'
 import { ProductInfo } from './ProductInfo'
 import { ProductPrice } from './ProductPrice'
 import { ProductRating } from './ProductRating'
-import { Button } from '../Global/Button/Button'
-import { LanguageContext } from '@/context/LangContext'
-import { fetchWord } from '@/lang/fetchWord'
-import { CartIcon, DeleteIcon } from '../Icons'
-import { useRouter } from 'next/router'
 
 export const ProductCard = ({ grid, size, product }) => {
   const router = useRouter()
@@ -24,7 +24,7 @@ export const ProductCard = ({ grid, size, product }) => {
         <ProductInfo rating={product?.rating} brand={product?.company_name} title={product?.name} productId={product?.id} size={size} />
         <div className='flex gap-1 mt-1 '>
           <ProductPrice size={size} price={product?.price} discount={product?.discount} />
-          <span className={`${size === 'large' ? 'text-sm' : 'text-[8px]'}  flex items-center justify-center text-[#6881A1]`}>{product?.delivery_time}</span>
+          <span className={`${size === 'large' ? 'text-sm' : 'text-[8px]'} whitespace-nowrap flex items-center justify-center text-[#6881A1]`}>{product?.delivery_time}</span>
         </div>
         <div className='flex gap-2 mt-2'>
           {

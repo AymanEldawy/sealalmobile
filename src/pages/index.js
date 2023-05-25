@@ -1,26 +1,25 @@
+import Sidebar from './../components/Sidebar/Sidebar';
+import { LanguageContext } from './../context/LangContext';
 import Banner from '@/components/Banner/Banner';
 import { CompaniesSection } from '@/components/CompaniesSection/CompaniesSection';
+import { Grid } from '@/components/Grid/Grid';
 import { BestSellerSection } from '@/components/HomeComponents/BestSellerSection/BestSellerSection';
+import { CategoriesSection } from '@/components/HomeComponents/CategoriesSection/CategoriesSection';
 import { Collection } from '@/components/HomeComponents/Collection/Collection';
 import CompaniesBanner from '@/components/HomeComponents/CompaniesBanner/CompaniesBanner';
 import { FlashSaleBanner } from '@/components/HomeComponents/FlashSaleBanner/FlashSaleBanner';
-import { Grid } from '@/components/Grid/Grid';
 import { WhyChooseUs } from '@/components/HomeComponents/WhyChooseUs/WhyChooseUs';
+import { HomePickup } from '@/components/HomePickup/HomePickup';
 import { Layout } from '@/components/Layout/Layout';
+import { products } from '@/data/dummyData';
 // import SubMenu from '@/components/Menu/SubMenu/SubMenu';
 import { fetchWord } from '@/lang/fetchWord';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useContext } from 'react';
 
-import Sidebar from './../components/Sidebar/Sidebar';
-import { LanguageContext } from './../context/LangContext';
-
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { HomePickup } from '@/components/HomePickup/HomePickup';
-import { CategoriesSection } from '@/components/HomeComponents/CategoriesSection/CategoriesSection';
-import { products } from '@/data/dummyData';
 
 export default function Home() {
   const { lang } = useContext(LanguageContext);
@@ -36,7 +35,6 @@ export default function Home() {
       <Layout>
         <Banner />
         <CategoriesSection />
-        {/* <CompaniesSection /> */}
         <Grid products={products} title={fetchWord('popular_products', lang)} />
         <CompaniesBanner />
         <Grid products={products} title={fetchWord('opportunity_products', lang)} />

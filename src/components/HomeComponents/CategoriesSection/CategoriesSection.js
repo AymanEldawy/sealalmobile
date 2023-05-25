@@ -1,17 +1,18 @@
 import SectionTitle from '@/components/Global/SectionTitle/SectionTitle'
 import { LanguageContext } from '@/context/LangContext'
+import { categories } from '@/data/dummyData';
 import { fetchWord } from '@/lang/fetchWord'
+import Image from 'next/image';
+import Link from 'next/link';
 import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
-import Image from 'next/image';
-import { categories } from '@/data/dummyData';
-import Link from 'next/link';
 
 export const CategoriesSection = () => {
   const { lang } = useContext(LanguageContext)
   return (
-    <div className='mt-3'>
+    <div className='mt-3 mb-4'>
       <SectionTitle link="/categories" title={fetchWord('categories', lang)} />
       <Swiper
         spaceBetween={0}
