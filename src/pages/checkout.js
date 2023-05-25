@@ -8,6 +8,7 @@ import { LanguageContext } from '@/context/LangContext'
 import { paymentsBank } from '@/data/dummyData'
 import { fetchWord } from '@/lang/fetchWord'
 import React, { useContext, useEffect, useState } from 'react'
+
 const stages = {
   checkout: { stage: 1, stageName: "checkout" },
   address: { stage: 2, stageName: "address" },
@@ -56,7 +57,7 @@ const Checkout = () => {
 
 
   return (
-    <Layout hideSearch title={fetchWord('checkout', lang)} hideIcons handleBack={stage?.stageName !== 'checkout' ? handleBack : undefined}>
+    <Layout containerClassName="pb-3 before:border-b before:absolute before:-left-4 before:w-screen before:h-[1px] before:-bottom-1 !overflow-visible" hideSearch title={fetchWord('checkout', lang)} hideIcons handleBack={stage?.stageName !== 'checkout' ? handleBack : undefined}>
       <TabsContent activeTabName={stage?.stageName}>
         <CheckoutInformation
           subtotal={subtotal}
