@@ -23,7 +23,7 @@ const FixedBottomMenu = () => {
         <span className="absolute -top-1 ltr:right-0 rtl:left-0 bg-red-500 text-white text-xs px-[2px] rounded-md">{cartLength}</span>
       </Link>
       <a href="https://sealal-shipping.vercel.app/">
-        <Image src="/images/express-logo.svg" alt="sealal express" height={25} width={45} />
+        <Image src="/images/sealal-express.svg" alt="sealal express" height={40} width={70} className="object-contain" />
       </a>
       <button onClick={() => setOpenDrawer(p => !p)}><BarsIcon className="text-black" /></button>
     </div>

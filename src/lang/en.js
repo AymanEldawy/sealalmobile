@@ -151,7 +151,7 @@ export const en = {
   more: "more",
   product_tech_description: "product tech description",
   // cart page
-  remove_from_cart:"remove from cart",
+  remove_from_cart: "remove from cart",
   cart_empty_msg: "Cart is empty",
   product_description: "Product Description",
   size: "Size",
@@ -443,6 +443,10 @@ export const en = {
   waist_size: "waist size",
   cuff: "cuff",
   bicep_length: "bicep length",
+  Share_this_link_via: "Share this link via",
+  Copy: "Copy",
+  or_copy: "Or copy link",
+  Copied: "Copied",
 
   // Notification page 
   Notification: "Notification",

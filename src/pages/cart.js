@@ -20,7 +20,7 @@ const Cart = () => {
     setLoading(false)
   }, [])
   return (
-    <Layout containerClassName="!justify-center" hideIcons hideSearch hideNotificationIcon hideIconBack title={fetchWord('my_cart', lang)}>
+    <Layout containerClassName="!justify-center pb-3 before:border-b before:absolute before:-left-4 before:w-screen before:h-[1px] before:-bottom-1 !overflow-visible" hideIcons hideSearch hideNotificationIcon title={fetchWord('my_cart', lang)}>
       {!loading ? (
         <>
           {
@@ -29,7 +29,7 @@ const Cart = () => {
                 <div className='mb-12 mt-8'>
                   {cart?.map(item => (
                     <div className='mb-8' key={item?.id}>
-                      <ProductCard grid size="large" product={item} />
+                      <ProductCard hideReview grid size="large" product={item} />
                     </div>
                   ))}
                 </div>

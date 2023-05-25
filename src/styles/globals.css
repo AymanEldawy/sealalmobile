@@ -162,6 +162,7 @@ body {
 }
 
 /* hero swiper */
+.swiper-product-gallery .swiper-pagination,
 .single-product-slider .swiper-pagination ,
 .hero-swiper .swiper-pagination{
   position: absolute;
@@ -172,13 +173,14 @@ body {
   gap: 5px;
   z-index: 99;
 }
+.swiper-product-gallery .swiper-pagination {
+  bottom: 15px;
+}
 .hero-swiper .swiper-pagination-bullet-active{
   background-color: var(--primary-color);
 }
 
-.single-product-slider .swiper-pagination-bullet {
-  
-}
+.swiper-pagination .swiper-pagination-bullet-active,
 .single-product-slider .swiper-pagination-bullet-active{
   background-color: #fff;
   border: none

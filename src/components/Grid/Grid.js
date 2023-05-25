@@ -10,7 +10,7 @@ import 'swiper/css';
 export const Grid = ({ title, products }) => {
   const { lang } = useContext(LanguageContext)
   return (
-    <div className=''>
+    <div className='mt-8'>
       {title ?
         <SectionTitle title={title} link="/" />
         : null}

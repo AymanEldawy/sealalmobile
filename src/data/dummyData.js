@@ -69,6 +69,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 25,
     "rating": 4,
     "favorite": false,
@@ -97,6 +99,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 39,
     "rating": 5,
     "favorite": true,
@@ -111,6 +115,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 15,
     "rating": 4,
     "favorite": false,
@@ -139,6 +145,7 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
     "price": 50,
     "rating": 5,
     "favorite": true,
@@ -195,6 +202,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 69,
     "rating": 5,
     "favorite": true,
@@ -223,6 +232,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 99,
     "rating": 5,
     "favorite": true,
@@ -237,6 +248,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 19,
     "rating": 3,
     "favorite": false,
@@ -265,6 +278,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": false,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 29,
     "rating": 3,
     "favorite": false,
@@ -279,6 +294,8 @@ export const products = [
     stock: Math.floor(Math.random() * 32),
     "status": true,
     image: '/images/products/1.png',
+    images: ['/images/products/1.png', '/images/products/2.png', '/images/products/3.png', '/images/products/3.png'],
+
     "price": 50,
     "rating": 5,
     "favorite": true,
@@ -302,15 +319,6 @@ export const products = [
   }
 ]
 
-
-// ]Institutional
-// categories
-// Popular Brands
-// Popular Phones
-// Lorem ipsum, or lipsum as it is sometimes known, is
-//  dummy text used in laying out print, graphic or web 
-// designs. The passage is attributed to an unknown 
-// typesetter in the 15th century 
 export const institutional = [
   { name: "about us", link: '' },
   { name: "Vision mission", link: '' },
