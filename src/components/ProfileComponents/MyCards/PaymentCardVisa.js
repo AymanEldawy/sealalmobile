@@ -4,7 +4,7 @@ import React from 'react';
 export const PaymentCardVisa = ({ color }) => {
   return (
     <div
-      className={`rounded-xl p-2  relative h-44 max-w-[333px]  overflow-hidden ${color || 'bg-blue-500'
+      className={`rounded-xl p-2  relative h-44 max-w-[370px]  overflow-hidden ${color || 'bg-blue-500'
         }`}
     >
       <span className=" rounded-bl-[10rem] bg-transparent border-2 border-white opacity-20 absolute left-[107.12px] top-[-103.96px] w-[264.51px] h-[186.22px]"></span>

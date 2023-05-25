@@ -11,18 +11,13 @@ export const CartPayment = ({ subtotal, total, cart, banks, stage, selectedPayme
   return (
     <div className="my-12">
       <CartStepsBar stage={stage} />
-      <h2 className="capitalize text-lg text-secondary font-semibold my-12">{fetchWord('payment', lang)}</h2>
-      <div className="flex gap-8">
-        <PaymentCardList
-          banks={banks}
-          selectedPaymentCard={selectedPaymentCard}
-          setSelectedPaymentCard={setSelectedPaymentCard}
-        />
-        <div className='flex-1'>
-          <OrderSummary cart={cart} total={total} subtotal={subtotal} />
-        </div>
-
-      </div>
+      <h2 className="capitalize text-lg text-secondary font-semibold my-4">{fetchWord('payment', lang)}</h2>
+      <PaymentCardList
+        banks={banks}
+        selectedPaymentCard={selectedPaymentCard}
+        setSelectedPaymentCard={setSelectedPaymentCard}
+      />
+      <OrderSummary cart={cart} total={total} subtotal={subtotal} />
     </div>
   )
 }

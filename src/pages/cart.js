@@ -25,13 +25,16 @@ const Cart = () => {
         <>
           {
             cart?.length ? (
-              <div className='mb-12 mt-8'>
-                {cart?.map(item => (
-                  <div className='mb-8' key={item?.id}>
-                    <ProductCard grid size="large" product={item} />
-                  </div>
-                ))}
-              </div>
+              <>
+                <div className='mb-12 mt-8'>
+                  {cart?.map(item => (
+                    <div className='mb-8' key={item?.id}>
+                      <ProductCard grid size="large" product={item} />
+                    </div>
+                  ))}
+                </div>
+                <PrimaryLink  link="checkout" className="!w-full block max-w-[300px] mx-auto rounded-3xl" >{fetchWord('checkout', lang)}</PrimaryLink>
+              </>
             )
               : (
                 <>

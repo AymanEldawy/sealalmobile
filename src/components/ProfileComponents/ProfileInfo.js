@@ -1,76 +1,61 @@
-import React, { useState, useContext } from 'react'
-import { ProfileTitle } from './ProfileTitle'
 import { LanguageContext } from '@/context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
-import { ProfileForm } from './ProfileForm';
+import React, { useContext, useState } from 'react'
 
+import { InputField } from '../Forms/InputField';
+import { Button } from '../Global/Button/Button';
+import { ProfileForm } from './ProfileForm';
+import { ProfileTitle } from './ProfileTitle'
 
 export const ProfileInfo = () => {
   const { lang } = useContext(LanguageContext);
   const [first_name, setFirstName] = useState('')
   const [last_name, setLastName] = useState('')
   const [email, setEmail] = useState('')
-  const [new_email, setNewEmail] = useState('');
   const [password, setPassword] = useState()
-  const [new_password, setNewPassword] = useState()
 
-  const updateProfileInfo = (e) => {
-    e.preventDefault()
-  }
-  const updateEmail = (e) => {
-    e.preventDefault()
-  }
-  const updatePassword = (e) => {
+  const updateProfile = (e) => {
     e.preventDefault()
   }
   return (
-    <div className="">
-      <ProfileTitle title={fetchWord('profile', lang)} />
-      <div className="bg-bmain py-8 px-4 mb-4">
-        <h3 className="text-[#363636] font-semibold text-lg">{fetchWord('General_info', lang)}</h3>
-        <ProfileForm
-          firstField={fetchWord('first_name', lang)}
-          firstFieldPlaceholder={fetchWord('User_name', lang)}
-          secondField={fetchWord('last_name', lang)}
-          secondFieldPlaceholder={fetchWord('User_last_name', lang)}
-          submit={updateProfileInfo}
-          firstFieldValue={first_name}
-          secondFieldValue={last_name}
-          onFirstFieldChange={setFirstName}
-          onSecondFieldChange={setLastName}
+    <form className="mt-5" onSubmit={updateProfile}>
+      <div className='flex gap-4'>
+        <InputField
+          containerClassName="!mt-6 !mb-0"
+          classes="border-[#D5D5D5] px-4 bg-[#FAFAFA] !border-none"
+          label={fetchWord('first_name', lang)}
+          placeholder="Jame"
+          value={first_name}
+          onChange={e => setFirstName(e.target.value)}
+        />
+        <InputField
+          containerClassName="!mt-6 !mb-0"
+          classes="border-[#D5D5D5] px-4 bg-[#FAFAFA] !border-none"
+          label={fetchWord('last_name', lang)}
+          placeholder="Taylor"
+          value={last_name}
+          onChange={e => setLastName(e.target.value)}
         />
       </div>
-      <div className="bg-bmain py-8 px-4">
-        <h3 className="text-[#363636] font-semibold text-lg">{fetchWord('Security', lang)}</h3>
-        <ProfileForm
-          firstFieldType="email"
-          secondFieldType="email"
-          firstField={fetchWord('email', lang)}
-          firstFieldPlaceholder="example@example.com"
-          secondField={fetchWord('add_new_email', lang)}
-          secondFieldPlaceholder="example@example.com"
-          submit={updateEmail}
-          firstFieldValue={email}
-          secondFieldValue={new_email}
-          onFirstFieldChange={setEmail}
-          onSecondFieldChange={setNewEmail}
-        />
-        <div className="h-8" />
-        <ProfileForm
-          firstFieldType="password"
-          secondFieldType="password"
-          firstField={fetchWord('password', lang)}
-          firstFieldPlaceholder={fetchWord('**********', lang)}
-          secondField={fetchWord('change_password', lang)}
-          secondFieldPlaceholder={fetchWord('**********', lang)}
-          submit={updatePassword}
-          firstFieldValue={password}
-          secondFieldValue={new_password}
-          onFirstFieldChange={setPassword}
-          onSecondFieldChange={setNewPassword}
-        />
-      </div>
-
-    </div>
+      <InputField
+        type="email"
+        containerClassName="!mt-6 !mb-0"
+        classes="border-[#D5D5D5] px-4 bg-[#FAFAFA] !border-none"
+        label={fetchWord('email', lang)}
+        placeholder="example@example.com"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
+      <InputField
+        type="password"
+        containerClassName="!mt-6 !mb-0"
+        classes="border-[#D5D5D5] px-4 bg-[#FAFAFA] !border-none"
+        label={fetchWord('password', lang)}
+        placeholder="**********"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      />
+      <Button classes="!py-3 mt-8 !rounded-3xl text-sm !px-8 h-[46px] block w-full mx-auto max-w-[282px]">{fetchWord('update', lang)}</Button>
+    </form>
   )
 }

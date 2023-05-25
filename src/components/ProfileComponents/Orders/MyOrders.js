@@ -1,10 +1,11 @@
 import TabsList from '@/components/Tabs/TabsList'
 import { LanguageContext } from '@/context/LangContext';
-import React, { useContext, useState } from 'react'
-import { OrderCard } from './OrderCard';
 import { fetchWord } from '@/lang/fetchWord';
-import { OrderDetailsCard } from './OrderDetailsCard';
+import React, { useContext, useState } from 'react'
+
 import { SellerBar } from '../SellerBar';
+import { OrderCard } from './OrderCard';
+import { OrderDetailsCard } from './OrderDetailsCard';
 
 const list = [
   "All",
@@ -21,13 +22,7 @@ export const MyOrders = () => {
 
   return (
     <div>
-      <div className="border-[#D2D2D2] border-b flex items-center mb-6">
-        {
-          list.map(item => (
-            <button key={item} onClick={() => setStatus(item)} className={`text-[#CCCCCC] capitalize flex-1 text-center font-medium text-lg justify-center ${status === item ? "border-b-2 border-primary !text-primary -mb-[1px]" : ""}`}>{fetchWord(item, lang)}</button>
-          ))
-        }
-      </div>
+
       {
         !!orderDetails ? (
           <>
@@ -36,6 +31,13 @@ export const MyOrders = () => {
           </>
         ) : (
           <div className=''>
+            <div className="border-[#D2D2D2] border-b flex items-center mb-4">
+              {
+                list.map(item => (
+                  <button key={item} onClick={() => setStatus(item)} className={`text-[#CCCCCC] capitalize flex-1 text-center font-medium text-sm justify-center ${status === item ? "border-b-2 border-primary !text-primary -mb-[1px]" : ""}`}>{fetchWord(item, lang)}</button>
+                ))
+              }
+            </div>
             <OrderCard setOrderDetails={setOrderDetails} />
           </div>
         )

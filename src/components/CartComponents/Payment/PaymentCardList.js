@@ -34,7 +34,7 @@ export const PaymentCardList = ({ banks, selectedPaymentCard, setSelectedPayment
                 }
               </div>
             </div>
-            <button onClick={() => setOperation('create')} className="flex gap-3 items-center border border-[#CFCFCF] hover:bg-gray-100 p-6 rounded-2xl mt-8 w-full font-medium capitalize">
+            <button onClick={() => setOperation('create')} className="flex text-sm gap-3 items-center border border-[#CFCFCF] hover:bg-gray-100 p-3 rounded-2xl mt-8 w-full font-medium capitalize">
               <span className='h-6 w-6 flex items-center justify-center border border-inherit rounded-full'>
                 <PlusIcon />
               </span>

@@ -63,7 +63,7 @@ export const categories = [
 export const products = [
 
   {
-    id: 'Product X',
+    id: '012354695',
     "name": "Product X",
     "description": "This is a great product that will meet all of your needs!",
     stock: Math.floor(Math.random() * 32),
@@ -77,7 +77,7 @@ export const products = [
     "delivery_time": "2-3 Delivery days"
   },
   {
-    id: 'Product Y',
+    id: '012154695',
     "name": "Product Y",
     "description": "This is another great product that will meet all of your needs!",
     stock: Math.floor(Math.random() * 32),
@@ -91,7 +91,7 @@ export const products = [
     "delivery_time": "3-5 Delivery days"
   },
   {
-    id: 'Product Z',
+    id: '012344695',
     "name": "Product Z",
     "description": "This is an amazing product that you won't want to miss out on!",
     stock: Math.floor(Math.random() * 32),
@@ -105,7 +105,7 @@ export const products = [
     "delivery_time": "1-2 Delivery days"
   },
   {
-    id: 'Product A',
+    id: '0123546595',
     "name": "Product A",
     "description": "This product is perfect for those who need a reliable solution!",
     stock: Math.floor(Math.random() * 32),
@@ -119,7 +119,7 @@ export const products = [
     "delivery_time": "4-6 Delivery days"
   },
   {
-    id: 'Product B',
+    id: '0123542695',
     "name": "Product B",
     "description": "This is a high-quality product that will exceed your expectations!",
     stock: Math.floor(Math.random() * 32),
@@ -133,7 +133,7 @@ export const products = [
     "delivery_time": "2-4 Delivery days"
   },
   {
-    id: 'Product C',
+    id: '0123454695',
     "name": "Product C",
     "description": "This product is designed to make your life easier and more enjoyable!",
     stock: Math.floor(Math.random() * 32),
@@ -147,7 +147,7 @@ export const products = [
     "delivery_time": "1-3 Delivery days"
   },
   {
-    id: 'Product D',
+    id: '0123514695',
     "name": "Product D",
     "description": "This is a versatile product that can be used in many different ways!",
     stock: Math.floor(Math.random() * 32),
@@ -161,7 +161,7 @@ export const products = [
     "delivery_time": "3-5 Delivery days"
   },
   {
-    id: 'Product E',
+    id: '0123454695',
     "name": "Product E",
     "description": "This product is perfect for those who demand the best!",
     stock: Math.floor(Math.random() * 32),
@@ -175,7 +175,7 @@ export const products = [
     "delivery_time": "1-2 Delivery days"
   },
   {
-    id: 'Product F',
+    id: '0121354695',
     "name": "Product F",
     "description": "This is a reliable product that you can count on!",
     stock: Math.floor(Math.random() * 32),
@@ -189,7 +189,7 @@ export const products = [
     "delivery_time": "2-4 Delivery days"
   },
   {
-    id: 'Product G',
+    id: '0123543695',
     "name": "Product G",
     "description": "This product is perfect for those who need a powerful solution!",
     stock: Math.floor(Math.random() * 32),
@@ -203,7 +203,7 @@ export const products = [
     "delivery_time": "1-3 Delivery days"
   },
   {
-    id: 'Product H',
+    id: '0123546595',
     "name": "Product H",
     "description": "This is a high-performance product that won't let you down!",
     stock: Math.floor(Math.random() * 32),
@@ -217,7 +217,7 @@ export const products = [
     "delivery_time": "3-5 Delivery days"
   },
   {
-    id: 'Product I',
+    id: '0112354695',
     "name": "Product I",
     "description": "This product is perfect for those who demand the best!",
     stock: Math.floor(Math.random() * 32),
@@ -231,7 +231,7 @@ export const products = [
     "delivery_time": "1-2 Delivery days"
   },
   {
-    id: 'Product J',
+    id: '0126354695',
     "name": "Product J",
     "description": "This is a versatile product that can be used in many different ways!",
     stock: Math.floor(Math.random() * 32),
@@ -245,7 +245,7 @@ export const products = [
     "delivery_time": "3-5 Delivery days"
   },
   {
-    id: 'Product K',
+    id: '0123254695',
     "name": "Product K",
     "description": "This product is perfect for those who need a reliable solution!",
     stock: Math.floor(Math.random() * 32),
@@ -259,7 +259,7 @@ export const products = [
     "delivery_time": "4-6 Delivery days"
   },
   {
-    id: 'Product L',
+    id: '0123254695',
     "name": "Product L",
     "description": "This is a high-quality product that will exceed your expectations!",
     stock: Math.floor(Math.random() * 32),
@@ -273,7 +273,7 @@ export const products = [
     "delivery_time": "2-4 Delivery days"
   },
   {
-    id: 'Product M',
+    id: '0123546915',
     "name": "Product M",
     "description": "This product is designed to make your life easier and more enjoyable!",
     stock: Math.floor(Math.random() * 32),
@@ -287,7 +287,7 @@ export const products = [
     "delivery_time": "1-3 Delivery days"
   },
   {
-    id: 'Product N',
+    id: '0123514695',
     "name": "Product N",
     "description": "This is a reliable product that you can count on!",
     stock: Math.floor(Math.random() * 32),
@@ -475,7 +475,7 @@ export const reviews = [
   {
     id: 1,
     name: "John Smith",
-    image: "/images/clients/Ellipse 182.png",
+    image: "/images/clients/1.png",
     date: "2023-04-08",
     rating: 4,
     comment: "Great product, works as advertised!",
@@ -483,7 +483,7 @@ export const reviews = [
   {
     id: 2,
     name: "Jane Doe",
-    image: "/images/clients/Group 3.png",
+    image: "/images/clients/2.png",
     date: "2023-04-07",
     rating: 2,
     comment: "This product did not meet my expectations.",
@@ -491,7 +491,7 @@ export const reviews = [
   {
     id: 3,
     name: "Bob Johnson",
-    image: "/images/clients/Ellipse 180.png",
+    image: "/images/clients/1.png",
     date: "2023-04-05",
     rating: 5,
     comment: "I am very happy with my purchase!",
@@ -630,7 +630,7 @@ export const phoneChart = [
 export const cartList = [
 
   {
-    id: 'Product M',
+    id: '012354695',
     "name": "Product M",
     "description": "This product is designed to make your life easier and more enjoyable!",
     "status": true,
@@ -644,7 +644,7 @@ export const cartList = [
     quantity: 4
   },
   {
-    id: 'Product N',
+    id: '012354695',
     "name": "Product N",
     "description": "This is a reliable product that you can count on!",
     "status": false,
@@ -936,3 +936,87 @@ export const paymentsBank = [
     "name": "Sarah Lee",
     "date": "12/34"
   }]
+
+
+export const notifications = [
+  {
+    "id": 1,
+    "image": "/images/clients/1.png",
+    "title": "commented on",
+    "description": "Your post received a comment!",
+    "from": "Alice Smith",
+    "date": "2023-05-22T15:45:00.000Z"
+  },
+  {
+    "id": 2,
+    "image": "/images/clients/2.png",
+    "title": "shared",
+    "description": "Your post was shared!",
+    "from": "Bob Johnson",
+    "date": "2023-05-22T16:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "image": "/images/clients/1.png",
+    "title": "liked",
+    "description": "Your post received a like!",
+    "from": "Charlie Brown",
+    "date": "2023-05-22T17:15:00.000Z"
+  },
+  {
+    "id": 4,
+    "image": "/images/clients/2.png",
+    "title": "messaged",
+    "description": "You received a new message!",
+    "from": "David Lee",
+    "date": "2023-05-22T18:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "image": "/images/clients/1.png",
+    "title": "followed",
+    "description": "You have a new follower!",
+    "from": "Emma Thompson",
+    "date": "2023-05-22T18:45:00.000Z"
+  },
+  {
+    "id": 6,
+    "image": "/images/clients/2.png",
+    "title": "purchased",
+    "description": "Your order has been shipped!",
+    "from": "Frank Williams",
+    "date": "2023-05-22T19:30:00.000Z"
+  },
+  {
+    "id": 7,
+    "image": "/images/clients/1.png",
+    "title": "commented on",
+    "description": "Your post received a comment!",
+    "from": "Grace Lee",
+    "date": "2023-05-22T20:15:00.000Z"
+  },
+  {
+    "id": 8,
+    "image": "/images/clients/2.png",
+    "title": "liked",
+    "description": "Your post received a like!",
+    "from": "Henry Smith",
+    "date": "2023-05-22T21:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "image": "/images/clients/1.png",
+    "title": "shared",
+    "description": "Your post was shared!",
+    "from": "Isabella Davis",
+    "date": "2023-05-22T21:45:00.000Z"
+  },
+  {
+    "id": 10,
+    "image": "/images/clients/2.png",
+    "title": "messaged",
+    "description": "You received a new message!",
+    "from": "Jacob Martinez",
+    "date": "2023-05-22T22:30:00.000Z"
+  }
+]

@@ -27,7 +27,7 @@ const FixedTopMenu = ({
   const router = useRouter();
   return (
     <div
-      className={`relative flex items-center gap-4 overflow-hidden mb-4 ${containerClassName}`}
+      className={`relative flex items-center gap-4 overflow-hidden mb-4 ${extraIcons ? '!justify-between' :''} ${containerClassName}`}
     >
       {
         hideSearch ?
@@ -57,12 +57,12 @@ const FixedTopMenu = ({
       }
 
       {title ? (
-        <h1 className="mx-auto text-secondary capitalize text-lg font-semibold">
+        <h1 className={`${extraIcons? '': 'mx-auto'} text-secondary capitalize text-lg font-semibold `}>
           {title}
         </h1>
       ) : null}
       {!!hideIcons ? null : (
-        <div className="ltr:ml-auto rtl:mr-auto flex gap-2 items-center ">
+        <div className={` ${title ? "" :"ltr:ml-auto rtl:mr-auto"} flex gap-2 items-center`}>
           {extraIcons ? extraIcons : null}
           {
             hideNotificationIcon ? null : (

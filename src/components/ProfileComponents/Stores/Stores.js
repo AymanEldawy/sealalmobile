@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react'
-import { ProfileTitle } from '../ProfileTitle'
 import { LanguageContext } from '@/context/LangContext';
 import { fetchWord } from '@/lang/fetchWord';
-import { StoreCard } from './StoreCard';
+import React, { useContext, useState } from 'react'
+
+import { ProfileTitle } from '../ProfileTitle'
 import { SingleStore } from './SingleStore';
+import { StoreCard } from './StoreCard';
 
 export const Stores = () => {
   const { lang } = useContext(LanguageContext);
@@ -16,7 +17,6 @@ export const Stores = () => {
           <SingleStore setSelectedStore={setSelectedStore}  store={selectedStore} />
         ) : (
           <>
-            <ProfileTitle title={fetchWord('Stores_follow', lang)} />
             <div className='grid gap-4 md:grid-cols-2'>
               <StoreCard setSelectedStore={setSelectedStore} />
               <StoreCard setSelectedStore={setSelectedStore} />

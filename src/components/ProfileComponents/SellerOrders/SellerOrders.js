@@ -25,26 +25,23 @@ export const SellerOrders = () => {
     setOrders(sellerOrders)
   }, [])
   return (
-    <div className="ltr:pl-4 rtl:pr-4">
-      <div className="flex justify-between gap-4 items-center mb-4">
-        <ProfileTitle title={fetchWord('orders', lang)} />
-        <div className="">
-          <SortBy />
-        </div>
-      </div>
+    <div className="">
       {
         !!orderDetails ? (
           <>
             <div className="mb-4 justify-between bg-[#F4F4F4] p-4 items-center gap-4 w-full flex">
-              <strong className='text-secondary capitalize'>{fetchWord('order_details', lang)}</strong>
-              <Button classes="text-sm" outline>{fetchWord('make_it_done', lang)}</Button>
+              <strong className='text-secondary text-sm capitalize'>{fetchWord('order_details', lang)}</strong>
+              <Button classes="text-xs !p-1" outline>{fetchWord('make_it_done', lang)}</Button>
             </div>
             <OrderDetailsCard isSeller order={orderDetails} />
           </>
         ) : (
           <div className=''>
+                  <div className="flex justify-between gap-4 items-center mb-4">
+        <SortBy />
+      </div>
             <OrdersTable orders={orders} setOrderDetails={setOrderDetails} />
-            <OrderCard setOrderDetails={setOrderDetails} />
+            {/* <OrderCard setOrderDetails={setOrderDetails} /> */}
           </div>
         )
       }

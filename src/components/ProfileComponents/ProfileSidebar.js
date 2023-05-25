@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import { LanguageContext } from '@/context/LangContext';
+import { fetchWord } from '@/lang/fetchWord'
+import React, { useContext, useEffect, useState } from 'react'
+
 import { UserCircleIcon } from '../Icons'
 import TabsList from '../Tabs/TabsList'
-import { fetchWord } from '@/lang/fetchWord'
-import { LanguageContext } from '@/context/LangContext';
-import { list } from 'postcss';
-
+import { LogoutBox } from '../LogoutBox/LogoutBox';
 
 const sellerList = [
   "Profile_info",
@@ -26,22 +26,30 @@ const userList = [
 
 
 export const ProfileSidebar = ({ containerClassName, username, role, activeTab, setActiveTab, changeUserRole }) => {
-  const { lang } = useContext(LanguageContext)
-  // Hello, User name
-  useEffect(() => {
-    setActiveTab(role === 'seller' ? sellerList?.[0] : userList?.[0])
-  }, [])
+  const { lang } = useContext(LanguageContext);
+  const [open, setOpen] = useState(false)
+
+  const onClickConfirm = () => {
+    
+  }
   return (
-    <aside className={`sticky top-0 h-[100dvh] flex flex-col w-[286px] border-2 ${containerClassName}`}>
-      <h3 className='text-white bg-primary flex items-center p-2 px-4  gap-3'><UserCircleIcon className="text-white" /> {fetchWord('hello', lang)}, {username}</h3>
+    <aside className={`bg-white top-0 h-screen flex flex-col ${containerClassName}`}>
+      <h3 className='text-white bg-primary flex pt-8 items-end py-4 px-4  gap-3'><UserCircleIcon className="text-white" /> {fetchWord('hello', lang)}, {username}</h3>
       <TabsList
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         direction="vertical"
         list={role === 'seller' ? sellerList : userList}
-        itemClassName="capitalize ltr:pl-12 rtl:pr-12 py-2 border-b relative whitespace-nowrap before:bg-gray-400 ltr:before:left-5 rtl:before:right-5 before:top-1/2 before:-translate-y-1/2 before:absolute before:w-[5px] before:h-[5px] before:rounded-full"
+        containerClassName="gap-2"
+        itemClassName="capitalize ltr:pl-8 rtl:pr-8 py-4 font-semibold border-b relative whitespace-nowrap"
         activeClassName="!text-primary before:!bg-primary"
       />
+      {
+        open ?
+          <LogoutBox onClickConfirm={onClickConfirm} onClickCancel={() => setOpen(false)} />
+          : null
+      }
+      <button onClick={() => setOpen(true)} className="capitalize ltr:pl-8 rtl:pr-8 py-4 font-semibold border-b relative whitespace-nowrap w-full ltr:text-left rtl:text-right">{fetchWord('logout', lang)}</button>
       <button className="text-blue-500 border border-blue-500 p-2 duration-300 hover:bg-blue-500 hover:text-white" onClick={changeUserRole}>Toggle user role</button>
     </aside>
   )

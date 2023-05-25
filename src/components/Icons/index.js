@@ -98,4 +98,6 @@ export { default as HomeIcon } from "./HomeIcon";
 export { default as CartIcon } from "./CartIcon";
 export { default as BarsIcon } from "./BarsIcon";
 export { default as CategoryGridIcon } from "./CategoryGridIcon";
+export { default as BanIcon } from "./BanIcon";
+export { default as SMSIcon } from "./SMSIcon";
 

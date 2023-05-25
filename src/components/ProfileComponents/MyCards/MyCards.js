@@ -4,8 +4,8 @@ import { fetchWord } from '@/lang/fetchWord'
 import React, { useContext, useEffect, useState } from 'react'
 
 import { ProfileTitle } from '../ProfileTitle'
-import { PaymentCardVisa } from './PaymentCardVisa';
 import { AddNewCard } from './AddNewCard';
+import { PaymentCardVisa } from './PaymentCardVisa';
 
 export const MyCards = () => {
   const { lang } = useContext(LanguageContext)
@@ -22,20 +22,12 @@ export const MyCards = () => {
 
   }
   return (
-    <div>
-      <div className="flex justify-between gap-4 items-center mb-4">
-        <ProfileTitle title={fetchWord(stage !== 'create' ? 'My_saved_cards' : !!updatedCard ? 'Update_card' : 'add_new_card', lang)} />
-        {
-          stage !== 'create' ?
-            <Button onClick={() => setStage('create')} classes="text-sm capitalize  border-primary bg-transparent border font-semibold !text-primary hover:!bg-primary hover:!text-white">{fetchWord('add_new_card', lang)}</Button>
-            : null
-        }
-      </div>
+    <div className="px-4">
       {
         stage === 'create' ? (
-          <AddNewCard onClickCancel={() => setStage('display')}/>
+          <AddNewCard onClickCancel={() => setStage('display')} />
         ) : (
-          <div className='grid md:grid-cols-3 gap-4'>
+          <div className='grid md:grid-cols-3 gap-4  '>
             {
               Array(4).fill(9).map((item, index) => (
                 <PaymentCardVisa key={index} />
@@ -44,6 +36,14 @@ export const MyCards = () => {
           </div>
         )
       }
+      <div className="mt-8">
+        {
+          stage !== 'create' ?
+            <Button onClick={() => setStage('create')} classes="w-full block text-sm capitalize  border-primary bg-transparent border font-semibold !text-primary hover:!bg-primary hover:!text-white">{fetchWord('add_new_card', lang)}</Button>
+            : null
+        }
+      </div>
+
     </div>
   )
 }

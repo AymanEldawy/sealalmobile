@@ -21,21 +21,17 @@ export const SellerProducts = () => {
     setProducts(allProducts)
   }, [])
   return (
-    <div className="ltr:pl-4 rtl:pr-4">
-      <div className="flex justify-between gap-4 items-center mb-4">
-        <ProfileTitle title={fetchWord('products', lang)} />
-        <div className="flex gap-2 items-center">
-          <SortBy sortBy={sortBy} setSortBy={setSortBy} />
-          <ViewAs activeView={activeView} setActiveView={setActiveView} />
-          {
-            operation === 'create' ?
-              <Button onClick={() => setOperation('')} classes="!p-1" outline><CloseIcon /></Button>
-              :
-              <Button onClick={() => setOperation('create')} classes="!p-1" outline><PlusIcon /></Button>
-
-          }
-        </div>
-      </div>
+    <div className="">
+      {
+        operation === 'create' ? null : (
+          <div className="flex justify-between gap-2 my-4 items-center">
+            <SortBy sortBy={sortBy} setSortBy={setSortBy} />
+            <div className="flex gap-2">
+              <ViewAs activeView={activeView} setActiveView={setActiveView} />
+              <Button onClick={() => setOperation('create')} classes="!p-1 !px-2" outline><PlusIcon className="w-4 h-4" /></Button>
+            </div>
+          </div>
+        )}
       {
         operation === 'create' ?
           <AddNewProduct setOperation={setOperation} />

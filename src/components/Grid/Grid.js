@@ -16,6 +16,28 @@ export const Grid = ({ title, products }) => {
       <Swiper
         spaceBetween={10}
         slidesPerView={2.15}
+        breakpoints={{
+          100: {
+            slidesPerView: 1.5
+          },
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 2.15,
+           
+          },
+          400: {
+            slidesPerView: 2.5,
+           
+          },
+          480: {
+            slidesPerView: 3,
+           
+          },
+          640: {
+            slidesPerView: 4,
+        
+          }
+        }}
       >
         {products?.slice(0, 5)?.map(product => (
           <SwiperSlide key={product?.id}>
@@ -23,6 +45,6 @@ export const Grid = ({ title, products }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </div >
   )
 }

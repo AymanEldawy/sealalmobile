@@ -8,12 +8,12 @@ export const CartStepsBar = ({ stage }) => {
   const { lang } = useContext(LanguageContext);
   console.log(stage)
   return (
-    <div className="flex justify-between items-center min-h-[90px] mb-8 max-w-[500px] mx-auto">
+    <div className="flex justify-between items-center min-h-[90px] mb-4 max-w-[500px] mx-auto">
       <div className='relative flex justify-center'>
         <span className={`flex items-center justify-center h-9 w-9 rounded-full border ${stage?.stage > 0 ? "border-black" : "border-[#C9C9C9]"}`}>
           {stage?.stage > 1 ? <CheckIcon /> : null}
         </span>
-        <span className="capitalize absolute top-[110%] left-0 text-xs text-black">{fetchWord('cart', lang)}</span>
+        <span className="capitalize absolute top-[110%] left-0 text-xs text-black">{fetchWord('checkout', lang)}</span>
       </div>
       <span className={`h-[1px] ${stage?.stage > 1 ? "bg-black" : "bg-[#CFCFCF]"} flex-1`} />
       <div className='relative'>

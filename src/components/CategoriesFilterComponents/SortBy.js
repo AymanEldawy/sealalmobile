@@ -12,7 +12,7 @@ const list = [
 export const SortBy = ({ sortBy, setSortBy, hideBorder }) => {
   const { lang } = useContext(LanguageContext)
   return (
-    <div className={`flex p-1 gap-2 ${hideBorder ? "fit-content !min-w-fit" : 'border border-secondary'} rounded-md shrink-0 min-w-[150px]'`}>
+    <div className={`flex p-1 text-xs gap-2 ${hideBorder ? "fit-content !min-w-fit" : 'border border-secondary'} rounded-md shrink-0 min-w-[150px]'`}>
       <span className={`${hideBorder ? '!text-secondary' : 'text-primary'} font-semibold capitalize whitespace-nowrap`}>{fetchWord('sort_by', lang)}</span>
       <CustomSelectField
         placeholder={list?.[0]?.name}
@@ -20,7 +20,7 @@ export const SortBy = ({ sortBy, setSortBy, hideBorder }) => {
         onChange={(e) => setSortBy(e.target.value)}
         containerClassName="!mb-0 "
         selectClassName="p-0 !border-none px-2"
-        arrowClassName="!right-0 !-top-1"
+        arrowClassName="!right-0 !-top-2"
       />
     </div>
   )

@@ -1,4 +1,5 @@
 import { CartAddress } from '@/components/CartComponents/CartAddress'
+import { CheckoutInformation } from '@/components/CartComponents/CheckoutInformation'
 import { CartPayment } from '@/components/CartComponents/Payment/CartPayment'
 import { Layout } from '@/components/Layout/Layout'
 import TabsContent from '@/components/Tabs/TabsContent'
@@ -8,10 +9,10 @@ import { paymentsBank } from '@/data/dummyData'
 import { fetchWord } from '@/lang/fetchWord'
 import React, { useContext, useEffect, useState } from 'react'
 const stages = {
-  // cart: { stage: 1, stateName: "cart" },
-  address: { stage: 2, stateName: "address" },
-  payment: { stage: 3, stateName: "payment" },
-  confirm: { stage: 4, stateName: "confirm" },
+  checkout: { stage: 1, stageName: "checkout" },
+  address: { stage: 2, stageName: "address" },
+  payment: { stage: 3, stageName: "payment" },
+  confirm: { stage: 4, stageName: "confirm" },
 }
 
 const Checkout = () => {
@@ -23,9 +24,8 @@ const Checkout = () => {
   const [error, setError] = useState('')
   const [msg, setMsg] = useState('');
   const [selectedPaymentCard, setSelectedPaymentCard] = useState(null);
-  const [stage, setStage] = useState(stages?.address);
+  const [stage, setStage] = useState(stages?.checkout);
   const [subtotal, setSubtotal] = useState(0)
-
   useEffect(() => {
     let total = cart?.reduce((result, cur) => {
       return result += cur?.price * cur?.quantity
@@ -50,13 +50,27 @@ const Checkout = () => {
     setStage(stages?.[tab])
   }
   console.log(subtotal)
+  const handleBack = () => {
+    setStage(Object.values(stages)?.[stage?.stage - 2])
+  }
 
 
   return (
-    <Layout hideSearch title={fetchWord('checkout', lang)} hideIcons >
-
-      <TabsContent activeTabName={stage?.stateName}>
-        <CartAddress tabName={stages?.address?.stateName} setStage={selectedStage} />
+    <Layout hideSearch title={fetchWord('checkout', lang)} hideIcons handleBack={stage?.stageName !== 'checkout' ? handleBack : undefined}>
+      <TabsContent activeTabName={stage?.stageName}>
+        <CheckoutInformation
+          subtotal={subtotal}
+          total={total}
+          msg={msg}
+          error={error}
+          code={code}
+          setCode={setCode}
+          applyCode={applyCode}
+          cart={cart}
+          tabName={stages?.checkout?.stageName}
+          setStage={selectedStage}
+           />
+        <CartAddress tabName={stages?.address?.stageName} setStage={selectedStage} />
         <CartPayment
           subtotal={subtotal}
           total={total}
@@ -65,7 +79,7 @@ const Checkout = () => {
           selectedPaymentCard={selectedPaymentCard}
           setSelectedPaymentCard={setSelectedPaymentCard}
           stage={stage}
-          tabName={stages?.payment?.stateName}
+          tabName={stages?.payment?.stageName}
           setStage={selectedStage} />
       </TabsContent>
 

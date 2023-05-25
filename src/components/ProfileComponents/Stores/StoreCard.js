@@ -1,21 +1,22 @@
-import React, { useContext } from 'react'
-import { StoreAvatarInfo } from '../StoreAvatarInfo'
 import { Button } from '@/components/Global/Button/Button'
-import { fetchWord } from '@/lang/fetchWord'
-import { LanguageContext } from '@/context/LangContext'
-import Image from 'next/image'
-import { products } from '@/data/dummyData'
 import PrimaryLink from '@/components/Global/PrimaryLink/PrimaryLink'
+import { LanguageContext } from '@/context/LangContext'
+import { products } from '@/data/dummyData'
+import { fetchWord } from '@/lang/fetchWord'
+import Image from 'next/image'
+import React, { useContext } from 'react'
+
+import { StoreAvatarInfo } from '../StoreAvatarInfo'
 
 export const StoreCard = ({setSelectedStore }) => {
   const { lang } = useContext(LanguageContext)
   return (
-    <div className='p-4 rounded bg-[#FCFCFC]'>
+    <div className='p-2 rounded bg-[#FCFCFC]'>
       <div className='flex justify-between items-center'>
         <StoreAvatarInfo hideFollow />
         <Button onClick={() => setSelectedStore(1)} outline classes="text-sm">{fetchWord('go_to_store', lang)}</Button>
       </div>
-      <div className='mt-4 px-4'>
+      <div className='mt-4 px-2'>
         <h5 className='text-sm text-[#2E2E2E] mb-2'>seller’s products</h5>
         <div className='flex gap-2'>
           {
