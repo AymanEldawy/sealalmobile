@@ -1,16 +1,9 @@
 import Image from "next/image";
-import {
-  //   ArrowShortIcon,
-  BellIcon,
-  LongArrowIcon,
-  //   LongArrowIcon,
-  //   OvalIcon,
-  //   props,
-  UserMenuIcon
-} from "../Icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+
+import { BellIcon, LongArrowIcon, UserMenuIcon } from "../Icons";
 import SearchBar from "../SearchBar/SearchBar";
 
 const FixedTopMenu = ({
@@ -48,9 +41,9 @@ const FixedTopMenu = ({
           </>
           : (
             <div className="flex gap-2 items-center">
-              <figure>
+              <Link href="/">
                 <Image src="/images/logo.png" alt="" height={20} width={83} className="object-contain w-[80px] h-[40px]  min-[450px]:w-[100px] min-[450px]h-[30px]" />
-              </figure>
+              </Link>
               <SearchBar />
             </div>
           )

@@ -4,6 +4,7 @@ import { LanguageContext } from '@/context/LangContext'
 import { fetchWord } from '@/lang/fetchWord'
 import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 
 export const Grid = ({ title, products }) => {
@@ -34,7 +35,7 @@ export const Grid = ({ title, products }) => {
            
           },
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3.15,
         
           }
         }}
