@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FilterColors } from './FilterColors'
 import { brands, colors, sizes } from '@/data/dummyData'
 import { FilterSizes } from './FilterSizes'
 import FilterPrice from './FilterPrice'
 import { FilterBrands } from './FilterBrands'
 import { CategoriesKeywords } from './CategoriesKeywords'
+import { Button } from '../Global/Button/Button'
+import { LanguageContext } from '@/context/LangContext'
+import { fetchWord } from '@/lang/fetchWord'
 
-export const Filters = () => {
+export const Filters = ({ setOpenFilter }) => {
+  const {lang} = useContext(LanguageContext)
   const [activeKeywords, setActiveKeywords] = useState('')
   const [selectedColors, setSelectedColors] = useState([])
   const [selectedSizes, setSelectedSizes] = useState([])
@@ -32,8 +36,10 @@ export const Filters = () => {
     else setSelectedBrands(prev => [...prev, brandId])
   }
   const onChangePrice = (value) => {
-    console.log(value, '---')
     setValues(value)
+  }
+  const applyFilters = () => {
+    setOpenFilter(false)
   }
 
   return (
@@ -43,6 +49,10 @@ export const Filters = () => {
       <FilterSizes selectedSizes={selectedSizes} sizes={sizes} insertIntoSizes={insertIntoSizes} />
       <FilterPrice onChangePrice={onChangePrice} values={values} max={600} />
       <FilterBrands brands={brands} selectedBrands={selectedBrands} insertIntoBrands={insertIntoBrands} />
+      <div className='flex gap-2 mb-8'>
+        <Button onClick={() => setOpenFilter(false)} outline classes="flex-1">{fetchWord('cancel', lang)}</Button>
+        <Button onClick={applyFilters} classes="flex-1">{fetchWord('apply', lang)}</Button>
+      </div>
     </div>
   )
 }

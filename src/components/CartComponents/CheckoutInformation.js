@@ -33,7 +33,7 @@ export const CheckoutInformation = ({
       <CartBar total={total} subtotal={subtotal} />
           <div className='flex flex-1 items-center justify-between text-lg font-semibold text-[#3D3D3D] border border-[#ECECEC] p-2 rounded-md gap-12'>
             <span>{fetchWord('Total', lang)}</span>
-            <span>${total + 20}</span>
+            <span>${(+total + 20)?.toFixed(2)}</span>
           </div>
           <Button classes="!p-2 mt-4 block w-full mx-auto min-w-[300px]" onClick={() => setStage("address")}>{fetchWord('Continue', lang)} </Button>
     </div>

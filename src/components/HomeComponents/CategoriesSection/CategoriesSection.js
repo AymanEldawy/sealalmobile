@@ -23,7 +23,7 @@ export const CategoriesSection = () => {
         {categories?.map(category => (
           <SwiperSlide key={category?.id}>
             <Link href={`/categories/${category?.id}`} className='flex flex-col gap-2'>
-              <Image src={category?.image} alt={category?.name} height={80} width={80} className='max-w-none !w-[60px] h-[60px] object-cover' />
+              <Image src={category?.image} alt={category?.name} height={80} width={80} className='max-w-none !w-[60px] h-[60px] object-cover rounded-full' />
               <span className='text-sm text-secondary'>{category?.name}</span>
             </Link>
           </SwiperSlide>

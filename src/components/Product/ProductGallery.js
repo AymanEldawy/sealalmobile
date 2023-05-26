@@ -18,20 +18,22 @@ export const ProductGallery = ({ images, alt, productId, grid }) => {
     },
   };
   return (
-    <Swiper
-      className='swiper-product-gallery'
-      pagination={pagination}
-      modules={[Pagination]}
-      spaceBetween={50}
-      slidesPerView={1}
-    >
-      {images?.slice(0, 5).map(image => (
-        <SwiperSlide key={image?.id}>
-          <figure className='cursor-pointer h-full' onClick={handelLink}>
-            <Image src={image} alt={alt} height={284} width={grid ? 110 : 230} className={`${grid ? 'w-[110px]' : 'w-full'} h-full object-contain`} />
-          </figure>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className={`overflow-hidden ${grid ? 'w-[120px]' : ''}`}>
+      <Swiper
+        className='swiper-product-gallery'
+        pagination={pagination}
+        modules={[Pagination]}
+        spaceBetween={10}
+        slidesPerView={1}
+      >
+        {images?.slice(0, 5).map(image => (
+          <SwiperSlide key={image?.id}>
+            <figure className={`bg-gray-100 cursor-pointer ${grid ? 'h-[180px]' : 'h-[240px]'} w-full`} onClick={handelLink}>
+              <Image src={image} alt={alt} height={284} width={grid ? 120 : 230} className={`w-full h-full object-contain`} />
+            </figure>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   )
 }

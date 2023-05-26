@@ -20,7 +20,7 @@ const FixedBottomMenu = () => {
       </Link>
       <Link href='/cart' className={`${router?.pathname == '/cart' ? 'menu-bottom-active-link' : ''} relative`}>
         <CartIcon className="text-black" />
-        <span className="absolute -top-1 ltr:right-0 rtl:left-0 bg-red-500 text-white text-xs px-[2px] rounded-md">{cartLength}</span>
+        <span className="absolute -top-1 ltr:-right-1 rtl:-left-1 bg-red-500 text-white text-xs px-[3px] rounded-md">{cartLength}</span>
       </Link>
       <a href="https://sealal-shipping.vercel.app/">
         <Image src="/images/sealal-express.svg" alt="sealal express" height={40} width={70} className="object-contain" />

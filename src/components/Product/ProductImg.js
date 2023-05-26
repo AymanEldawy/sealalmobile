@@ -8,8 +8,8 @@ export const ProductImg = ({ src, alt, productId, grid }) => {
     router.push(`/products/${productId}`)
   }
   return (
-    <figure className=' cursor-pointer h-full' onClick={handelLink}>
-      <Image src={src} alt={alt} height={284} width={grid ? 110 : 230} className={`${grid ? 'w-[110px]' : 'w-full'} h-full object-contain`} />
+    <figure className={`bg-gray-100 cursor-pointer ${grid ? 'h-full' : 'h-[240px]'} `}  onClick={handelLink}>
+      <Image src={src} alt={alt} height={284} width={grid ? 110 : 230} className={`w-full h-full object-contain`} />
     </figure>
   )
 }

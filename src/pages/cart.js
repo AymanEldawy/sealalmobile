@@ -3,20 +3,20 @@ import { CartIcon } from '@/components/Icons'
 import { Layout } from '@/components/Layout/Layout'
 import { LoadingBar } from '@/components/LoadingBar/LoadingBar'
 import { ProductCard } from '@/components/Product/ProductCard'
+import { GlobalOptions } from '@/context/GlobalOptions'
 import { LanguageContext } from '@/context/LangContext'
-import { cartList, products } from '@/data/dummyData'
+import { products } from '@/data/dummyData'
 import { fetchWord } from '@/lang/fetchWord'
 import React, { useState, useEffect, useContext } from 'react'
 
 const Cart = () => {
-  const [loading, setLoading] = useState(false)
-  const [cart, setCart] = useState([])
+  const [loading, setLoading] = useState(false);
+  const { cart, removeFromCart } = useContext(GlobalOptions)
   const { lang } = useContext(LanguageContext);
   const [favorites, setFavorites] = useState([])
   useEffect(() => {
     setLoading(true)
     setFavorites(products?.filter(product => product?.favorite))
-    setCart(cartList)
     setLoading(false)
   }, [])
   return (
@@ -29,11 +29,11 @@ const Cart = () => {
                 <div className='mb-12 mt-8'>
                   {cart?.map(item => (
                     <div className='mb-8' key={item?.id}>
-                      <ProductCard hideReview grid size="large" product={item} />
+                      <ProductCard removeFromCart={removeFromCart} hideReview grid size="large" product={item} />
                     </div>
                   ))}
                 </div>
-                <PrimaryLink  link="checkout" className="!w-full block max-w-[300px] mx-auto rounded-3xl" >{fetchWord('checkout', lang)}</PrimaryLink>
+                <PrimaryLink link="checkout" className="!w-full block max-w-[300px] mx-auto rounded-3xl" >{fetchWord('checkout', lang)}</PrimaryLink>
               </>
             )
               : (

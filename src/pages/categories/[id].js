@@ -26,7 +26,7 @@ const SingleCategory = () => {
       {
         openFilter ? (
           <Layout handleBack={() => setOpenFilter(false)} containerClassName="" hideIcons hideNotificationIcon hideSearch title={fetchWord('filter', lang)}>
-            <Filters />
+            <Filters setOpenFilter={setOpenFilter} />
           </Layout>
         ) : (
           <Layout hideNotificationIcon extraIcons={<button onClick={toggleView}><CategoryGridIcon view={viewAs} /></button>}>
@@ -41,7 +41,7 @@ const SingleCategory = () => {
             <div className={`grid gap-4 ${viewAs === 'grid' ? 'grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : ''}`}>
               {
                 products?.map(product => (
-                  <ProductCard size={viewAs !== 'grid' ? "large" : ''} product={product} key={product?.id} />
+                  <ProductCard size={viewAs !== 'grid' ? "large" : ''} grid={viewAs !== 'grid'} product={product} key={product?.id} />
                 ))
               }
             </div>

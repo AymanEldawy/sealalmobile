@@ -1,5 +1,6 @@
 import { CartAddress } from '@/components/CartComponents/CartAddress'
 import { CheckoutInformation } from '@/components/CartComponents/CheckoutInformation'
+import ConfirmOrder from '@/components/CartComponents/ConfirmOrder'
 import { CartPayment } from '@/components/CartComponents/Payment/CartPayment'
 import { Layout } from '@/components/Layout/Layout'
 import TabsContent from '@/components/Tabs/TabsContent'
@@ -31,8 +32,8 @@ const Checkout = () => {
     let total = cart?.reduce((result, cur) => {
       return result += cur?.price * cur?.quantity
     }, 0)
-    setSubtotal(total)
-    setTotal(total)
+    setSubtotal(total?.toFixed(2))
+    setTotal(total?.toFixed(2))
   }, [cart])
 
   const applyCode = (e) => {
@@ -50,7 +51,6 @@ const Checkout = () => {
   const selectedStage = (tab) => {
     setStage(stages?.[tab])
   }
-  console.log(subtotal)
   const handleBack = () => {
     setStage(Object.values(stages)?.[stage?.stage - 2])
   }
@@ -70,7 +70,7 @@ const Checkout = () => {
           cart={cart}
           tabName={stages?.checkout?.stageName}
           setStage={selectedStage}
-           />
+        />
         <CartAddress tabName={stages?.address?.stageName} setStage={selectedStage} />
         <CartPayment
           subtotal={subtotal}
@@ -82,6 +82,10 @@ const Checkout = () => {
           stage={stage}
           tabName={stages?.payment?.stageName}
           setStage={selectedStage} />
+        <ConfirmOrder
+          stage={stage}
+          tabName={stages?.confirm?.stageName}
+        />
       </TabsContent>
 
     </Layout>

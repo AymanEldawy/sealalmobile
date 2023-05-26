@@ -101,4 +101,5 @@ export { default as CategoryGridIcon } from "./CategoryGridIcon";
 export { default as BanIcon } from "./BanIcon";
 export { default as SMSIcon } from "./SMSIcon";
 export { default as ShareIcon } from "./ShareIcon";
+export { default as ThumbUpIcon } from "./ThumbUpIcon";
 

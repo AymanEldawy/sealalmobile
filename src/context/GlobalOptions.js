@@ -28,10 +28,18 @@ export const GlobalOptionsProvider = ({ children }) => {
     }])
   }
   const removeFromCart = (id) => {
-    setCart(prev => prev?.filter(item => item?.id !== id))
+    setCart(prev => prev?.filter(item => +item?.id !== +id))
   }
 
-  const values = { openDrawer, setOpenDrawer, user, changeUserRole, cart, addToCart, removeFromCart, cartLength: cart?.length }
+  const updateQuantity = (id, quantity) => {
+    let newCart = cart?.map(item => {
+      if (item?.id === id) {
+        return { ...item, quantity }
+      } else return item
+    })
+    setCart(newCart)
+  }
+  const values = { openDrawer, setOpenDrawer, user, changeUserRole, cart, updateQuantity, addToCart, removeFromCart, cartLength: cart?.length }
   return (
     <GlobalOptions.Provider value={values}>
       {children}

@@ -5,7 +5,7 @@ import { LanguageContext } from '@/context/LangContext'
 import Image from 'next/image'
 import { Button } from '../Global/Button/Button'
 
-export const OrderSummary = ({ subtotal, total, cart }) => {
+export const OrderSummary = ({ subtotal, total, cart, setStage }) => {
   const { lang } = useContext(LanguageContext)
   return (
     <div className='bg-[#FAFAFA] mt-6 '>
@@ -29,10 +29,10 @@ export const OrderSummary = ({ subtotal, total, cart }) => {
       }
       <div className='border-b border-[#CFCFCF] my-4' />
       <div className='flex items-center justify-between gap-1 text-sm'>
-        <h3>{fetchWord('Subtotal', lang)}: <strong>${subtotal + 20}</strong> </h3>
-        <h4>{fetchWord('Total', lang)}: <strong>${total + 20}</strong> </h4>
+        <h3>{fetchWord('Subtotal', lang)}: <strong>${(+subtotal + 20)?.toFixed(2)}</strong> </h3>
+        <h4>{fetchWord('Total', lang)}: <strong>${(+total + 20)?.toFixed(2)}</strong> </h4>
       </div>
-      <Button classes="w-full mt-4 !p-3">{fetchWord('Review_your_order', lang)}</Button>
+      <Button onClick={() => setStage('confirm')} classes="w-full mt-4 !p-3">{fetchWord('Review_your_order', lang)}</Button>
     </div>
   )
 }

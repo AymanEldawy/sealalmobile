@@ -174,7 +174,7 @@ body {
   z-index: 99;
 }
 .swiper-product-gallery .swiper-pagination {
-  bottom: 15px;
+  bottom: 10px;
 }
 .hero-swiper .swiper-pagination-bullet-active{
   background-color: var(--primary-color);
