@@ -19,7 +19,7 @@ export const ProductCard = ({ removeFromCart, hideReview, grid, size, product })
   const { lang } = useContext(LanguageContext)
   const { addToCart } = useContext(GlobalOptions)
   return (
-    <div className={`relative ${grid ? 'flex gap-4' : ' border border-gray-100 pt-2 px-2'} `}>
+    <div className={`relative ${grid ? 'flex' : ' border border-gray-100 pt-2 px-2'} `}>
       <div className='relative'>
         <ProductFavorite className={grid ? 'rtl:left-auto ltr:right-auto ltr:left-2 rtl:right-2' : ''} favorite={product?.favorite} />
         {
@@ -33,6 +33,9 @@ export const ProductCard = ({ removeFromCart, hideReview, grid, size, product })
           product?.colors?.length ? <ProductCardColors colors={product?.colors} /> : null
         }
       </div>
+      {
+        grid ? <span className='h-full w-[2px] min-h-[180px] mx-3 border-l border-gray-200' /> : null
+      }
       <div className={grid ? 'flex-1' : ''}>
         <ProductInfo hideReview={hideReview} rating={product?.rating} brand={product?.company_name} title={product?.name} productId={product?.id} size={size} />
         <div className='flex gap-1'>
