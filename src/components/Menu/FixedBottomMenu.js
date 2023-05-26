@@ -1,10 +1,11 @@
 import { GlobalOptions } from "@/context/GlobalOptions";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useContext } from "react";
-import { CartIcon, CategoriesIcon, HomeIcon, BarsIcon } from "../Icons";
-import Image from "next/image";
+
+import { BarsIcon, CartIcon, CategoriesIcon, HomeIcon } from "../Icons";
 
 const FixedBottomMenu = () => {
   const { cartLength, setOpenDrawer } = useContext(GlobalOptions)
@@ -23,7 +24,7 @@ const FixedBottomMenu = () => {
         <span className="absolute -top-1 ltr:-right-1 rtl:-left-1 bg-red-500 text-white text-xs px-[3px] rounded-md">{cartLength}</span>
       </Link>
       <a href="https://sealal-shipping.vercel.app/">
-        <Image src="/images/sealal-express.svg" alt="sealal express" height={40} width={70} className="object-contain" />
+        <Image src="/images/sealal-ex.svg" alt="sealal express" height={40} width={90} className="object-contain" />
       </a>
       <button onClick={() => setOpenDrawer(p => !p)}><BarsIcon className="text-black" /></button>
     </div>
