@@ -17,10 +17,7 @@ import { Terms } from '@/components/ProfileComponents/Terms';
 import TabsContent from '@/components/Tabs/TabsContent';
 import { GlobalOptions } from '@/context/GlobalOptions';
 import { LanguageContext } from '@/context/LangContext';
-import { products } from '@/data/dummyData';
 import { fetchWord } from '@/lang/fetchWord';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import React from 'react'
 import { useContext } from 'react';
 import { useState } from 'react';
@@ -37,7 +34,7 @@ const Profile = () => {
   return (
     <Layout
       handleBack={activeTab !== 'options' ? handleBack: undefined}
-      title={!id ? fetchWord(activeTab, lang) : ''}
+      title={fetchWord(activeTab, lang)}
       extraIcons={
         activeTab === 'My_Products' && user?.role === 'seller' ?
           <button><DeleteIcon className="w-5 h-5 text-secondary" /> </button> : ''
