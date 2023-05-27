@@ -371,6 +371,7 @@ export const en = {
   Product_price: "Product price",
   rate_seller: "rate seller",
   seller: "seller",
+  products_count: "products count",
 
   // Mobile version
 
@@ -476,10 +477,10 @@ export const en = {
   // logout 
   logout_msg1: "Are you sure you want to log out?",
   logout_ms2: "Yes,logout",
-   // confirm order
-   confirm_order_msg1:"Thank you for your order!",
-   confirm_order_msg2:"Your purchase has been confirmed",
-   continue_shopping:"continue shopping",
+  // confirm order
+  confirm_order_msg1: "Thank you for your order!",
+  confirm_order_msg2: "Your purchase has been confirmed",
+  continue_shopping: "continue shopping",
 };
 
 export const getWordEn = (key) => {

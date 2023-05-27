@@ -177,10 +177,10 @@ body {
   bottom: 10px;
 }
 .hero-swiper .swiper-pagination-bullet-active{
-  background-color: var(--primary-color);
+  background-color: var(--primary-color) !important;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active,
+/* .swiper-pagination .swiper-pagination-bullet-active, */
 .single-product-slider .swiper-pagination-bullet-active{
   background-color: #fff;
   border: none

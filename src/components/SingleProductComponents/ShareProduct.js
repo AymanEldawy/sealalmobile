@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { FacebookMessengerShareButton, InstapaperShareButton, TelegramIcon, TelegramShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
-import { CloseIcon, FacebookIcon, InstagramIcon, TwitterIcon, WhatsAppIcon } from '../Icons';
+import { FacebookMessengerIcon, FacebookMessengerShareButton,TwitterIcon , InstapaperIcon, InstapaperShareButton, TelegramIcon, TelegramShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
+// import { CloseIcon, FacebookIcon, InstagramIcon, TwitterIcon, WhatsAppIcon } from '../Icons';
 import Modal from '../Modal/Modal';
 import Link from 'next/link';
 import { LanguageContext } from '@/context/LangContext';
@@ -19,23 +19,23 @@ const ShareProduct = ({ setShare, url }) => {
   return (
     <Modal containerClassName="z-[99] max-w-[575px]" open={true} close={() => setShare(false)}>
       <>
-        <p className='mt-6 font-[500] 2xl:text-[18px]'>{fetchWord('Share_this_link_via', lang)}</p>
+        <p className=' font-[500] 2xl:text-[18px]'>{fetchWord('Share_this_link_via', lang)}</p>
         <div className='flex space-x-4 mt-4'>
-          <FacebookMessengerShareButton className='w-9 h-9 rounded-full !bg-primary text-white flex items-center justify-center' title="" url={window ? window?.location?.href : null}>
-            <FacebookIcon className="h-6 w-6 !text-white" />
+          <FacebookMessengerShareButton  title="" url={window ? window?.location?.href : null}>
+            <FacebookMessengerIcon className="h-6 w-6 !rounded-full " />
           </FacebookMessengerShareButton>
-          <InstapaperShareButton className='w-9 h-9 rounded-full !bg-primary text-white flex items-center justify-center' title="" url={window ? window?.location?.href : null}>
-            <InstagramIcon className="h-6 w-6 !text-white" />
+          <InstapaperShareButton  title="" url={window ? window?.location?.href : null}>
+            <InstapaperIcon className="h-6 w-6 !rounded-full " />
           </InstapaperShareButton>
-          <TwitterShareButton className='w-9 h-9 rounded-full !bg-primary text-white flex items-center justify-center' title="" url={window ? window?.location?.href : null}>
-            <TwitterIcon className="h-6 w-6 !text-white" />
+          <TwitterShareButton  title="" url={window ? window?.location?.href : null}>
+            <TwitterIcon className="h-6 w-6 !rounded-full " />
           </TwitterShareButton>
-          <WhatsappShareButton className='w-9 h-9 rounded-full !bg-primary text-white flex items-center justify-center' title="" url={window ? window?.location?.href : null}>
-            <WhatsAppIcon className="h-6 w-6 bg-primary !text-white" />
+          <WhatsappShareButton  title="" url={window ? window?.location?.href : null}>
+            <WhatsappIcon className="h-6 w-6 !rounded-full " />
           </WhatsappShareButton>
-          {/* <TelegramShareButton className='w-9 h-9 rounded-full !bg-primary text-white flex items-center justify-center' title="" url={window ? window?.location?.href : null}>
-            <TelegramIcon className="h-6 w-6 !rounded-full !bg-primary !text-white" />
-          </TelegramShareButton> */}
+          <TelegramShareButton  title="" url={window ? window?.location?.href : null}>
+            <TelegramIcon className="h-6 w-6 !rounded-full" />
+          </TelegramShareButton>
         </div>
         <p className='mt-4 flex items-center justify-between'>{fetchWord('or_copy', lang)} {copied ? <span className='text-xs bg-green-100 text-green-500 p-1 px-2'>{fetchWord('Copied', lang)}</span> : null} </p>
         <div className='py-2 border rounded-[10px] flex justify-between mt-2 px-2 gap-2 items-center text-xs'>

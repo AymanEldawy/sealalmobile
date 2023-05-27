@@ -102,4 +102,5 @@ export { default as BanIcon } from "./BanIcon";
 export { default as SMSIcon } from "./SMSIcon";
 export { default as ShareIcon } from "./ShareIcon";
 export { default as ThumbUpIcon } from "./ThumbUpIcon";
+export { default as FilterIcon } from "./FilterIcon";
 

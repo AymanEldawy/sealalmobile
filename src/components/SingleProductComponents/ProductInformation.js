@@ -11,6 +11,7 @@ import { ProductQuantity } from './ProductQuantity'
 import { ProductSizes } from './ProductSizes'
 import { ProductPrice } from '../Product/ProductPrice'
 import { HeartIcon } from '../Icons'
+import Link from 'next/link'
 
 export const ProductInformation = ({ sale, status, handleToCart, product, color, setColor, size, setSize, quantity, setQuantity, maxQuantity }) => {
   const { lang } = useContext(LanguageContext);
@@ -19,9 +20,9 @@ export const ProductInformation = ({ sale, status, handleToCart, product, color,
 
     <div className='flex-1'>
       <div className='flex flex-wrap relative items-center gap-2 justify-between'>
-        <h3 className='text-secondary font-medium'>{product?.company_name}</h3>
+        <Link href="/stores/42335" className='text-secondary font-medium'>{product?.company_name}</Link>
         <span className='flex items-center gap-1 text-gray-400'>
-          <HeartIcon className="!stroke-red-500 fill-red-500" />
+          <HeartIcon className="!stroke-red-500 fill-red-500 h-4 w-4" />
           323
         </span>
       </div>

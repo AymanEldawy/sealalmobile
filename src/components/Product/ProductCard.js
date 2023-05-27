@@ -23,14 +23,14 @@ export const ProductCard = ({ removeFromCart, hideReview, grid, size, product })
       <div className='relative'>
         <ProductFavorite className={grid ? 'rtl:left-auto ltr:right-auto ltr:left-2 rtl:right-2' : ''} favorite={product?.favorite} />
         {
-          product?.images?.length ? (
+          product?.images?.length && router?.pathname !== '/cart' ? (
             <ProductGallery grid={grid} images={product?.images} alt={product?.name} productId={product?.id} />
           ) : (
             <ProductImg grid={grid} src={product?.image} alt={product?.name} productId={product?.id} />
           )
         }
         {
-          product?.colors?.length ? <ProductCardColors colors={product?.colors} /> : null
+          product?.colors?.length && router?.pathname !== '/cart' ? <ProductCardColors colors={product?.colors} /> : null
         }
       </div>
       {
