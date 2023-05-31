@@ -60,7 +60,7 @@ const SingleProduct = () => {
           list={tabs}
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          containerClassName="border-gray-400 border-b-2 mt-4 p-0 gap-4 mb-4"
+          containerClassName="border-gray-400 border-b-2 mt-4 p-0 gap-4 mb-4 overflow-auto scroll-hide"
           itemClassName="capitalize !px-0 text-xs whitespace-nowrap text-lead font-semibold"
           activeClassName="border-primary !text-primary border-b-[3px] -mb-[2px]"
         />

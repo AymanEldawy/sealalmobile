@@ -182,6 +182,6 @@ body {
 
 /* .swiper-pagination .swiper-pagination-bullet-active, */
 .single-product-slider .swiper-pagination-bullet-active{
-  background-color: #fff;
+  background-color: #fff !important;
   border: none
 }
